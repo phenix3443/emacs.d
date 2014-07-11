@@ -2,6 +2,7 @@
 /url/cache
 /.emacs.desktop
 /auto-save-list
+/elpa
 /.session
 /custom.el
 *.elc

@@ -2,7 +2,7 @@
 ;;Environment
 ;;---------------------------------------------------------------------
 
-;;add subdirs of ~/.emacs.d/ to load-path
+;add subdirs of ~/.emacs.d/ to load-path
 (let ((default-directory "~/.emacs.d/"))
   (setq load-path 
 	(append
@@ -13,14 +13,44 @@
 ;;---------------------------------------------------------------------
 ;;Startup
 ;;---------------------------------------------------------------------
-(require 'init-startup)
+(defconst is_gnu_os (equal system-type 'gnu) "GNU Hurd system")
+(defconst is_gnu_linux_os (equal system-type 'gnu/linux) "GNU/Linux system")
+(defconst is_gnu_kfreebsd_os (equal system-type 'gnu/kfreebsd) "GNU system with a FreeBSD kernel")
+(defconst is_darwin_os (equal system-type 'darwin) "Darwin")
+(defconst is_ms_dos_os (equal system-type 'ms-dos) "MS-DOS system")
+(defconst is_windows_nt_os (equal system-type 'windows-nt) "native win32 application")
+(defconst is_cygwin_os (equal system-type 'cygwin) "cygwin")
 
-;(require 'init-fonts)
+(cond (is_gnu_os ())
+      (is_gnu_linux_os ())
+      (is_gnu_kfreebsd_os ())
+      (is_darwin_os())
+      (is_ms_dos_os ())
+      (is_windows_nt_os())
+      (cygmin-os ()))
 
-(global-set-key (kbd "C-SPC") 'nil)
-(global-set-key (kbd "S-SPC") 'set-mark-command)
+;;---------------------------------------------------------------------
+;;custom view
+;;---------------------------------------------------------------------
+;hide the welcome screen in Emacs
+(setq inhibit-startup-message t)
+;hide scroll bar
+(set-scroll-bar-mode nil) 
+;frame
+(setq frame-title-format (list "Emacs " emacs-version))
+(tool-bar-mode -1)
 
-(set-scroll-bar-mode nil) ;hide scroll bar
+;;mode line
+(display-time-mode 1)
+(setq display-time-format "%D %a %H:%M")
+
+;;color theme
+(load-theme 'wombat t)
+
+;;----------------------------------------------------------------------
+;;text edit
+;;----------------------------------------------------------------------
+
 (global-linum-mode t) ;display line number
 (column-number-mode t) ;display column number
 
@@ -41,7 +71,10 @@
 (show-paren-mode t)
 (electric-pair-mode t)
 
-
+;;----------------------------------------------------------------------
+;;require module
+;;----------------------------------------------------------------------
+(require 'init-elpa)
 (require 'init-yasnippet)
 (require 'init-auto-complete)
 (require 'init-popwin)
@@ -60,7 +93,6 @@
 		  '(lambda()
 			 (c-set-style "linux")
 			 (setq c-basic-offset 4)))
-;----------------------------------------------------------------------
 
 ;;----------------------------------------------------------------------
 ;;Lua mode
@@ -70,5 +102,3 @@
     (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
     (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
 ;----------------------------------------------------------------------
-
-

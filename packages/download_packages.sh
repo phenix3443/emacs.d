@@ -1,6 +1,4 @@
-#!/bin/sh
-
-cd ~/.emacs.d/packages/
+!#\bin\bash
 git clone https://github.com/auto-complete/auto-complete.git
 git clone https://github.com/auto-complete/fuzzy-el.git
 git clone https://github.com/auto-complete/popup-el.git
