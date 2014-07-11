@@ -1,3 +1,4 @@
+;;Time-stamp: <2014-07-11 21:27:03 chengxu70>
 (require 'cl)
 (defun font-candidate (&rest fonts)
    "Return existing font which first match."

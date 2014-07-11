@@ -1,4 +1,4 @@
-
+;;Time-stamp: <2014-07-11 21:28:00 chengxu70>
 ;;cedet
 
 (load-file "~/.emacs.d/cedet-1.1/common/cedet.elc")

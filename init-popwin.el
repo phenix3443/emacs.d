@@ -1,3 +1,4 @@
+;;Time-stamp: <2014-07-11 21:26:20 chengxu70>
 (require 'popwin)
 
 (setq popwin:special-display-config nil)

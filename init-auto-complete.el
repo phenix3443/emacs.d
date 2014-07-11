@@ -1,3 +1,4 @@
+;;Time-stamp: <2014-07-11 21:24:34 chengxu70>
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 
