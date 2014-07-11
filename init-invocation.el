@@ -1,5 +1,5 @@
-;;Time-stamp: <2014-07-11 21:21:50 chengxu70>
+;;Time-stamp: <2014-07-11 22:32:09 phenix>
 ;;;Enviroment
 ;;General Variables
 
-(provide 'init-invocation.el)
+(provide 'init-invocation)
