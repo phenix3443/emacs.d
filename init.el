@@ -2,16 +2,13 @@
 ;;Environment
 ;;---------------------------------------------------------------------
 
-;add subdirs of ~/.emacs.d/ to load-path
-(let ((default-directory "~/.emacs.d/"))
-  (setq load-path 
-	(append
-	 (let ((load-path (copy-sequence load-path)))
-         (append (copy-sequence (normal-top-level-add-to-load-path '(".")))
-         (normal-top-level-add-subdirs-to-load-path)))
-	 load-path)))
+;To recursively add the sub-directories of the current directory to the end of the ‘load-path’
+(let ((default-directory "~/.emacs.d/lisps"))
+  (normal-top-level-add-to-load-path '("." ".."))
+  (normal-top-level-add-subdirs-to-load-path))
+  
 ;;---------------------------------------------------------------------
-;;Startup
+;;different OS configures
 ;;---------------------------------------------------------------------
 (defconst is_gnu_os (equal system-type 'gnu) "GNU Hurd system")
 (defconst is_gnu_linux_os (equal system-type 'gnu/linux) "GNU/Linux system")
@@ -74,10 +71,15 @@
 ;;----------------------------------------------------------------------
 ;;require module
 ;;----------------------------------------------------------------------
-(require 'init-elpa)
-(require 'init-yasnippet)
-(require 'init-auto-complete)
-(require 'init-popwin)
+(add-hook 'after-init-hook (lambda () 
+							  "load installed packages configures" 
+							  (interactive)
+							  (progn
+								(require 'init-elpa)
+								(require 'init-popwin)
+								(require 'init-yasnippet)
+								(require 'init-auto-complete)
+							   )))
 
 ;;----------------------------------------------------------------------
 ;;init c/C++ mode
@@ -86,8 +88,6 @@
 		  '(lambda()
 			 (c-set-style "linux")
 			 (setq c-basic-offset 4)))
-
-
 
 (add-hook 'c++-mode-hook
 		  '(lambda()

@@ -2,7 +2,6 @@
 ;;------------------------------------------------------------------------------
 (when (>= emacs-major-version 24)
   (require 'package)
-  (package-initialize)
   (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
 						   ("melpa" . "http://melpa.milkbox.net/packages/")
 						   ("marmalade" . "http://marmalade-repo.org/packages/"))))
@@ -22,8 +21,9 @@
 
 (require-package 'auto-complete)
 (require-package 'fuzzy)
-(require-package 'yasnippet)
-(require-package 'pos-tip)
-(require-package 'popwin)
 (require-package 'lua-mode)
+(require-package 'popwin)
+(require-package 'pos-tip)
+(require-package 'yasnippet)
+
 (provide 'init-elpa)
