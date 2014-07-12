@@ -1,13 +1,15 @@
-/.emacs.desktop
-/auto-save-list
-/elpa
-/.session
+.emacs.desktop
+auto-save-list
+elpa/*/
+themes/*/
+lisps/*/
+.session
 *.elc
 .svn
 *~
 *.log
 .*.lock
-/ac-comphist.dat
+ac-comphist.dat
 eshell/
 semanticdb/
 
