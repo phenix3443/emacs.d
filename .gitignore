@@ -1,6 +1,7 @@
 .emacs.desktop
 auto-save-list
-elpa/*/
+elpa/
+.emacs.desktop
 themes/*/
 lisps/*/
 .session
