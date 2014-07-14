@@ -26,8 +26,7 @@
 (and (require 'battery nil t)
      (functionp battery-status-function)
      (or (equal (cdr (assoc ?L (funcall battery-status-function))) "on-line")
-         ((setq battery-mode-line-format "[%b-%p%%-%L]")
-		  (display-battery-mode))))
+		  (display-battery-mode)))
 
 
 

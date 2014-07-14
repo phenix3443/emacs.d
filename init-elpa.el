@@ -23,14 +23,13 @@
    packages))
 
 (ensure-package-installed 'auctex
-						  'auto-complete
-						  'fuzzy
-						  'lua-mode
-						  'xml-rpc
-						  'org2blog
-						  'popwin
-						  'pos-tip
-						  'yasnippet
+			  'auto-complete
+			  'fuzzy
+			  'lua-mode
+			  'org2blog
+			  'popwin
+			  'pos-tip
+			  'yasnippet
 )
 
 ;;------------------------------------------------------------------------------
