@@ -22,7 +22,10 @@
 (display-time-mode 1)
 (setq display-time-format "%D %a %H:%M")
 
-(display-battery-mode)
-(setq battery-mode-line-format "[%b-%p%%-%L]")
-
+;; If not on AC power line, then display battery status on the mode line
+(and (require 'battery nil t)
+     (functionp battery-status-function)
+     (or (equal (cdr (assoc ?L (funcall battery-status-function))) "on-line")
+         (display-battery-mode)))
+;(setq battery-mode-line-format "[%b-%p%%-%L]")
 (provide 'init-display)
