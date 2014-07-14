@@ -36,10 +36,11 @@
 		(normal-top-level-add-to-load-path '(".." "."))
 		(normal-top-level-add-subdirs-to-load-path))
 	(require 'misc)
+	(require 'init-elpa)
 	(require 'init-auto-complete)
 	(require 'init-basic)
 	(require 'init-display)
-	(require 'init-elpa)
+
 	(require 'init-file-handle)
 	(require 'init-frames)
 	(require 'init-indentation)
