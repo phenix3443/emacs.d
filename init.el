@@ -1,4 +1,4 @@
-;;Time-stamp: <2014-07-12 01:22:26 phenix>
+;;Time-stamp: <2014-07-14 13:16:33 chengxu70>
 ;;---------------------------------------------------------------------
 ;;different OS configures
 ;;---------------------------------------------------------------------
@@ -51,6 +51,7 @@
 	(require 'init-text)
 	(require 'init-yasnippet)
 	(require 'init-color-theme)
+	(require 'init-org2blog)
 	)
 (add-hook 'after-init-hook 'load-package-init-files)
 

@@ -26,6 +26,8 @@
 						  'auto-complete
 						  'fuzzy
 						  'lua-mode
+						  'xml-rpc
+						  'org2blog
 						  'popwin
 						  'pos-tip
 						  'yasnippet
