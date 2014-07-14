@@ -1,4 +1,4 @@
-;;Time-stamp: <2014-07-14 13:16:33 chengxu70>
+;;Time-stamp: <2014-07-14 14:42:00 chengxu70>
 ;;---------------------------------------------------------------------
 ;;different OS configures
 ;;---------------------------------------------------------------------
@@ -45,7 +45,8 @@
 	(require 'init-indentation)
 	(require 'init-invocation)
 	(require 'init-killing)
-	
+	(require 'init-desktop)
+
 	(require 'init-popwin)
 	(require 'init-program)
 	(require 'init-text)
