@@ -1,4 +1,4 @@
-;;Time-stamp: <2014-07-12 01:01:41 phenix>
+;;Time-stamp: <2014-07-14 11:01:14 chengxu70>
 
 ;;;Scrolling
 (set-scroll-bar-mode nil) 
@@ -26,6 +26,9 @@
 (and (require 'battery nil t)
      (functionp battery-status-function)
      (or (equal (cdr (assoc ?L (funcall battery-status-function))) "on-line")
-         (display-battery-mode)))
-;(setq battery-mode-line-format "[%b-%p%%-%L]")
+         ((setq battery-mode-line-format "[%b-%p%%-%L]")
+		  (display-battery-mode))))
+
+
+
 (provide 'init-display)
