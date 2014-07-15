@@ -1,42 +1,53 @@
-;;Time-stamp: <2014-07-11 21:28:00 chengxu70>
-;;cedet
+;;Time-stamp: <2014-07-15 14:17:01 chengxu70>
+(require 'cedet)
 
-(load-file "~/.emacs.d/cedet-1.1/common/cedet.elc")
-
-;;ede
-(defconst cedet-user-include-dirs
-  (list ".." "../include" "../inc" "../common" "../public"
-	"../.." "../../include" "../../inc" "../../common" "../../public"))
-
-
+;;;ede
+(defconst cedet-sys-include-dirs (list
+								  "/usr/include/"
+								  "/usr/include/gnu"
+								  "/usr/local/include"
+								  ))
+(defconst cedet-user-include-dirs (list 
+								   ".."
+								   "../include"
+								   "../inc"
+								   "../common"
+								   "../public"
+								   "../.."
+								   "../../include"
+								   "../../inc"
+								   "../../common"
+								   "../../public"))
 
 (global-ede-mode 1)
-(global-semantic-highlight-edits-mode (if window-system 1 -1))
-(global-semantic-show-unmatched-syntax-mode 1)
-(global-semantic-show-parser-state-mode 1)
 
-;;semantic
 
+;;;semantic configures
 (setq semantic-default-submodes '(global-semanticdb-minor-mode
-				  global-semantic-idle-scheduler-mode
+								  global-semantic-mru-bookmark-mode
+								  global-semantic-highlight-func-mode
+								  global-semantic-decoration-mode
+								  global-semantic-idle-local-symbol-highlight-mode
+								  global-semantic-idle-scheduler-mode
                                   global-semantic-idle-summary-mode
-				  global-semantic-idle-completions-mode
-				  global-semantic-decoration-mode
-				  global-semantic-highlight-func-mode
-				  global-semantic-stickyfunc-mode
-                                  global-semantic-mru-bookmark-mode))
+								  global-semantic-idle-completions-mode
+								  global-semantic-stickyfunc-mode
+                                  ))
 
+(semantic-mode 1)
+(global-semantic-show-parser-state-mode 1)
+(global-semantic-show-unmatched-syntax-mode 1)
+(global-semantic-highlight-edits-mode (if is-windows-nt-os 1 -1))
 
+;; set for c/c++ on windows nt os
 (require 'semantic-c nil 'noerror)
 (let ((include-dirs cedet-user-include-dirs))
-  (when is_windows_nt_os
-    (setq include-dirs (append include-dirs sys-include-dirs)))
+  (when is-windows-nt-os
+    (setq include-dirs (append include-dirs cedet-sys-include-dirs)))
   (mapc (lambda (dir)
 	  (semantic-add-system-include dir 'c++-mode)
 	  (semantic-add-system-include dir 'c-mode))
 	include-dirs))
-
-(global-set-key [f12] 'semantic-ia-fast-jump)
 
 (defun semantic-ia-fast-jump-back ()
   (interactive)
@@ -48,10 +59,9 @@
     (if (semantic-equivalent-tag-p (oref first tag) (semantic-current-tag))
         (setq first (cdr (car (cdr alist)))))
     (semantic-mrub-switch-tags first)))
-
+(global-set-key [f12] 'semantic-ia-fast-jump)
 (global-set-key [S-f12] 'semantic-ia-fast-jump-back)
 
-(define-key c-mode-base-map [M-S-f12] 'semantic-analyze-proto-impl-toggle)
 
 (require 'eassist nil 'noerror)
 (setq eassist-header-switches
@@ -71,7 +81,7 @@
         ("c" . ("h"))
         ("m" . ("h"))
         ("mm" . ("h"))))
-(define-key c-mode-base-map [M-f12] 'eassist-switch-h-cpp)
+
 
 (when (and window-system (require 'semantic-tag-folding nil 'noerror))
   (global-semantic-tag-folding-mode 1)
@@ -82,9 +92,9 @@
   (define-key semantic-tag-folding-mode-map (kbd "C-+") 'semantic-tag-folding-show-all))
 
 
-(require 'semantic-tag-folding nil 'noerror)
-(global-semantic-tag-folding-mode 1)
+;(require 'semantic-tag-folding nil 'noerror)
 
-(global-srecode-minor-mode 1)
-(provide 'init_cedet)
+;;;srecode
+;(global-srecode-minor-mode 1)
+(provide 'init-cedet)
 

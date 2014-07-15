@@ -24,6 +24,7 @@
 
 (ensure-package-installed 'auctex
 						  'auto-complete
+						  'ecb
 						  'fuzzy
 						  'lua-mode
 						  'xml-rpc
