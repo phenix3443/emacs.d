@@ -1,7 +1,6 @@
-;;Time-stamp: <2014-07-15 14:17:01 chengxu70>
+;;Time-stamp: <2014-07-17 00:34:29 phenix>
 (require 'cedet)
 
-;;;ede
 (defconst cedet-sys-include-dirs (list
 								  "/usr/include/"
 								  "/usr/include/gnu"
@@ -18,7 +17,7 @@
 								   "../../inc"
 								   "../../common"
 								   "../../public"))
-
+;;;ede
 (global-ede-mode 1)
 
 
