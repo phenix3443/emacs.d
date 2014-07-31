@@ -1,4 +1,4 @@
-;;Time-stamp: <2014-07-29 23:48:51 phenix>
+;;Time-stamp: <2014-07-31 21:04:04 chengxu70>
 ;;---------------------------------------------------------------------
 ;;different OS configures
 ;;---------------------------------------------------------------------
@@ -37,22 +37,16 @@
 		(normal-top-level-add-subdirs-to-load-path))
 	(require 'misc)
 	(require 'init-elpa)
-	(require 'init-auto-complete)
 	(require 'init-basic)
 	(require 'init-display)
-
 	(require 'init-file-handle)
 	(require 'init-frames)
 	(require 'init-indentation)
 	(require 'init-invocation)
 	(require 'init-killing)
 	(require 'init-desktop)
-
-	
-	(require 'init-popwin)
 	(require 'init-program)
 	(require 'init-text)
-	(require 'init-yasnippet)
 	(require 'init-color-theme)
 	(require 'init-org)
 	(require 'init-org2blog)

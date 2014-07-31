@@ -1,4 +1,5 @@
-;;Time-stamp: <2014-07-11 21:24:34 chengxu70>
+;;Time-stamp: <2014-07-31 20:59:39 chengxu70>
+(require 'auto-complete)
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 
@@ -23,6 +24,7 @@
                        (cons "->" '(ac-source-semantic)))
           (setq ac-sources '(ac-source-semantic ac-source-yasnippet))))
 
+(ac-set-trigger-key "TAB")
 (global-auto-complete-mode t)
 
 (provide 'init-auto-complete)
