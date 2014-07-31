@@ -28,6 +28,7 @@
 						  'fuzzy
 						  'lua-mode
 						  'xml-rpc
+						  'org
 						  'org2blog
 						  'popwin
 						  'pos-tip

@@ -1,4 +1,4 @@
-;;Time-stamp: <2014-07-15 13:42:17 chengxu70>
+;;Time-stamp: <2014-07-29 23:48:51 phenix>
 ;;---------------------------------------------------------------------
 ;;different OS configures
 ;;---------------------------------------------------------------------
@@ -54,6 +54,7 @@
 	(require 'init-text)
 	(require 'init-yasnippet)
 	(require 'init-color-theme)
+	(require 'init-org)
 	(require 'init-org2blog)
 	)
 (add-hook 'after-init-hook 'load-package-init-files)
@@ -79,3 +80,15 @@
     (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
     (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
 ;----------------------------------------------------------------------
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ede-project-directories (quote ("/home/phenix/projects/edetest/include" "/home/phenix/projects/edetest/src" "/home/phenix/projects/edetest"))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
