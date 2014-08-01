@@ -25,6 +25,7 @@
 (ensure-package-installed 'auctex
 						  'auto-complete
 						  'cdlatex
+						  'company
 						  'ecb
 						  'fuzzy
 						  'lua-mode

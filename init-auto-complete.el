@@ -1,6 +1,7 @@
-;;Time-stamp: <2014-07-31 20:59:39 chengxu70>
+;;Time-stamp: <2014-08-01 21:45:55 chengxu70>
 (require 'auto-complete)
 (require 'auto-complete-config)
+(ac-config-default)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 
 (set-default 'ac-sources
@@ -9,9 +10,6 @@
                ac-source-dictionary
                ac-source-words-in-buffer
                ac-source-words-in-same-mode-buffers))
-
-(require 'pos-tip)
-(setq ac-quick-help-prefer-pos-tip t)
 
 (setq ac-quick-help-delay 1.0)
 (setq ac-fuzzy-enable t)
@@ -25,7 +23,10 @@
           (setq ac-sources '(ac-source-semantic ac-source-yasnippet))))
 
 (ac-set-trigger-key "TAB")
-(global-auto-complete-mode t)
 
+(require 'pos-tip)
+(setq ac-quick-help-prefer-pos-tip t)
+
+(global-auto-complete-mode t)
 (provide 'init-auto-complete)
 

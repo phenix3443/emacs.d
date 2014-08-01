@@ -1,5 +1,6 @@
-;;Time-stamp: <2014-07-11 21:25:48 chengxu70>
+;;Time-stamp: <2014-08-01 21:18:44 chengxu70>
 (require 'yasnippet)
 (yas-global-mode 1)
 
 (provide 'init-yasnippet)
+
