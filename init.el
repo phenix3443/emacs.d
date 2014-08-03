@@ -1,4 +1,4 @@
-;;Time-stamp: <2014-07-31 21:04:04 chengxu70>
+;;Time-stamp: <2014-08-03 13:51:29 phenix>
 ;;---------------------------------------------------------------------
 ;;different OS configures
 ;;---------------------------------------------------------------------
@@ -73,16 +73,4 @@
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
     (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
     (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
-;----------------------------------------------------------------------
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ede-project-directories (quote ("/home/phenix/projects/edetest/include" "/home/phenix/projects/edetest/src" "/home/phenix/projects/edetest"))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;----------------------------------------------------------------------XS

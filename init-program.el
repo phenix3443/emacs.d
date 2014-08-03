@@ -1,6 +1,6 @@
-;;Time-stamp: <2014-08-01 22:19:56 chengxu70>
+;;Time-stamp: <2014-08-04 00:14:09 phenix>
 
-(require 'init-cedet)
+
 ;; 26.4.3 matching parentheses
 (show-paren-mode t)
 (electric-pair-mode t)
@@ -10,5 +10,10 @@
 (require 'init-popwin)
 (require 'init-auto-complete)
 ;(require 'init-company)
+
+
+;;project support
+(require 'init-cedet)
+(require 'init-cscope)
 
 (provide 'init-program)

@@ -1,4 +1,4 @@
-;;Time-stamp: <2014-07-17 00:34:29 phenix>
+;;Time-stamp: <2014-08-03 09:09:25 phenix>
 (require 'cedet)
 
 (defconst cedet-sys-include-dirs (list
@@ -19,7 +19,7 @@
 								   "../../public"))
 ;;;ede
 (global-ede-mode 1)
-
+(setq ede-local-setup-options '(ede-local-global ede-local-base))
 
 ;;;semantic configures
 (setq semantic-default-submodes '(global-semanticdb-minor-mode
