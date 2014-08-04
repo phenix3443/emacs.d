@@ -1,4 +1,4 @@
-;;Time-stamp: <2014-07-14 11:01:14 chengxu70>
+;;Time-stamp: <2014-08-04 16:11:51 chengxu70>
 
 ;;;Scrolling
 (set-scroll-bar-mode nil) 
@@ -23,10 +23,10 @@
 (setq display-time-format "%D %a %H:%M")
 
 ;; If not on AC power line, then display battery status on the mode line
-(and (require 'battery nil t)
-     (functionp battery-status-function)
-     (or (equal (cdr (assoc ?L (funcall battery-status-function))) "on-line")
-		  (display-battery-mode)))
+;(and (require 'battery nil t)
+;     (functionp battery-status-function)
+;     (or (equal (cdr (assoc ?L (funcall battery-status-function))) "on-line")
+;		  (display-battery-mode)))
 
 
 
