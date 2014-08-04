@@ -34,6 +34,7 @@
 						  'org2blog
 						  'popwin
 						  'pos-tip
+						  'xcscope
 						  'yasnippet
 )
 
