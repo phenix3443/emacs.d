@@ -28,6 +28,8 @@
 						  'company
 						  'ecb
 						  'fuzzy
+						  'ggtags
+						  'helm
 						  'lua-mode
 						  'xml-rpc
 						  'org
