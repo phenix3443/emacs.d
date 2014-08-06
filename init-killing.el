@@ -1,5 +1,9 @@
-;;Time-stamp: <2014-07-12 00:50:18 phenix>
-;;;12.3 cut and paste
-(setq x-select-enable-clipboard t)
+;; Time-stamp: <2014-08-06 20:17:52 chengxu70>
+;; 12.3 cut and paste
+
+;; 12.6 CUA
+(require 'cua)
+(cua-mode t)
+
 (provide 'init-killing)
 

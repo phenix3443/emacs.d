@@ -1,4 +1,4 @@
-;;Time-stamp: <2014-08-06 16:05:29 chengxu70>
+;;Time-stamp: <2014-08-06 16:48:38 chengxu70>
 ;;---------------------------------------------------------------------
 ;;different OS configures
 ;;---------------------------------------------------------------------
@@ -24,7 +24,7 @@
 (setq inhibit-startup-message t)
 ;; 6 Exiting Emacs
 
-;; require packages and load their init files
+;; 各种配置文件，按照 Emacs manual 顺序排列
 (defun load-package-init-files()
 	"load most packages init files"
 	(let ((default-directory "~/.emacs.d/lisps"))
@@ -34,12 +34,12 @@
 	(require 'init-elpa)
 	(require 'init-basic)
 	(require 'init-minibuffer)
+	(require 'init-killing)
 	(require 'init-display)
 	(require 'init-file-handle)
 	(require 'init-frames)
 	(require 'init-indentation)
 	(require 'init-invocation)
-	(require 'init-killing)
 	(require 'init-desktop)
 	(require 'init-program)
 	(require 'init-text)

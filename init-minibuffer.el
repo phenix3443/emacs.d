@@ -4,4 +4,4 @@
 ;; 8.4 Completion
 (require 'init-helm)
 
-(require 'init-minibuffer)
+(provide 'init-minibuffer)
