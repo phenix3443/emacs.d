@@ -2,7 +2,6 @@
 ;; 12.3 cut and paste
 
 ;; 12.6 CUA
-(require 'cua)
 (cua-mode t)
 
 (provide 'init-killing)

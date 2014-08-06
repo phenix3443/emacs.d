@@ -1,5 +1,5 @@
-;;elpa configures
-;;------------------------------------------------------------------------------
+; Time-stamp: <2014-08-06 20:33:38 chengxu70>
+
 (when (>= emacs-major-version 24)
   (require 'package)
   (package-initialize)
@@ -7,12 +7,12 @@
 						   ("melpa" . "http://melpa.milkbox.net/packages/")
 						   ("marmalade" . "http://marmalade-repo.org/packages/"))))
 
-;; make sure to have downloaded archive description. Or use package-archive-contents as suggested by Nicolas Dudebout
+; make sure to have downloaded archive description. Or use package-archive-contents as suggested by Nicolas Dudebout
 (or (file-exists-p package-user-dir)
     (package-refresh-contents))
 						   
 (defun ensure-package-installed (&rest packages)
-  "Assure every package is installed, ask for installation if it’s not.Return a list of installed packages or nil for every skipped package."
+  "Assure every package is installed, ask for installation if it is not.Return a list of installed packages or nil for every skipped package."
   (mapcar
    (lambda (package)
       (if (package-installed-p package)
@@ -40,9 +40,7 @@
 						  'yasnippet
 )
 
-;;------------------------------------------------------------------------------
-;; On-demand installation of packages
-;;------------------------------------------------------------------------------
+; On-demand installation of packages
 (defun require-package (package &optional min-version no-refresh)
   "Ask elpa to install given PACKAGE."
   (if (package-installed-p package min-version)
@@ -53,11 +51,4 @@
         (package-refresh-contents)
         (require-package package min-version t)))))
 
-;(require-package 'auto-complete)
-;(require-package 'fuzzy)
-;(require-package 'lua-mode)
-;(require-package 'popwin)
-;(require-package 'pos-tip)
-;(require-package 'yasnippet)
-;(require-package 'auctex)
 (provide 'init-elpa)

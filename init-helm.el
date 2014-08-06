@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-08-06 16:23:38 chengxu70>
+;; Time-stamp: <2014-08-06 21:15:41 chengxu70>
 
 ;; configure defult from helm wiki
 
@@ -43,8 +43,16 @@
 	  helm-buffers-fuzzy-matching t     ; fuzzy matching buffer names when non--nil useful in helm-mini that lists buffers
 	  )
 
-;; Save current position to mark ring when jumping to a different place
+; Save current position to mark ring when jumping to a different place
 (add-hook 'helm-goto-line-before-hook 'helm-save-current-pos-to-mark-ring)
+
+; key bindings
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+(global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+
+
 
 (helm-mode 1)
 
