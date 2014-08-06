@@ -1,4 +1,4 @@
-;;Time-stamp: <2014-08-04 00:14:09 phenix>
+;; Time-stamp: <2014-08-06 15:49:35 chengxu70>
 
 
 ;; 26.4.3 matching parentheses
@@ -12,8 +12,25 @@
 ;(require 'init-company)
 
 
-;;project support
+;; project support
 (require 'init-cedet)
 (require 'init-cscope)
 
+
+;; C-mode
+(add-hook 'c-mode-hook
+		  '(lambda()
+			 (c-set-style "linux")
+			 (setq c-basic-offset 4)))
+;; C++-mode
+(add-hook 'c++-mode-hook
+		  '(lambda()
+			 (c-set-style "linux")
+			 (setq c-basic-offset 4)))
+
+;; Lua mode
+(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
+    (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
+    (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
+;----------------------------------------------------------------------
 (provide 'init-program)

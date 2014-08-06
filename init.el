@@ -1,4 +1,4 @@
-;;Time-stamp: <2014-08-04 15:17:19 chengxu70>
+;;Time-stamp: <2014-08-06 16:05:29 chengxu70>
 ;;---------------------------------------------------------------------
 ;;different OS configures
 ;;---------------------------------------------------------------------
@@ -20,16 +20,11 @@
       (is-windows-nt-os())
       (cygmin-os ()))
 
-;;---------------------------------------------------------------------
-;;custom view
-;;---------------------------------------------------------------------
+;; 5 Eenter Emacs
 (setq inhibit-startup-message t)
-(global-linum-mode t) 
-(fset 'yes-or-no-p 'y-or-n-p) ;
+;; 6 Exiting Emacs
 
-;;----------------------------------------------------------------------
-;;require packages and load their init files
-;;----------------------------------------------------------------------
+;; require packages and load their init files
 (defun load-package-init-files()
 	"load most packages init files"
 	(let ((default-directory "~/.emacs.d/lisps"))
@@ -38,6 +33,7 @@
 	(require 'misc)
 	(require 'init-elpa)
 	(require 'init-basic)
+	(require 'init-minibuffer)
 	(require 'init-display)
 	(require 'init-file-handle)
 	(require 'init-frames)
@@ -53,25 +49,4 @@
 	)
 (add-hook 'after-init-hook 'load-package-init-files)
 
-;;----------------------------------------------------------------------
-;;init c/C++ mode
-;;----------------------------------------------------------------------
-(add-hook 'c-mode-hook
-		  '(lambda()
-			 (c-set-style "linux")
-			 (setq c-basic-offset 4)))
-
-(add-hook 'c++-mode-hook
-		  '(lambda()
-			 (c-set-style "linux")
-			 (setq c-basic-offset 4)))
-
-;;----------------------------------------------------------------------
-;;Lua mode
-;;----------------------------------------------------------------------
-
-(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
-    (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
-    (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
-;----------------------------------------------------------------------XS
 

@@ -1,22 +1,25 @@
-;;Time-stamp: <2014-08-04 16:11:51 chengxu70>
+; Time-stamp: <2014-08-06 16:05:20 chengxu70>
 
-;;;Scrolling
+(global-linum-mode t)
+;(set-face-attribute 'linum nil :height 100)
+
+; Scrolling
 (set-scroll-bar-mode nil) 
 
-;;;View mode
+; View mode
 
-;;;Text Display
+; Text Display
 
-;;;14.20 Curssor Display
+;; 14.20 Curssor Display
 (global-hl-line-mode t)
 (setq-default cursor-type 'bar) 
-;;;14.21 line truncation
+;; 14.21 line truncation
 
-;;;14.22 Visual Line mode
+;; 14.22 Visual Line mode
 (global-visual-line-mode t) ;line wrap in screen line
-;;14.23 customization of display
+;; 14.23 customization of display
 
-;;optional mode line features
+;; optional mode line features
 (column-number-mode t)
 
 (display-time-mode 1)
