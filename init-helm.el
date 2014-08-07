@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-08-06 21:15:41 chengxu70>
+;; Time-stamp: <2014-08-07 14:57:23 chengxu70>
 
 ;; configure defult from helm wiki
 
@@ -49,10 +49,11 @@
 ; key bindings
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
+
 (global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 
-
+(global-set-key (kbd "C-c h o") 'helm-occur)
 
 (helm-mode 1)
 

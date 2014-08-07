@@ -1,15 +1,18 @@
-;; Time-stamp: <2014-08-06 15:49:35 chengxu70>
+; Time-stamp: <2014-08-07 16:43:40 chengxu70>
 
 
-;; 26.4.3 matching parentheses
+;;; 26.4.3 matching parentheses
 (show-paren-mode t)
 (electric-pair-mode t)
 
 ;; 26.8 Completion for symbol names
 (require 'init-yasnippet)
-(require 'init-popwin)
-(require 'init-auto-complete)
-;(require 'init-company)
+
+;AC configure
+;(require 'init-popwin)
+;(require 'init-auto-complete)
+
+(require 'init-company)
 
 
 ;; project support

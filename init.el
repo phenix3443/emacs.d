@@ -1,7 +1,5 @@
-;;Time-stamp: <2014-08-06 16:48:38 chengxu70>
-;;---------------------------------------------------------------------
-;;different OS configures
-;;---------------------------------------------------------------------
+;;Time-stamp: <2014-08-07 21:32:08 chengxu70>
+
 (setq default-directory "~/.emacs.d/")
 
 (defconst is-gnu-os (equal system-type 'gnu) "GNU Hurd system")
@@ -20,11 +18,11 @@
       (is-windows-nt-os())
       (cygmin-os ()))
 
-;; 5 Eenter Emacs
+; 5 Eenter Emacs
 (setq inhibit-startup-message t)
-;; 6 Exiting Emacs
+; 6 Exiting Emacs
 
-;; 各种配置文件，按照 Emacs manual 顺序排列
+; 
 (defun load-package-init-files()
 	"load most packages init files"
 	(let ((default-directory "~/.emacs.d/lisps"))
@@ -43,6 +41,7 @@
 	(require 'init-desktop)
 	(require 'init-program)
 	(require 'init-text)
+	(require 'init-international)
 	(require 'init-color-theme)
 	(require 'init-org)
 	(require 'init-org2blog)

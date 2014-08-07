@@ -1,4 +1,4 @@
-;;Time-stamp: <2014-08-01 22:19:32 chengxu70>
+; Time-stamp: <2014-08-07 18:37:47 chengxu70>
 (require 'company)
 
 (global-company-mode t)

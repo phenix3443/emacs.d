@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-06 20:33:38 chengxu70>
+; Time-stamp: <2014-08-07 14:58:53 chengxu70>
 
 (when (>= emacs-major-version 24)
   (require 'package)
@@ -30,12 +30,14 @@
 						  'fuzzy
 						  'ggtags
 						  'helm
+						  'helm-projectile
 						  'lua-mode
 						  'xml-rpc
 						  'org
 						  'org2blog
 						  'popwin
 						  'pos-tip
+						  'projectile
 						  'xcscope
 						  'yasnippet
 )
