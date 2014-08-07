@@ -1,4 +1,4 @@
-;;Time-stamp: <2014-08-07 21:32:08 chengxu70>
+;;Time-stamp: <2014-08-08 00:18:19 phenix>
 
 (setq default-directory "~/.emacs.d/")
 

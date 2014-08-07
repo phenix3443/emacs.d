@@ -1,7 +1,7 @@
-;; Time-stamp: <2014-08-07 15:51:40 chengxu70>
+;; Time-stamp: <2014-08-08 01:40:32 phenix>
 
 
 ;; 8.4 Completion
-;(require 'init-helm)
+(require 'init-helm)
 
 (provide 'init-minibuffer)
