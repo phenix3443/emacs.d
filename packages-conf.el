@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-07 14:58:53 chengxu70>
+; Time-stamp: <2014-08-08 12:20:54 chengxu70>
 
 (when (>= emacs-major-version 24)
   (require 'package)
@@ -53,4 +53,4 @@
         (package-refresh-contents)
         (require-package package min-version t)))))
 
-(provide 'init-elpa)
+(provide 'packages-conf)

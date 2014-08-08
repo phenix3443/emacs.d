@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-06 16:05:20 chengxu70>
+; Time-stamp: <2014-08-08 12:27:23 chengxu70>
 
 (global-linum-mode t)
 ;(set-face-attribute 'linum nil :height 100)
@@ -33,4 +33,4 @@
 
 
 
-(provide 'init-display)
+(provide 'display-conf)

@@ -1,4 +1,4 @@
-;;Time-stamp: <2014-08-08 00:18:19 phenix>
+; Time-stamp: <2014-08-08 12:38:30 chengxu70>
 
 (setq default-directory "~/.emacs.d/")
 
@@ -18,10 +18,6 @@
       (is-windows-nt-os())
       (cygmin-os ()))
 
-; 5 Eenter Emacs
-(setq inhibit-startup-message t)
-; 6 Exiting Emacs
-
 ; 
 (defun load-package-init-files()
 	"load most packages init files"
@@ -29,23 +25,16 @@
 		(normal-top-level-add-to-load-path '(".." "."))
 		(normal-top-level-add-subdirs-to-load-path))
 	(require 'misc)
-	(require 'init-elpa)
-	(require 'init-basic)
-	(require 'init-minibuffer)
-	(require 'init-killing)
-	(require 'init-display)
-	(require 'init-file-handle)
-	(require 'init-frames)
-	(require 'init-indentation)
-	(require 'init-invocation)
-	(require 'init-desktop)
-	(require 'init-program)
-	(require 'init-text)
-	(require 'init-international)
-	(require 'init-color-theme)
-	(require 'init-org)
-	(require 'init-org2blog)
+	(require 'packages-conf) ;47
+	(require 'minibuffer-conf) ; 8
+	(require 'killing-conf) ; 12
+	(require 'display-conf) ; 14
+	(require 'files-conf) ; 18
+	(require 'frames-conf) ; 21
+	(require 'international-conf) ; 22
+	(require 'indentation-conf) ; 24
+	(require 'text-conf) ; 25
+	(require 'program-conf) ; 26
+	(require 'customization-conf) ; 48
 	)
 (add-hook 'after-init-hook 'load-package-init-files)
-
-

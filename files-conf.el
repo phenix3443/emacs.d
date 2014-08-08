@@ -1,7 +1,7 @@
-;;Time-stamp: <2014-07-11 21:22:00 chengxu70>
-;;;File name
+; Time-stamp: <2014-08-08 12:29:41 chengxu70>
+; File name
 
-;;;Visiting
+; Visiting
 
 ;;;Saving
 ;;Shadowing
@@ -13,4 +13,4 @@
 
 ;;;Auto save
 
-(provide 'init-file-handle)
+(provide 'files-conf)

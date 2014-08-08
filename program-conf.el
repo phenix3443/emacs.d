@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-07 16:43:40 chengxu70>
+; Time-stamp: <2014-08-08 12:34:26 chengxu70>
 
 
 ;;; 26.4.3 matching parentheses
@@ -36,4 +36,4 @@
     (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
     (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
 ;----------------------------------------------------------------------
-(provide 'init-program)
+(provide 'program-conf)
