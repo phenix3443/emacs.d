@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-09 16:54:46 chengxu70>
+; Time-stamp: <2014-08-10 02:01:12 phenix>
 
 ;; 21.8 Fonts
 (defun font-candidate (&rest fonts)
@@ -6,22 +6,22 @@
   (cl-find-if (lambda (f) (find-font (font-spec :name f))) fonts))
 
 ;chinese font
-(set-frame-font (font-candidate  "DejaVu Sans Mono-14" "Consolas-14"))
-(dolist (charset '(kana han symbol cjk-misc bopomofo))
-  (set-fontset-font (frame-parameter nil 'font)
-                    charset (font-spec :family "Microsoft Yahei"
-                                       :size 14)))
-;;
-;(let ((en-font (font-candidate "DejaVu Sans Mono-14" "Consolas-14")) 
-;	  (zh-font (font-candidate "Microsoft Yahei-14")))
-;  ; set en-font
-;  (add-to-list 'init-frame-alist '(font . en-font))
-;  (add-to-list 'default-frame-alit '(font .en-font)))
-;  ; set zh-font
-;  (dolist (charset '(kana han symbol cjk-misc bopomofo))
-;	(set-fontset-font (frame-parameter nil 'font)
-;					  charset (font-spec :family zh-font
-;										 :size 14))))
+;(set-frame-font (font-candidate  "DejaVu Sans Mono-14" "Consolas-14"))
+;(dolist (charset '(kana han symbol cjk-misc bopomofo))
+;  (set-fontset-font (frame-parameter nil 'font)
+;                    charset (font-spec :family "Microsoft Yahei"
+;                                      :size 14)))
+;					charset "Microsoft Yahei-14"))
+
+(let ((en-font (font-candidate "DejaVu Sans Mono-14" "Consolas-14")) 
+      (zh-font (font-candidate "Microsoft Yahei-14")))
+  ; set en-font
+  (add-to-list 'default-frame-alist (cons 'font en-font))
+  ; set zh-font
+  (dolist (charset '(kana han symbol cjk-misc bopomofo))
+	(set-fontset-font (frame-parameter nil 'font)
+					  charset zh-font)))
+
 ;(setq initial-frame-alist '())
 ;(setq default-frame-alist '((width . 100) (alpha . 100)))
 ;(setq minibuffer-frame-alist '())
@@ -31,8 +31,8 @@
 ; trasparent transparency of emacs
 (defun transparency (value)
   "Sets the transparency of the frame window. 0=transparent/100=opaque"
-  (interactive "nTransparency Value 0 - 100 opaque:")
-  (set-frame-pearameter (selected-frame) 'alpha value))
+  (interactive "Transparency Value 0 - 100 opaque:")
+  (set-frame-parameter (selected-frame) 'alpha value))
 (transparency 100)
 ;; 21.12 Scroll Bars
 ;; 21.13 Drag and  Drop
