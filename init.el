@@ -1,4 +1,5 @@
-; Time-stamp: <2014-08-08 12:38:30 chengxu70>
+
+; Time-stamp: <2014-08-08 14:05:15 chengxu70>
 
 (setq default-directory "~/.emacs.d/")
 
@@ -18,7 +19,7 @@
       (is-windows-nt-os())
       (cygmin-os ()))
 
-; 
+;加载配置文件，按照 Emacs Manual 章节顺序 
 (defun load-package-init-files()
 	"load most packages init files"
 	(let ((default-directory "~/.emacs.d/lisps"))
@@ -31,7 +32,6 @@
 	(require 'display-conf) ; 14
 	(require 'files-conf) ; 18
 	(require 'frames-conf) ; 21
-	(require 'international-conf) ; 22
 	(require 'indentation-conf) ; 24
 	(require 'text-conf) ; 25
 	(require 'program-conf) ; 26
