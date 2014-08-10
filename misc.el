@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-09 15:49:16 chengxu70>
+; Time-stamp: <2014-08-10 20:08:04 phenix>
 
 
 ; 5 Enter Emacs
@@ -9,8 +9,10 @@
 (setq track-eol t)
 
 ;; 22 international character set support
-(set-default-coding-systems 'utf-8)
-(prefer-coding-system 'utf-8)
+;(set-language-environment 'utf-8)
+;(setq buffer-file-coding-system 'utf-8)
+;(set-default-coding-systems 'utf-8)
+;(prefer-coding-system 'etutf-8)
 
 ; 42 saving emacs sessions
 (desktop-save-mode 1)

@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-08 12:34:26 chengxu70>
+; Time-stamp: <2014-08-10 21:48:32 phenix>
 
 
 ;;; 26.4.3 matching parentheses
@@ -9,10 +9,10 @@
 (require 'init-yasnippet)
 
 ;AC configure
-;(require 'init-popwin)
-;(require 'init-auto-complete)
+(require 'init-popwin)
+(require 'init-auto-complete)
 
-(require 'init-company)
+;(require 'init-company)
 
 
 ;; project support

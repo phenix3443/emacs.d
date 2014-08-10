@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-10 02:01:12 phenix>
+; Time-stamp: <2014-08-10 16:22:06 phenix>
 
 ;; 21.8 Fonts
 (defun font-candidate (&rest fonts)
@@ -14,7 +14,7 @@
 ;					charset "Microsoft Yahei-14"))
 
 (let ((en-font (font-candidate "DejaVu Sans Mono-14" "Consolas-14")) 
-      (zh-font (font-candidate "Microsoft Yahei-14")))
+      (zh-font (font-candidate "Microsoft Yahei-14" "文泉驿微米黑 14")))
   ; set en-font
   (add-to-list 'default-frame-alist (cons 'font en-font))
   ; set zh-font
@@ -22,9 +22,6 @@
 	(set-fontset-font (frame-parameter nil 'font)
 					  charset zh-font)))
 
-;(setq initial-frame-alist '())
-;(setq default-frame-alist '((width . 100) (alpha . 100)))
-;(setq minibuffer-frame-alist '())
 ;(setq window-system-default-frame-alist '() )
 
 
@@ -34,7 +31,9 @@
   (interactive "Transparency Value 0 - 100 opaque:")
   (set-frame-parameter (selected-frame) 'alpha value))
 (transparency 100)
+
 ;; 21.12 Scroll Bars
+(set-scroll-bar-mode nil) 
 ;; 21.13 Drag and  Drop
 ;; 21.14 Menu Bars
 

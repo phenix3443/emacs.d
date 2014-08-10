@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-08 12:20:54 chengxu70>
+; Time-stamp: <2014-08-10 21:31:52 phenix>
 
 (when (>= emacs-major-version 24)
   (require 'package)
@@ -23,23 +23,30 @@
    packages))
 
 (ensure-package-installed 'auctex
-						  'auto-complete
-						  'cdlatex
-						  'company
 						  'ecb
-						  'fuzzy
-						  'ggtags
+
 						  'helm
-						  'helm-projectile
-						  'lua-mode
-						  'xml-rpc
-						  'org
-						  'org2blog
-						  'popwin
-						  'pos-tip
 						  'projectile
+						  'helm-projectile
+
+						  'cdlatex
+						  'org
+
+						  'xml-rpc
+						  'metaweblog
+						  'org2blog
+
+						  'ggtags
 						  'xcscope
 						  'yasnippet
+
+						  'popwin
+						  'pos-tip
+						  'fuzzy
+						  'auto-complete
+						  'company
+
+						  'lua-mode
 )
 
 ; On-demand installation of packages

@@ -1,5 +1,5 @@
 
-; Time-stamp: <2014-08-08 14:05:15 chengxu70>
+; Time-stamp: <2014-08-10 16:24:45 phenix>
 
 (setq default-directory "~/.emacs.d/")
 

@@ -1,5 +1,5 @@
-;;Time-stamp: <2014-08-08 12:37:49 chengxu70>
-;;;25.2 sentences
+; Time-stamp: <2014-08-10 21:25:42 phenix>
+;; 25.2 sentences
 (setq sentence-end "\\([。！？]\\|……\\|[.?!][]\"')}]*\\($\\|[ \t]\\)\\)[ \t\n]*")
 (setq sentence-end-double-space nil)
 

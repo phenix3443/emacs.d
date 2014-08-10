@@ -3,7 +3,7 @@ auto-save-list
 elpa/
 .emacs.desktop
 themes/*/
-lisps/*/
+.netrc
 .session
 *.elc
 .svn
