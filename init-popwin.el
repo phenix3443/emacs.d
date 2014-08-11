@@ -1,10 +1,10 @@
-;;Time-stamp: <2014-07-11 21:26:20 chengxu70>
+; Time-stamp: <2014-08-11 14:47:21 chengxu70>
 (require 'popwin)
 
 (setq popwin:special-display-config nil)
 (setq display-buffer-function 'popwin:display-buffer)
 
-;; enable popwin-mode globally is too dangerous
+; enable popwin-mode globally is too dangerous
 (add-to-list 'popwin:special-display-config '("*Help*"))
 (add-to-list 'popwin:special-display-config '("*Completions*" :noselect t))
 (add-to-list 'popwin:special-display-config '("*compilation*" :noselect t))

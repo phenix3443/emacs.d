@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-10 21:31:52 phenix>
+; Time-stamp: <2014-08-11 16:00:48 chengxu70>
 
 (when (>= emacs-major-version 24)
   (require 'package)
@@ -23,6 +23,7 @@
    packages))
 
 (ensure-package-installed 'auctex
+						  'auto-compile
 						  'ecb
 
 						  'helm

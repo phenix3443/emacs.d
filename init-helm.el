@@ -1,6 +1,6 @@
-;; Time-stamp: <2014-08-07 14:57:23 chengxu70>
+; Time-stamp: <2014-08-11 14:43:23 chengxu70>
 
-;; configure defult from helm wiki
+; configure defult from helm wiki
 
 (require 'helm)
 

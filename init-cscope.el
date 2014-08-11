@@ -1,4 +1,4 @@
-;;Time-stamp: <2014-08-03 15:00:30 phenix>
+;;Time-stamp: <2014-08-11 14:46:30 chengxu70>
 (require 'xcscope)
 
 (provide 'init-cscope)
