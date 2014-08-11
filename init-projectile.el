@@ -1,7 +1,8 @@
-; Time-stamp: <2014-08-11 14:49:46 chengxu70>
+; Time-stamp: <2014-08-11 21:16:39 chengxu70>
 
 (require 'projectile)
 
-(add-hook 'c-mode-hook 'projectile-on)
-(setq projectile-enable-caching t)
+(add-hook 'prog-mode-hook '(lambda()
+							 (projectile-mode t)))
+
 (provide 'init-projectile)

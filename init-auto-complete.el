@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-11 19:52:45 chengxu70>
+; Time-stamp: <2014-08-11 21:25:32 chengxu70>
 
 ; default from auto-complete manual
 ;; 3.2 install script
@@ -104,12 +104,11 @@
 ;; 8.12. use quick help
 (setq ac-use-quick-help t)
 ;; 8.13 Delay time to show quick help in real number seconds.
-(setq ac-quick-help-delay 1.0)
+(setq ac-quick-help-delay 3.0)
 ;; 8.25 "Do What I Mean" function
 (setq ac-dwim t)
 
-
-
+(add-hook 'prog-mode-hook '(lambda() (auto-complete-mode t)))
 
 
 (provide 'init-auto-complete)

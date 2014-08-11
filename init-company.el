@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-11 14:41:22 chengxu70>
+; Time-stamp: <2014-08-11 21:19:52 chengxu70>
 (require 'company)
 
 (setq company-idle-delay 0.1)
@@ -15,5 +15,7 @@
 		company-elisp
 		))
 
+(add-hook 'prog-mode-hook '(lambda()
+							 (company-mode t)))
 (provide 'init-company)
 

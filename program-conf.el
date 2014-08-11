@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-11 15:26:49 chengxu70>
+; Time-stamp: <2014-08-11 21:55:12 chengxu70>
 
 ;;; 26.4.3 matching parentheses
 (show-paren-mode t)
@@ -9,10 +9,10 @@
 (require 'init-yasnippet)
 
 ; auto-complete configure
-(require 'init-popwin)
-;(require 'init-auto-complete)
+;(require 'init-popwin)
+(require 'init-auto-complete)
 
-(require 'init-company)
+;(require 'init-company)
 
 ;; project support
 (require 'init-cedet)
@@ -20,25 +20,12 @@
 
 ;; 26.1 major mode for programming languages
 (add-hook 'prog-mode-hook
-		  (lambda () 
+		  '(lambda () 
 			"add common modes for program"
-			
-			; turn on xcscope
-			; turn on ggtags
-			; turn on semantic
 			;(semantic-mode 1)
 			;(semantic-show-parser-state-mode 1)
 			;(semantic-show-unmatched-syntax-mode 1)
-			;(semantic-highlight-edits-mode (if is-windows-nt-os 1 -1))
-			
-			; turn on auto-complete mode
-			(auto-complete-mode t)
-			
-			; turn on company mode
-			;(company-mode t)
-			
-			; turn on projectile
-			(projectile-mode t)
+			;(semantic-highlight-edits-mode (if is-windows-nt-os 1 -1))						
 			))
 
 ; C mode
