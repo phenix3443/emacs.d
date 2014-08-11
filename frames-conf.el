@@ -1,29 +1,7 @@
-; Time-stamp: <2014-08-10 16:22:06 phenix>
-
-;; 21.8 Fonts
-(defun font-candidate (&rest fonts)
-  "Return existing font which first match."
-  (cl-find-if (lambda (f) (find-font (font-spec :name f))) fonts))
-
-;chinese font
-;(set-frame-font (font-candidate  "DejaVu Sans Mono-14" "Consolas-14"))
-;(dolist (charset '(kana han symbol cjk-misc bopomofo))
-;  (set-fontset-font (frame-parameter nil 'font)
-;                    charset (font-spec :family "Microsoft Yahei"
-;                                      :size 14)))
-;					charset "Microsoft Yahei-14"))
-
-(let ((en-font (font-candidate "DejaVu Sans Mono-14" "Consolas-14")) 
-      (zh-font (font-candidate "Microsoft Yahei-14" "文泉驿微米黑 14")))
-  ; set en-font
-  (add-to-list 'default-frame-alist (cons 'font en-font))
-  ; set zh-font
-  (dolist (charset '(kana han symbol cjk-misc bopomofo))
-	(set-fontset-font (frame-parameter nil 'font)
-					  charset zh-font)))
+; Time-stamp: <2014-08-11 11:30:37 chengxu70>
+;
 
 ;(setq window-system-default-frame-alist '() )
-
 
 ; trasparent transparency of emacs
 (defun transparency (value)
