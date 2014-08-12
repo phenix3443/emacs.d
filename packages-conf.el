@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-11 16:00:48 chengxu70>
+; Time-stamp: <2014-08-12 22:43:14 chengxu70>
 
 (when (>= emacs-major-version 24)
   (require 'package)
@@ -28,6 +28,7 @@
 
 						  'helm
 						  'projectile
+						  'helm-gtags
 						  'helm-projectile
 
 						  'cdlatex
@@ -37,14 +38,14 @@
 						  'metaweblog
 						  'org2blog
 
-						  'ggtags
 						  'xcscope
 						  'yasnippet
 
-						  'popwin
+;						  'popwin
 						  'pos-tip
 						  'fuzzy
 						  'auto-complete
+
 						  'company
 
 						  'lua-mode

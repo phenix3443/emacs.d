@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-11 21:25:32 chengxu70>
+; Time-stamp: <2014-08-12 22:04:40 chengxu70>
 
 ; default from auto-complete manual
 ;; 3.2 install script
