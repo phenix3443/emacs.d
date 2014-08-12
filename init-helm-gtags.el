@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-12 22:29:49 chengxu70>
+; Time-stamp: <2014-08-13 01:10:08 phenix>
 (require 'helm-gtags)
 
 ;;; Enable helm-gtags-mode
@@ -8,7 +8,6 @@
 ;; customize
 (custom-set-variables
  '(helm-gtags-path-style 'relative)
- '(helm-gtags-ignore-case t)
  '(helm-gtags-auto-update t))
 
 ;; key bindings

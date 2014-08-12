@@ -1,6 +1,6 @@
-; Time-stamp: <2014-08-12 22:51:32 chengxu70>
+; Time-stamp: <2014-08-13 00:57:06 phenix>
 (require 'xcscope)
 (cscope-setup)
 
-(setq cscope-program “gtags-cscope)
+(setq cscope-program "gtags-cscope")
 (provide 'init-xcscope)

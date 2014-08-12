@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-12 14:47:10 chengxu70>
+; Time-stamp: <2014-08-13 01:07:38 phenix>
 
 ;; 26.1 major mode for programming languages
 
@@ -9,7 +9,7 @@
 ;; 26.8 Completion for symbol names
 (require 'init-cscope)
 (require 'init-yasnippet)
-
+(require 'init-helm-gtags)
 ; auto-complete configure
 ;(require 'init-popwin)
 (require 'init-auto-complete)
@@ -17,7 +17,7 @@
 ;(require 'init-company)
 
 ;; project support
-(require 'init-cedet)
+;(require 'init-cedet)
 
 ; C mode
 (add-hook 'c-mode-hook
