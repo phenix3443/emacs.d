@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-13 01:07:38 phenix>
+; Time-stamp: <2014-08-13 01:27:02 phenix>
 
 ;; 26.1 major mode for programming languages
 
@@ -7,7 +7,7 @@
 (electric-pair-mode t)
 
 ;; 26.8 Completion for symbol names
-(require 'init-cscope)
+(require 'init-xcscope)
 (require 'init-yasnippet)
 (require 'init-helm-gtags)
 ; auto-complete configure
