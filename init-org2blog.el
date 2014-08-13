@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-11 01:40:32 phenix>
+; Time-stamp: <2014-08-13 15:44:15 chengxu70>
 
 (require 'org2blog-autoloads)
 (require 'netrc)

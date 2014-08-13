@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-13 01:27:02 phenix>
+; Time-stamp: <2014-08-13 20:27:19 chengxu70>
 
 ;; 26.1 major mode for programming languages
 
@@ -7,17 +7,19 @@
 (electric-pair-mode t)
 
 ;; 26.8 Completion for symbol names
-(require 'init-xcscope)
 (require 'init-yasnippet)
-(require 'init-helm-gtags)
 ; auto-complete configure
 ;(require 'init-popwin)
+;(require 'init-company)
 (require 'init-auto-complete)
 
-;(require 'init-company)
+; 28 tags
+;(require 'init-xcscope)
+(require 'init-helm-gtags)
 
 ;; project support
 ;(require 'init-cedet)
+(require 'init-projectile)
 
 ; C mode
 (add-hook 'c-mode-hook

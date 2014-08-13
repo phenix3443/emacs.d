@@ -1,0 +1,9 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: code2
+# key: code2
+# binding: direct-keybinding
+# --
+#+NAME: ${1:name}
+#+BEGIN_SRC ${2:language} ${3:switches} ${4:arguments}
+	 ${5:}
+#+END_SRC
