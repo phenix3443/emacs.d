@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-13 20:27:19 chengxu70>
+; Time-stamp: <2014-08-14 01:17:52 phenix>
 
 ;; 26.1 major mode for programming languages
 
@@ -18,7 +18,7 @@
 (require 'init-helm-gtags)
 
 ;; project support
-;(require 'init-cedet)
+(require 'init-cedet)
 (require 'init-projectile)
 
 ; C mode

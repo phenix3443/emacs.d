@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-13 15:49:41 chengxu70>
+; Time-stamp: <2014-08-14 00:10:09 phenix>
 
 (when (>= emacs-major-version 24)
   (require 'package)
@@ -24,11 +24,11 @@
 
 (ensure-package-installed 'auctex
 						  'auto-compile
-						  'ecb
-
 						  'helm
+						  
+						  ;工程管理
+						  'ecb
 						  'projectile
-						  'helm-gtags
 						  'helm-projectile
 
 						  'cdlatex
@@ -38,10 +38,15 @@
 						  'metaweblog
 						  'htmlize
 						  'org2blog
-
-						  'xcscope
+						  
+						  ;tags
+;						  'xcscope
+						  'gtags
+						  'helm-gtags
+						  
+						  ;auto complete
 						  'yasnippet
-
+						  
 ;						  'popwin
 						  'pos-tip
 						  'fuzzy

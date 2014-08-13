@@ -1,12 +1,8 @@
-;;Time-stamp: <2014-08-13 18:27:21 chengxu70>
+;;Time-stamp: <2014-08-14 01:14:40 phenix>
 (require 'cedet)
-; set for c/c++ on windows nt os
-(add-hook 'prog-mode-hook
-		  '(lambda () 
-			 (semantic-mode 1)
-			 (semantic-show-parser-state-mode 1)
-			 (semantic-show-unmatched-syntax-mode 1)
-			 (semantic-highlight-edits-mode (if is-windows-nt-os 1 -1))))
+
+; global support
+(setq cedet-global-command "gtags")
 			 
 (defconst cedet-sys-include-dirs (list
 								  "/usr/include/"
@@ -22,10 +18,11 @@
 								   "../.."
 								   "../../include"
 								   "../../inc"
-								   "../../common"
+								   "../../Common"
 								   "../../public"))
 ;;;ede
-(setq ede-local-setup-options '(ede-local-global ede-local-base))
+(setq ede-local-setup-options '(ede-local-global 
+								ede-local-base))
 
 ;;;semantic configures
 (setq semantic-default-submodes '(global-semanticdb-minor-mode
@@ -38,13 +35,21 @@
 								  ;global-semantic-mru-bookmark-mode
 								  ;global-semantic-stickyfunc-mode
                                   ))
-
-
-
-(semanticdb-enable-gnu-global-databases 'c-mode)
+(when (cedet-gnu-global-version-check t)
+  ;; Configurations for GNU Global and CEDET
+  (semanticdb-enable-gnu-global-databases 'c-mode t)
+  (semanticdb-enable-gnu-global-databases 'c++-mode t))
 
 ; srecode
 ; (global-srecode-minor-mode 1)
+
+(add-hook 'prog-mode-hook
+		  '(lambda () 
+			 (global-ede-mode 1)
+			 (semantic-mode 1)
+			 (semantic-show-parser-state-mode 1)
+			 (semantic-show-unmatched-syntax-mode 1)
+			 (semantic-highlight-edits-mode (if is-windows-nt-os 1 -1))))
 
 (provide 'init-cedet)
 
