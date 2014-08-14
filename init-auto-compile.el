@@ -1,8 +1,8 @@
-; Time-stamp: <2014-08-13 01:06:30 phenix>
+; Time-stamp: <2014-08-14 23:44:01 phenix>
 
 (setq load-prefer-newer t)
 (require 'auto-compile)
-;(auto-compile-on-load-mode 1)
+(auto-compile-on-load-mode 1)
 (auto-compile-on-save-mode 1)
 
 (setq auto-compile-display-buffer nil)

@@ -1,6 +1,9 @@
-; Time-stamp: <2014-08-14 21:55:36 chengxu70>
+; Time-stamp: <2014-08-14 23:57:25 phenix>
 (require 'cedet)
-
+(require 'cedet-cscope)
+(require 'cedet-files)
+(require 'cedet-global)
+(require 'cedet-idutils)
 
 ; global support
 (setq cedet-global-command "gtags")
@@ -40,12 +43,8 @@
 
 
 (add-hook 'prog-mode-hook
-		  '(lambda () 
+		  (lambda () 
 			 (semantic-mode 1)
-			 ;(semantic-show-parser-state-mode 1)
-			 ;(semantic-show-unmatched-syntax-mode 1)
-			 ;(semantic-highlight-edits-mode (if is-windows-nt-os 1 -1))	
-			 (require 'cedet-global)
 			 (when (cedet-gnu-global-version-check t)
 			   (semanticdb-enable-gnu-global-databases 'c-mode t)
 			   (semanticdb-enable-gnu-global-databases 'c++-mode t))))	
