@@ -1,4 +1,4 @@
-;;Time-stamp: <2014-08-14 19:30:36 chengxu70>
+; Time-stamp: <2014-08-14 21:55:36 chengxu70>
 (require 'cedet)
 
 
@@ -21,14 +21,12 @@
 								   "../../inc"
 								   "../../Common"
 								   "../../public"))
-;;;ede
+; ede
 (setq ede-local-setup-options '(ede-local-global 
 								ede-local-base))
-(add-hook 'prog-mode-hook
-	  '(lambda () 
-		 (global-ede-mdoe)))
+;(add-hook 'prog-mode-hook 'global-ede-mode)
 		 
-;;;semantic configures
+; semantic configures
 (setq semantic-default-submodes '(global-semanticdb-minor-mode
 								  global-semantic-decoration-mode
 								  ;global-semantic-highlight-func-mode
@@ -42,19 +40,18 @@
 
 
 (add-hook 'prog-mode-hook
-	  '(lambda () 
-		 (semantic-mode 1)
-		 (semantic-show-parser-state-mode 1)
-		 (semantic-show-unmatched-syntax-mode 1)
-		 (semantic-highlight-edits-mode (if is-windows-nt-os 1 -1))
-		 (require 'cedet-global)	
-		 (when (cedet-gnu-global-version-check t)
-		   (semanticdb-enable-gnu-global-databases 'c-mode t)
-		   (semanticdb-enable-gnu-global-databases 'c++-mode t))
-		 ))	
+		  '(lambda () 
+			 (semantic-mode 1)
+			 ;(semantic-show-parser-state-mode 1)
+			 ;(semantic-show-unmatched-syntax-mode 1)
+			 ;(semantic-highlight-edits-mode (if is-windows-nt-os 1 -1))	
+			 (require 'cedet-global)
+			 (when (cedet-gnu-global-version-check t)
+			   (semanticdb-enable-gnu-global-databases 'c-mode t)
+			   (semanticdb-enable-gnu-global-databases 'c++-mode t))))	
 ; srecode
-; (global-srecode-minor-mode 1)
-
+;(add-hook 'prog-mode-hook '(lambda()
+;							 (global-srecode-minor-mode 1)))
 
 
 (provide 'init-cedet)

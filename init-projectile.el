@@ -1,8 +1,18 @@
-; Time-stamp: <2014-08-11 21:16:39 chengxu70>
+; Time-stamp: <2014-08-14 22:07:02 chengxu70>
 
 (require 'projectile)
 
 (add-hook 'prog-mode-hook '(lambda()
-							 (projectile-mode t)))
+							 (projectile-mode)
+							 (require 'perspective)
+							 (persp-mode)
+							 (require 'persp-projectile)))
+
+; caches
+;(setq projectile-enable-caching t )
+;(setq projectile-remember-window-configs t)
+
+;perspective
+(define-key projectile-mode-map (kbd "s-s") 'projectile-persp-switch-project)
 
 (provide 'init-projectile)

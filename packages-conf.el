@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-14 14:11:35 chengxu70>
+; Time-stamp: <2014-08-14 21:48:18 chengxu70>
 
 (when (>= emacs-major-version 24)
   (require 'package)
@@ -31,6 +31,8 @@
 						  'ecb
 						  'projectile
 						  'helm-projectile
+						  'perspective
+						  'persp-projectile
 
 						  'cdlatex
 						  'org
