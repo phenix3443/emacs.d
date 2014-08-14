@@ -10,18 +10,18 @@
 ; make sure to have downloaded archive description. Or use package-archive-contents as suggested by Nicolas Dudebout
 (or (file-exists-p package-user-dir)
     (package-refresh-contents))
+(defun require-package (package &optional min-version no-refresh)
+  "Ask elpa to install given PACKAGE."
+  (if (package-installed-p package min-version)
+      t
+    (if (or (assoc package package-archive-contents) no-refresh)
+        (package-install package)
+      (progn
+        (package-refresh-contents)
+        (require-package package min-version t)))))
 						   
 (defun ensure-package-installed (&rest packages)
-  (mapcar
-   (lambda (package &optional min-version no-refresh)
-	 (if (package-installed-p package min-version)
-         t
-	   (if (or (assoc package package-archive-contents) no-refresh)
-		   (package-install package)
-		 (progn
-		   (package-refresh-contents)
-		   (require-package package min-version t)))))
-   packages))
+  (mapcar 'require-package packages))
 
 (ensure-package-installed 'auctex
 						  'auto-compile
@@ -59,14 +59,6 @@
 )
 
 ; On-demand installation of packages
-(defun require-package (package &optional min-version no-refresh)
-  "Ask elpa to install given PACKAGE."
-  (if (package-installed-p package min-version)
-      t
-    (if (or (assoc package package-archive-contents) no-refresh)
-        (package-install package)
-      (progn
-        (package-refresh-contents)
-        (require-package package min-version t)))))
+
 
 (provide 'packages-conf)
