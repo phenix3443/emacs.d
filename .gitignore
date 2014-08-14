@@ -10,6 +10,9 @@ themes/*/
 *~
 *.log
 .*.lock
+*.eld
+*.cache
+*.tut
 ac-comphist.dat
 eshell/
 semanticdb/

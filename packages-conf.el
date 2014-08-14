@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-14 00:10:09 phenix>
+; Time-stamp: <2014-08-14 14:11:35 chengxu70>
 
 (when (>= emacs-major-version 24)
   (require 'package)
@@ -12,14 +12,15 @@
     (package-refresh-contents))
 						   
 (defun ensure-package-installed (&rest packages)
-  "Assure every package is installed, ask for installation if it is not.Return a list of installed packages or nil for every skipped package."
   (mapcar
-   (lambda (package)
-      (if (package-installed-p package)
-         nil
-       (if (y-or-n-p (format "Package %s is missing. Install it? " package))
-           (package-install package)
-         package)))
+   (lambda (package &optional min-version no-refresh)
+	 (if (package-installed-p package min-version)
+         t
+	   (if (or (assoc package package-archive-contents) no-refresh)
+		   (package-install package)
+		 (progn
+		   (package-refresh-contents)
+		   (require-package package min-version t)))))
    packages))
 
 (ensure-package-installed 'auctex
