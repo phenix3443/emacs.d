@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-14 21:48:18 chengxu70>
+; Time-stamp: <2014-08-15 14:59:58 chengxu70>
 
 (when (>= emacs-major-version 24)
   (require 'package)

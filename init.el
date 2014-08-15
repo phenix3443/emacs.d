@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-11 12:28:01 chengxu70>
+; Time-stamp: <2014-08-15 15:08:38 chengxu70>
 ;; 该文件内容由于初始化顺序的原因只能放在init.el中
 (setq default-directory "~/.emacs.d/")
 
@@ -38,8 +38,8 @@
 	(set-fontset-font "fontset-default" charset zh-font)))
 
 ; 22 international character set support
-(set-language-environment 'utf-8)
-;(setq buffer-file-coding-system 'utf-8)
+;(set-language-environment 'utf-8)
+(setq buffer-file-coding-system 'utf-8)
 ;(set-default-coding-systems 'utf-8)
 ;(prefer-coding-system 'utf-8)
 
@@ -52,6 +52,7 @@
 	  (normal-top-level-add-subdirs-to-load-path))
 	(require 'misc)
 	(require 'packages-conf) ;47
+	(require 'init-auto-compile)
 	(require 'minibuffer-conf) ; 8
 	(require 'killing-conf) ; 12
 	(require 'display-conf) ; 14
