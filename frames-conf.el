@@ -1,5 +1,22 @@
-; Time-stamp: <2014-08-11 11:30:37 chengxu70>
+; Time-stamp: <2014-08-17 21:47:01 phenix>
 ;
+
+
+;; 21.8 Fonts
+(require 'cl)
+(defun font-candidate (&rest fonts)
+  "Return existing font which first match."
+  (cl-find-if (lambda (f) (find-font (font-spec :name f))) fonts))
+
+(let ((en-font (font-candidate "DejaVu Sans Mono-14" "Consolas-14")) 
+      (zh-font (font-candidate "Microsoft Yahei-14" "文泉驿微米黑 14")))
+  ; set en-font
+  (setq default-frame-alist 
+		(list '(alpha 100 50)
+			  (cons 'font en-font)))
+  ; set zh-font
+  (dolist (charset '(kana han symbol cjk-misc bopomofo))
+	(set-fontset-font "fontset-default" charset zh-font)))
 
 ;(setq window-system-default-frame-alist '() )
 
