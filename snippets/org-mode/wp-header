@@ -3,13 +3,10 @@
 # key: wph
 # binding: direct-keybinding
 # --
-#+BLOG:${1:panghuli}
-#+POSTID:$2
-#+DATE:`(format-time-string "%Y-%m-%d" (current-time))`
-#+OPTIONS:$3
-#+CATEGORY:${4:专业知识}
-#+TAGS:$5
-#+DESCRIPTION:$6
-#+TITLE:${7:未命名}
+#+POSTID:$1
+#+CATEGORY:${2:专业知识}
+#+TAGS:$3
+#+DESCRIPTION:$4
+#+TITLE:${5:未命名}
 
 $0
