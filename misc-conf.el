@@ -1,8 +1,8 @@
-; Time-stamp: <2014-08-17 21:52:22 phenix>
+; Time-stamp: <2014-08-18 21:08:17 chengxu70>
 
 
 ; 5 Enter Emacs
-(setq inhibit-startup-message t)
+;(setq inhibit-startup-message t)
 
 ; 6 Exiting Emacs
 
@@ -10,10 +10,9 @@
 (setq track-eol t)
 
 ; 22 international character set support
-;(set-language-environment 'utf-8)
-(setq buffer-file-coding-system 'utf-8)
-;(set-default-coding-systems 'utf-8)
-;(prefer-coding-system 'utf-8)
+(set-language-environment 'utf-8)
+(cond
+ (is-windows-nt-os (setq default-file-name-coding-system 'chinese-gbk)))
 
 ; 42 saving emacs sessions
 (desktop-save-mode 1)

@@ -5,10 +5,11 @@
 # --
 #+BLOG:${1:panghuli}
 #+POSTID:$2
-#+DATE:`(current-time-string)`
+#+DATE:`(format-time-string "%Y-%m-%d" (current-time))`
 #+OPTIONS:$3
 #+CATEGORY:${4:专业知识}
-#+TAGS:${5:其他}
+#+TAGS:$5
 #+DESCRIPTION:$6
 #+TITLE:${7:未命名}
+
 $0
