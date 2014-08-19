@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-11 14:42:58 chengxu70>
+; Time-stamp: <2014-08-19 12:04:26 chengxu70>
 (require 'org)
 (require 'cdlatex)
 
@@ -8,4 +8,5 @@
 
 (add-hook 'org-mode-hook 'turn-on-org-cdlatex)
 
+(setq org-startup-folded nil)
 (provide 'init-org)
