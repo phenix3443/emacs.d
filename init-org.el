@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-19 12:04:26 chengxu70>
+; Time-stamp: <2014-08-20 00:24:49 phenix>
 (require 'org)
 (require 'cdlatex)
 
@@ -9,4 +9,5 @@
 (add-hook 'org-mode-hook 'turn-on-org-cdlatex)
 
 (setq org-startup-folded nil)
+(setq org-list-indent-offset 2)
 (provide 'init-org)
