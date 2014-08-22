@@ -1,7 +1,7 @@
-; Time-stamp: <2014-08-20 00:24:49 phenix>
+; Time-stamp: <2014-08-21 10:23:34 chengxu70>
 (require 'org)
 (require 'cdlatex)
-
+(require 'htmlize)
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
