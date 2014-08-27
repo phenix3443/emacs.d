@@ -1,6 +1,6 @@
-; Time-stamp: <2014-08-13 01:10:08 phenix>
+; Time-stamp: <2014-08-27 09:54:15 chengxu70>
+; required by program-conf.el
 (require 'helm-gtags)
-
 ;;; Enable helm-gtags-mode
 (add-hook 'prog-mode-hook '(lambda()
 							 (helm-gtags-mode 1)))
@@ -8,7 +8,7 @@
 ;; customize
 (custom-set-variables
  '(helm-gtags-path-style 'relative)
- '(helm-gtags-auto-update t))
+ '(helm-gtags-auto-update nil))
 
 ;; key bindings
 (eval-after-load "helm-gtags"

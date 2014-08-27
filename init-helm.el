@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-11 14:43:23 chengxu70>
+; Time-stamp: <2014-08-27 09:39:37 chengxu70>
 
 ; configure defult from helm wiki
 
@@ -13,14 +13,6 @@
 (require 'helm-eshell)
 (require 'helm-files)
 (require 'helm-grep)
-
-(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
-(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
-(define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
-
-(define-key helm-grep-mode-map (kbd "<return>")  'helm-grep-mode-jump-other-window)
-(define-key helm-grep-mode-map (kbd "n")  'helm-grep-mode-jump-other-window-forward)
-(define-key helm-grep-mode-map (kbd "p")  'helm-grep-mode-jump-other-window-backward)
 
 (setq helm-google-suggest-use-curl-p t
 	  helm-scroll-amount 4 ; scroll 4 lines other window using M-<next>/M-<prior>
@@ -41,6 +33,7 @@
 	  helm-move-to-line-cycle-in-source t ; move to end or beginning of source when reaching top or bottom of source.
 	  ido-use-virtual-buffers t      ; Needed in helm-buffers-list
 	  helm-buffers-fuzzy-matching t     ; fuzzy matching buffer names when non--nil useful in helm-mini that lists buffers
+	  projectile-enable-caching t
 	  )
 
 ; Save current position to mark ring when jumping to a different place
@@ -55,6 +48,13 @@
 
 (global-set-key (kbd "C-c h o") 'helm-occur)
 
-(helm-mode 1)
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
+(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
+(define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 
+(define-key helm-grep-mode-map (kbd "<return>")  'helm-grep-mode-jump-other-window)
+(define-key helm-grep-mode-map (kbd "n")  'helm-grep-mode-jump-other-window-forward)
+(define-key helm-grep-mode-map (kbd "p")  'helm-grep-mode-jump-other-window-backward)
+
+(helm-mode 1)
 (provide 'init-helm)

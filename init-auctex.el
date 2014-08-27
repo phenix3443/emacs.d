@@ -1,5 +1,5 @@
-; Time-stamp: <2014-08-11 15:03:33 chengxu70>
-
+; Time-stamp: <2014-08-27 10:12:56 chengxu70>
+; required by text-conf.el
 ; default from auctex-manual 
 ;; 1.3  5.3
 (setq TeX-auto-save t)

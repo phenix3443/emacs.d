@@ -1,4 +1,6 @@
-; Time-stamp: <2014-08-21 10:23:34 chengxu70>
+; Time-stamp: <2014-08-27 10:11:18 chengxu70>
+; required by text-conf.le
+
 (require 'org)
 (require 'cdlatex)
 (require 'htmlize)

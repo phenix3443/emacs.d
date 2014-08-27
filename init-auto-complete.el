@@ -1,5 +1,5 @@
-; Time-stamp: <2014-08-12 22:04:40 chengxu70>
-
+; Time-stamp: <2014-08-27 09:52:21 chengxu70>
+; required by program-conf.el
 ; default from auto-complete manual
 ;; 3.2 install script
 (require 'auto-complete)

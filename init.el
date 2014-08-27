@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-18 17:01:24 chengxu70>
+; Time-stamp: <2014-08-27 09:57:06 chengxu70>
 ;; 该文件内容由于初始化顺序的原因只能放在init.el中
 (setq default-directory "~/.emacs.d/")
 
@@ -28,7 +28,6 @@
   (require 'init-auto-compile)
   (require 'misc-conf)
   (require 'packages-conf) ;47
-  (require 'init-auto-compile)
   (require 'minibuffer-conf) ; 8
   (require 'killing-conf) ; 12
   (require 'display-conf) ; 14

@@ -6,7 +6,7 @@
 ;;;Saving
 ;;Shadowing
 ;;Time Stamps
-(add-hook 'before-save-hook 'time-stamp)
+;(add-hook 'before-save-hook 'time-stamp)
 ;;;Reverting
 
 ;;;Autorevert

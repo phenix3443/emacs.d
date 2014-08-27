@@ -1,4 +1,5 @@
-; Time-stamp: <2014-08-11 14:47:54 chengxu70>
+; Time-stamp: <2014-08-27 10:13:40 chengxu70>
+; required by text-conf.el
 ; default from reftex manual
 
 ;;;1.1.3 entering RefTex Mode

@@ -1,12 +1,12 @@
-; Time-stamp: <2014-08-17 21:47:01 phenix>
+; Time-stamp: <2014-08-27 10:15:34 chengxu70>
 ;
 
 
 ;; 21.8 Fonts
-(require 'cl)
+(require 'cl) 
 (defun font-candidate (&rest fonts)
   "Return existing font which first match."
-  (cl-find-if (lambda (f) (find-font (font-spec :name f))) fonts))
+  (find-if (lambda (f) (find-font (font-spec :name f))) fonts))
 
 (let ((en-font (font-candidate "DejaVu Sans Mono-14" "Consolas-14")) 
       (zh-font (font-candidate "Microsoft Yahei-14" "文泉驿微米黑 14")))
@@ -43,7 +43,7 @@
 ;; 21.20 Text-Only Mouse
 
 
-										; (elisp)29.5 Frame Title
+; (elisp)29.5 Frame Title
 (setq frame-title-format '("%*" " " "%f"))
 
 (provide 'frames-conf)

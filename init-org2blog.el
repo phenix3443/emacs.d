@@ -1,4 +1,5 @@
-; Time-stamp: <2014-08-20 02:14:56 phenix>
+; Time-stamp: <2014-08-27 10:12:10 chengxu70>
+; required by text-conf.el
 
 (require 'org2blog-autoloads)
 (require 'netrc)
