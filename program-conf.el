@@ -15,7 +15,7 @@
 
 ; 28 tags
 ;(require 'init-xcscope)
-(require 'init-helm-gtags)
+;(require 'init-helm-gtags)
 
 ;; project support
 (require 'init-cedet)
