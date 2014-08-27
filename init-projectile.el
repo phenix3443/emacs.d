@@ -4,16 +4,16 @@
 
 (add-hook 'prog-mode-hook '(lambda()
 							 (projectile-mode)
-							 (helm-projectile)
-							 (require 'perspective)
-							 (persp-mode)
-							 (require 'persp-projectile)))
+							 ;(require 'perspective)
+							 ;(persp-mode)
+							 ;(require 'persp-projectile)
+							 ))
 ; completion
 (setq projectile-completion-system 'helm)
 
 ; caches
 (setq projectile-enable-caching t )
-(setq projectile-remember-window-configs t)
+;(setq projectile-remember-window-configs t)
 (setq projectile-file-exists-remote-cache-expire (* 10 60))
 
 ;perspective
