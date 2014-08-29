@@ -1,14 +1,20 @@
 ; Time-stamp: <2014-08-27 09:54:15 chengxu70>
+; https://https://github.com/syohex/emacs-helm-gtags
 ; required by program-conf.el
-(require 'helm-gtags)
-;;; Enable helm-gtags-mode
-(add-hook 'prog-mode-hook '(lambda()
-							 (helm-gtags-mode 1)))
+
+(require-package 'helm-gtags)
+
+; Enable helm-gtags-mode
+;(add-hook 'prog-mode-hook 'helm-gtags-mode)
+
+(add-hook 'c-mode-hook 'helm-gtags-mode)
+(add-hook 'c++-mode-hook 'helm-gtags-mode)
 
 ;; customize
 (custom-set-variables
  '(helm-gtags-path-style 'relative)
- '(helm-gtags-auto-update nil))
+ '(helm-gtags-ignore-case t)
+ '(helm-gtags-auto-update t))
 
 ;; key bindings
 (eval-after-load "helm-gtags"
@@ -22,3 +28,5 @@
      (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)))
 
 (provide 'init-helm-gtags)
+
+

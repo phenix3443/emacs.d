@@ -2,19 +2,18 @@
 
 (require 'projectile)
 
-(add-hook 'prog-mode-hook '(lambda()
-							 (projectile-mode)
-							 ;(require 'perspective)
-							 ;(persp-mode)
-							 ;(require 'persp-projectile)
-							 ))
+(add-hook 'lisp-mode-hook 'projectile-mode)
+
 ; completion
 (setq projectile-completion-system 'helm)
 
 ; caches
-(setq projectile-enable-caching t )
-;(setq projectile-remember-window-configs t)
+(setq projectile-enable-caching t)
+(setq projectile-remember-window-configs t)
 (setq projectile-file-exists-remote-cache-expire (* 10 60))
+
+;key binding
+(setq projectile-keymap-prefix (kbd "C-c p"))
 
 ;perspective
 (define-key projectile-mode-map (kbd "s-s") 'projectile-persp-switch-project)
