@@ -3,10 +3,9 @@
 # key: wph
 # binding: direct-keybinding
 # --
-#+POSTID:$1
-#+CATEGORY:${2:专业知识}
-#+TAGS:$3
-#+DESCRIPTION:$4
-#+TITLE:${5:未命名}
+#+CATEGORY:${1:专业知识}
+#+TAGS:$2
+#+DESCRIPTION:$3
+#+TITLE:${4:未命名}
 
 $0
