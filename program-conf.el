@@ -18,7 +18,7 @@
 ;(require 'init-helm-gtags)
 
 ;; project support
-(require 'init-cedet)
+;(require 'init-cedet)
 (require 'init-projectile)
 
 ; C mode
