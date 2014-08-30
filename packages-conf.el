@@ -23,42 +23,6 @@
 (defun ensure-package-installed (&rest packages)
   (mapcar 'require-package packages))
 
-(ensure-package-installed 'auctex
-						  'auto-compile
-						  'helm
-						  
-						  ;工程管理
-						  'ecb
-						  'projectile
-						  'helm-projectile
-						  'perspective
-						  'persp-projectile
-
-						  'cdlatex
-						  'org
-
-						  'xml-rpc
-						  'metaweblog
-						  'htmlize
-						  'org2blog
-						  
-						  ;tags
-;						  'xcscope
-						  'gtags
-						  'helm-gtags
-						  
-						  ;auto complete
-						  'yasnippet
-						  
-;						  'popwin
-						  'pos-tip
-						  'fuzzy
-						  'auto-complete
-
-						  'company
-
-						  'lua-mode
-)
 
 ; On-demand installation of packages
 
