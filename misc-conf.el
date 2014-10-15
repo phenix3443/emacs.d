@@ -10,9 +10,9 @@
 (setq track-eol t)
 
 ; 22 international character set support
-;(set-language-environment 'utf-8)
-;(cond
-; (is-windows-nt-os (setq default-file-name-coding-system 'chinese-gbk)))
+(set-language-environment 'utf-8)
+(cond
+ (is-windows-nt-os (setq default-file-name-coding-system 'chinese-gbk)))
 
 ; 42 saving emacs sessions
 (desktop-save-mode 1)

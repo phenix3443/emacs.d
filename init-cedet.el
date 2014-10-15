@@ -25,8 +25,8 @@
 								   "../../Common"
 								   "../../public"))
 ; ede
-(setq ede-local-setup-options '(ede-local-global 
-								ede-local-base))
+;(setq ede-local-setup-options '(ede-local-global 
+;								ede-local-base))
 ;(add-hook 'prog-mode-hook 'global-ede-mode)
 		 
 ; semantic configures
@@ -35,8 +35,8 @@
 								  ;global-semantic-highlight-func-mode
 								  global-semantic-idle-local-symbol-highlight-mode
 								  global-semantic-idle-scheduler-mode
-                                  ;global-semantic-idle-summary-mode
-								  ;global-semantic-idle-completions-mode
+                                  global-semantic-idle-summary-mode
+								  global-semantic-idle-completions-mode
 								  ;global-semantic-mru-bookmark-mode
 								  ;global-semantic-stickyfunc-mode
                                   ))
