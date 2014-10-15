@@ -2,7 +2,7 @@
 
 ; configure defult from helm wiki
 
-(require 'helm)
+(require-package 'helm)
 
 ;; must set before helm-config,  otherwise helm use default
 ;; prefix "C-x c", which is inconvenient because you can

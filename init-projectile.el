@@ -1,5 +1,5 @@
 ; Time-stamp: <2014-08-14 22:07:02 chengxu70>
-
+(require-package 'projectile)
 (require 'projectile)
 
 (add-hook 'lisp-mode-hook 'projectile-mode)

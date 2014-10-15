@@ -1,6 +1,8 @@
 ; Time-stamp: <2014-08-27 09:52:21 chengxu70>
 ; required by program-conf.el
 ; default from auto-complete manual
+(require-package 'auto-complete)
+
 ;; 3.2 install script
 (require 'auto-complete)
 (require 'auto-complete-config)
@@ -84,6 +86,7 @@
 (define-key ac-mode-map (kbd "C-c H") 'ac-last-help)
 
 ;; 7.17. Show help beautifully
+(require-package 'pos-tip)
 (require 'pos-tip)
 (setq ac-quick-help-prefer-pos-tip t)
 

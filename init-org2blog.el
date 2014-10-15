@@ -1,6 +1,8 @@
 ; Time-stamp: <2014-08-27 10:12:10 chengxu70>
 ; required by text-conf.el
 
+(require-package 'org2blog)
+
 (require 'org2blog-autoloads)
 (require 'netrc)
 

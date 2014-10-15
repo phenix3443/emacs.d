@@ -25,7 +25,7 @@
   (let ((default-directory "~/.emacs.d/lisps"))
 	(normal-top-level-add-to-load-path '(".." "."))
 	(normal-top-level-add-subdirs-to-load-path))
-  (require 'init-auto-compile)
+  ;(require 'init-auto-compile)
   (require 'misc-conf)
   (require 'packages-conf) ;47
   (require 'minibuffer-conf) ; 8
