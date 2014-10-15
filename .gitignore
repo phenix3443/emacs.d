@@ -14,6 +14,7 @@ themes/*/
 *.eld
 *.cache
 *.tut
+*.el#
 ac-comphist.dat
 eshell/
 semanticdb/

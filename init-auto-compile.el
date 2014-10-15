@@ -1,4 +1,5 @@
 ; Time-stamp: <2014-08-14 23:44:01 phenix>
+(require-package 'auto-compile)
 
 (setq load-prefer-newer t)
 (require 'auto-compile)
