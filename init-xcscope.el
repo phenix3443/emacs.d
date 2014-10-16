@@ -1,4 +1,6 @@
-; Time-stamp: <2014-08-13 01:42:54 phenix>
+; Time-stamp: <2014-08-13 01:42:54 phenix> 
+(require-package 'xcscope)
+
 (require 'xcscope)
 (cscope-setup)
 

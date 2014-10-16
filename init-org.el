@@ -4,6 +4,12 @@
 (require-package 'org)
 (require-package 'cdlatex)
 (require-package 'htmlize)
+
+(require 'org)
+(require 'cdlatex)
+(require 'htmlize)
+
+(global-set-key "\C-c'" 'org-src-mode)
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)

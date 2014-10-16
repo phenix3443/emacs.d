@@ -4,6 +4,7 @@
 
 (require-package 'helm)
 
+(require 'helm)
 ;; must set before helm-config,  otherwise helm use default
 ;; prefix "C-x c", which is inconvenient because you can
 ;; accidentially pressed "C-x C-c"

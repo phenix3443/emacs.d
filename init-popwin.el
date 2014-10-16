@@ -1,4 +1,6 @@
 ; Time-stamp: <2014-08-11 14:47:21 chengxu70>
+(require-package 'popwin)
+
 (require 'popwin)
 
 (setq popwin:special-display-config nil)

@@ -4,6 +4,7 @@
 
 (require-package 'helm-gtags)
 
+(require 'helm-gtags)
 ; Enable helm-gtags-mode
 ;(add-hook 'prog-mode-hook 'helm-gtags-mode)
 

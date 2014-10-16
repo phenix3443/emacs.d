@@ -1,4 +1,6 @@
 ; Time-stamp: <2014-08-27 10:12:56 chengxu70>
+(require-package 'auctex)
+
 ; required by text-conf.el
 ; default from auctex-manual 
 ;; 1.3  5.3

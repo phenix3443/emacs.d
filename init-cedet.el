@@ -1,4 +1,6 @@
 ; Time-stamp: <2014-08-14 23:57:25 phenix>
+(require-package 'cedet)
+
 (require 'cedet)
 (require 'cedet-cscope)
 (require 'cedet-files)

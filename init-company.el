@@ -1,4 +1,6 @@
 ; Time-stamp: <2014-08-11 21:19:52 chengxu70>
+(require-package 'company)
+
 (require 'company)
 
 (setq company-idle-delay 0.1)

@@ -2,6 +2,7 @@
 ; required by text-conf.el
 
 (require-package 'org2blog)
+(require-package 'netrc)
 
 (require 'org2blog-autoloads)
 (require 'netrc)
