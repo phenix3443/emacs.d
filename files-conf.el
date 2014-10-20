@@ -3,11 +3,12 @@
 
 ; Visiting
 
-;;;Saving
-;;Shadowing
-;;Time Stamps
+;; 18.3 Saving Files
+
+;;; 18.3.6 Updating Time Stamps Automatically
 ;(add-hook 'before-save-hook 'time-stamp)
-;;;Reverting
+
+;; 18.4 Reverting a Buffer
 
 ;;;Autorevert
 
