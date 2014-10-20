@@ -14,8 +14,12 @@
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
-
 (add-hook 'org-mode-hook 'turn-on-org-cdlatex)
+
+;3 Tables
+(setq org-ascii-table-keep-all-vertical-lines t)
+;3.2 Column width and alignment
+(setq org-startup-align-all-tables t)
 ;14 Working with source code
 ;;14.2 Editing source code
 (setq org-src-lang-modes 
