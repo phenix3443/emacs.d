@@ -3,18 +3,19 @@
 
 (require-package 'org2blog)
 (require-package 'netrc)
+(require-package 'xml-rpc)
+(require-package 'metaweblog)
 
 (require 'org2blog-autoloads)
 (require 'netrc)
 
-(setq wp_panghuli (netrc-machine (netrc-parse "~/.emacs.d/.netrc") "wp_panghuli" t))
+(setq panghuli_blog (netrc-machine (netrc-parse "~/.emacs.d/.netrc") "panghuli_blog" t))
 
 (setq org2blog/wp-blog-alist
-      '(("wp_panghuli"
-         :url "http://panghuli.me/xmlrpc.php"
-         :username (netrc-get wp_panghuli "login")
-         :password (netrc-get wp_panghuli "password")
-         :default-title "Hello World"
+      '(("panghuli_blog"
+         :url "http://blog.panghuli.me/xmlrpc.php"
+         :username (netrc-get panghuli_blog "login")
+         :password (netrc-get panghuli_blog "password")
          :default-categories ("专业知识"))))
 
 ;(setq org2blog/wp-buffer-template "")
@@ -26,11 +27,24 @@
 (setq org2blog/wp-sourcecode-default-params nil)
 ; target language needs to be in here
 (setq org2blog/wp-sourcecode-langs
-      '("actionscript3" "bash" "coldfusion" "cpp" "csharp" "css" "delphi"
-        "erlang" "fsharp" "diff" "groovy" "javascript" "java" "javafx" "matlab"
-        "objc" "perl" "php" "text" "powershell" "python" "ruby" "scala" "sql"
-        "vb" "xml"
-        "sh" "emacs-lisp" "lisp" "lua"))
+      '("actionscript3"
+		"bash"
+		"c" "c++" "coldfusion"  "cpp" "csharp" "css"
+		"delphi"
+        "elisp" "erlang"
+		"fsharp"
+		"go"
+		"html"
+		"java" "javascript"
+		"lisp" "lua"
+		"matlab"
+        "objc"
+		"perl"  "php" "powershell" "python"
+		"ruby" 
+		"sh" "shell" "sql"
+		"text"   
+        "vb" 
+		"xml"))
  
 ; this will use emacs syntax higlighting in your #+BEGIN_SRC <language> <your-code> #+END_SRC code blocks.
 (setq org-src-fontify-natively t)
