@@ -4,7 +4,7 @@
 # binding: direct-keybinding
 # --
 #+NAME: ${1:name}
-#+BEGIN_SRC ${2:language} :export${3:code} :tangle${4:no}
+#+BEGIN_SRC ${2:language} :export ${3:code} :tangle ${4:no}
 	 ${5:}
 #+END_SRC
-${0}
+$0
