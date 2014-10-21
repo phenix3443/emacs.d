@@ -26,26 +26,11 @@
 ; removed light="true"
 (setq org2blog/wp-sourcecode-default-params nil)
 ; target language needs to be in here
-(setq org2blog/wp-sourcecode-langs
-      '("actionscript3"
-		"bash"
-		"c" "c++" "coldfusion"  "cpp" "csharp" "css"
-		"delphi"
-        "elisp" "erlang"
-		"fsharp"
-		"go"
-		"html"
-		"java" "javascript"
-		"lisp" "lua"
-		"matlab"
-        "objc"
-		"perl"  "php" "powershell" "python"
-		"ruby" 
-		"sh" "shell" "sql"
-		"text"   
-        "vb" 
-		"xml"))
- 
+;(setq org2blog/wp-sourcecode-langs '()) ;do not change this varialbe
+(setq org2blog/wp-shortcode-langs-map 
+	  '(("clojure" . "clojure")
+		("html" . "html")
+		("r" . "r"))
 ; this will use emacs syntax higlighting in your #+BEGIN_SRC <language> <your-code> #+END_SRC code blocks.
 (setq org-src-fontify-natively t)
 
