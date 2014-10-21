@@ -20,6 +20,13 @@
 (setq org-ascii-table-keep-all-vertical-lines t)
 ;3.2 Column width and alignment
 (setq org-startup-align-all-tables t)
+
+;12 Exporting
+;;12.6 HTML export
+;;;12.6.2 HTML doctypes
+(setq org-html-doctype "html4-transitional")
+;;;12.6.6 Tables
+(setq org-html-table-default-attributes '(:border "1" :cellspacing "0" :cellpadding "6" :rules "groups" :frame "box"))
 ;14 Working with source code
 ;;14.2 Editing source code
 (setq org-src-lang-modes 
@@ -33,7 +40,7 @@
 		("elisp" . emacs-lisp)
 		("ocaml" . tuareg)
 		("screen" . shell-script)
-		("shell" . sh)
+		("bash" . sh)
 		("sql" . sql)
 		("sqlite" . sql)
 		("xml" . nxml)))
