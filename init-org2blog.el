@@ -9,7 +9,7 @@
 (require 'org2blog-autoloads)
 (require 'netrc)
 
-(setq panghuli_blog (netrc-machine (netrc-parse "~/.emacs.d/.netrc") "panghuli_blog" t))
+(setq panghuli_blog (netrc-machine (netrc-parse "~/.netrc") "panghuli_blog" t))
 
 (setq org2blog/wp-blog-alist
       '(("panghuli_blog"

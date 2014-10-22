@@ -19,12 +19,5 @@
       (progn
         (package-refresh-contents)
         (require-package package min-version t)))))
-						   
-(defun ensure-package-installed (&rest packages)
-  (mapcar 'require-package packages))
-
-
-; On-demand installation of packages
-
-
+						  
 (provide 'packages-conf)
