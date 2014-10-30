@@ -1,5 +1,4 @@
 ; Time-stamp: <2014-08-27 09:39:37 chengxu70>
-
 ; configure defult from helm wiki
 
 (require-package 'helm)
