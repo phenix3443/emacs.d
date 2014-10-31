@@ -20,9 +20,9 @@
 (setq projectile-keymap-prefix (kbd "C-c p"))
 
 ;perspective
-(require-package 'perspective)
-(require 'persp-projectile)
+;(require-package 'perspective)
+;(require 'persp-projectile)
 
-(define-key projectile-mode-map (kbd "s-s") 'projectile-persp-switch-project)
+;(define-key projectile-mode-map (kbd "s-s") 'projectile-persp-switch-project)
 
 (provide 'init-projectile)
