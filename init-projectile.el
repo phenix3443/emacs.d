@@ -9,7 +9,7 @@
 
 
 ;indexing
-(setq projectile-indexing-method 'alien)
+;(setq projectile-indexing-method 'alien)
 ;caching
 (setq projectile-enable-caching t)
 ;switching projects
