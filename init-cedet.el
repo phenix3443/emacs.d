@@ -8,7 +8,7 @@
 (require 'cedet-idutils)
 
 ; global support
-(setq cedet-global-command "gtags")
+;(setq cedet-global-command "gtags")
 			 
 (defconst cedet-sys-include-dirs (list
 								  "/usr/include/"
