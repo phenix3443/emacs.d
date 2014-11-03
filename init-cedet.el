@@ -2,36 +2,20 @@
 (require-package 'cedet)
 
 (require 'cedet)
-(require 'cedet-cscope)
 (require 'cedet-files)
 (require 'cedet-global)
 (require 'cedet-idutils)
 
 ; global support
-;(setq cedet-global-command "gtags")
-			 
-(defconst cedet-sys-include-dirs (list
-								  "/usr/include/"
-								  "/usr/include/gnu"
-								  "/usr/local/include"
-								  ))
-(defconst cedet-user-include-dirs (list 
-								   ".."
-								   "../include"
-								   "../inc"
-								   "../common"
-								   "../public"
-								   "../.."
-								   "../../include"
-								   "../../inc"
-								   "../../Common"
-								   "../../public"))
+(setq cedet-global-command "gtags")
+
 ; ede
 ;(setq ede-local-setup-options '(ede-local-global 
 ;								ede-local-base))
 ;(add-hook 'prog-mode-hook 'global-ede-mode)
 		 
 ; semantic configures
+(require 'semantic)
 (setq semantic-default-submodes '(global-semanticdb-minor-mode
 								  global-semantic-decoration-mode
 								  ;global-semantic-highlight-func-mode
@@ -44,13 +28,25 @@
                                   ))
 
 
-(add-hook 'prog-mode-hook
-		  (lambda () 
-			 (semantic-mode 1)
-			 (when (cedet-gnu-global-version-check t)
-			   (semanticdb-enable-gnu-global-databases 'c-mode t)
-			   (semanticdb-enable-gnu-global-databases 'c++-mode t))))	
-; srecode
+(defconst user-include-dirs (list ".." "../include" "../../include"))
+(defconst win-include-dirs (list "C:/MinGW/include" "C:/Program Files (x86)/Microsoft Visual Studio 11.0/VC/include"))
+
+(require 'semantic-c nil 'noerror)
+(let ((include-dirs user-include-dirs))
+  (when (eq system-type 'window-nt)
+	(setq include-dirs (append include-dirs win-include-dirs)))
+  (mapc (lambda (dir)
+		  (semantic-add-system-include dir 'c-mode)
+		  (semantic-add-system-include dir 'c++-mode))
+		include-dirs))
+
+(when (cedet-gnu-global-version-check t)
+  (semanticdb-enable-gnu-global-databases 'c-mode t)
+  (semanticdb-enable-gnu-global-databases 'c++-mode t))
+(semantic-mode 1)
+
+
+  ; srecode
 ;(add-hook 'prog-mode-hook '(lambda()
 ;							 (global-srecode-minor-mode 1)))
 
