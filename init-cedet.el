@@ -44,7 +44,8 @@
 
 (when (cedet-gnu-global-version-check t)
   (semanticdb-enable-gnu-global-databases 'c-mode t)
-  (semanticdb-enable-gnu-global-databases 'c++-mode t))
+  (semanticdb-enable-gnu-global-databases 'c++-mode t)
+  (semanticdb-enable-gnu-global-databases 'lua-mode t))
 
 (semantic-mode 1)
 
