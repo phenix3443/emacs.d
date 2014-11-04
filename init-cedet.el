@@ -28,25 +28,28 @@
                                   ))
 
 
-(defconst user-include-dirs (list ".." "../include" "../../include"))
-(defconst win-include-dirs (list "C:/MinGW/include" "C:/Program Files (x86)/Microsoft Visual Studio 11.0/VC/include"))
-
-(require 'semantic-c nil 'noerror)
+(defvar user-include-dirs (list ".." "../include" "../../include"))
+(defvar win-include-dirs (list "C:/MinGW/include" "C:/Program Files (x86)/Microsoft Visual Studio 11.0/VC/include"))
+(require 'semantic/bovine/c)
 (let ((include-dirs user-include-dirs))
   (when (eq system-type 'window-nt)
+	(semantic-reset-system-include 'c-mode)
+	(semantic-reset-system-include 'c++-mode)
 	(setq include-dirs (append include-dirs win-include-dirs)))
   (mapc (lambda (dir)
 		  (semantic-add-system-include dir 'c-mode)
 		  (semantic-add-system-include dir 'c++-mode))
 		include-dirs))
 
+
 (when (cedet-gnu-global-version-check t)
   (semanticdb-enable-gnu-global-databases 'c-mode t)
   (semanticdb-enable-gnu-global-databases 'c++-mode t))
+
 (semantic-mode 1)
 
 
-  ; srecode
+; srecode
 ;(add-hook 'prog-mode-hook '(lambda()
 ;							 (global-srecode-minor-mode 1)))
 

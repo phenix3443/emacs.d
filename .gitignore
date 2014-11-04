@@ -18,5 +18,7 @@ themes/*/
 ac-comphist.dat
 eshell/
 semanticdb/
-
+GPATH
+GRTAGS
+GTAGS
 
