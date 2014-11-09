@@ -19,7 +19,13 @@
          :password (netrc-get panghuli_blog "password")
 		 :default-title ("未命名")
          :default-categories "专业知识"
-		 )))
+		 )
+		("blog_local"
+		 :url "http://blog.localhost/xmlrpc.php"
+		 :username (netrc-get blog_local "login")
+		 :password (netrc-get blog_local "password")
+		 :default-title ("未命名")
+		 :default-categories "专业知识")))
 
 ; use yasnippet snippet instead of blog template
 ;(setq org2blog/wp-buffer-template "")
