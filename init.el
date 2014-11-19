@@ -28,7 +28,7 @@
 (defun load-package-init-files()
   "load most packages init files"
   (let ((default-directory "~/.emacs.d/lisps"))
-	(normal-top-level-add-to-load-path '(".." "."))
+	(normal-top-level-add-to-load-path '("."))
 	(normal-top-level-add-subdirs-to-load-path))
   (require 'misc-conf)
   (require 'packages-conf) ;47
