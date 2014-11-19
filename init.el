@@ -1,6 +1,9 @@
 ; Time-stamp: <2014-08-27 09:57:06 chengxu70>
 ;; 该文件内容由于初始化顺序的原因只能放在init.el中
 
+; 方便调试
+;(setq debug-on-error t)
+
 (setq default-directory "~/.emacs.d/")
 
 (defconst is-gnu-os (equal system-type 'gnu) "GNU Hurd system")

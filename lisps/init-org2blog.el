@@ -9,23 +9,27 @@
 (require 'org2blog-autoloads)
 (require 'netrc)
 
-(setq panghuli_blog (netrc-machine (netrc-parse "~/.netrc") "panghuli_blog" t))
-
 ;personal blog site configure
-(setq org2blog/wp-blog-alist
-      '(("panghuli_blog"
-         :url "http://blog.panghuli.me/xmlrpc.php"
-         :username (netrc-get panghuli_blog "login")
-         :password (netrc-get panghuli_blog "password")
-		 :default-title ("未命名")
-         :default-categories "专业知识"
-		 )
-		("blog_local"
-		 :url "http://blog.localhost/xmlrpc.php"
-		 :username (netrc-get blog_local "login")
-		 :password (netrc-get blog_local "password")
-		 :default-title ("未命名")
-		 :default-categories "专业知识")))
+(require 'auth-source)
+
+;(setq panghuli_blog (netrc-machine (netrc-parse "~/.netrc") "panghuli_blog" t))
+;(setq blog_local (netrc-machine (netrc-parse "~/.netrc") "blog_local" t))
+(add-to-list 'auth-sources "~/.netrc")
+(let ((c_1 (auth-source-user-and-password "panghuli_blog"))
+	  (c_2 (auth-source-user-and-password "blog_local")))
+  (setq org2blog/wp-blog-alist
+        `(("panghuli_blog"
+           :url "http://blog.panghuli.me/xmlrpc.php"
+           :username ,(car  c_1)
+           :password ,(cadr c_1)
+           :default-title ("未命名")
+		   :default-categories "专业知识")
+		  ("blog_local"
+		   :url "http://blog.localhost/xmlrpc.php"
+		   :username ,(car c_2)
+		   :password ,(cadr c_2)
+		   :default-title ("未命名")
+		   :default-categories "专业知识"))))
 
 ; use yasnippet snippet instead of blog template
 ;(setq org2blog/wp-buffer-template "")
