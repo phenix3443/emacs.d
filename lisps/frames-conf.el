@@ -1,7 +1,5 @@
 ; Time-stamp: <2014-08-27 10:15:34 chengxu70>
 ;
-
-
 ;; 21.8 Fonts
 (require 'cl) 
 (defun font-candidate (&rest fonts)
