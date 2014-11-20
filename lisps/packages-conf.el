@@ -5,7 +5,7 @@
   (package-initialize)
   (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
 						   ("melpa" . "http://melpa.milkbox.net/packages/")
-						   ("marmalade" . "http://marmalade-repo.org/packages/"))))
+						   ("marmalade" . "https://marmalade-repo.org/packages/"))))
 
 ; make sure to have downloaded archive description. Or use package-archive-contents as suggested by Nicolas Dudebout
 (or (file-exists-p package-user-dir)

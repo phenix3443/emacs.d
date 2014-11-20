@@ -23,9 +23,9 @@
       (cygmin-os ()))
 
 ;use proxy for internet
-;(setq url-proxy-services
-;   '(("http" . "127.0.0.1:8087")
-;     ("https" . "127.0.0.1:8087")))
+(setq url-proxy-services
+ '(("http" . "127.0.0.1:8087")
+     ("https" . "127.0.0.1:8087")))
 
 ;加载配置文件，按照 Emacs Manual 章节顺序 
 (defun load-package-init-files()
