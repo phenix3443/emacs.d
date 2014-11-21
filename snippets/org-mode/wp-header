@@ -1,11 +1,11 @@
-# -*- mode: snippet; require-final-newline: nil -*-
-# name: wp-header
+# -*- mode: snippet; coding:chinese-gbk; require-final-newline: nil -*-
+# name: wordpress-blog-header
 # key: wph
 # binding: direct-keybinding
 # --
-#+CATEGORY:${1:涓撲笟鐭ヨ瘑}
+#+CATEGORY:${1:专业知识}
 #+TAGS:$2
 #+DESCRIPTION:$3
-#+TITLE:${4:鏈懡鍚峿
+#+TITLE:${4:未命名}
 
 $0
