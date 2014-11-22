@@ -4,9 +4,7 @@
 (require-package 'yasnippet)
 
 (require 'yasnippet)
-;(yas-global-mode 1)
-(add-hook 'prog-mode-hook '(lambda()
-							 (yas-minor-mode)))
+(yas-global-mode 1)
 
 ;(define-key yas-minor-mode-map (kbd "TAB") nil)
 
