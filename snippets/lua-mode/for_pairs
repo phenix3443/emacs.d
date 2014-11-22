@@ -1,6 +1,6 @@
 # -*- mode: snippet; require-final-newline: nil -*-
 # name: for i,v in pairs()
-# key: for
+# key: for1
 # binding: direct-keybinding
 # --
 for ${1:i},${2:v} in pairs(${3:tbl_name}) do
