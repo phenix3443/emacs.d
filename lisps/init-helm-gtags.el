@@ -17,6 +17,7 @@
 ;; key bindings
 (eval-after-load "helm-gtags"
   '(progn
+	 ;(define-key helm-gtags-mode-map (kbd "M-c") 'helm-gtags-create-tags)
      (define-key helm-gtags-mode-map (kbd "M-t") 'helm-gtags-find-tag)
      (define-key helm-gtags-mode-map (kbd "M-r") 'helm-gtags-find-rtag)
      (define-key helm-gtags-mode-map (kbd "M-s") 'helm-gtags-find-symbol)
