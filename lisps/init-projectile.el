@@ -2,8 +2,7 @@
 (require-package 'projectile)
 
 (require 'projectile)
-;; (projectile-global-mode)
-(add-hook 'prog-mode 'projectile-mode)
+(projectile-global-mode)
 
 (eval-after-load "projectile"
   '(progn
@@ -50,7 +49,7 @@
 	 (global-set-key (kbd "C-c p j") 'helm-gtags-find-tag)
 	 (global-set-key (kbd "C-c p S-j") 'helm-gtags-find-rtags)
 	 (global-set-key (kbd "C-c p .") 'helm-gtags-dwim)
-	 (global-set-key (kbd "<f8>") 'helm-semantic-or-imenu)
+	 (global-set-key (kbd "C-c p I") 'helm-semantic-or-imenu)
 	 ;; symbol
 	 (global-set-key (kbd "C-c p s g") 'helm-projectile-grep)
 	 (global-set-key (kbd "C-c p s s") 'helm-projectile-ag)
