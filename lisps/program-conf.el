@@ -26,6 +26,7 @@
 		  '(lambda()
 			 (c-set-style "linux")
 			 (setq c-basic-offset 4)))
+;c-indent-comment-alist
 ; C++ mode
 (add-hook 'c++-mode-hook
 		  '(lambda()
