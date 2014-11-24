@@ -7,7 +7,7 @@
 (require 'cedet-idutils)
 
 ;; global support
-(setq cedet-global-command "gtags")
+(setq cedet-global-command "global")
 
 ;; ede
 ;;(setq ede-local-setup-options '(ede-local-global 
@@ -28,7 +28,7 @@
                                   ))
 
 
-(defvar user-include-dirs (list ".." "../include" "../../include"))
+(defvar user-include-dirs (list ".." "../include" "../../include" "../../../include" "../../../../include"))
 (defvar win-include-dirs (list "C:/MinGW/include" "C:/Program Files (x86)/Microsoft Visual Studio 11.0/VC/include"))
 (require 'semantic/bovine/c)
 (let ((include-dirs user-include-dirs))

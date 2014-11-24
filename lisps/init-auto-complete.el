@@ -59,16 +59,6 @@
 ;; 7.9 Ignore case
 (setq ac-ignore-case 'smart)
 
-(ac-set-trigger-key "TAB")
-(global-set-key (kbd "C-i") 'auto-expand)
-(global-set-key (kbd "C-m") 'auto-complete)
-(define-key ac-completing-map (kbd "M-/") 'ac-stop)
-
-(define-key ac-menu-map (kbd "C-n") 'ac-next)
-(define-key ac-menu-map (kbd "C-p") 'ac-previous)
-(define-key ac-mode-map (kbd "C-c h") 'ac-last-quick-help)
-(define-key ac-mode-map (kbd "C-c H") 'ac-last-help)
-
 ;; 7.17. Show help beautifully
 (require-package 'pos-tip)
 (require 'pos-tip)
@@ -85,6 +75,7 @@
 ;; 8.6 stop Flymake on completion
 (setq ac-stop-flymake-on-completing t)
 ;; 8.7 use fuzzy matching
+(require-package 'fuzzy)
 (setq ac-use-fuzzy t)
 ;; 8.9 use candidate suggestion
 (setq ac-comphist t)
@@ -97,6 +88,16 @@
 
 (add-hook 'prog-mode-hook '(lambda() (auto-complete-mode t)))
 
+;; key binding
+(ac-set-trigger-key "TAB")
+;(global-set-key (kbd "C-i") 'auto-expand)
+;(global-set-key (kbd "C-m") 'auto-complete)
+(define-key ac-completing-map (kbd "M-/") 'ac-stop)
+
+(define-key ac-menu-map (kbd "C-n") 'ac-next)
+(define-key ac-menu-map (kbd "C-p") 'ac-previous)
+(define-key ac-mode-map (kbd "C-c h") 'ac-last-quick-help)
+(define-key ac-mode-map (kbd "C-c H") 'ac-last-help)
 
 (provide 'init-auto-complete)
 

@@ -12,6 +12,8 @@
 ;;(require 'init-popwin)
 ;;(require 'init-company)
 (require 'init-auto-complete)
+;; 27.5 Finding Syntax Error on The Fly
+(require 'init-flycheck)
 
 ;; 28 tags
 (require 'init-helm-gtags)
