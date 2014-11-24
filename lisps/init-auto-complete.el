@@ -1,6 +1,6 @@
-; Time-stamp: <2014-08-27 09:52:21 chengxu70>
-; required by program-conf.el
-; default from auto-complete manual
+;; Time-stamp: <2014-08-27 09:52:21 chengxu70>
+;; required by program-conf.el
+;; default from auto-complete manual
 (require-package 'auto-complete)
 
 ;; 3.2 install script
@@ -8,19 +8,9 @@
 (require 'auto-complete-config)
 (ac-config-default)
 
-;; 5.1 auto-complete command
-(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
-
-;; 5.2 completion by fuzzy matching
-(setq ac-fuzzy-enable t)
-
-;; 5.4 trigger key
-(ac-set-trigger-key "TAB")
-(setq ac-auto-start nil)
-
 ;; 5.6.1 completion by dictionary
 (setq ac-user-dictionary-files "~/.emacs.d/.dict")
-;(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+;;(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 
 ;; 6.1 using sources
 (set-default 'ac-sources
@@ -29,9 +19,9 @@
 
 (defun ac-4-prog-mode()
   (setq ac-sources (append '(ac-source-yasnippet
-										ac-source-gtags
-										ac-source-semantic
-										ac-source-imenu) ac-sources)))
+							 ac-source-gtags
+							 ac-source-semantic
+							 ac-source-imenu) ac-sources)))
 (add-hook 'prog-mode-hook 'ac-4-prog-mode)
 
 (defun ac-4-emacs-lisp-mode()
@@ -54,34 +44,28 @@
 (defun ac-4-css-mode ()
   (setq ac-sources (append '(ac-source-css-property) ac-sources)))
 
-; 7 tips
+;; 7 tips
 ;; 7.1
 (setq ac-auto-start 4)
-
-;; 7.3 stop completion
-(define-key ac-completing-map (kbd "M-/") 'ac-stop)
-
-;; 7.4 finish completion by tab
-(define-key ac-completing-map "\t" 'ac-complete)
-(define-key ac-completing-map "\r" nil)
-
-;; 7.5 select candidates
-(define-key ac-menu-map (kbd "C-n") 'ac-next)
-(define-key ac-menu-map (kbd "C-p") 'ac-previous)
-
 ;; 7.6 not to use quick help
 (setq ac-use-quick-help nil)
 
 ;; 7.7. Change a height of completion menu
-;(setq ac-menu-height 20)
+;;(setq ac-menu-height 20)
 
 ;; 7.8  Enable auto-complete-mode automatically for specific modes
-;(setq ac-modes (append '(prog-mode) ac-modes))
+;;(setq ac-modes (append '(prog-mode) ac-modes))
 
 ;; 7.9 Ignore case
 (setq ac-ignore-case 'smart)
 
-;; 7.16 Show a lastly completed candidate help
+(ac-set-trigger-key "TAB")
+(global-set-key (kbd "C-i") 'auto-expand)
+(global-set-key (kbd "C-m") 'auto-complete)
+(define-key ac-completing-map (kbd "M-/") 'ac-stop)
+
+(define-key ac-menu-map (kbd "C-n") 'ac-next)
+(define-key ac-menu-map (kbd "C-p") 'ac-previous)
 (define-key ac-mode-map (kbd "C-c h") 'ac-last-quick-help)
 (define-key ac-mode-map (kbd "C-c H") 'ac-last-help)
 

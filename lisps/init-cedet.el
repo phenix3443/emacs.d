@@ -1,4 +1,4 @@
-; Time-stamp: <2014-08-14 23:57:25 phenix>
+;;; Time-stamp: <2014-08-14 23:57:25 phenix>
 (require-package 'cedet)
 
 (require 'cedet)
@@ -6,25 +6,25 @@
 (require 'cedet-global)
 (require 'cedet-idutils)
 
-; global support
+;; global support
 (setq cedet-global-command "gtags")
 
-; ede
-;(setq ede-local-setup-options '(ede-local-global 
-;								ede-local-base))
-;(add-hook 'prog-mode-hook 'global-ede-mode)
-		 
-; semantic configures
+;; ede
+;;(setq ede-local-setup-options '(ede-local-global 
+;;								ede-local-base))
+;;(add-hook 'prog-mode-hook 'global-ede-mode)
+
+;; semantic configures
 (require 'semantic)
 (setq semantic-default-submodes '(global-semanticdb-minor-mode
 								  global-semantic-decoration-mode
-								  ;global-semantic-highlight-func-mode
+								  ;;global-semantic-highlight-func-mode
 								  global-semantic-idle-local-symbol-highlight-mode
 								  global-semantic-idle-scheduler-mode
                                   global-semantic-idle-summary-mode
 								  global-semantic-idle-completions-mode
-								  ;global-semantic-mru-bookmark-mode
-								  ;global-semantic-stickyfunc-mode
+								  ;;global-semantic-mru-bookmark-mode
+								  ;;global-semantic-stickyfunc-mode
                                   ))
 
 
@@ -50,9 +50,9 @@
 (semantic-mode 1)
 
 
-; srecode
-;(add-hook 'prog-mode-hook '(lambda()
-;							 (global-srecode-minor-mode 1)))
+;; srecode
+;;(add-hook 'prog-mode-hook '(lambda()
+;;							 (global-srecode-minor-mode 1)))
 
 
 (provide 'init-cedet)
