@@ -6,9 +6,6 @@
 ;; 14.13 interactive highlight
 ;(global-highlight-changes-mode 1)
 (global-hi-lock-mode 1)
-(require-package 'auto-highlight-symbol)
-(require 'auto-highlight-symbol)
-(global-auto-highlight-symbol-mode t)
 
 ;; 14.18 optional mode line features
 (global-linum-mode t)

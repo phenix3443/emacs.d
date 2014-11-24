@@ -39,22 +39,21 @@
 	 (global-set-key (kbd "C-c p S-f") 'helm-projectile-find-file-in-known-projects)
 	 (global-set-key (kbd "C-c p f") 'helm-projectile-find-file)
 	 (global-set-key (kbd "C-c p l") 'projectile-find-file-in-directory)
-	 (global-set-key (kbd "C-c p g") 'projectile-find-file-dwim)
+	 (global-set-key (kbd "C-c p M-f") 'projectile-find-file-dwim)
 	 (global-set-key (kbd "C-c p a") 'helm-projectile-find-other-file)
 	 (global-set-key (kbd "C-c p e") 'helm-projectile-recentf)
 	 (global-set-key (kbd "C-c p z") 'projectile-cache-current-file)
-	 (global-set-key (kbd "C-c p ESC") 'projectile-project-buffers-other-buffer)
+	 (global-set-key (kbd "C-c p o") 'projectile-project-buffers-other-buffer)
+
 	 ;;tags
-	 (global-set-key (kbd "C-c p S-r") 'helm-gtags-create-tags)
-	 (global-set-key (kbd "C-c p j") 'helm-gtags-find-tag)
-	 (global-set-key (kbd "C-c p S-j") 'helm-gtags-find-rtags)
-	 (global-set-key (kbd "C-c p .") 'helm-gtags-dwim)
-	 (global-set-key (kbd "C-c p I") 'helm-semantic-or-imenu)
+	 ;; some are defined in init-helm-gtags.el
+	 (global-set-key (kbd "<f8>") 'helm-semantic-or-imenu)
 	 ;; symbol
 	 (global-set-key (kbd "C-c p s g") 'helm-projectile-grep)
 	 (global-set-key (kbd "C-c p s s") 'helm-projectile-ag)
 	 ;; file edit
 	 (global-set-key (kbd "C-c p r") 'projectile-replace)
+
 	 ;; compile
 	 (global-set-key (kbd "C-c p c") 'projectile-compile-project)
 	 (global-set-key (kbd "C-c p !") 'projectile-run-shell-command-in-root)

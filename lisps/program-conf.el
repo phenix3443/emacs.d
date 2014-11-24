@@ -21,7 +21,12 @@
 (require 'init-cedet)
 (require 'init-projectile)
 
-; C mode
+;; 高亮/替换同名变量
+(require-package 'auto-highlight-symbol)
+(require 'auto-highlight-symbol)
+(global-auto-highlight-symbol-mode t)
+(global-set-key (kbd "C-c p h") 'ahs-edit-mode)
+;; C mode
 (add-hook 'c-mode-hook
 		  '(lambda()
 			 (c-set-style "linux")

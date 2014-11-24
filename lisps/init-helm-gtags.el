@@ -17,15 +17,16 @@
 ;; key bindings
 (eval-after-load "helm-gtags"
   '(progn
-	 ;(define-key helm-gtags-mode-map (kbd "M-c") 'helm-gtags-create-tags)
-     (define-key helm-gtags-mode-map (kbd "M-t") 'helm-gtags-find-tag)
-     (define-key helm-gtags-mode-map (kbd "M-r") 'helm-gtags-find-rtag)
-     (define-key helm-gtags-mode-map (kbd "M-s") 'helm-gtags-find-symbol)
-     (define-key helm-gtags-mode-map (kbd "M-g M-p") 'helm-gtags-parse-file)
-     (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
-     (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
-     (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
- 	 (define-key helm-gtags-mode-map (kbd "M-.") 'helm-gtags-dwim)))
+	 (global-set-key (kbd "C-c p g c") 'helm-gtags-create-tags)
+	 (global-set-key (kbd "C-c p g t") 'helm-gtags-find-tag)
+	 (global-set-key (kbd "C-c p g r") 'helm-gtags-find-rtags)
+	 (global-set-key (kbd "C-c p g .") 'helm-gtags-dwim)
+     (global-set-key (kbd "C-c p g s") 'helm-gtags-find-symbol)
+     (global-set-key (kbd "C-c p g f") 'helm-gtags-parse-file)
+     (global-set-key (kbd "C-c p g p") 'helm-gtags-previous-history)
+     (global-set-key (kbd "C-c p g n") 'helm-gtags-next-history)
+     (global-set-key (kbd "C-c p g M-,") 'helm-gtags-pop-stack)
+ 	 (global-set-key (kbd "C-c p g M-.") 'helm-gtags-dwim)))
 
 (provide 'init-helm-gtags)
 
