@@ -15,12 +15,12 @@
 ;; 27.5 Finding Syntax Error on The Fly
 (require 'init-flycheck)
 
-;; 28 tags
-(require 'init-helm-gtags)
-
 ;; project support
 (require 'init-cedet)
 (require 'init-projectile)
+
+;; 28 tags
+(require 'init-helm-gtags)
 
 ;; 高亮/替换同名变量
 (require-package 'auto-highlight-symbol)

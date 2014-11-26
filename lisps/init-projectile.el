@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-08-14 22:07:02 chengxu70>
+;;; Time-stamp: <2014-08-14 22:07:02 chengxu70>
 (require-package 'projectile)
 
 (require 'projectile)
@@ -39,7 +39,7 @@
 	 (global-set-key (kbd "C-c p S-f") 'helm-projectile-find-file-in-known-projects)
 	 (global-set-key (kbd "C-c p f") 'helm-projectile-find-file)
 	 (global-set-key (kbd "C-c p l") 'projectile-find-file-in-directory)
-	 (global-set-key (kbd "C-c p M-f") 'projectile-find-file-dwim)
+	 (global-set-key (kbd "C-c p M-f") 'helm-projectile-find-file-dwim)
 	 (global-set-key (kbd "C-c p a") 'helm-projectile-find-other-file)
 	 (global-set-key (kbd "C-c p e") 'helm-projectile-recentf)
 	 (global-set-key (kbd "C-c p z") 'projectile-cache-current-file)
