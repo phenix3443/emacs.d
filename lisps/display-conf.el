@@ -1,10 +1,10 @@
-; Time-stamp: <2014-08-11 00:31:30 phenix>
+;;; Time-stamp: <2014-08-11 00:31:30 phenix>
 
-;(set-face-attribute 'linum nil :height 100)
+;;(set-face-attribute 'linum nil :height 100)
 ;; 14.12 Font Lock mode
 (add-hook 'prog-mode-hook 'font-lock-mode)
 ;; 14.13 interactive highlight
-;(global-highlight-changes-mode 1)
+;;(global-highlight-changes-mode 1)
 (global-hi-lock-mode 1)
 
 ;; 14.18 optional mode line features
@@ -16,10 +16,10 @@
 
 
 ;; If not on AC power line, then display battery status on the mode line
-;(and (require 'battery nil t)
-;     (functionp battery-status-function)
-;     (or (equal (cdr (assoc ?L (funcall battery-status-function))) "on-line")
-;		  (display-battery-mode)))
+;;(and (require 'battery nil t)
+;;     (functionp battery-status-function)
+;;     (or (equal (cdr (assoc ?L (funcall battery-status-function))) "on-line")
+;;		  (display-battery-mode)))
 
 ;; 14.20 Curssor Display
 (global-hl-line-mode t)
