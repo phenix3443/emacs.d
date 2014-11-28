@@ -1,6 +1,5 @@
-
-; Time-stamp: <2014-08-27 10:11:18 chengxu70>
-; required by text-conf.el, from org manual(http://orgmode.org/org.html)
+;;; Time-stamp: <2014-08-27 10:11:18 chengxu70>
+;;; required by text-conf.el, from org manual(http://orgmode.org/org.html)
 
 (require-package 'cdlatex)
 (require-package 'htmlize)
@@ -15,18 +14,18 @@
 (global-set-key "\C-cb" 'org-iswitchb)
 (add-hook 'org-mode-hook 'turn-on-org-cdlatex)
 
-;3 Tables
+;;3 Tables
 (setq org-ascii-table-keep-all-vertical-lines t)
-;3.2 Column width and alignment
+;;3.2 Column width and alignment
 (setq org-startup-align-all-tables t)
 
-;12 Exporting
+;;12 Exporting
 ;;12.6 HTML export
-;;;12.6.2 HTML doctypes
+;;12.6.2 HTML doctypes
 (setq org-html-doctype "html4-transitional")
-;;;12.6.6 Tables
+;;12.6.6 Tables
 (setq org-html-table-default-attributes '(:border "1" :cellspacing "0" :cellpadding "6" :rules "groups" :frame "box"))
-;14 Working with source code
+;;14 Working with source code
 ;;14.2 Editing source code
 (setq org-src-lang-modes 
 	  '(("asymptote" . asy)
@@ -46,7 +45,7 @@
 (setq org-src-window-setup 'reorganize-frame)
 (setq org-src-ask-before-returning-to-edit-buffer nil)
 
-(setq org-edit-src-block-indentation )
+(setq org-edit-src-block-indentation 2)
 (setq org-edit-src-content-indentation 2)
 (setq org-src-preserve-indentation nil)
 
