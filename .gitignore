@@ -15,7 +15,7 @@ themes/*/
 *.cache
 *.tut
 *.el#
-ac-comphist.dat
+*.dat
 eshell/
 semanticdb/
 GPATH
