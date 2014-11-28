@@ -1,6 +1,6 @@
-;; Time-stamp: <2014-08-27 09:52:21 chengxu70>
-;; required by program-conf.el
-;; default from auto-complete manual
+;;; Time-stamp: <2014-08-27 09:52:21 chengxu70>
+;;; required by program-conf.el
+;;; default from auto-complete manual
 (require-package 'auto-complete)
 
 ;; 3.2 install script
@@ -100,4 +100,3 @@
 (define-key ac-mode-map (kbd "C-c H") 'ac-last-help)
 
 (provide 'init-auto-complete)
-

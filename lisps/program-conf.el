@@ -1,32 +1,33 @@
-;; Time-stamp: <2014-08-14 01:17:52 phenix>
+;;;Time-stamp: <2014-08-14 01:17:52 phenix>
 
-;; 26.1 major mode for programming languages
+;;26.1 major mode for programming languages
 
-;; 26.4.3 matching parentheses
+;;26.4.3 matching parentheses
 (show-paren-mode t)
 (electric-pair-mode t)
 
-;; 26.8 Completion for symbol names
+;;26.8 Completion for symbol names
 (require 'init-yasnippet)
-;; auto-complete configure
+;;auto-complete configure
 ;;(require 'init-popwin)
 ;;(require 'init-company)
 (require 'init-auto-complete)
-;; 27.5 Finding Syntax Error on The Fly
+;;27.5 Finding Syntax Error on The Fly
 (require 'init-flycheck)
 
-;; project support
+;;project support
 (require 'init-cedet)
 (require 'init-projectile)
 
-;; 28 tags
+;;28 tags
 (require 'init-helm-gtags)
 
-;; 高亮/替换同名变量
+;;高亮/替换同名变量
 (require-package 'auto-highlight-symbol)
 (require 'auto-highlight-symbol)
 (global-auto-highlight-symbol-mode t)
-(global-set-key (kbd "C-c p h") 'ahs-edit-mode)
+
+
 ;; C mode
 (add-hook 'c-mode-hook
 		  '(lambda()

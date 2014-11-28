@@ -1,4 +1,4 @@
-;;; Time-stamp: <2014-08-14 23:57:25 phenix>
+;;;Time-stamp: <2014-08-14 23:57:25 phenix>
 (require-package 'cedet)
 
 (require 'cedet)
@@ -41,7 +41,6 @@
 		  (semantic-add-system-include dir 'c++-mode))
 		include-dirs))
 
-
 (when (cedet-gnu-global-version-check t)
   (semanticdb-enable-gnu-global-databases 'c-mode t)
   (semanticdb-enable-gnu-global-databases 'c++-mode t)
@@ -54,6 +53,4 @@
 ;;(add-hook 'prog-mode-hook '(lambda()
 ;;							 (global-srecode-minor-mode 1)))
 
-
 (provide 'init-cedet)
-
