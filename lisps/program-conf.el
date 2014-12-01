@@ -48,8 +48,6 @@
 (setq lua-indent-level 4)
 
 ;; python mode
-(require-package 'virtualenv)
-
 (require-package 'jedi)
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
