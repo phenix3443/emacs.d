@@ -90,6 +90,7 @@
 
 ;; key binding
 (ac-set-trigger-key "TAB")
+(ac-set-trigger-key "<tab>")
 ;(global-set-key (kbd "C-i") 'auto-expand)
 ;(global-set-key (kbd "C-m") 'auto-complete)
 (define-key ac-completing-map (kbd "M-/") 'ac-stop)
