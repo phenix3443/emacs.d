@@ -20,6 +20,8 @@
 (setq org-startup-align-all-tables t)
 
 ;;12 Exporting
+;;12.3 Export setting
+(setq org-export-with-section-numbers 3)
 ;;12.6 HTML export
 ;;12.6.2 HTML doctypes
 (setq org-html-doctype "html4-transitional")
@@ -55,4 +57,8 @@
 (setq org-list-indent-offset 2)
 (setq org-src-fontify-natively t)
 
+(add-hook 'org-mode-hook '(lambda()
+							(set-face-attribute 'org-level-1 nil :height 1.6 :bold t)
+							(set-face-attribute 'org-level-2 nil :height 1.4 :bold t)
+							(set-face-attribute 'org-level-3 nil :height 1.2 :bold t)))
 (provide 'init-org)

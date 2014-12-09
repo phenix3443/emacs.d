@@ -1,5 +1,5 @@
-; Time-stamp: <2014-08-27 10:15:34 chengxu70>
-;
+;;;Time-stamp: <2014-08-27 10:15:34 chengxu70>
+
 ;; 21.8 Fonts
 (require 'cl) 
 (defun font-candidate (&rest fonts)
@@ -8,17 +8,17 @@
 
 (let ((en-font (font-candidate "DejaVu Sans Mono-14" "Consolas-14")) 
       (zh-font (font-candidate "Microsoft Yahei-14" "文泉驿微米黑 14")))
-  ; set en-font
+  ;;set en-font
   (setq default-frame-alist 
 		(list '(alpha 100 50)
 			  (cons 'font en-font)))
-  ; set zh-font
+  ;; set zh-font
   (dolist (charset '(kana han symbol cjk-misc bopomofo))
 	(set-fontset-font "fontset-default" charset zh-font)))
 
-;(setq window-system-default-frame-alist '() )
+;;(setq window-system-default-frame-alist '() )
 
-; trasparent transparency of emacs
+;;trasparent transparency of emacs
 (defun transparency (value)
   "Sets the transparency of the frame window. 0=transparent/100=opaque"
   (interactive "Transparency Value 0 - 100 opaque:")
@@ -41,7 +41,7 @@
 ;; 21.20 Text-Only Mouse
 
 
-; (elisp)29.5 Frame Title
+;;29.5 Frame Title
 (setq frame-title-format '("%*" " " "%f"))
 
 (provide 'frames-conf)
