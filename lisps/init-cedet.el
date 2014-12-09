@@ -1,4 +1,5 @@
 ;;;Time-stamp: <2014-08-14 23:57:25 phenix>
+
 (require-package 'cedet)
 
 (require 'cedet)
@@ -28,7 +29,7 @@
                                   ))
 
 
-(defvar user-include-dirs (list ".." "../include" "../../include" "../../../include" "../../../../include"))
+(defvar user-include-dirs (list "." "./include" ".." "../include" "../../include" "../../../include" "../../../../include"))
 (defvar win-include-dirs (list "C:/MinGW/include" "C:/Program Files (x86)/Microsoft Visual Studio 11.0/VC/include"))
 (require 'semantic/bovine/c)
 (let ((include-dirs user-include-dirs))
