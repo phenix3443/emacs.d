@@ -17,6 +17,13 @@
 
 ;; semantic configures
 (require 'semantic)
+(require 'semantic/ia)
+;;(require 'semantic-gcc-get-include-paths)
+;;(require 'semantic/bovine/gcc)
+(require 'semanticdb)
+(require 'semanticdb-global-mode)
+(semanticdb-enable-gnu-global-databases 'c-mode)
+(semanticdb-enable-gnu-global-databases 'c++-mode)
 (setq semantic-default-submodes '(global-semanticdb-minor-mode
 								  global-semantic-decoration-mode
 								  ;;global-semantic-highlight-func-mode
