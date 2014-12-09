@@ -1,8 +1,8 @@
-; Time-stamp: <2014-08-27 09:57:06 chengxu70>
-;; 该文件内容由于初始化顺序的原因只能放在init.el中
+;;;Time-stamp: <2014-08-27 09:57:06 chengxu70>
+;;;该文件内容由于初始化顺序的原因只能放在init.el中
 
-; 方便调试
-;(setq debug-on-error t)
+;; 方便调试
+;;(setq debug-on-error t)
 
 (setq default-directory "~/.emacs.d/")
 
@@ -22,28 +22,29 @@
       (is-windows-nt-os())
       (cygmin-os ()))
 
-;use proxy for internet
-;(setq url-proxy-services
-; '(("http" . "127.0.0.1:8087")
-;     ("https" . "127.0.0.1:8087")))
+;;use proxy for internet
+;;(setq url-proxy-services
+;;	  '(
+		;;("http" . "127.0.0.1:8087")
+;;		("https" . "127.0.0.1:8087")))
 
-;加载配置文件，按照 Emacs Manual 章节顺序 
+;;加载配置文件，按照 Emacs Manual 章节顺序 
 (defun load-package-init-files()
   "load most packages init files"
   (let ((default-directory "~/.emacs.d/lisps"))
 	(normal-top-level-add-to-load-path '("."))
 	(normal-top-level-add-subdirs-to-load-path))
   (require 'misc-conf)
-  (require 'packages-conf) ;47
+  (require 'packages-conf) ;;47
   (require 'init-auto-compile)
-  (require 'minibuffer-conf) ; 8
-  (require 'killing-conf) ; 12
-  (require 'display-conf) ; 14
-  (require 'files-conf) ; 18
-  (require 'frames-conf) ; 21
-  (require 'indentation-conf) ; 24
-  (require 'text-conf) ; 25
-  (require 'program-conf) ; 26
-  (require 'customization-conf) ; 48
+  (require 'minibuffer-conf) ;; 8
+  (require 'killing-conf) ;; 12
+  (require 'display-conf) ;; 14
+  (require 'files-conf) ;; 18
+  (require 'frames-conf) ;; 21
+  (require 'indentation-conf) ;; 24
+  (require 'text-conf) ;; 25
+  (require 'program-conf) ;; 26
+  (require 'customization-conf) ;; 48
   )
 (add-hook 'after-init-hook 'load-package-init-files)

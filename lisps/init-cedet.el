@@ -11,8 +11,8 @@
 (setq cedet-global-command "global")
 
 ;; ede
-;;(setq ede-local-setup-options '(ede-local-global 
-;;								ede-local-base))
+(setq ede-locate-setup-options '(ede-locate-global 
+								ede-locate-base))
 ;;(add-hook 'prog-mode-hook 'global-ede-mode)
 
 ;; semantic configures
@@ -20,10 +20,7 @@
 (require 'semantic/ia)
 ;;(require 'semantic-gcc-get-include-paths)
 ;;(require 'semantic/bovine/gcc)
-(require 'semanticdb)
-(require 'semanticdb-global-mode)
-(semanticdb-enable-gnu-global-databases 'c-mode)
-(semanticdb-enable-gnu-global-databases 'c++-mode)
+(require 'semantic/db)
 
 (setq semantic-default-submodes '(global-semanticdb-minor-mode
 								  global-semantic-decoration-mode
@@ -35,7 +32,6 @@
 								  ;;global-semantic-mru-bookmark-mode
 								  ;;global-semantic-stickyfunc-mode
                                   ))
-
 
 (defvar user-include-dirs (list "." "./include" ".." "../include" "../../include" "../../../include" "../../../../include"))
 (defvar win-include-dirs (list "C:/MinGW/include" "C:/Program Files (x86)/Microsoft Visual Studio 11.0/VC/include"))
