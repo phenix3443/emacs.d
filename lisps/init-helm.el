@@ -1,12 +1,12 @@
-; Time-stamp: <2014-08-27 09:39:37 chengxu70>
-; configure defult from helm wiki
+;;; Time-stamp: <2014-08-27 09:39:37 chengxu70>
+;;; configure defult from helm wiki
 
 (require-package 'helm)
 
 (require 'helm)
-;; must set before helm-config,  otherwise helm use default
-;; prefix "C-x c", which is inconvenient because you can
-;; accidentially pressed "C-x C-c"
+;;; must set before helm-config,  otherwise helm use default
+;;; prefix "C-x c", which is inconvenient because you can
+;;; accidentially pressed "C-x C-c"
 (setq helm-command-prefix-key "C-c h")
 
 (require 'helm-config)
@@ -36,10 +36,10 @@
 	  projectile-enable-caching t
 	  )
 
-; Save current position to mark ring when jumping to a different place
+;;Save current position to mark ring when jumping to a different place
 (add-hook 'helm-goto-line-before-hook 'helm-save-current-pos-to-mark-ring)
 
-; key bindings
+;;key bindings
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-x b") 'helm-mini)
