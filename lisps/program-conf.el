@@ -5,7 +5,22 @@
 ;;26.4.3 matching parentheses
 (show-paren-mode t)
 (electric-pair-mode t)
-
+;;26.5.2 Multiple Lines of Comments
+(defun comment-dwin-line()
+  (interactive)
+  (let ((start (line-beginning-position))
+		(end (line-end-position)))
+	(when (region-active-p)
+	  (setq start (save-excursion
+					(goto-char (region-beginning))
+					(beginning-of-line)
+					(point))
+			end (save-excursion
+				  (goto-char (region-end))
+				  (end-of-line)
+				  (point))))
+	(comment-or-uncomment-region start end)))
+(global-set-key (kbd "C-;") 'comment-dwin-line)
 ;;26.8 Completion for symbol names
 (require 'init-yasnippet)
 ;;auto-complete configure

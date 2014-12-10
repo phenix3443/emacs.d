@@ -1,0 +1,5 @@
+-projectile-cache
+-projectile-bookmarks.eld
+-*.elc
+-*~
+-*.dat
