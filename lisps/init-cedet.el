@@ -34,7 +34,7 @@
                                   ))
 
 (defvar user-include-dirs (list "." "./include" ".." "../include" "../../include" "../../../include" "../../../../include"))
-(defvar win-include-dirs (list "C:/MinGW/include" "C:/Program Files (x86)/Microsoft Visual Studio 11.0/VC/include"))
+(defvar win-include-dirs (list "C:/MinGW/include" "C:/msys64/usr/include" "C:/Program Files (x86)/Microsoft Visual Studio 11.0/VC/include"))
 (require 'semantic/bovine/c)
 (let ((include-dirs user-include-dirs))
   (when (eq system-type 'window-nt)
