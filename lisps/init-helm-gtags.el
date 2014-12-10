@@ -11,7 +11,7 @@
  '(helm-gtags-auto-update t)
  '(helm-gtags-use-input-at-cursor t)
  '(helm-gtags-pulse-at-cursor t)
- '(helm-gtags-prefix-key "C-c g")
+ '(helm-gtags-prefix-key (kbd "C-c g"))
  '(helm-gtags-suggested-key-mapping t))
 
 ;; key bindings
@@ -30,7 +30,6 @@
 	(define-key helm-gtags-mode-map (kbd "M-.") 'helm-gtags-dwim)
     ;; common
     (define-key helm-gtags-mode-map "\e*" 'helm-gtags-pop-stack)
-    (define-key helm-gtags-mode-map "\e." 'helm-gtags-find-tag)
     (define-key helm-gtags-mode-map "\C-x4." 'helm-gtags-find-tag-other-window))))
 (require 'helm-gtags)
 
