@@ -4,26 +4,25 @@
 (require 'projectile)
 (projectile-global-mode)
 
-(eval-after-load "projectile"
-  '(progn
-	 (require 'helm-projectile)
-	 (helm-projectile-on)
+(require-package 'helm-projectile)
+(require 'helm-projectile)
+(helm-projectile-on)
 
-	 ;; indexing
-	 ;;(setq projectile-indexing-method 'alien)
-	 ;; caching
-	 (setq projectile-enable-caching t)
-	 ;; switching projects
-	 (setq projectile-remember-window-configs t)
-	 (setq projectile-switch-project-action 'helm-projectile-find-file)
-	 ;; completion
-	 (setq projectile-completion-system 'helm)
+;; indexing
+;;(setq projectile-indexing-method 'alien)
+;; caching
+(setq projectile-enable-caching t)
+;; switching projects
+(setq projectile-remember-window-configs t)
+(setq projectile-switch-project-action 'helm-projectile-find-file)
+;; completion
+(setq projectile-completion-system 'helm)
 
+;;perspective
+;;(require-package 'perspective)
+;;(require 'persp-projectile)
 
-	 ;;perspective
-	 ;;(require-package 'perspective)
-	 ;;(require 'persp-projectile)
-
-	 (global-set-key (kbd "<f8>") 'helm-semantic-or-imenu)))
+(global-set-key (kbd "<f8>") 'helm-semantic-or-imenu)
+	 
 
 (provide 'init-projectile)
