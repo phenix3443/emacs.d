@@ -1,5 +1,7 @@
 ;;; Time-stamp: <2014-08-11 00:31:30 phenix>
 
+;;14.3 Automatic Scrolling
+(setq scroll-conservatively 10000)
 ;;(set-face-attribute 'linum nil :height 100)
 ;; 14.12 Font Lock mode
 (add-hook 'prog-mode-hook 'font-lock-mode)
