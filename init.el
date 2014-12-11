@@ -24,7 +24,7 @@
 		  (setenv "GTAGSCONF" "~/win_apps/glo633wb/share/gtags/gtags.conf")
 		  (setenv "GTAGSLABEL" "pygments")
 		  (setq exec-path (list (concat (getenv "emacs_dir") "/bin/")
-								"C:/Windows/system32/WindowsPowerShell/v1.0"
+								"~/.emacs.d/win_apps/glo633wb/bin/"
 								))))
       (cygmin-os ()))
 
