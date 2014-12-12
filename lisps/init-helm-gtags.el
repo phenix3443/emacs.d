@@ -16,21 +16,23 @@
 
 ;; key bindings
 (eval-after-load "helm-gtags"
-'(progn
-  (let ((prefix helm-gtags-prefix-key))
-    (define-key helm-gtags-mode-map (concat prefix "h") 'helm-gtags-display-browser)
-    (define-key helm-gtags-mode-map "\C-]" 'helm-gtags-find-tag-from-here)
-    (define-key helm-gtags-mode-map "\C-t" 'helm-gtags-pop-stack)
-    (define-key helm-gtags-mode-map (concat prefix "P") 'helm-gtags-find-files)
-    (define-key helm-gtags-mode-map (concat prefix "f") 'helm-gtags-parse-file)
-    (define-key helm-gtags-mode-map (concat prefix "g") 'helm-gtags-find-pattern)
-    (define-key helm-gtags-mode-map (concat prefix "s") 'helm-gtags-find-symbol)
-    (define-key helm-gtags-mode-map (concat prefix "r") 'helm-gtags-find-rtag)
-    (define-key helm-gtags-mode-map (concat prefix "d") 'helm-gtags-find-tag)
-	(define-key helm-gtags-mode-map (kbd "M-.") 'helm-gtags-dwim)
-    ;; common
-    (define-key helm-gtags-mode-map "\e*" 'helm-gtags-pop-stack)
-    (define-key helm-gtags-mode-map "\C-x4." 'helm-gtags-find-tag-other-window))))
+  '(progn
+	 (let ((prefix helm-gtags-prefix-key))
+	   (define-key helm-gtags-mode-map (concat prefix "c") 'helm-gtags-create-tags)
+	   (define-key helm-gtags-mode-map (concat prefix "u") 'helm-gtags-update-tags)
+	   (define-key helm-gtags-mode-map (concat prefix "h") 'helm-gtags-display-browser)
+	   (define-key helm-gtags-mode-map "\C-]" 'helm-gtags-find-tag-from-here)
+	   (define-key helm-gtags-mode-map "\C-t" 'helm-gtags-pop-stack)
+	   (define-key helm-gtags-mode-map (concat prefix "P") 'helm-gtags-find-files)
+	   (define-key helm-gtags-mode-map (concat prefix "f") 'helm-gtags-parse-file)
+	   (define-key helm-gtags-mode-map (concat prefix "g") 'helm-gtags-find-pattern)
+	   (define-key helm-gtags-mode-map (concat prefix "s") 'helm-gtags-find-symbol)
+	   (define-key helm-gtags-mode-map (concat prefix "r") 'helm-gtags-find-rtag)
+	   (define-key helm-gtags-mode-map (concat prefix "d") 'helm-gtags-find-tag)
+	   (define-key helm-gtags-mode-map (kbd "M-.") 'helm-gtags-dwim)
+	   ;; common
+	   (define-key helm-gtags-mode-map "\e*" 'helm-gtags-pop-stack)
+	   (define-key helm-gtags-mode-map "\C-x4." 'helm-gtags-find-tag-other-window))))
 (require 'helm-gtags)
 
 
