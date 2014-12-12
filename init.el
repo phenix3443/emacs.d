@@ -25,7 +25,8 @@
 		  (setenv "GTAGSLABEL" "pygments")
 		  (setq exec-path (list (concat (getenv "emacs_dir") "/bin/")
 								"~/.emacs.d/win_apps/glo633wb/bin/"
-								"~/.emacs.d/win_apps/lua-5.2.3_Win32_bin/"))))
+								"~/.emacs.d/win_apps/lua-5.2.3_Win32_bin/"
+								(getenv "path")))))
       (cygmin-os ()))
 
 ;;use proxy for internet
