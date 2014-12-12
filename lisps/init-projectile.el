@@ -11,7 +11,8 @@
 ;; indexing
 ;;(setq projectile-indexing-method 'alien)
 ;; caching
-(setq projectile-enable-caching t)
+(when (equal system-type 'windows-nt)
+  (setq projectile-enable-caching t))
 ;; switching projects
 (setq projectile-remember-window-configs t)
 (setq projectile-switch-project-action 'helm-projectile-find-file)
