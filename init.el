@@ -42,16 +42,17 @@
 	(normal-top-level-add-to-load-path '("."))
 	(normal-top-level-add-subdirs-to-load-path))
   (require 'misc-conf)
-  (require 'packages-conf) ;;47
-  (require 'init-auto-compile)
-  (require 'minibuffer-conf) ;; 8
-  (require 'killing-conf) ;; 12
-  (require 'display-conf) ;; 14
-  (require 'files-conf) ;; 18
-  (require 'frames-conf) ;; 21
-  (require 'indentation-conf) ;; 24
-  (require 'text-conf) ;; 25
-  (require 'program-conf) ;; 26
-  (require 'customization-conf) ;; 48
+  (require 'packages-conf)				;47
+  (require 'minibuffer-conf)			;8
+  (require 'killing-conf)				;12
+  (require 'display-conf)				;14
+  (require 'files-conf)					;18
+  (require 'frames-conf)				;21
+  (require 'indentation-conf)			;24
+  (require 'text-conf)					;25
+  (require 'program-conf)				;26
+  (require 'compile-test-conf)			;27
+  (require 'vc-conf)					;28
+  (require 'customization-conf)			;48
   )
 (add-hook 'after-init-hook 'load-package-init-files)
