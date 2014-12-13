@@ -5,5 +5,6 @@
 			 (setq tab-width 4)))
 ;;24.4 convenience feature for indentation
 (setq tab-always-indent 'complete)
+(electric-indent-mode t)
 (provide 'indentation-conf)
 
