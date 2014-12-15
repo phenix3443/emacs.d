@@ -20,10 +20,8 @@
 (setq projectile-completion-system 'helm)
 
 ;;perspective
-;;(require-package 'perspective)
-;;(require 'persp-projectile)
-
-(global-set-key (kbd "<f8>") 'helm-semantic-or-imenu)
-	 
+(require-package 'perspective)
+(persp-mode)
+(require 'persp-projectile)
 
 (provide 'init-projectile)
