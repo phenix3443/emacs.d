@@ -14,20 +14,15 @@
 (defconst is-windows-nt-os (equal system-type 'windows-nt) "native win32 application")
 (defconst is-cygwin-os (equal system-type 'cygwin) "cygwin")
 
-(cond (is-gnu-os ())
-      (is-gnu-linux-os ())
-      (is-gnu-kfreebsd-os ())
-      (is-darwin-os())
-      (is-ms-dos-os ())
-      (is-windows-nt-os
-	   '(progn
-		  (setenv "GTAGSCONF" "~/win_apps/glo633wb/share/gtags/gtags.conf")
-		  (setenv "GTAGSLABEL" "pygments")
-		  (setq exec-path (list (concat (getenv "emacs_dir") "/bin/")
-								"~/.emacs.d/win_apps/glo633wb/bin/"
-								"~/.emacs.d/win_apps/lua-5.2.3_Win32_bin/"
-								(getenv "path")))))
-      (cygmin-os ()))
+(when (equal system-type 'windows-nt)
+	 (setenv "GTAGSCONF" "~/win_apps/glo633wb/share/gtags/gtags.conf")
+	 (setenv "GTAGSLABEL" "pygments")
+	 (add-to-list 'exec-path (list
+				  ;;(concat (getenv "emacs_dir") "/bin/")
+				  "~/.emacs.d/win_apps/"
+				  "~/.emacs.d/win_apps/glo633wb/bin/"
+				  "~/.emacs.d/win_apps/lua-5.2.3_Win32_bin/")))
+
 
 ;;use proxy for internet
 ;;(setq url-proxy-services
