@@ -42,6 +42,7 @@
   (require 'killing-conf)				;12
   (require 'display-conf)				;14
   (require 'files-conf)					;18
+  (require 'window-conf)				;20
   (require 'frames-conf)				;21
   (require 'indentation-conf)			;24
   (require 'text-conf)					;25
