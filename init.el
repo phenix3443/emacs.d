@@ -15,20 +15,20 @@
 (defconst is-cygwin-os (equal system-type 'cygwin) "cygwin")
 
 (when (equal system-type 'windows-nt)
-	 (setenv "GTAGSCONF" "~/win_apps/glo633wb/share/gtags/gtags.conf")
+	 (setenv "GTAGSCONF" (concat (getenv "HOME") "\\.emacs.d\\win_apps\\glo633wb\\share\\gtags\\gtags.conf"))
 	 (setenv "GTAGSLABEL" "pygments")
 	 (add-to-list 'exec-path (list
-				  ;;(concat (getenv "emacs_dir") "/bin/")
-				  "~/.emacs.d/win_apps/"
-				  "~/.emacs.d/win_apps/glo633wb/bin/"
-				  "~/.emacs.d/win_apps/lua-5.2.3_Win32_bin/")))
+							  ;;(concat (getenv "emacs_dir") "/bin/")
+							  ;; 设置exec-path要使用绝对路径
+							  (concat (getenv "HOME") "\\.emacs.d\\win_apps\\")
+							  (concat (getenv "HOME") "\\.emacs.d\\win_apps\\glo633wb\\bin\\")
+							  (concat (getenv "HOME") "\\.emacs.d\\win_apps\\lua-5.2.3_Win32_bin\\"))))
 
-
-;;use proxy for internet
-;;(setq url-proxy-services
-;;	  '(
-		;;("http" . "127.0.0.1:8087")
-;;		("https" . "127.0.0.1:8087")))
+;; use proxy for internet
+;; (setq url-proxy-services
+	  ;; '(
+		;; ("http" . "127.0.0.1:8087")
+		;; ("https" . "127.0.0.1:8087")))
 
 ;;加载配置文件，按照 Emacs Manual 章节顺序 
 (defun load-package-init-files()
