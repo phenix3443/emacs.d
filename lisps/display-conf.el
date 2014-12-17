@@ -1,4 +1,6 @@
-;;; Time-stamp: <2014-08-11 00:31:30 phenix>
+;;; package --- Summary
+
+;;; Commentary
 
 ;;14.3 Automatic Scrolling
 (setq scroll-conservatively 10000)
