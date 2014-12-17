@@ -22,6 +22,6 @@
 ;;perspective
 (require-package 'perspective)
 (persp-mode)
-(require 'persp-projectile)
+(require-package 'persp-projectile)
 
 (provide 'init-projectile)
