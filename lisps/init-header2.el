@@ -7,9 +7,9 @@
 ;; Created: 周四 十二月 18 16:03:28 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: (conf-package.el package.el)
-;; Last-Updated: 周四 十二月 18 16:11:11 2014 (+0800)
+;; Last-Updated: 周四 十二月 18 16:18:18 2014 (+0800)
 ;;           By: chengxu70
-;;     Update #: 2
+;;     Update #: 3
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -53,7 +53,7 @@
 (autoload 'auto-make-header "header2")
 (add-hook 'emacs-lisp-mode-hook 'auto-make-header)
 (add-hook 'c-mode-common-hook 'auto-make-header)
-
+(add-hook 'lua-mode-hook 'auto-make-header)
 (provide 'init-header2)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-header2.el ends here
