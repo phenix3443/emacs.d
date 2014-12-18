@@ -19,7 +19,7 @@
 	 (setenv "GTAGSLABEL" "pygments")
 	 (add-to-list 'exec-path (list
 							  ;;(concat (getenv "emacs_dir") "/bin/")
-							  ;; 设置exec-path要使用绝对路径
+							  ;; 设置exec-path要使用绝对路径，只在windows8上可用
 							  (concat (getenv "HOME") "\\.emacs.d\\win_apps\\")
 							  (concat (getenv "HOME") "\\.emacs.d\\win_apps\\glo633wb\\bin\\")
 							  (concat (getenv "HOME") "\\.emacs.d\\win_apps\\lua-5.2.3_Win32_bin\\"))))
