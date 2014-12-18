@@ -7,8 +7,8 @@
 ;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
-;; Last-Updated: 周四 十二月 18 20:59:29 2014 (+0800)
-;;           By: chengxu70
+;; Last-Updated: 周五 12月 19 02:05:24 2014 (+0800)
+;;           By: phenix
 ;;     Update #:
 ;; URL: 
 ;; Doc URL: 
@@ -56,15 +56,9 @@
 (defconst is-cygwin-os (equal system-type 'cygwin) "cygwin")
 
 (when (equal system-type 'windows-nt)
-	 (setenv "GTAGSCONF" (concat (getenv "HOME") "\\.emacs.d\\win_apps\\glo633wb\\share\\gtags\\gtags.conf"))
-	 (setenv "GTAGSLABEL" "pygments")
-	 ;; 在windows7 上设置 exec-path 不好使，直接更改PATH变量
-	 (setenv "PATH" (concat (getenv "PATH")
-							(concat ";" (getenv "HOME") "\\.emacs.d\\win_apps\\")
-							(concat ";" (getenv "HOME") "\\.emacs.d\\win_apps\\glo633wb\\bin\\")
-							(concat ";" (getenv "HOME") "\\.emacs.d\\win_apps\\lua-5.2.3_Win32_bin\\")
-							)))
-
+  ;; 不要在emacs里面改动 PATH 和 exec-path
+  (setenv "GTAGSCONF" (concat (getenv "HOME") "\\.emacs.d\\win_apps\\glo633wb\\share\\gtags\\gtags.conf"))
+  (setenv "GTAGSLABEL" "pygments"))
 
 ;; use proxy for internet
 ;; (setq url-proxy-services
