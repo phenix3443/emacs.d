@@ -17,12 +17,13 @@
 (when (equal system-type 'windows-nt)
 	 (setenv "GTAGSCONF" (concat (getenv "HOME") "\\.emacs.d\\win_apps\\glo633wb\\share\\gtags\\gtags.conf"))
 	 (setenv "GTAGSLABEL" "pygments")
-	 (add-to-list 'exec-path (list
-							  ;;(concat (getenv "emacs_dir") "/bin/")
-							  ;; 设置exec-path要使用绝对路径，只在windows8上可用
-							  (concat (getenv "HOME") "\\.emacs.d\\win_apps\\")
-							  (concat (getenv "HOME") "\\.emacs.d\\win_apps\\glo633wb\\bin\\")
-							  (concat (getenv "HOME") "\\.emacs.d\\win_apps\\lua-5.2.3_Win32_bin\\"))))
+	 ;; 在windows7 上设置 exec-path 不好使，直接更改PATH变量
+	 (setenv "PATH" (concat (getenv "PATH")
+							(concat ";" (getenv "HOME") "\\.emacs.d\\win_apps\\")
+							(concat ";" (getenv "HOME") "\\.emacs.d\\win_apps\\glo633wb\\bin\\")
+							(concat ";" (getenv "HOME") "\\.emacs.d\\win_apps\\lua-5.2.3_Win32_bin\\")
+							)))
+
 
 ;; use proxy for internet
 ;; (setq url-proxy-services
@@ -52,3 +53,5 @@
   (require 'customization-conf)			;48
   )
 (add-hook 'after-init-hook 'load-package-init-files)
+
+(setq default-directory "~/.emacs.d/")
