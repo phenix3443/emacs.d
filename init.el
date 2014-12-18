@@ -1,8 +1,49 @@
-;;;Time-stamp: <2014-08-27 09:57:06 chengxu70>
-;;;该文件内容由于初始化顺序的原因只能放在init.el中
-
-;; 方便调试
-;;(setq debug-on-error t)
+;;; init.el --- emacs init file
+;; 
+;; Filename: init.el
+;; Description: 
+;; Author: phenix3443
+;; Maintainer: 
+;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
+;; Version: 1.0
+;; Package-Requires: ()
+;; Last-Updated: 周四 十二月 18 16:08:21 2014 (+0800)
+;;           By: chengxu70
+;;     Update #: 1
+;; URL: 
+;; Doc URL: 
+;; Keywords: init
+;; Compatibility: 
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Commentary: 
+;; 
+;; 
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Change Log:
+;; 
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;; This program is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or (at
+;; your option) any later version.
+;; 
+;; This program is distributed in the hope that it will be useful, but
+;; WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; General Public License for more details.
+;; 
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Code:
 
 (setq default-directory "~/.emacs.d/")
 
@@ -31,12 +72,13 @@
 		;; ("http" . "127.0.0.1:8087")
 		;; ("https" . "127.0.0.1:8087")))
 
-;;加载配置文件，按照 Emacs Manual 章节顺序 
+;;加载配置文件，按照 https://www.gnu.org/software/emacs/manual/ 出现顺序
 (defun load-package-init-files()
   "load most packages init files"
   (let ((default-directory "~/.emacs.d/lisps"))
 	(normal-top-level-add-to-load-path '("."))
 	(normal-top-level-add-subdirs-to-load-path))
+  ;; GNU Emacs manual
   (require 'misc-conf)
   (require 'packages-conf)				;47
   (require 'minibuffer-conf)			;8
@@ -51,7 +93,19 @@
   (require 'compile-test-conf)			;27
   (require 'vc-conf)					;28
   (require 'customization-conf)			;48
+  ;; GNU Emacs Lisp reference manual
+
+  ;; GNU Emacs FAQ
+
+  ;; GNU Emacs FAQ for MS Windows
+
+  ;; Autotype
+  (require 'init-header2)
+
   )
 (add-hook 'after-init-hook 'load-package-init-files)
 
 (setq default-directory "~/.emacs.d/")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; init.el ends here
