@@ -4,7 +4,7 @@
 (setq sentence-end-double-space nil)
 
 ;;;25.10 TeX Mode
-(require 'init-auctex) ;可能下面的init-org要用到auctex/texmathp
+;(require 'init-auctex) ;可能下面的init-org要用到auctex/texmathp
 (require 'init-reftex)
 
 ;; 25.9 Org mode

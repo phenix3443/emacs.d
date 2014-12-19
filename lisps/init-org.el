@@ -4,7 +4,7 @@
 (require-package 'cdlatex)
 (require-package 'htmlize)
 
-(require 'cdlatex)
+;(require 'cdlatex)
 (require 'htmlize)
 
 

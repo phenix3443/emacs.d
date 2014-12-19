@@ -2,12 +2,12 @@
 ;; 
 ;; Filename: init.el
 ;; Description: 
-;; Author: phenix3443
+;; Author: phenix3443<phenix3443@gmail.com>
 ;; Maintainer: 
 ;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
-;; Last-Updated: 周五 12月 19 02:05:24 2014 (+0800)
+;; Last-Updated: 周六 12月 20 00:48:33 2014 (+0800)
 ;;           By: phenix
 ;;     Update #:
 ;; URL: 
@@ -44,8 +44,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 
 ;;; Code:
-
-(setq default-directory "~/.emacs.d/")
+(setq debug-on-error t)
 
 (defconst is-gnu-os (equal system-type 'gnu) "GNU Hurd system")
 (defconst is-gnu-linux-os (equal system-type 'gnu/linux) "GNU/Linux system")
@@ -78,6 +77,7 @@
   (require 'minibuffer-conf)			;8
   (require 'killing-conf)				;12
   (require 'display-conf)				;14
+  (require 'search-replace-conf)		;15
   (require 'files-conf)					;18
   (require 'window-conf)				;20
   (require 'frames-conf)				;21
