@@ -7,9 +7,9 @@
 ;; Created: 周六 12月 20 00:46:02 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
-;; Last-Updated: 周六 12月 20 00:55:43 2014 (+0800)
+;; Last-Updated: 周六 12月 20 00:58:53 2014 (+0800)
 ;;           By: phenix
-;;     Update #: 2
+;;     Update #: 3
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: search replace multiply-cursors
@@ -47,10 +47,10 @@
 
 (require-package 'multiple-cursors)
 (require 'multiple-cursors)
-(global-set-key (kbd "C-m e") 'mc/edit-lines)
-(global-set-key (kbd "C-m p") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-m n") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-m a") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-c m e") 'mc/edit-lines)
+(global-set-key (kbd "C-c m p") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c m n") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c m a") 'mc/mark-all-like-this)
 
 (provide 'search-replace-conf)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
