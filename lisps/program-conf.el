@@ -1,4 +1,49 @@
-;;;Time-stamp: <2014-08-14 01:17:52 phenix>
+;;; program-conf.el --- related to programming
+;; 
+;; Filename: program-conf.el
+;; Description: 
+;; Author: phenix3443<phenix3443@gmail.com>
+;; Maintainer: 
+;; Created: 周六 12月 20 00:50:11 2014 (+0800)
+;; Version: 
+;; Package-Requires: ()
+;; Last-Updated: 周六 12月 20 00:51:36 2014 (+0800)
+;;           By: phenix
+;;     Update #: 2
+;; URL: 
+;; Doc URL: 
+;; Keywords: 
+;; Compatibility: 
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Commentary: 
+;; 
+;; 
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Change Log:
+;; 
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;; This program is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or (at
+;; your option) any later version.
+;; 
+;; This program is distributed in the hope that it will be useful, but
+;; WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; General Public License for more details.
+;; 
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Code:
 
 ;;26.1 major mode for programming languages
 
@@ -37,12 +82,6 @@
 ;;28 tags
 (require 'init-helm-gtags)
 
-;;高亮/替换同名变量
-(require-package 'auto-highlight-symbol)
-(require 'auto-highlight-symbol)
-(global-auto-highlight-symbol-mode t)
-
-
 ;; C mode
 (add-hook 'c-mode-hook
 		  '(lambda()
@@ -69,3 +108,6 @@
 
 
 (provide 'program-conf)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; program-conf.el ends here
