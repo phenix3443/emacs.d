@@ -1,15 +1,15 @@
-;;; text-conf.el --- 
+;;; init-paredit.el --- 
 ;; 
-;; Filename: text-conf.el
+;; Filename: init-paredit.el
 ;; Description: 
-;; Author: phenix34433<phenix3443@gmail.com>
+;; Author: phenix3443<phenix3443@gmail.com>
 ;; Maintainer: 
-;; Created: 周三 十二月 24 11:07:52 2014 (+0800)
+;; Created: 周三 十二月 24 11:19:44 2014 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 周三 十二月 24 11:10:32 2014 (+0800)
+;; Last-Updated: 周三 十二月 24 12:30:22 2014 (+0800)
 ;;           By: chengxu70
-;;     Update #: 2
+;;     Update #: 7
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -45,19 +45,13 @@
 ;; 
 ;;; Code:
 
-;; 25.2 sentences
-(setq sentence-end "\\([。！？]\\|……\\|[.?!][]\"')}]*\\($\\|[ \t]\\)\\)[ \t\n]*")
-(setq sentence-end-double-space nil)
+(require-package 'paredit)
+(autoload 'enable-paredit-mode "paredit")
 
-;;;25.10 TeX Mode
-;(require 'init-auctex) ;可能下面的init-org要用到auctex/texmathp
-(require 'init-reftex)
+(require-package 'paredit-everywhere)
+(add-hook 'prog-mode-hook 'paredit-everywhere-mode)
+(add-hook 'css-mode-hook 'paredit-everywhere-mode)
 
-;; 25.9 Org mode
-(require 'init-org)
-(require 'init-org2blog)
-
-(provide 'text-conf)
-
+(provide 'init-paredit)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; text-conf.el ends here
+;;; init-paredit.el ends here

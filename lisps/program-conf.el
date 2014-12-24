@@ -7,9 +7,9 @@
 ;; Created: 周六 12月 20 00:50:11 2014 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 周六 12月 20 00:51:36 2014 (+0800)
-;;           By: phenix
-;;     Update #: 2
+;; Last-Updated: 周三 十二月 24 11:19:14 2014 (+0800)
+;;           By: chengxu70
+;;     Update #: 4
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -46,10 +46,11 @@
 ;;; Code:
 
 ;;26.1 major mode for programming languages
-
-;;26.4.3 matching parentheses
+;; 26.4 Commands for Editing with Parentheses
+;; 26.4.3 matching parentheses
 (show-paren-mode t)
 (electric-pair-mode t)
+(require 'init-paredit)
 ;;26.5.2 Multiple Lines of Comments
 (defun comment-dwin-line()
   (interactive)
