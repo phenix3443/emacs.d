@@ -7,8 +7,8 @@
 ;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
-;; Last-Updated: 周六 12月 20 00:48:33 2014 (+0800)
-;;           By: phenix
+;; Last-Updated: 周三 十二月 24 10:38:45 2014 (+0800)
+;;           By: chengxu70
 ;;     Update #:
 ;; URL: 
 ;; Doc URL: 
@@ -44,7 +44,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 
 ;;; Code:
-(setq debug-on-error t)
+;; (setq debug-on-error t)
 
 (defconst is-gnu-os (equal system-type 'gnu) "GNU Hurd system")
 (defconst is-gnu-linux-os (equal system-type 'gnu/linux) "GNU/Linux system")
