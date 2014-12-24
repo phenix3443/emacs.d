@@ -7,9 +7,9 @@
 ;; Created: 周三 十二月 24 11:19:44 2014 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 周三 十二月 24 12:30:22 2014 (+0800)
-;;           By: chengxu70
-;;     Update #: 7
+;; Last-Updated: 周四 12月 25 00:52:26 2014 (+0800)
+;;           By: phenix
+;;     Update #: 9
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -47,10 +47,17 @@
 
 (require-package 'paredit)
 (autoload 'enable-paredit-mode "paredit")
+(add-hook 'prog-mode-hook 'enable-paredit-mode)
 
-(require-package 'paredit-everywhere)
-(add-hook 'prog-mode-hook 'paredit-everywhere-mode)
-(add-hook 'css-mode-hook 'paredit-everywhere-mode)
+(eval-after-load 'paredit
+  '(progn
+	 (dolist (binding (list (kbd "C-<left>") (kbd "C-<right>")
+							(kbd "C-M-<left>") (kbd "C-M-<right>")))
+	   (define-key paredit-mode-map binding nil))))
+
+;; (require-package 'paredit-everywhere)
+;; (add-hook 'prog-mode-hook 'paredit-everywhere-mode)
+;; (add-hook 'css-mode-hook 'paredit-everywhere-mode)
 
 (provide 'init-paredit)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
