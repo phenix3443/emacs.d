@@ -7,9 +7,9 @@
 ;; Created: 周三 十二月 24 11:19:44 2014 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 周四 12月 25 00:52:26 2014 (+0800)
-;;           By: phenix
-;;     Update #: 9
+;; Last-Updated: 周五 十二月 26 20:44:17 2014 (+0800)
+;;           By: chengxu70
+;;     Update #: 10
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -47,7 +47,7 @@
 
 (require-package 'paredit)
 (autoload 'enable-paredit-mode "paredit")
-(add-hook 'prog-mode-hook 'enable-paredit-mode)
+(add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
 
 (eval-after-load 'paredit
   '(progn
