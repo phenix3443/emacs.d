@@ -7,9 +7,9 @@
 ;; Created: 周六 12月 20 00:50:11 2014 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 周三 十二月 24 11:19:14 2014 (+0800)
+;; Last-Updated: 周五 十二月 26 18:01:22 2014 (+0800)
 ;;           By: chengxu70
-;;     Update #: 4
+;;     Update #: 6
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -86,8 +86,10 @@
 ;; C mode
 (add-hook 'c-mode-hook
 		  '(lambda()
+			 (setq c-basic-offset 4)
 			 (c-set-style "linux")
-			 (setq c-basic-offset 4)))
+			 (define-key c-mode-base-map (kbd "C-m") 'c-context-line-break)
+			 ))
 ;;c-indent-comment-alist
 ;; C++ mode
 (add-hook 'c++-mode-hook
