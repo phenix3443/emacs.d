@@ -7,9 +7,9 @@
 ;; Created: 周二 一月 13 19:42:55 2015 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 周二 一月 13 19:55:18 2015 (+0800)
+;; Last-Updated: 周三 一月 14 14:20:16 2015 (+0800)
 ;;           By: chengxu70
-;;     Update #: 2
+;;     Update #: 6
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -55,6 +55,10 @@
 (helm-projectile-on)
 
 (require-package 'helm-ag)
+(defun my-ag ()
+  (interactive)
+  (helm-ag (projectile-project-root)))
+
 ;; indexing
 ;;(setq projectile-indexing-method 'alien)
 ;; caching
