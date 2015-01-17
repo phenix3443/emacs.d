@@ -7,9 +7,9 @@
 ;; Created: 周六 一月 17 10:10:24 2015 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 周六 一月 17 12:10:40 2015 (+0800)
+;; Last-Updated: 周六 一月 17 16:11:58 2015 (+0800)
 ;;           By: chengxu70
-;;     Update #: 5
+;;     Update #: 6
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -63,5 +63,15 @@
 ;;;
 ;; (require-package 'highlight-indentation)
 ;; (require 'highlight-indentation)
+;; (defun aj-toggle-fold ()
+;;   "Toggle fold all lines larger than indentation on current line"
+;;   (interactive)
+;;   (let ((col 1))
+;;     (save-excursion
+;;       (back-to-indentation)
+;;       (setq col (+ 1 (current-column)))
+;;       (set-selective-display
+;;        (if selective-display nil (or col 1))))))
+;; (global-set-key [(M C i)] 'aj-toggle-fold)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; indentation-conf.el ends here
