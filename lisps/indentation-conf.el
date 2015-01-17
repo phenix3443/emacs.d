@@ -7,9 +7,9 @@
 ;; Created: 周六 一月 17 10:10:24 2015 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 周六 一月 17 10:16:06 2015 (+0800)
+;; Last-Updated: 周六 一月 17 12:10:40 2015 (+0800)
 ;;           By: chengxu70
-;;     Update #: 3
+;;     Update #: 5
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -55,9 +55,13 @@
 (provide 'indentation-conf)
 
 ;;; show vertical lines to guide indentation
-(require-package 'indent-guide)
-(indent-guide-global-mode)
-(setq indent-guide-delay 0.1)
-(setq indent-guide-recursive t)
+;; (require-package 'indent-guide)
+;; (indent-guide-global-mode)
+;; (setq indent-guide-delay 0.1)
+;; (setq indent-guide-recursive t)
+
+;;;
+;; (require-package 'highlight-indentation)
+;; (require 'highlight-indentation)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; indentation-conf.el ends here
