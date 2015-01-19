@@ -1,4 +1,49 @@
-;;;Time-stamp: <2014-08-14 23:57:25 phenix>
+;;; init-cedet.el --- 
+;; 
+;; Filename: init-cedet.el
+;; Description: 
+;; Author: phenix<phenix3443@gmail.com>
+;; Maintainer: 
+;; Created: 二  1月 20 01:48:51 2015 (+0800)
+;; Version: 
+;; Package-Requires: ()
+;; Last-Updated: 二  1月 20 01:49:14 2015 (+0800)
+;;           By: phenix
+;;     Update #: 1
+;; URL: 
+;; Doc URL: 
+;; Keywords: 
+;; Compatibility: 
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Commentary: 
+;; 
+;; 
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Change Log:
+;; 
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;; This program is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or (at
+;; your option) any later version.
+;; 
+;; This program is distributed in the hope that it will be useful, but
+;; WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; General Public License for more details.
+;; 
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Code:
 
 (require-package 'cedet)
 
@@ -33,7 +78,7 @@
 								  ;;global-semantic-stickyfunc-mode
                                   ))
 
-(defvar user-include-dirs (list "." "./include" ".." "../include" "../../include" "../../../include" "../../../../include"))
+(defvar user-include-dirs (list "." "./include" ".." "../include"))
 (defvar win-include-dirs (list "C:/MinGW/include" "C:/msys64/usr/include" "C:/Program Files (x86)/Microsoft Visual Studio 11.0/VC/include"))
 (require 'semantic/bovine/c)
 (let ((include-dirs user-include-dirs))
@@ -59,3 +104,6 @@
 ;;							 (global-srecode-minor-mode 1)))
 
 (provide 'init-cedet)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; init-cedet.el ends here
