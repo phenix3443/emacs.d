@@ -7,9 +7,9 @@
 ;; Created: 周三 十二月 24 11:07:52 2014 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 周一 一月 19 16:56:28 2015 (+0800)
+;; Last-Updated: 周一 一月 19 17:10:51 2015 (+0800)
 ;;           By: chengxu70
-;;     Update #: 3
+;;     Update #: 4
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -64,5 +64,6 @@
 (require-package 'pangu-spacing)
 (require pangu-spacing)
 (global-pangu-spacing-mode 1)
+(pangu-spacing-modify-buffer)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; text-conf.el ends here
