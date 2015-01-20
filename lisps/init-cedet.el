@@ -7,9 +7,9 @@
 ;; Created: 二  1月 20 01:48:51 2015 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 二  1月 20 01:49:14 2015 (+0800)
+;; Last-Updated: 三  1月 21 03:21:59 2015 (+0800)
 ;;           By: phenix
-;;     Update #: 1
+;;     Update #: 5
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -63,8 +63,7 @@
 ;; semantic configures
 (require 'semantic)
 (require 'semantic/ia)
-;;(require 'semantic-gcc-get-include-paths)
-;;(require 'semantic/bovine/gcc)
+(require 'semantic/bovine/gcc)
 (require 'semantic/db)
 
 (setq semantic-default-submodes '(global-semanticdb-minor-mode
@@ -85,7 +84,7 @@
   (when (eq system-type 'window-nt)
 	(semantic-reset-system-include 'c-mode)
 	(semantic-reset-system-include 'c++-mode)
-	(setq include-dirs (append include-dirs win-include-dirs)))
+	(append include-dirs win-include-dirs))
   (mapc (lambda (dir)
 		  (semantic-add-system-include dir 'c-mode)
 		  (semantic-add-system-include dir 'c++-mode))
