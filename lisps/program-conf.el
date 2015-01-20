@@ -4,12 +4,12 @@
 ;; Description: 
 ;; Author: phenix3443<phenix3443@gmail.com>
 ;; Maintainer: 
-;; Created: ÖÜÁù 12ÔÂ 20 00:50:11 2014 (+0800)
+;; Created: Ã–ÃœÃÃ¹ 12Ã”Ã‚ 20 00:50:11 2014 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: ÖÜÎå Ê®¶şÔÂ 26 18:01:22 2014 (+0800)
-;;           By: chengxu70
-;;     Update #: 6
+;; Last-Updated: ä¸‰  1æœˆ 21 03:36:13 2015 (+0800)
+;;           By: phenix
+;;     Update #: 9
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -50,7 +50,7 @@
 ;; 26.4.3 matching parentheses
 (show-paren-mode t)
 (electric-pair-mode t)
-(require 'init-paredit)
+;(require 'init-paredit)
 ;;26.5.2 Multiple Lines of Comments
 (defun comment-dwin-line()
   (interactive)
@@ -87,7 +87,7 @@
 (add-hook 'c-mode-hook
 		  '(lambda()
 			 (setq c-basic-offset 4)
-			 (c-set-style "linux")
+			 (c-set-style "bsd")
 			 (define-key c-mode-base-map (kbd "C-m") 'c-context-line-break)
 			 ))
 ;;c-indent-comment-alist
