@@ -7,9 +7,9 @@
 ;; Created: ÖÜÁù 12ÔÂ 20 00:50:11 2014 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 三  1月 21 03:36:13 2015 (+0800)
+;; Last-Updated: 三  1月 21 22:32:02 2015 (+0800)
 ;;           By: phenix
-;;     Update #: 9
+;;     Update #: 10
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -50,7 +50,9 @@
 ;; 26.4.3 matching parentheses
 (show-paren-mode t)
 (electric-pair-mode t)
-;(require 'init-paredit)
+;; (require 'init-paredit)
+(require 'init-smartparens)
+
 ;;26.5.2 Multiple Lines of Comments
 (defun comment-dwin-line()
   (interactive)
