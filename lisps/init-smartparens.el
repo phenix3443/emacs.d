@@ -7,9 +7,9 @@
 ;; Created: 三  1月 21 22:32:20 2015 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 三  1月 21 22:38:56 2015 (+0800)
+;; Last-Updated: 三  1月 21 22:46:06 2015 (+0800)
 ;;           By: phenix
-;;     Update #: 3
+;;     Update #: 4
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -44,6 +44,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 
 ;;; Code:
+;; required by program-conf.el
 (require-package 'smartparens)
 (require 'smartparens-config)
 
