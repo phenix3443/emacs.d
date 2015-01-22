@@ -7,9 +7,9 @@
 ;; Created: 三  1月 21 22:42:59 2015 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 三  1月 21 23:50:05 2015 (+0800)
-;;           By: phenix
-;;     Update #: 9
+;; Last-Updated: 周四 一月 22 20:16:30 2015 (+0800)
+;;           By: chengxu70
+;;     Update #: 10
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -48,21 +48,21 @@
 
 ;; 22.3 Input Methods
 
-;; (defun my-chinese-setup ()
-;;   "Set up my private Chinese environment."
-;;   (if (equal current-language-environment "Chinese-GBK")
-;; 	  (progn
-;; 		(require-package 'chinese-pyim)
-;; 		(require 'chinese-pyim)
-;; 		(setq pyim-dicts '((:name "BgiDict" :file "~/.emacs.d/pyim/pyim-bigdict.txt" :coding utf-8-unix)))
-;; 		(setq default-input-method "chinese-pyim"))))
+(defun my-chinese-setup ()
+  "Set up my private Chinese environment."
+  (if (equal current-language-environment "Chinese-GBK")
+	  (progn
+		(require-package 'chinese-pyim)
+		(require 'chinese-pyim)
+		(setq pyim-dicts '((:name "BigDict" :file "~/.emacs.d/pyim/pyim-bigdict.txt" :coding utf-8-unix)))
+		(setq default-input-method "chinese-pyim"))))
 
-;; (add-hook 'set-language-environment-hook 'my-chinese-setup)
+(add-hook 'set-language-environment-hook 'my-chinese-setup)
 
-(require-package 'chinese-pyim)
-(require 'chinese-pyim)
-(setq pyim-dicts '((:name "BgiDict" :file "~/.emacs.d/pyim/pyim-bigdict.txt" :coding utf-8-unix)))
-(setq default-input-method "chinese-pyim")
+;; (require-package 'chinese-pyim)
+;; (require 'chinese-pyim)
+;; (setq pyim-dicts '((:name "BgiDict" :file "~/.emacs.d/pyim/pyim-bigdict.txt" :coding utf-8-unix)))
+;; (setq default-input-method "chinese-pyim")
 
 (provide 'international-conf)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
