@@ -1,1 +1,24 @@
 ;; -*- coding: utf-8 -*-
+b-zh-d 不知道
+bu-zhi-dao 不知道
+g-sh 改朔
+g-sh-sh-m-h 该说什么好
+gai 该
+gai-shuo 改朔
+gai-shuo-shen-me-hao 该说什么好
+hao 好
+jia 加
+sh-m 什么
+sh-r-f 输入法
+shen-me 什么
+shu-ru-fa 输入法
+shuo 说
+t-j 添加
+tian 添
+tian-jia 添加
+zh-sh 真是
+zh-sh-b-zh-d 真是不知道
+zhen-shi 真是
+zhen-shi-bu-zhi-dao 真是不知道
+zhong 中
+zhou 州
