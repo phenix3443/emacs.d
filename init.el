@@ -7,8 +7,8 @@
 ;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
-;; Last-Updated: 三  1月 21 22:42:03 2015 (+0800)
-;;           By: phenix
+;; Last-Updated: 周四 一月 22 20:24:45 2015 (+0800)
+;;           By: chengxu70
 ;;     Update #:
 ;; URL: 
 ;; Doc URL: 
@@ -99,45 +99,3 @@
 
   )
 (add-hook 'after-init-hook 'load-package-init-files)
-
-(setq default-directory "~/.emacs.d/")
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init.el ends here
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(helm-gtags-auto-update t)
- '(helm-gtags-ignore-case t)
- '(helm-gtags-prefix-key (kbd "C-c g"))
- '(helm-gtags-pulse-at-cursor t)
- '(helm-gtags-suggested-key-mapping t)
- '(helm-gtags-use-input-at-cursor t)
- '(safe-local-variable-values
-   (quote
-	((eval progn
-		   (require
-			(quote projectile))
-		   (require
-			(quote semantic))
-		   (let
-			   ((include-dirs
-				 (list
-				  (concat
-				   (projectile-project-root)
-				   "include/"))))
-			 (mapc
-			  (lambda
-				(dir)
-				(semantic-add-system-include dir
-											 (quote c-mode)))
-			  include-dirs)))
-	 (header-auto-update-enabled)))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
