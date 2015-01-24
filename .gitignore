@@ -1,6 +1,7 @@
 recentf
 session.*
 .emacs.desktop
+.projectile
 auto-save-list
 elpa/
 .emacs.desktop
