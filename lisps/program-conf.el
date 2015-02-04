@@ -7,9 +7,9 @@
 ;; Created: ÖÜÁù 12ÔÂ 20 00:50:11 2014 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 周三 二月  4 18:10:59 2015 (+0800)
-;;           By: chengxu70
-;;     Update #: 18
+;; Last-Updated: 四  2月  5 02:19:47 2015 (+0800)
+;;           By: phenix
+;;     Update #: 19
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -84,16 +84,6 @@
 
 ;;28 tags
 (require 'init-helm-gtags)
-
-;; C mode
-(add-hook 'c-mode-hook
-		  '(lambda()
-			 (define-key c-mode-base-map (kbd "C-m") 'c-context-line-break)))
-
-;; C++ mode
-(add-hook 'c++-mode-hook
-		  '(lambda()
-			 ))
 
 ;; Lua mode
 (require-package 'lua-mode)
