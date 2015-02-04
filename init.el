@@ -7,8 +7,13 @@
 ;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
+<<<<<<< HEAD
 ;; Last-Updated: 四  2月  5 01:07:33 2015 (+0800)
 ;;           By: phenix
+=======
+;; Last-Updated: 周三 二月  4 16:30:51 2015 (+0800)
+;;           By: chengxu70
+>>>>>>> 54b0163a66822e099376e9ca232dbc43817eae1e
 ;;     Update #:
 ;; URL: 
 ;; Doc URL: 
