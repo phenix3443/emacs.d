@@ -7,9 +7,9 @@
 ;; Created: ÖÜÁù 12ÔÂ 20 00:50:11 2014 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 三  1月 21 22:32:02 2015 (+0800)
-;;           By: phenix
-;;     Update #: 10
+;; Last-Updated: 周三 二月  4 18:10:59 2015 (+0800)
+;;           By: chengxu70
+;;     Update #: 18
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -88,16 +88,12 @@
 ;; C mode
 (add-hook 'c-mode-hook
 		  '(lambda()
-			 (setq c-basic-offset 4)
-			 (c-set-style "bsd")
-			 (define-key c-mode-base-map (kbd "C-m") 'c-context-line-break)
-			 ))
-;;c-indent-comment-alist
+			 (define-key c-mode-base-map (kbd "C-m") 'c-context-line-break)))
+
 ;; C++ mode
 (add-hook 'c++-mode-hook
 		  '(lambda()
-			 (c-set-style "linux")
-			 (setq c-basic-offset 4)))
+			 ))
 
 ;; Lua mode
 (require-package 'lua-mode)
