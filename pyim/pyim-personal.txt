@@ -3,13 +3,19 @@ b-zh-d 不知道
 bu-zhi-dao 不知道
 g-sh 改朔
 g-sh-sh-m-h 该说什么好
+g-zh 更正 耿正
 gai 该
 gai-shuo 改朔
 gai-shuo-shen-me-hao 该说什么好
+geng-zheng 更正 耿正
 hao 好
 jia 加
+p-zh 配置 培植
+pei-zhi 配置 培植
 sh-m 什么
 sh-r-f 输入法
+sh-zh 设置
+she-zhi 设置
 shen-me 什么
 shu-ru-fa 输入法
 shuo 说
