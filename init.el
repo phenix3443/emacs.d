@@ -7,7 +7,7 @@
 ;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
-;; Last-Updated: 四  2月  5 02:17:31 2015 (+0800)
+;; Last-Updated: 四  2月  5 02:20:54 2015 (+0800)
 ;;           By: phenix
 ;;     Update #:
 ;; URL: 
@@ -97,7 +97,7 @@
   ;; GNU Emacs FAQ for MS Windows
 
   ;; CC mode
-  (require 'init-ccmode)
+  (require 'init-cc-mode)
   ;; Autotype
   (require 'init-header2)
 
