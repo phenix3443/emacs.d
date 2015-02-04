@@ -7,8 +7,8 @@
 ;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
-;; Last-Updated: 周三 二月  4 16:30:51 2015 (+0800)
-;;           By: chengxu70
+;; Last-Updated: 四  2月  5 02:17:31 2015 (+0800)
+;;           By: phenix
 ;;     Update #:
 ;; URL: 
 ;; Doc URL: 
@@ -90,10 +90,14 @@
   (require 'customization-conf)			;48
   ;; GNU Emacs Lisp reference manual
 
+  ;; An Introduction to Programming in Emacs Lisp
+
   ;; GNU Emacs FAQ
 
   ;; GNU Emacs FAQ for MS Windows
 
+  ;; CC mode
+  (require 'init-ccmode)
   ;; Autotype
   (require 'init-header2)
 
