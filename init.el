@@ -7,8 +7,8 @@
 ;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
-;; Last-Updated: 周四 二月  5 16:45:47 2015 (+0800)
-;;           By: chengxu70
+;; Last-Updated: 五  2月  6 01:29:38 2015 (+0800)
+;;           By: phenix
 ;;     Update #:
 ;; URL: 
 ;; Doc URL: 
@@ -97,27 +97,13 @@
   ;; GNU Emacs FAQ for MS Windows
 
   ;; CC mode
-  (require 'init-cc-mode)
+  ;; (require 'init-cc-mode)
   ;; Autotype
   (require 'init-header2)
 
   )
+;;cc mode
+(setq c-default-style '((java-mode . "java")
+						(awk-mode . "awk")
+						(other . "linux")))
 (add-hook 'after-init-hook 'load-package-init-files)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(helm-gtags-auto-update t)
- '(helm-gtags-ignore-case t)
- '(helm-gtags-prefix-key (kbd "C-c g"))
- '(helm-gtags-pulse-at-cursor t)
- '(helm-gtags-suggested-key-mapping t)
- '(helm-gtags-use-input-at-cursor t)
- '(safe-local-variable-values (quote ((nil) (header-auto-update-enabled)))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
