@@ -7,9 +7,9 @@
 ;; Created: 四  2月  5 02:18:07 2015 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 四  2月  5 02:21:38 2015 (+0800)
-;;           By: phenix
-;;     Update #: 3
+;; Last-Updated: 周四 二月  5 10:47:02 2015 (+0800)
+;;           By: chengxu70
+;;     Update #: 4
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -45,15 +45,9 @@
 ;; 
 ;;; Code:
 
-;; C mode
-(add-hook 'c-mode-hook
-		  '(lambda()
-			 (define-key c-mode-base-map (kbd "C-m") 'c-context-line-break)))
-
-;; C++ mode
-(add-hook 'c++-mode-hook
-		  '(lambda()
-			 ))
+(setq c-default-style '((java-mode . "java")
+						(awk-mode . "awk")
+						(other . "linux")))
 (provide 'init-cc-mode)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-cc-mode.el ends here
