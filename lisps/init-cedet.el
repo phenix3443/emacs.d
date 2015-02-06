@@ -7,9 +7,9 @@
 ;; Created: 二  1月 20 01:48:51 2015 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 周五 二月  6 14:19:41 2015 (+0800)
+;; Last-Updated: 周五 二月  6 21:19:22 2015 (+0800)
 ;;           By: chengxu70
-;;     Update #: 8
+;;     Update #: 9
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -73,7 +73,7 @@
                                   global-semantic-idle-summary-mode
 								  global-semantic-idle-completions-mode
 								  ;;global-semantic-mru-bookmark-mode
-								  ;;global-semantic-stickyfunc-mode
+								  global-semantic-stickyfunc-mode
                                   ))
 
 (defvar user-include-dirs (list "." "./include" ".." "../include"))
