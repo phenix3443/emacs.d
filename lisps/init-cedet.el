@@ -7,9 +7,9 @@
 ;; Created: 二  1月 20 01:48:51 2015 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 三  1月 21 03:21:59 2015 (+0800)
-;;           By: phenix
-;;     Update #: 5
+;; Last-Updated: 周五 二月  6 14:19:41 2015 (+0800)
+;;           By: chengxu70
+;;     Update #: 8
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -56,10 +56,9 @@
 (setq cedet-global-command "global")
 
 ;; ede
-(setq ede-locate-setup-options '(ede-locate-global 
-								ede-locate-base))
-;;(add-hook 'prog-mode-hook 'global-ede-mode)
-
+(setq ede-locate-setup-options '(ede-locate-global ede-locate-base))
+(global-ede-mode t)
+(require 'cedet-projects)
 ;; semantic configures
 (require 'semantic)
 (require 'semantic/ia)

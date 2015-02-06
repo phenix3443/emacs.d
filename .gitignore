@@ -24,6 +24,6 @@ semanticdb/
 GPATH
 GRTAGS
 GTAGS
-win_apps/glo633wb
+gtags.files
+win_apps/glo634wb
 win_apps/pygments
-win_apps/lua-5.2.3_Win32_bin

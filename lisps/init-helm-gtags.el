@@ -18,6 +18,7 @@
 (eval-after-load "helm-gtags"
   '(progn
 	 (let ((prefix helm-gtags-prefix-key))
+	   (define-key helm-gtags-mode-map (concat prefix "a") 'helm-gtags-tags-in-this-function)
 	   (define-key helm-gtags-mode-map (concat prefix "c") 'helm-gtags-create-tags)
 	   (define-key helm-gtags-mode-map (concat prefix "u") 'helm-gtags-update-tags)
 	   (define-key helm-gtags-mode-map (concat prefix "h") 'helm-gtags-display-browser)
