@@ -7,8 +7,8 @@
 ;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
-;; Last-Updated: 五  2月  6 01:29:38 2015 (+0800)
-;;           By: phenix
+;; Last-Updated: 周五 二月  6 15:19:53 2015 (+0800)
+;;           By: chengxu70
 ;;     Update #:
 ;; URL: 
 ;; Doc URL: 
@@ -56,7 +56,7 @@
 
 (when (equal system-type 'windows-nt)
   ;; 不要在emacs里面改动 PATH 和 exec-path
-  (setenv "GTAGSCONF" (concat (getenv "HOME") "\\.emacs.d\\win_apps\\glo633wb\\share\\gtags\\gtags.conf"))
+  (setenv "GTAGSCONF" (concat (getenv "HOME") "\\.emacs.d\\win_apps\\glo634wb\\share\\gtags\\gtags.conf"))
   (setenv "GTAGSLABEL" "pygments"))
 
 ;; use proxy for internet
