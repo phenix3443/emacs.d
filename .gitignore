@@ -19,13 +19,12 @@ themes/*/
 *.tut
 *.el#
 *.dat
-eshell/
-semanticdb/
+eshell
+semanticdb
 GPATH
 GRTAGS
 GTAGS
 gtags.files
 win_apps/glo634wb
 win_apps/pygments
-cedet-projects.el
-ede-projects.el
+tmp-dir
