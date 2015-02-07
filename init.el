@@ -7,7 +7,7 @@
 ;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
-;; Last-Updated: 周五 二月  6 15:19:53 2015 (+0800)
+;; Last-Updated: 周六 二月  7 12:29:32 2015 (+0800)
 ;;           By: chengxu70
 ;;     Update #:
 ;; URL: 
@@ -58,6 +58,7 @@
   ;; 不要在emacs里面改动 PATH 和 exec-path
   (setenv "GTAGSCONF" (concat (getenv "HOME") "\\.emacs.d\\win_apps\\glo634wb\\share\\gtags\\gtags.conf"))
   (setenv "GTAGSLABEL" "pygments"))
+(setq tmp-dir "~/.emacs.d/tmp-dir/")
 
 ;; use proxy for internet
 ;; (setq url-proxy-services
@@ -106,4 +107,5 @@
 (setq c-default-style '((java-mode . "java")
 						(awk-mode . "awk")
 						(other . "linux")))
+
 (add-hook 'after-init-hook 'load-package-init-files)
