@@ -7,9 +7,9 @@
 ;; Created: 周二 一月 13 19:42:55 2015 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 周六 二月  7 17:41:01 2015 (+0800)
+;; Last-Updated: 周六 二月  7 19:49:01 2015 (+0800)
 ;;           By: chengxu70
-;;     Update #: 10
+;;     Update #: 15
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -59,9 +59,7 @@
   (interactive)
   (helm-ag (projectile-project-root)))
 
-;; indexing
-;;(setq projectile-indexing-method 'alien)
-;; caching
+;; indexing and caching
 (when (equal system-type 'windows-nt)
   (setq projectile-enable-caching t))
 ;; switching projects
