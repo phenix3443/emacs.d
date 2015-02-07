@@ -7,9 +7,9 @@
 ;; Created: 二  1月 20 01:48:51 2015 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 周六 二月  7 12:33:17 2015 (+0800)
+;; Last-Updated: 周六 二月  7 17:20:34 2015 (+0800)
 ;;           By: chengxu70
-;;     Update #: 10
+;;     Update #: 26
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -60,12 +60,10 @@
 (global-ede-mode t)
 (setq ede-project-placeholder-cache-file (concat tmp-dir "ede-projects.el"))
 
-;; semantic configures
+;; configure from semantic manual
+;; https://www.gnu.org/software/emacs/manual/html_mono/semantic.html
 (require 'semantic)
-(require 'semantic/ia)
-(require 'semantic/bovine/gcc)
-(require 'semantic/db)
-
+;; 2.1 Semantic mode
 (setq semantic-default-submodes '(global-semanticdb-minor-mode
 								  global-semantic-decoration-mode
 								  ;;global-semantic-highlight-func-mode
@@ -74,9 +72,16 @@
                                   global-semantic-idle-summary-mode
 								  global-semantic-idle-completions-mode
 								  ;;global-semantic-mru-bookmark-mode
-								  global-semantic-stickyfunc-mode
-                                  ))
+								  global-semantic-stickyfunc-mode))
+;; 2.2.1 Semanticdb Tag Storage
+(setq semantic-default-save-directory (concat tmp-dir "semanticdb/"))
 
+;; 2.2.2.2 SemanticDB project roots
+(defun get-semantic-project-root()
+  (let((semantic-projct-root-markers . '(".git" ".svn" "GTAGS" "TAGS")))
+	)) 
+(add-hook 'semanticdb-project-root-functions 'projectile-project-root)
+;; 2.2.2.3 Include Paths
 (defvar user-include-dirs (list "." "./include" ".." "../include"))
 (defvar win-include-dirs (list "C:/MinGW/include" "C:/msys64/usr/include" "C:/Program Files (x86)/Microsoft Visual Studio 11.0/VC/include"))
 (require 'semantic/bovine/c)
@@ -90,10 +95,8 @@
 		  (semantic-add-system-include dir 'c++-mode))
 		include-dirs))
 
-(when (cedet-gnu-global-version-check t)
-  (semanticdb-enable-gnu-global-databases 'c-mode t)
-  (semanticdb-enable-gnu-global-databases 'c++-mode t)
-  (semanticdb-enable-gnu-global-databases 'lua-mode t))
+;; 2.5 Speedbar
+(require 'semantic/sb)
 
 (semantic-mode 1)
 
