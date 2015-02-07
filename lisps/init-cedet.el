@@ -7,9 +7,9 @@
 ;; Created: 二  1月 20 01:48:51 2015 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 周五 二月  6 21:19:22 2015 (+0800)
+;; Last-Updated: 周六 二月  7 12:33:17 2015 (+0800)
 ;;           By: chengxu70
-;;     Update #: 9
+;;     Update #: 10
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -58,7 +58,8 @@
 ;; ede
 (setq ede-locate-setup-options '(ede-locate-global ede-locate-base))
 (global-ede-mode t)
-(require 'cedet-projects)
+(setq ede-project-placeholder-cache-file (concat tmp-dir "ede-projects.el"))
+
 ;; semantic configures
 (require 'semantic)
 (require 'semantic/ia)
