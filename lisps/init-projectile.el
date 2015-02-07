@@ -49,8 +49,6 @@
 
 (require 'projectile)
 (projectile-global-mode)
-(setq projectile-known-projects-file (concat tmp-dir "projectile-bookmarks.eld"))
-(setq projectile-cache-file (concat tmp-dir "projectile.cache"))
 ;; Helm Integration
 (require-package 'helm-projectile)
 (require 'helm-projectile)
