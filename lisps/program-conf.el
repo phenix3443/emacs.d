@@ -7,9 +7,9 @@
 ;; Created: ÖÜÁù 12ÔÂ 20 00:50:11 2014 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 四  2月  5 02:19:47 2015 (+0800)
-;;           By: phenix
-;;     Update #: 19
+;; Last-Updated: 周六 二月  7 15:32:51 2015 (+0800)
+;;           By: chengxu70
+;;     Update #: 20
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -79,8 +79,9 @@
 (require 'init-flycheck)
 
 ;;project support
-(require 'init-cedet)
 (require 'init-projectile)
+(require 'init-cedet)
+
 
 ;;28 tags
 (require 'init-helm-gtags)
