@@ -8,8 +8,11 @@
 (require 'auto-complete-config)
 (ac-config-default)
 
+;; Candidate Suggestion
+(defvar tmp-dir)
+(setq ac-comphist-file (concat tmp-dir "ac-comphist.dat"))
 ;; 5.6.1 completion by dictionary
-(setq ac-user-dictionary-files "~/.emacs.d/.dict")
+(setq ac-user-dictionary-files (concat tmp-dir ".dict"))
 ;;(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 
 ;; 6.1 using sources
