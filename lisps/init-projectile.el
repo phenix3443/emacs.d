@@ -7,9 +7,9 @@
 ;; Created: 周二 一月 13 19:42:55 2015 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 周三 一月 14 14:20:16 2015 (+0800)
+;; Last-Updated: 周六 二月  7 17:35:11 2015 (+0800)
 ;;           By: chengxu70
-;;     Update #: 6
+;;     Update #: 8
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -49,6 +49,8 @@
 
 (require 'projectile)
 (projectile-global-mode)
+(setq projectile-known-projects-file (concat tmp-dir "projectile-bookmarks.eld"))
+(setq projectile-cache-file (concat tmp-dir "projectile.cache"))
 ;; Helm Integration
 (require-package 'helm-projectile)
 (require 'helm-projectile)
