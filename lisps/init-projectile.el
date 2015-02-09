@@ -7,9 +7,9 @@
 ;; Created: 周二 一月 13 19:42:55 2015 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 周六 二月  7 19:49:01 2015 (+0800)
-;;           By: chengxu70
-;;     Update #: 15
+;; Last-Updated: 二  2月 10 01:18:23 2015 (+0800)
+;;           By: phenix
+;;     Update #: 16
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -55,15 +55,11 @@
 (helm-projectile-on)
 
 (require-package 'helm-ag)
-(defun my-ag ()
-  (interactive)
-  (helm-ag (projectile-project-root)))
 
 ;; indexing and caching
 (when (equal system-type 'windows-nt)
   (setq projectile-enable-caching t))
 ;; switching projects
-(setq projectile-remember-window-configs t)
 (setq projectile-switch-project-action 'helm-projectile-find-file)
 ;; completion
 (setq projectile-completion-system 'helm)
