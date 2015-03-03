@@ -7,9 +7,9 @@
 ;; Created: ÖÜÁù 12ÔÂ 20 00:50:11 2014 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 周六 二月  7 15:32:51 2015 (+0800)
+;; Last-Updated: 周二 三月  3 12:55:08 2015 (+0800)
 ;;           By: chengxu70
-;;     Update #: 20
+;;     Update #: 21
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -98,7 +98,8 @@
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 
-
+;; c sharp mode
+(require-package 'csharp-mode)
 (provide 'program-conf)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
