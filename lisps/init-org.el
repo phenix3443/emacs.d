@@ -1,10 +1,56 @@
-;;; Time-stamp: <2014-08-27 10:11:18 chengxu70>
+;;; init-org.el --- 
+;; 
+;; Filename: init-org.el
+;; Description: 
+;; Author: phenix3443 <phenix3443@gmail.com>
+;; Maintainer: 
+;; Created: 周六 三月  7 16:09:24 2015 (+0800)
+;; Version: 
+;; Package-Requires: ()
+;; Last-Updated: 
+;;           By: 
+;;     Update #: 0
+;; URL: 
+;; Doc URL: 
+;; Keywords: 
+;; Compatibility: 
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Commentary: 
+;; 
+;; 
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Change Log:
+;; 
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;; This program is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or (at
+;; your option) any later version.
+;; 
+;; This program is distributed in the hope that it will be useful, but
+;; WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; General Public License for more details.
+;; 
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Code:
+
 ;;; required by text-conf.el, from org manual(http://orgmode.org/org.html)
 
 (require-package 'cdlatex)
 (require-package 'htmlize)
 
-;(require 'cdlatex)
+(require 'cdlatex)
 (require 'htmlize)
 
 
@@ -62,3 +108,6 @@
 							(set-face-attribute 'org-level-2 nil :height 1.4 :bold t)
 							(set-face-attribute 'org-level-3 nil :height 1.2 :bold t)))
 (provide 'init-org)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; init-org.el ends here
