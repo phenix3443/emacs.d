@@ -7,9 +7,9 @@
 ;; Created: 周三 十二月 24 11:07:52 2014 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 周一 一月 19 18:02:20 2015 (+0800)
+;; Last-Updated: 周六 三月  7 16:35:56 2015 (+0800)
 ;;           By: chengxu70
-;;     Update #: 5
+;;     Update #: 6
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -50,6 +50,7 @@
 (setq sentence-end-double-space nil)
 
 ;;;25.10 TeX Mode
+;; org-mode使用的cdlatex用到了auctex自带的texmathp，所以该文件调用在init-org之前。
 (require 'init-auctex)
 
 ;; 25.9 Org mode
