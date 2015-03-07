@@ -2,7 +2,7 @@
 ;; 
 ;; Filename: text-conf.el
 ;; Description: 
-;; Author: phenix34433<phenix3443@gmail.com>
+;; Author: phenix34433 <phenix3443@gmail.com>
 ;; Maintainer: 
 ;; Created: 周三 十二月 24 11:07:52 2014 (+0800)
 ;; Version: 
@@ -50,8 +50,7 @@
 (setq sentence-end-double-space nil)
 
 ;;;25.10 TeX Mode
-;(require 'init-auctex) ;可能下面的init-org要用到auctex/texmathp
-(require 'init-reftex)
+(require 'init-auctex)
 
 ;; 25.9 Org mode
 (require 'init-org)
