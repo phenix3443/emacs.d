@@ -7,9 +7,9 @@
 ;; Created: 五  4月 17 14:57:48 2015 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 五  4月 17 14:58:16 2015 (+0800)
-;;           By: phenix
-;;     Update #: 1
+;; Last-Updated: 周五 四月 17 17:00:19 2015 (+0800)
+;;           By: chengxu70
+;;     Update #: 3
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -45,10 +45,8 @@
 ;; 
 ;;; Code:
 
-
-
 ;;; required by program-conf.el
-;;; default from auto-complete manual
+;;; https://github.com/auto-complete/auto-complete
 (require-package 'auto-complete)
 
 ;; 3.2 install script
@@ -116,7 +114,7 @@
 (setq ac-quick-help-prefer-pos-tip t)
 
 ;; 8.1 Delay time to start completion in real number seconds
-(setq ac-delay 0.8)
+(setq ac-delay 0.3)
 ;; 8.2 Show completion menu automatically
 (setq ac-auto-show-menu t)
 ;; 8.3 show completion menu immediately on auto-complete command
