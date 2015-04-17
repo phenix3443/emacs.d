@@ -1,4 +1,52 @@
-;;; Time-stamp: <2014-08-27 09:52:21 chengxu70>
+;;; init-auto-complete.el --- 
+;; 
+;; Filename: init-auto-complete.el
+;; Description: 
+;; Author: phenix <phenix3443@gmail.com>
+;; Maintainer: 
+;; Created: 五  4月 17 14:57:48 2015 (+0800)
+;; Version: 
+;; Package-Requires: ()
+;; Last-Updated: 五  4月 17 14:58:16 2015 (+0800)
+;;           By: phenix
+;;     Update #: 1
+;; URL: 
+;; Doc URL: 
+;; Keywords: 
+;; Compatibility: 
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Commentary: 
+;; 
+;; 
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Change Log:
+;; 
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;; This program is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or (at
+;; your option) any later version.
+;; 
+;; This program is distributed in the hope that it will be useful, but
+;; WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; General Public License for more details.
+;; 
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Code:
+
+
+
 ;;; required by program-conf.el
 ;;; default from auto-complete manual
 (require-package 'auto-complete)
@@ -104,3 +152,6 @@
 (define-key ac-mode-map (kbd "C-c H") 'ac-last-help)
 
 (provide 'init-auto-complete)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; init-auto-complete.el ends here
