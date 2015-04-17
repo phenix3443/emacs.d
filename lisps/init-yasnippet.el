@@ -1,6 +1,50 @@
-;; Time-stamp: <2014-08-27 09:51:11 chengxu70>
-;; required by program-conf.el
+;;; init-yasnippet.el --- 
 
+;; 
+;; Filename: init-yasnippet.el
+;; Description: 
+;; Author: phenix <phenix3443@gmail.com>
+;; Maintainer: 
+;; Created: 五  4月 17 14:29:15 2015 (+0800)
+;; Version: 
+;; Package-Requires: ()
+;; Last-Updated: 五  4月 17 14:30:13 2015 (+0800)
+;;           By: phenix
+;;     Update #: 1
+;; URL: 
+;; Doc URL: 
+;; Keywords: 
+;; Compatibility: 
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Commentary: 
+;; 
+;; 
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Change Log:
+;; 
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;; This program is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or (at
+;; your option) any later version.
+;; 
+;; This program is distributed in the hope that it will be useful, but
+;; WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; General Public License for more details.
+;; 
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
+;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;; Code:
 (require-package 'yasnippet)
 
 (require 'yasnippet)
@@ -11,3 +55,6 @@
 ;; Set Yasnippet's key binding to shift+tab
 (define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand)
 (provide 'init-yasnippet)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; init-yasnippet.el ends here
