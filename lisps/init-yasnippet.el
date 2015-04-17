@@ -1,5 +1,4 @@
 ;;; init-yasnippet.el --- 
-
 ;; 
 ;; Filename: init-yasnippet.el
 ;; Description: 
@@ -8,9 +7,9 @@
 ;; Created: 五  4月 17 14:29:15 2015 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 五  4月 17 14:30:13 2015 (+0800)
-;;           By: phenix
-;;     Update #: 1
+;; Last-Updated: 周五 四月 17 16:58:04 2015 (+0800)
+;;           By: chengxu70
+;;     Update #: 3
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -45,6 +44,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 
 ;;; Code:
+;;; required by program-conf.el
+;;; https://github.com/capitaomorte/yasnippet
 (require-package 'yasnippet)
 
 (require 'yasnippet)
