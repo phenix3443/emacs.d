@@ -2,14 +2,14 @@
 ;; 
 ;; Filename: program-conf.el
 ;; Description: 
-;; Author: phenix3443<phenix3443@gmail.com>
+;; Author: phenix3443 <phenix3443@gmail.com>
 ;; Maintainer: 
 ;; Created: ÖÜÁù 12ÔÂ 20 00:50:11 2014 (+0800)
 ;; Version: 
 ;; Package-Requires: ()
-;; Last-Updated: 周二 三月  3 12:55:08 2015 (+0800)
-;;           By: chengxu70
-;;     Update #: 21
+;; Last-Updated: 周六 4月 18 11:00:45 2015 (+0800)
+;;           By: phenix
+;;     Update #: 22
 ;; URL: 
 ;; Doc URL: 
 ;; Keywords: 
@@ -100,7 +100,11 @@
 
 ;; c sharp mode
 (require-package 'csharp-mode)
-(provide 'program-conf)
 
+;; mardown mode
+(require 'init-markdown)
+
+
+(provide 'program-conf)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; program-conf.el ends here
