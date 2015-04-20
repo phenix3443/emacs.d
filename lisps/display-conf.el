@@ -1,48 +1,48 @@
-;;; display-conf.el --- 
-;; 
+;;; display-conf.el ---
+;;
 ;; Filename: display-conf.el
-;; Description: 
+;; Description:
 ;; Author: phenix<phenix3443@gmail.com>
-;; Maintainer: 
+;; Maintainer:
 ;; Created: 三  1月 21 03:33:18 2015 (+0800)
-;; Version: 
+;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 三  1月 21 03:36:46 2015 (+0800)
-;;           By: phenix
-;;     Update #: 3
-;; URL: 
-;; Doc URL: 
-;; Keywords: 
-;; Compatibility: 
-;; 
+;; Last-Updated: 周一 四月 20 15:40:01 2015 (+0800)
+;;           By: chengxu70
+;;     Update #: 5
+;; URL:
+;; Doc URL:
+;; Keywords:
+;; Compatibility:
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
-;;; Commentary: 
-;; 
-;; 
-;; 
+;;
+;;; Commentary:
+;;
+;;
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;;; Change Log:
-;; 
-;; 
+;;
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
 ;; the Free Software Foundation, either version 3 of the License, or (at
 ;; your option) any later version.
-;; 
+;;
 ;; This program is distributed in the hope that it will be useful, but
 ;; WITHOUT ANY WARRANTY; without even the implied warranty of
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 ;; General Public License for more details.
-;; 
+;;
 ;; You should have received a copy of the GNU General Public License
 ;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
-;; 
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;;; Code:
 ;; required by program-conf.el
 ;;14.3 Automatic Scrolling
@@ -53,6 +53,9 @@
 ;; 14.13 interactive highlight
 ;;(global-highlight-changes-mode 1)
 (global-hi-lock-mode 1)
+
+;; 14.16 Useless Whitespace
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; 14.18 optional mode line features
 (global-linum-mode t)
