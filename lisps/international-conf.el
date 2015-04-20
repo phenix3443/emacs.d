@@ -7,9 +7,9 @@
 ;; Created: 三  1月 21 22:42:59 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: Mon Apr 20 20:04:36 2015 (+0800)
+;; Last-Updated: Mon Apr 20 20:05:22 2015 (+0800)
 ;;           By: ubuntu-desktop
-;;     Update #: 22
+;;     Update #: 23
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -50,7 +50,7 @@
 
 
 ;; Set up my private Chinese environment.
-;; https://github.com/tumashu/chinese-pyim#sec-1-1
+;; https://github.com/tumashu/chinese-pyim
 (require-package 'chinese-pyim)
 (require 'chinese-pyim)
 (setq pyim-dicts '((:name "BigDict" :file "~/.emacs.d/pyim/pyim-bigdict.txt" :coding utf-8-unix)))
