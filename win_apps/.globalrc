@@ -1,5 +1,6 @@
 #
-# Copyright (c) 1998, 1999, 2000, 2001, 2002, 2003, 2010, 2011, 2013
+# Copyright (c) 1998, 1999, 2000, 2001, 2002, 2003, 2010, 2011, 2013,
+#	2015
 #	Tama Communications Corporation
 #
 # This file is part of GNU GLOBAL.
@@ -15,13 +16,13 @@
 # *
 # Configuration file for GNU GLOBAL source code tag system.
 #
-# GLOBAL doesn't need 'gtags.conf' because it has the default values in it.
-# But if you have this file as '/etc/gtags.conf' or "$HOME/.globalrc"
-# then GLOBAL system overwrite default values with the values from the file.
+# Basically, GLOBAL doesn't need this file ('gtags.conf'), because it has
+# default values in itsself. If you have the file as '/etc/gtags.conf' or
+# "$HOME/.globalrc" in your system then GLOBAL overwrite the default values
+# with the values in the file.
 #
-# 'gtags.conf' is termcap style file.
-# 'default' is default target.
-# You can specify target with GTAGSLABEL environment variable.
+# The format is similar to termcap(5). You can specify a target with
+# GTAGSLABEL environment variable. Default target is 'default'.
 #
 default:\
 	:tc=native:tc=pygments:
@@ -38,7 +39,7 @@ pygments:\
 # See gtags(1).
 #---------------------------------------------------------------------
 common:\
-	:skip=HTML/,HTML.pub/,tags,TAGS,ID,y.tab.c,y.tab.h,cscope.out,cscope.po.out,cscope.in.out,SCCS/,RCS/,CVS/,CVSROOT/,{arch}/,.svn/,.git/,autom4te.cache/:
+	:skip=HTML/,HTML.pub/,tags,TAGS,ID,y.tab.c,y.tab.h,gtags.files,cscope.files,cscope.out,cscope.po.out,cscope.in.out,SCCS/,RCS/,CVS/,CVSROOT/,{arch}/,autom4te.cache/,*.orig,*.rej,*.bak,*~,#*#,*.swp,*.tmp,*_flymake.*,*_flymake:
 #
 # Built-in parsers.
 #
@@ -53,7 +54,7 @@ builtin-parser:\
 user-custom|User custom plugin parser:\
 	:tc=common:\
 	:langmap=c\:.c.h:\
-	:gtags_parser=c\:/usr/local/lib/gtags/user-custom.la:
+	:gtags_parser=c\:c\:/usr/lib/gtags/user-custom.la:
 #
 # Plug-in parser to use Exuberant Ctags.
 #
@@ -98,46 +99,48 @@ exuberant-ctags|plugin-example|setting to use Exuberant Ctags plug-in parser:\
 	:langmap=VHDL\:.vhdl.vhd:\
 	:langmap=Vim\:.vim:\
 	:langmap=YACC\:.y:\
-	:gtags_parser=Asm\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=Asp\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=Awk\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=Basic\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=BETA\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=C\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=C++\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=C#\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=Cobol\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=DosBatch\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=Eiffel\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=Erlang\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=Flex\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=Fortran\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=HTML\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=Java\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=JavaScript\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=Lisp\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=Lua\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=MatLab\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=OCaml\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=Pascal\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=Perl\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=PHP\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=Python\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=REXX\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=Ruby\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=Scheme\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=Sh\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=SLang\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=SML\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=SQL\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=Tcl\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=Tex\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=Vera\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=Verilog\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=VHDL\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=Vim\:/usr/local/lib/gtags/exuberant-ctags.la:\
-	:gtags_parser=YACC\:/usr/local/lib/gtags/exuberant-ctags.la:
-
+	:gtags_parser=Asm\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=Asp\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=Awk\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=Basic\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=BETA\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=C\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=C++\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=C#\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=Cobol\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=DosBatch\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=Eiffel\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=Erlang\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=Flex\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=Fortran\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=HTML\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=Java\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=JavaScript\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=Lisp\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=Lua\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=MatLab\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=OCaml\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=Pascal\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=Perl\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=PHP\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=Python\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=REXX\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=Ruby\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=Scheme\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=Sh\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=SLang\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=SML\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=SQL\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=Tcl\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=Tex\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=Vera\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=Verilog\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=VHDL\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=Vim\:c\:/usr/lib/gtags/exuberant-ctags.la:\
+	:gtags_parser=YACC\:c\:/usr/lib/gtags/exuberant-ctags.la:
+#
+# Plug-in parser to use Pygments.
+#
 pygments-parser|Pygments plug-in parser:\
 	:tc=common:\
 	:langmap=ABAP\:.abap:\
@@ -292,161 +295,160 @@ pygments-parser|Pygments plug-in parser:\
 	:langmap=XQuery\:.xqy.xquery.xq.xql.xqm:\
 	:langmap=XSLT\:.xsl.xslt.xpl:\
 	:langmap=Xtend\:.xtend:\
-	:gtags_parser=ABAP\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=ANTLR\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=ActionScript3\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Ada\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=AppleScript\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=AspectJ\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Aspx-cs\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Asymptote\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=AutoIt\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Awk\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=BUGS\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Bash\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Bat\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=BlitzMax\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Boo\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Bro\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=C#\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=C++\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=COBOLFree\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=COBOL\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=CUDA\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=C\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Ceylon\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Cfm\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Clojure\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=CoffeeScript\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Common-Lisp\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Coq\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Croc\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Csh\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Cython\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Dart\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Dg\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Duel\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Dylan\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=ECL\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=EC\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=ERB\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Elixir\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Erlang\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Evoque\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=FSharp\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Factor\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Fancy\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Fantom\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Felix\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Fortran\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=GAS\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=GLSL\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Genshi\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Gherkin\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Gnuplot\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Go\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=GoodData-CL\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Gosu\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Groovy\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Gst\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=HaXe\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Haml\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Haskell\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Hxml\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Hybris\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=IDL\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Io\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Ioke\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=JAGS\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Jade\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=JavaScript\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Java\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Jsp\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Julia\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Koka\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Kotlin\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=LLVM\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Lasso\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Literate-Haskell\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=LiveScript\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Logos\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Logtalk\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Lua\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=MAQL\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=MOOCode\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=MXML\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Mako\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Mason\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Matlab\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=MiniD\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Modelica\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Modula2\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Monkey\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=MoonScript\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=MuPAD\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Myghty\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=NASM\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=NSIS\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Nemerle\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=NewLisp\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Newspeak\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Nimrod\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=OCaml\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Objective-C++\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Objective-C\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Objective-J\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Octave\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Ooc\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Opa\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=OpenEdge\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=PHP\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Pascal\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Perl\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=PostScript\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=PowerShell\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Prolog\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Python\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=QML\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=REBOL\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=RHTML\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Racket\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Ragel\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Redcode\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=RobotFramework\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Ruby\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Rust\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=S\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Scala\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Scaml\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Scheme\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Scilab\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Smalltalk\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Smarty\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Sml\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Snobol\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=SourcePawn\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Spitfire\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Ssp\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Stan\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=SystemVerilog\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Tcl\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=TeX\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Tea\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Treetop\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=TypeScript\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=UrbiScript\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=VB.net\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=VGL\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Vala\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Velocity\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Verilog\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Vhdl\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Vim\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=XBase\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=XQuery\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=XSLT\:/usr/local/lib/gtags/pygments-parser.la:\
-	:gtags_parser=Xtend\:/usr/local/lib/gtags/pygments-parser.la:
-
+	:gtags_parser=ABAP\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=ANTLR\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=ActionScript3\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Ada\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=AppleScript\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=AspectJ\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Aspx-cs\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Asymptote\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=AutoIt\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Awk\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=BUGS\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Bash\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Bat\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=BlitzMax\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Boo\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Bro\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=C#\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=C++\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=COBOLFree\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=COBOL\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=CUDA\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=C\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Ceylon\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Cfm\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Clojure\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=CoffeeScript\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Common-Lisp\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Coq\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Croc\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Csh\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Cython\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Dart\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Dg\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Duel\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Dylan\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=ECL\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=EC\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=ERB\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Elixir\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Erlang\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Evoque\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=FSharp\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Factor\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Fancy\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Fantom\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Felix\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Fortran\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=GAS\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=GLSL\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Genshi\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Gherkin\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Gnuplot\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Go\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=GoodData-CL\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Gosu\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Groovy\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Gst\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=HaXe\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Haml\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Haskell\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Hxml\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Hybris\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=IDL\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Io\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Ioke\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=JAGS\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Jade\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=JavaScript\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Java\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Jsp\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Julia\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Koka\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Kotlin\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=LLVM\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Lasso\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Literate-Haskell\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=LiveScript\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Logos\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Logtalk\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Lua\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=MAQL\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=MOOCode\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=MXML\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Mako\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Mason\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Matlab\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=MiniD\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Modelica\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Modula2\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Monkey\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=MoonScript\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=MuPAD\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Myghty\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=NASM\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=NSIS\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Nemerle\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=NewLisp\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Newspeak\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Nimrod\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=OCaml\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Objective-C++\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Objective-C\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Objective-J\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Octave\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Ooc\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Opa\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=OpenEdge\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=PHP\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Pascal\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Perl\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=PostScript\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=PowerShell\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Prolog\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Python\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=QML\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=REBOL\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=RHTML\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Racket\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Ragel\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Redcode\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=RobotFramework\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Ruby\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Rust\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=S\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Scala\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Scaml\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Scheme\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Scilab\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Smalltalk\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Smarty\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Sml\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Snobol\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=SourcePawn\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Spitfire\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Ssp\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Stan\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=SystemVerilog\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Tcl\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=TeX\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Tea\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Treetop\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=TypeScript\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=UrbiScript\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=VB.net\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=VGL\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Vala\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Velocity\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Verilog\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Vhdl\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Vim\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=XBase\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=XQuery\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=XSLT\:c\:/usr/lib/gtags/pygments-parser.la:\
+	:gtags_parser=Xtend\:c\:/usr/lib/gtags/pygments-parser.la:
 #
 # Drupal configuration.
 #
@@ -455,8 +457,6 @@ drupal|Drupal content management platform:\
 	:langmap=php\:.php.module.inc.profile.install.test:
 #---------------------------------------------------------------------
 # Configuration for htags(1)
-# Let's paint hypertext with your favorite colors!
-# See htags(1).
 #---------------------------------------------------------------------
 htags:\
-	:script_alias=/cgi-bin/:ncol#4:tabs#8:normal_suffix=html:gzipped_suffix=ghtml:
+	::
