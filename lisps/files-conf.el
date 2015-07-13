@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 14
+;;     Update #: 18
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -62,12 +62,13 @@
 ;; 18.14 Remote Files
 (require 'tramp)
 ;; from http://www.gnu.org/software/emacs/manual/html_mono/tramp.html#Top
-;; (add-to-list 'tramp-default-method-alist '("" "phenix" "plink"))
-;; (add-to-list 'tramp-default-user-alist '())
+(add-to-list 'tramp-default-method-alist '("" "phenix" "plink"))
+(add-to-list 'tramp-default-user-alist '(nil nil "phenix") t)
 ;; (if (equal system-type 'windows-nt)
 	;; (setq tramp-default-method "pscp"))
 (setq tramp-default-user "phenix")
-(setq tramp-default-host "192.168.40.134")
+(setq tramp-default-host "192.168.2.144")
+(setq password-cache-expiry 86400)
 ;; (require 'auth-source)
 ;; (add-to-list 'tramp-default-proxies-alist '(nil "\\'root\\'" "/ssh:%h:"))
 (provide 'files-conf)
