@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 11
+;;     Update #: 12
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -65,7 +65,7 @@
 (add-to-list 'tramp-default-method-alist '("" "phenix" "plink"))
 (add-to-list 'tramp-default-user-alist '())
 (if (equal system-type 'windows-nt)
-	(setq tramp-default-method "plink"))
+	(setq tramp-default-method "pscp"))
 (setq tramp-default-user "phenix")
 (setq tramp-default-host "192.168.40.134")
 ;; (require 'auth-source)
