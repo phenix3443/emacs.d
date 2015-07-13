@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 10
+;;     Update #: 11
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -61,6 +61,7 @@
 
 ;; 18.14 Remote Files
 (require 'tramp)
+;; from http://www.gnu.org/software/emacs/manual/html_mono/tramp.html#Top
 (add-to-list 'tramp-default-method-alist '("" "phenix" "plink"))
 (add-to-list 'tramp-default-user-alist '())
 (if (equal system-type 'windows-nt)
