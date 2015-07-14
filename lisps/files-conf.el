@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 18
+;;     Update #: 19
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -67,7 +67,7 @@
 ;; (if (equal system-type 'windows-nt)
 	;; (setq tramp-default-method "pscp"))
 (setq tramp-default-user "phenix")
-(setq tramp-default-host "192.168.2.144")
+;; (setq tramp-default-host "192.168.2.144")
 (setq password-cache-expiry 86400)
 ;; (require 'auth-source)
 ;; (add-to-list 'tramp-default-proxies-alist '(nil "\\'root\\'" "/ssh:%h:"))
