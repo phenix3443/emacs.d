@@ -7,9 +7,9 @@
 ;; Created: ÖÜÁù 12ÔÂ 20 00:50:11 2014 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周四 七月 16 13:37:38 2015 (+0800)
-;;           By: chengxu70
-;;     Update #: 28
+;; Last-Updated: 周四 7月 16 22:43:37 2015 (+0800)
+;;           By: phenix
+;;     Update #: 29
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -56,7 +56,7 @@
 ;; 26.5.2 Multiple Lines of Comments
 
 ;; comment-dwim-line-version-1
-(defun comment-dwin-line()
+(defun comment-dwim-line()
   (interactive)
   (let ((start (line-beginning-position))
 		(end (line-end-position)))
