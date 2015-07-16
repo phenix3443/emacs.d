@@ -7,8 +7,8 @@
 ;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
-;; Last-Updated: 周四 七月 16 18:16:56 2015 (+0800)
-;;           By: chengxu70
+;; Last-Updated: 周五 7月 17 00:40:31 2015 (+0800)
+;;           By: phenix
 ;;     Update #:
 ;; URL:
 ;; Doc URL:
@@ -101,8 +101,10 @@
   ;; Auth-source	Emacs library for storing and sharing secret data.
   (require 'auth-source)
   (add-to-list 'auth-sources "~/.emacs.d/.authinfo.gpg")
-  (when (equal system-type 'windows-nt)
-	(w32-shell-execute "open" (concat win-app-dir "pageant.exe")))
+  ;; should close pageant first
+  ;; (when (equal system-type 'windows-nt)
+  ;; (shell-command "tskill pageant")
+	;; (w32-shell-execute "open" (concat win-app-dir "pageant.exe")))
 
   ;; Autotype	Features for frequently-entered text.
   ;; Calc	Calc is an advanced calculator and mathematical tool.
