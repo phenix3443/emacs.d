@@ -7,7 +7,7 @@
 ;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
-;; Last-Updated: 周四 七月 16 17:06:46 2015 (+0800)
+;; Last-Updated: 周四 七月 16 18:16:56 2015 (+0800)
 ;;           By: chengxu70
 ;;     Update #:
 ;; URL:
@@ -97,12 +97,17 @@
   ;; GNU Emacs on MS Windows FAQ.
   ;; GNU Emacs reference cards.
   ;; Ada-mode(Emacs mode for editing Ada code.)
+
   ;; Auth-source	Emacs library for storing and sharing secret data.
   (require 'auth-source)
   (add-to-list 'auth-sources "~/.emacs.d/.authinfo.gpg")
+  (when (equal system-type 'windows-nt)
+	(w32-shell-execute "open" (concat win-app-dir "pageant.exe")))
+
   ;; Autotype	Features for frequently-entered text.
   ;; Calc	Calc is an advanced calculator and mathematical tool.
-  ;; CC mode	Mode for editing C, C++, Objective C, Java, Pike, and IDL code.
+
+  ;; CC mode Mode for editing C, C++, Objective C, Java, Pike, and IDL code.
   (setq c-default-style '((java-mode . "java")
 						  (awk-mode . "awk")
 						  (other . "linux")))
@@ -152,7 +157,12 @@
   ;; Speedbar	File and tag summarizing utility.
   ;; Supercite	Package for citing and attributing messages.
   ;; Todo mode	Keeping track of things to do.
+
   ;; Tramp	Transparent remote file access system.
+  (require 'tramp)
+  (setq tramp-default-user "phenix")
+  (setq password-cache-expiry 86400)
+
   ;; URL	Library for manipulating and retrieving URLs and URIs.
   ;; VIP	An older VI emulator.
   ;; Viper	VI emulator.

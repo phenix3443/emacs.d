@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 28
+;;     Update #: 31
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -60,20 +60,7 @@
 ;; Auto save
 
 ;; 18.14 Remote Files
-(require 'tramp)
-;; from http://www.gnu.org/software/emacs/manual/html_mono/tramp.html#Top
-(add-to-list 'tramp-default-method-alist '("" "phenix" "plink"))
-(add-to-list 'tramp-default-user-alist '(nil nil "phenix") t)
-(when (equal system-type 'windows-nt)
-  (w32-shell-execute "open" (concat win-app-dir "pageant.exe"))
-;; (setq tramp-default-method "pscp")
-)
-(setq tramp-default-user "phenix")
-;; (setq tramp-default-host "192.168.2.144")
-(setq password-cache-expiry 86400)
-;; 4.12 Reusing passwords for several connections
 
-;; (add-to-list 'tramp-default-proxies-alist '(nil "\\'root\\'" "/ssh:%h:"))
 (provide 'files-conf)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
