@@ -7,9 +7,9 @@
 ;; Created: 周六 一月 17 10:10:24 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周四 7月 16 23:00:42 2015 (+0800)
+;; Last-Updated: 周四 7月 16 23:31:13 2015 (+0800)
 ;;           By: phenix
-;;     Update #: 8
+;;     Update #: 9
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -58,7 +58,7 @@
 (require-package 'indent-guide)
 (indent-guide-global-mode)
 (setq indent-guide-delay 0.1)
-(setq indent-guide-recursive t)
+;; (setq indent-guide-recursive t)
 
 ;;;
 ;; (require-package 'highlight-indentation)
