@@ -7,7 +7,7 @@
 ;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
-;; Last-Updated: 周四 七月 16 10:53:56 2015 (+0800)
+;; Last-Updated: 周四 七月 16 13:26:11 2015 (+0800)
 ;;           By: chengxu70
 ;;     Update #:
 ;; URL:
@@ -62,8 +62,8 @@
 ;; use proxy for internet
 ;; (setq url-proxy-services
 	  ;; '(
-		;; ("http" . "127.0.0.1:8087")
-		;; ("https" . "127.0.0.1:8087")))
+		;; ("http" . "127.0.0.1:10800")
+		;; ("https" . "127.0.0.1:10800")))
 
 ;;加载配置文件，按照 https://www.gnu.org/software/emacs/manual/ 出现顺序
 ;; GNU Emacs manual.
