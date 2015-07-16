@@ -7,9 +7,9 @@
 ;; Created: ÖÜÁù 12ÔÂ 20 00:50:11 2014 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周四 七月 16 13:33:25 2015 (+0800)
+;; Last-Updated: 周四 七月 16 13:37:38 2015 (+0800)
 ;;           By: chengxu70
-;;     Update #: 26
+;;     Update #: 28
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -55,32 +55,23 @@
 
 ;; 26.5.2 Multiple Lines of Comments
 
-;; comment-dwin-line-version-1
-;; (defun comment-dwin-line()
-;;   (interactive)
-;;   (let ((start (line-beginning-position))
-;; 		(end (line-end-position)))
-;; 	(when (region-active-p)
-;; 	  (setq start (save-excursion
-;; 					(goto-char (region-beginning))
-;; 					(beginning-of-line)
-;; 					(point))
-;; 			end (save-excursion
-;; 				  (goto-char (region-end))
-;; 				  (end-of-line)
-;; 				  (point))))
-;; 	(comment-or-uncomment-region start end)))
+;; comment-dwim-line-version-1
+(defun comment-dwin-line()
+  (interactive)
+  (let ((start (line-beginning-position))
+		(end (line-end-position)))
+	(when (region-active-p)
+	  (setq start (save-excursion
+					(goto-char (region-beginning))
+					(beginning-of-line)
+					(point))
+			end (save-excursion
+				  (goto-char (region-end))
+				  (end-of-line)
+				  (point))))
+	(comment-or-uncomment-region start end)))
 
-;; comment-dwin-line-version-2
-(defun comment-dwim-line (&optional arg)
-  "Replacement for the comment-dwim command. If no region is selected and current line is not blank and we are not at the end of the line, then comment current line. Replaces default behaviour of comment-dwim, when it inserts comment at the end of the line."
-  (interactive "*P")
-  (comment-normalize-vars)
-  (if (and (not (region-active-p)) (not (looking-at "[ \t]*$")))
-	  (comment-or-uncomment-region (line-beginning-position) (line-end-position))
-	(comment-dwim arg)))
-
-(global-set-key (kbd "C-;") 'comment-dwin-line)
+(global-set-key (kbd "C-;") 'comment-dwim-line)
 ;; 26.8 Completion for symbol names
 (require 'init-yasnippet)
 ;; auto-complete configure
