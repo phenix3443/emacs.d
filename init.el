@@ -7,7 +7,7 @@
 ;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
-;; Last-Updated: 周一 七月 13 16:07:10 2015 (+0800)
+;; Last-Updated: 周四 七月 16 10:53:56 2015 (+0800)
 ;;           By: chengxu70
 ;;     Update #:
 ;; URL:
@@ -55,6 +55,9 @@
 (defconst is-cygwin-os (equal system-type 'cygwin) "cygwin")
 
 (defconst tmp-dir "~/.emacs.d/tmp-dir/")
+;; some executable program in windows OS
+(when (equal system-type 'windows-nt)
+  (defconst win-app-dir "~/.emacs.d/win_apps/"))
 
 ;; use proxy for internet
 ;; (setq url-proxy-services
