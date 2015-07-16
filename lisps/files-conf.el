@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 27
+;;     Update #: 28
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -72,8 +72,7 @@
 ;; (setq tramp-default-host "192.168.2.144")
 (setq password-cache-expiry 86400)
 ;; 4.12 Reusing passwords for several connections
-(require 'auth-source)
-(add-to-list 'auth-sources "~/.emacs.d/.authinfo.gpg")
+
 ;; (add-to-list 'tramp-default-proxies-alist '(nil "\\'root\\'" "/ssh:%h:"))
 (provide 'files-conf)
 
