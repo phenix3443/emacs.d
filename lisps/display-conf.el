@@ -7,9 +7,9 @@
 ;; Created: 三  1月 21 03:33:18 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周一 四月 20 15:40:01 2015 (+0800)
+;; Last-Updated: 周一 七月 20 16:57:29 2015 (+0800)
 ;;           By: chengxu70
-;;     Update #: 5
+;;     Update #: 7
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -55,7 +55,9 @@
 (global-hi-lock-mode 1)
 
 ;; 14.16 Useless Whitespace
+(setq show-trailing-whitespace t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(setq-default indicate-empty-lines t)
 
 ;; 14.18 optional mode line features
 (global-linum-mode t)
