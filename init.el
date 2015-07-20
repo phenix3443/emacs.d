@@ -7,8 +7,8 @@
 ;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
-;; Last-Updated: 周五 7月 17 00:40:31 2015 (+0800)
-;;           By: phenix
+;; Last-Updated: 周一 七月 20 10:33:07 2015 (+0800)
+;;           By: chengxu70
 ;;     Update #:
 ;; URL:
 ;; Doc URL:
@@ -99,8 +99,9 @@
   ;; Ada-mode(Emacs mode for editing Ada code.)
 
   ;; Auth-source	Emacs library for storing and sharing secret data.
-  (require 'auth-source)
-  (add-to-list 'auth-sources "~/.emacs.d/.authinfo.gpg")
+  ;; 在window下莫名卡顿，先注释
+  ;; (require 'auth-source)
+  ;; (add-to-list 'auth-sources "~/.emacs.d/.authinfo.gpg")
   ;; should close pageant first
   ;; (when (equal system-type 'windows-nt)
   ;; (shell-command "tskill pageant")
