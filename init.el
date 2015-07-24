@@ -7,8 +7,8 @@
 ;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
-;; Last-Updated: 周五 七月 24 17:32:08 2015 (+0800)
-;;           By: chengxu70
+;; Last-Updated: 周五 7月 24 22:29:30 2015 (+0800)
+;;           By: phenix
 ;;     Update #:
 ;; URL:
 ;; Doc URL:
@@ -98,14 +98,16 @@
   ;; GNU Emacs reference cards.
   ;; Ada-mode(Emacs mode for editing Ada code.)
 
-  ;; Auth-source	Emacs library for storing and sharing secret data.
+  ;; Auth-source Emacs library for storing and sharing secret data.
   ;; 在window下莫名卡顿，先注释
   ;; (require 'auth-source)
   ;; (add-to-list 'auth-sources "~/.emacs.d/.authinfo.gpg")
   ;; should close pageant first
   (when (equal system-type 'windows-nt)
-	(shell-command-to-string "taskkill /IM pageant.exe")
-	(w32-shell-execute "open" (concat win-app-dir "pageant.exe")))
+	(when(executable-find "pageant")
+	  (shell-command-to-string "taskkill /IM pageant.exe")
+	  (start-process "pageant" nil "pageant")
+	  ))
 
   ;; Autotype	Features for frequently-entered text.
   ;; Calc	Calc is an advanced calculator and mathematical tool.

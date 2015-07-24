@@ -30,3 +30,5 @@ win_apps/pygments
 tmp-dir
 gtags.files
 tramp
+Everything.db
+Everything.ini
