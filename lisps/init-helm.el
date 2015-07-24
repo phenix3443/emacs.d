@@ -7,9 +7,9 @@
 ;; Created: 周二 一月 13 19:41:57 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周五 七月 24 17:09:56 2015 (+0800)
-;;           By: chengxu70
-;;     Update #: 16
+;; Last-Updated: 周五 7月 24 23:31:22 2015 (+0800)
+;;           By: phenix
+;;     Update #: 25
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -68,7 +68,12 @@
 (setq helm-mode-fuzzy-match t
 	  helm-completion-in-region-fuzzy-match t)
 
-
+;; helm-locate 使用es.exe的时候everything必须要启动
+(when (equal system-type 'windows-nt)
+  (when (executable-find "everything")
+	(shell-command "taskkill /IM everything.exe")
+	(start-process "everything" nil "everything" "-admin" "-minimized")
+	))
 
 (when (executable-find "curl")
   (setq helm-google-suggest-use-curl-p t))
