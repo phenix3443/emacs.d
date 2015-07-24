@@ -7,9 +7,9 @@
 ;; Created: 周二 一月 13 19:41:57 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周五 7月 24 23:31:22 2015 (+0800)
+;; Last-Updated: 周六 7月 25 00:35:07 2015 (+0800)
 ;;           By: phenix
-;;     Update #: 25
+;;     Update #: 26
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -72,7 +72,7 @@
 (when (equal system-type 'windows-nt)
   (when (executable-find "everything")
 	(shell-command "taskkill /IM everything.exe")
-	(start-process "everything" nil "everything" "-admin" "-minimized")
+	(start-process-shell-command "everything" nil "everything -admin -minimized")
 	))
 
 (when (executable-find "curl")
