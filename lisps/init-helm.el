@@ -1,63 +1,74 @@
-;;; init-helm.el --- 
-;; 
+;;; init-helm.el ---
+;;
 ;; Filename: init-helm.el
-;; Description: 
-;; Author: phenix3443@gmail.com
-;; Maintainer: 
+;; Description:
+;; Author: phenix3443 <phenix3443@gmail.com>
+;; Maintainer: phenix3443 <phenix3443@gmail.com>
 ;; Created: 周二 一月 13 19:41:57 2015 (+0800)
-;; Version: 
+;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周二 一月 13 19:42:28 2015 (+0800)
+;; Last-Updated: 周五 七月 24 17:09:56 2015 (+0800)
 ;;           By: chengxu70
-;;     Update #: 2
-;; URL: 
-;; Doc URL: 
-;; Keywords: 
-;; Compatibility: 
-;; 
+;;     Update #: 16
+;; URL:
+;; Doc URL:
+;; Keywords:
+;; Compatibility:
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
-;;; Commentary: 
-;; 
-;; 
-;; 
+;;
+;;; Commentary:
+;;
+;;
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;;; Change Log:
-;; 
-;; 
+;;
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
 ;; the Free Software Foundation, either version 3 of the License, or (at
 ;; your option) any later version.
-;; 
+;;
 ;; This program is distributed in the hope that it will be useful, but
 ;; WITHOUT ANY WARRANTY; without even the implied warranty of
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 ;; General Public License for more details.
-;; 
+;;
 ;; You should have received a copy of the GNU General Public License
 ;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
-;; 
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;;; Code:
 
-;;; configure defult from helm wiki
-
 (require-package 'helm)
-(require 'helm)
-(require 'helm-config)
-;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
-;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
-;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
 
-(setq helm-M-x-fuzzy-match t) ;; optional fuzzy matching for helm-M-x
-;;
-(setq helm-semantic-fuzzy-match t
-	  helm-imenu-fuzzy-match t)
+(require 'helm-config)
+
+;; enable modes
+(helm-mode 1)
+(helm-adaptive-mode 1)
+(helm-autoresize-mode 1)
+
+;; Fuzzy matching
+;; (setq helm-recentf-fuzzy-match t
+;; 	  helm-buffers-fuzzy-matching t
+;; 	  helm-locate-fuzzy-match t
+;; 	  helm-M-x-fuzzy-match t
+;; 	  helm-semantic-fuzzy-match t
+;; 	  helm-imenu-fuzzy-match t
+;; 	  helm-apropos-fuzzy-match t
+;; 	  helm-lisp-fuzzy-completion t)
+;; (setq helm-candidate-number-limit 100)
+;; enable fuzzy matching globally in all functions helmized by helm-mode
+(setq helm-mode-fuzzy-match t
+	  helm-completion-in-region-fuzzy-match t)
+
+
 
 (when (executable-find "curl")
   (setq helm-google-suggest-use-curl-p t))
@@ -72,9 +83,9 @@
       helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
       helm-ff-file-name-history-use-recentf t)
 (add-to-list 'helm-sources-using-default-as-input 'helm-source-man-pages)
-(setq helm-locate-fuzzy-match t)
+
 (setq helm-apropos-function-list t)
-(setq helm-lisp-fuzzy-completion t)
+
 ;; key binding
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
 (global-unset-key (kbd "C-x c"))
@@ -96,7 +107,7 @@
           #'(lambda ()
               (define-key eshell-mode-map (kbd "C-c C-l")  'helm-eshell-history)))
 (define-key shell-mode-map (kbd "C-c C-l") 'helm-comint-input-ring)
-(helm-mode 1)
+
 
 (provide 'init-helm)
 
