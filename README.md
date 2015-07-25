@@ -8,18 +8,17 @@ Emacs配置文件。按照Emacs Manual 章节排列。
 windows安装准备工作：
 安装git，执行git clone https://github.com/phenix3443/emacs.d.git %APPDATA%\.emacs.d
 为GNU Global做准备：
-安装python,TortoiseHg,
-安装pygments
-解压glo65wb.zip
+安装python 2.7.9
+
+
 如果要使用gpg，自行安装%APPDATA%\.emacs.d\win_apps\gpg4win-2.2.5.exe
 
 以管理员权限执行windows_init.bat
 
 
 ubuntu安装步骤：
-sudo apt-get -y install git hg
 git clone https://github.com/phenix3443/emacs.d.git ~/.emacs.d
-hg clone pygment
+
 sudo ~/.emacs.d/ubuntu_init.sh
 
 Note:
