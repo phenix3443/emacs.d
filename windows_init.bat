@@ -3,8 +3,13 @@ wmic ENVIRONMENT where "name='path' and username='<system>'" set VariableValue="
 rem 添加gnu global使用的环境变量
 wmic ENVIRONMENT create name="GTAGSCONF",username="<system>",VariableValue="%APPDATA%\.emacs.d\win_apps\glo65wb\share\gtags\gtags.conf"
 wmic ENVIRONMENT create name="GTAGSLABEL",username="<system>",VariableValue="pygment"
+
 rem 解压GNU Global
 unzip -o glo65wb.zip
+
+rem install pygments
+python .\win_apps\python get-pip.py
+pip install Pygments
 
 
 echo Done successfully!
