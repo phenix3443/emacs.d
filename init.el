@@ -7,7 +7,7 @@
 ;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
-;; Last-Updated: 周六 7月 25 00:37:49 2015 (+0800)
+;; Last-Updated: 周六 7月 25 11:44:09 2015 (+0800)
 ;;           By: phenix
 ;;     Update #:
 ;; URL:
@@ -106,7 +106,7 @@
   (when (equal system-type 'windows-nt)
 	(when(executable-find "pageant")
 	  (shell-command-to-string "taskkill /IM pageant.exe")
-	  (start-process-shell-command "pageant" nil "pageant")
+	  (start-process "pageant" nil "pageant")
 	  ))
 
   ;; Autotype	Features for frequently-entered text.
