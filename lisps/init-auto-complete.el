@@ -47,7 +47,9 @@
 
 ;;; required by program-conf.el
 ;;; https://github.com/auto-complete/auto-complete
+(require-package 'popup)
 (require-package 'auto-complete)
+
 
 ;; 3.2 install script
 (require 'auto-complete)
