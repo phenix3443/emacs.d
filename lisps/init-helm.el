@@ -7,9 +7,9 @@
 ;; Created: 周二 一月 13 19:41:57 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周六 7月 25 11:45:21 2015 (+0800)
-;;           By: phenix
-;;     Update #: 27
+;; Last-Updated: 周二 7月 28 12:17:33 2015 (+0800)
+;;           By: chengxu70
+;;     Update #: 28
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -70,10 +70,11 @@
 
 ;; helm-locate 使用es.exe的时候everything必须要启动
 (when (equal system-type 'windows-nt)
-  (when (executable-find "everything")
-	(shell-command "taskkill /IM everything.exe")
-	(start-process "everything" nil "everything" "-admin" "-minimized")
-	))
+  (let ((str (shell-command-to-string "tasklist /FI \"IMAGENAME eq Everything.exe\"")))
+	(when (not (string-match "Everything.exe" str))
+	  (when (executable-find "everything")
+		;; (shell-command "taskkill /IM everything.exe")
+		(start-process "everything" nil "everything" "-admin" "-minimized")))))
 
 (when (executable-find "curl")
   (setq helm-google-suggest-use-curl-p t))

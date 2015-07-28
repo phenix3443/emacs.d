@@ -7,8 +7,8 @@
 ;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
-;; Last-Updated: 周六 7月 25 11:44:09 2015 (+0800)
-;;           By: phenix
+;; Last-Updated: 周二 7月 28 14:20:08 2015 (+0800)
+;;           By: chengxu70
 ;;     Update #:
 ;; URL:
 ;; Doc URL:
@@ -102,12 +102,14 @@
   ;; 在window下莫名卡顿，先注释
   ;; (require 'auth-source)
   ;; (add-to-list 'auth-sources "~/.emacs.d/.authinfo.gpg")
-  ;; should close pageant first
+
+  ;; start pageant first
   (when (equal system-type 'windows-nt)
-	(when(executable-find "pageant")
-	  (shell-command-to-string "taskkill /IM pageant.exe")
-	  (start-process "pageant" nil "pageant")
-	  ))
+	(let ((str (shell-command-to-string "tasklist /FI \"IMAGENAME eq pageant.exe\"")))
+	  (when (not (string-match "pageant.exe" str))
+		(when (executable-find "pageant")
+		  ;;  (shell-command-to-string "taskkill /IM pageant.exe")
+		  (start-process "pageant" nil "pageant")))))
 
   ;; Autotype	Features for frequently-entered text.
   ;; Calc	Calc is an advanced calculator and mathematical tool.
