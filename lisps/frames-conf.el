@@ -1,15 +1,60 @@
-;;;Time-stamp: <2014-08-27 10:15:34 chengxu70>
+;;; frames-conf.el ---
+;;
+;; Filename: frames-conf.el
+;; Description:
+;; Author: phenix3443 <phenix3443@gmail.com>
+;; Maintainer: phenix3443
+;; Created: 周四 7月 30 20:10:34 2015 (+0800)
+;; Version:
+;; Package-Requires: ()
+;; Last-Updated:
+;;           By:
+;;     Update #: 2
+;; URL:
+;; Doc URL:
+;; Keywords:
+;; Compatibility:
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;; Commentary:
+;;
+;;
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;; Change Log:
+;;
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; This program is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or (at
+;; your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful, but
+;; WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;; Code:
 
 ;; 21.8 Fonts
-(require 'cl) 
+(require 'cl)
 (defun font-candidate (&rest fonts)
   "Return existing font which first match."
   (find-if (lambda (f) (find-font (font-spec :name f))) fonts))
 
-(let ((en-font (font-candidate "DejaVu Sans Mono-14" "Consolas-14")) 
+(let ((en-font (font-candidate "DejaVu Sans Mono-14" "Consolas-14"))
       (zh-font (font-candidate "Microsoft Yahei-14" "文泉驿微米黑 14")))
   ;;set en-font
-  (setq default-frame-alist 
+  (setq default-frame-alist
 		(list '(alpha 100 50)
 			  (cons 'font en-font)))
   ;; set zh-font
@@ -26,7 +71,7 @@
 (transparency 100)
 
 ;; 21.12 Scroll Bars
-(set-scroll-bar-mode nil) 
+(set-scroll-bar-mode nil)
 ;; 21.13 Drag and  Drop
 ;; 21.14 Menu Bars
 
@@ -45,3 +90,6 @@
 (setq frame-title-format '("%*" " " "%f"))
 
 (provide 'frames-conf)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; frames-conf.el ends here
