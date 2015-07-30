@@ -58,8 +58,7 @@
 ;; ede
 (setq ede-locate-setup-options '(ede-locate-global ede-locate-base))
 (global-ede-mode t)
-(defvar tmp-dir)
-(setq ede-project-placeholder-cache-file (concat tmp-dir "ede-projects.el"))
+(setq ede-project-placeholder-cache-file "~/.emacs.d/tmp-dir/ede-projects.el")
 
 ;; configure from semantic manual
 ;; https://www.gnu.org/software/emacs/manual/html_mono/semantic.html
@@ -76,7 +75,7 @@
 								  ;;global-semantic-stickyfunc-mode
 								  ))
 ;; 2.2.1 Semanticdb Tag Storage
-(setq semantic-default-save-directory (concat tmp-dir "semanticdb/"))
+(setq semantic-default-save-directory "~/.emacs.d/tmp-dir/semanticdb/")
 
 ;; 2.2.2.2 SemanticDB project roots
 (defun get-semantic-project-root()
