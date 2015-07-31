@@ -7,7 +7,7 @@
 ;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
-;; Last-Updated: 周四 7月 30 21:22:18 2015 (+0800)
+;; Last-Updated: 周五 7月 31 12:28:27 2015 (+0800)
 ;;           By: chengxu70
 ;;     Update #:
 ;; URL:
@@ -48,19 +48,47 @@
 ;; 按照 https://www.gnu.org/software/emacs/manual/ 出现顺序加载配置文件
 ;; GNU Emacs manual
 ;; (setq debug-on-error t)
+(add-to-list 'load-path "~/.emacs.d/lisps/")
+
+;; 5 Enter Emacs
+;(setq inhibit-startup-message t)
+
+;; 6 Exiting Emacs
+
+;; 7 Basic Editing Commands
+(require 'basic-edit-conf)
+
+;; 8 The Minibuffer
+
+;; 12 Killing and Moving Text
+;; (require 'killing-conf)
+
+;; 14 Controlling the Display
+(require 'display-conf)
+
+;; 15 Searching and Replacement
+;; (require 'search-replace-conf)
+
+;; 18 File Handling
+;; (require 'file-conf)
+
+;; 20 Multiple Windows
+(require 'window-mgr-conf)
+
+;; 22 international character set support
+(require 'international-character-conf)
+
+;; 43 Saving Emacs Sessions
+;; (desktop-save-mode 1)
+
+;; 47 Emacs Lisp Packages
+(require 'packages-conf)
 
 (defun load-package-init-files()
   "load most packages init files"
-  (add-to-list 'load-path "~/.emacs.d/lisps/")
-  ;; GNU Emacs manual.
-  (require 'misc-conf)
-  (require 'packages-conf)				;47
-  (require 'minibuffer-conf)			;8
-  (require 'killing-conf)				;12
-  (require 'display-conf)				;14
-  (require 'search-replace-conf)		;15
-  (require 'files-conf)					;18
-  (require 'window-conf)				;20
+  (require 'init-helm)
+  (require 'init-multiple-cursors)
+  (require 'init-window-numbering)
   (require 'frames-conf)				;21
   (require 'international-conf)			;22
   (require 'indentation-conf)			;24

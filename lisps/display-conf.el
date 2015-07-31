@@ -2,14 +2,14 @@
 ;;
 ;; Filename: display-conf.el
 ;; Description:
-;; Author: phenix<phenix3443@gmail.com>
-;; Maintainer:
+;; Author: phenix3443 <phenix3443@gmail.com>
+;; Maintainer: phenix3443
 ;; Created: 三  1月 21 03:33:18 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周一 七月 20 16:57:29 2015 (+0800)
+;; Last-Updated: 周五 7月 31 12:05:05 2015 (+0800)
 ;;           By: chengxu70
-;;     Update #: 7
+;;     Update #: 8
 ;; URL:
 ;; Doc URL:
 ;; Keywords:

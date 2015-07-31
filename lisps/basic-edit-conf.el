@@ -1,15 +1,15 @@
-;;; window-conf.el ---
+;;; basic-edit-conf.el ---
 ;;
-;; Filename: window-conf.el
-;; Description: emacs windows manager
-;; Author: phenix <phenix3443@gmail.com>
-;; Maintainer: phenix <phenix3443@gmail.com>
-;; Created: 周三 七月 15 17:38:39 2015 (+0800)
+;; Filename: basic-edit-conf.el
+;; Description: phenix3443 <phenix3443@gmail.com>
+;; Author: phenix3443
+;; Maintainer:
+;; Created: 周五 7月 31 11:38:00 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 7
+;;     Update #: 3
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -45,17 +45,9 @@
 ;;
 ;;; Code:
 
+;; 7.2 change the location of point
+(setq track-eol t)
 
-
-
-;; 20.3 Using Other Windows
-(require-package 'window-numbering)
-(window-numbering-mode 1)
-
-;; 20.7 Convenience Features for Window Handling
-(winner-mode 1)
-
-(provide 'window-conf)
-
+(provide 'basic-edit-conf)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; window-conf.el ends here
+;;; basic-edit-conf.el ends here
