@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 1
+;;     Update #: 5
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -47,9 +47,15 @@
 
 (require-package 'guide-key)
 (require 'guide-key)
-(setq guide-key/guide-key-sequence t)
+(setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-c p" "C-c g"))
+;; (setq guide-key/recursive-key-sequence-flag t)
+(setq guide-key/highlight-command-regexp
+      '("rectangle"
+        ("register" . font-lock-type-face)
+        ("bookmark" . "hot pink")))
 (setq guide-key/idle-delay 0.1)
 (guide-key-mode 1)
+(setq guide-key/popup-window-position 'bottom)
 
 (provide 'init-guide-key)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
