@@ -3,13 +3,13 @@
 ;; Filename: init-helm.el
 ;; Description:
 ;; Author: phenix3443 <phenix3443@gmail.com>
-;; Maintainer: phenix3443 <phenix3443@gmail.com>
+;; Maintainer: phenix3443
 ;; Created: 周二 一月 13 19:41:57 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周二 7月 28 12:17:33 2015 (+0800)
+;; Last-Updated: 周五 7月 31 12:20:18 2015 (+0800)
 ;;           By: chengxu70
-;;     Update #: 28
+;;     Update #: 29
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
