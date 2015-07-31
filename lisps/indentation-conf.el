@@ -2,14 +2,14 @@
 ;;
 ;; Filename: indentation-conf.el
 ;; Description:
-;; Author: phenix3443(phenix3443@gmail.com)
-;; Maintainer:
+;; Author: phenix3443 <phenix3443@gmail.com>
+;; Maintainer: phenix3443
 ;; Created: 周六 一月 17 10:10:24 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周四 7月 16 23:31:13 2015 (+0800)
-;;           By: phenix
-;;     Update #: 9
+;; Last-Updated: 周五 7月 31 12:43:02 2015 (+0800)
+;;           By: chengxu70
+;;     Update #: 10
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -54,11 +54,6 @@
 (electric-indent-mode t)
 (provide 'indentation-conf)
 
-;;; show vertical lines to guide indentation
-(require-package 'indent-guide)
-(indent-guide-global-mode)
-(setq indent-guide-delay 0.1)
-;; (setq indent-guide-recursive t)
 
 ;;;
 ;; (require-package 'highlight-indentation)
