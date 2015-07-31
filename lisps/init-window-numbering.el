@@ -1,15 +1,15 @@
-;;; files-conf.el ---
+;;; init-window-numbering.el ---
 ;;
-;; Filename: files-conf.el
+;; Filename: init-window-numbering.el
 ;; Description:
 ;; Author: phenix3443 <phenix3443@gmail.com>
 ;; Maintainer: phenix3443
-;; Created: 周一 七月 13 11:17:49 2015 (+0800)
+;; Created: 周五 7月 31 12:27:00 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 32
+;;     Update #: 1
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -44,24 +44,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
+(require-package 'window-numbering)
+(window-numbering-mode 1)
 
-;; File Name
-;; Visiting
-
-;; 18.3 Saving Files
-
-;; 18.3.6 Updating Time Stamps Automatically
-;(add-hook 'before-save-hook 'time-stamp)
-
-;; 18.4 Reverting a Buffer
-
-;; Autorevert
-
-;; Auto save
-
-;; 18.14 Remote Files
-
-(provide 'files-conf)
+(provide 'init-window-numbering)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; files-conf.el ends here
+;;; init-window-numbering.el ends here

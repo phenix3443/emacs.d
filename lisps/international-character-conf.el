@@ -1,15 +1,15 @@
-;;; files-conf.el ---
+;;; international-character-conf.el ---
 ;;
-;; Filename: files-conf.el
-;; Description:
-;; Author: phenix3443 <phenix3443@gmail.com>
-;; Maintainer: phenix3443
-;; Created: 周一 七月 13 11:17:49 2015 (+0800)
+;; Filename: international-character-conf.el
+;; Description: phenix3443 <phenix3443@gmail.com>
+;; Author: phenix3443
+;; Maintainer:
+;; Created: 周五 7月 31 11:43:20 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 32
+;;     Update #: 3
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -45,23 +45,11 @@
 ;;
 ;;; Code:
 
-;; File Name
-;; Visiting
+;;(set-language-environment 'utf-8)
+;;(cond
+;; (is-windows-nt-os (setq default-file-name-coding-system 'chinese-gbk)))
 
-;; 18.3 Saving Files
 
-;; 18.3.6 Updating Time Stamps Automatically
-;(add-hook 'before-save-hook 'time-stamp)
-
-;; 18.4 Reverting a Buffer
-
-;; Autorevert
-
-;; Auto save
-
-;; 18.14 Remote Files
-
-(provide 'files-conf)
-
+(provide 'international-character-conf)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; files-conf.el ends here
+;;; international-character-conf.el ends here

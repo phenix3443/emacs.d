@@ -1,15 +1,15 @@
-;;; files-conf.el ---
+;;; window-conf.el ---
 ;;
-;; Filename: files-conf.el
-;; Description:
-;; Author: phenix3443 <phenix3443@gmail.com>
+;; Filename: window-conf.el
+;; Description: emacs windows manager
+;; Author: phenix <phenix3443@gmail.com>
 ;; Maintainer: phenix3443
-;; Created: 周一 七月 13 11:17:49 2015 (+0800)
+;; Created: 周三 七月 15 17:38:39 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 32
+;;     Update #: 8
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -45,23 +45,12 @@
 ;;
 ;;; Code:
 
-;; File Name
-;; Visiting
+;; 20.3 Using Other Windows
 
-;; 18.3 Saving Files
+;; 20.7 Convenience Features for Window Handling
+(winner-mode 1)
 
-;; 18.3.6 Updating Time Stamps Automatically
-;(add-hook 'before-save-hook 'time-stamp)
-
-;; 18.4 Reverting a Buffer
-
-;; Autorevert
-
-;; Auto save
-
-;; 18.14 Remote Files
-
-(provide 'files-conf)
+(provide 'window-conf)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; files-conf.el ends here
+;;; window-conf.el ends here

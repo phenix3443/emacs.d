@@ -1,15 +1,15 @@
-;;; files-conf.el ---
+;;; init-multiple-cursors.el ---
 ;;
-;; Filename: files-conf.el
+;; Filename: init-multiple-cursors.el
 ;; Description:
 ;; Author: phenix3443 <phenix3443@gmail.com>
 ;; Maintainer: phenix3443
-;; Created: 周一 七月 13 11:17:49 2015 (+0800)
+;; Created: 周五 7月 31 12:12:56 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 32
+;;     Update #: 3
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -44,24 +44,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
+(require-package 'multiple-cursors)
+(require 'multiple-cursors)
+(global-set-key (kbd "C-c m e") 'mc/edit-lines)
+(global-set-key (kbd "C-c m p") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c m n") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c m a") 'mc/mark-all-like-this)
 
-;; File Name
-;; Visiting
-
-;; 18.3 Saving Files
-
-;; 18.3.6 Updating Time Stamps Automatically
-;(add-hook 'before-save-hook 'time-stamp)
-
-;; 18.4 Reverting a Buffer
-
-;; Autorevert
-
-;; Auto save
-
-;; 18.14 Remote Files
-
-(provide 'files-conf)
-
+(provide 'init-multiple-cursors)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; files-conf.el ends here
+;;; init-multiple-cursors.el ends here
