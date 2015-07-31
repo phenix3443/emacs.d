@@ -50,7 +50,7 @@
 ;; 20.7 Convenience Features for Window Handling
 (winner-mode 1)
 
-(provide 'window-conf)
+(provide 'window-mgr-conf)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; window-conf.el ends here

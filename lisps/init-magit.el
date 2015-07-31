@@ -1,15 +1,15 @@
-;;; text-conf.el ---
+;;; vc-conf.el ---
 ;;
-;; Filename: text-conf.el
+;; Filename: vc-conf.el
 ;; Description:
-;; Author: phenix34433 <phenix3443@gmail.com>
-;; Maintainer: phenix3443
-;; Created: 周三 十二月 24 11:07:52 2014 (+0800)
+;; Author: phenix3443<phenix3443@gmail.com>
+;; Maintainer: phenix3443<phenix3443@gmail.com>
+;; Created: 周二 七月 14 12:32:43 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周五 7月 31 12:49:20 2015 (+0800)
-;;           By: chengxu70
-;;     Update #: 7
+;; Last-Updated:
+;;           By:
+;;     Update #: 2
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -45,14 +45,15 @@
 ;;
 ;;; Code:
 
-;; 25.2 sentences
-(setq sentence-end "\\([。！？]\\|……\\|[.?!][]\"')}]*\\($\\|[ \t]\\)\\)[ \t\n]*")
-(setq sentence-end-double-space nil)
 
-;;;25.10 TeX Mode
 
-;; 25.9 Org mode
+(require-package 'magit)
 
-(provide 'text-conf)
+(with-eval-after-load 'info
+  (info-initialize)
+  (add-to-list 'Info-directory-list (file-name-directory (find-library-name "magit"))))
+
+(provide 'vc-conf)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; text-conf.el ends here
+;;; vc-conf.el ends here

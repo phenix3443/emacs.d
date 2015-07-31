@@ -7,7 +7,7 @@
 ;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
-;; Last-Updated: 周五 7月 31 12:28:27 2015 (+0800)
+;; Last-Updated: 周五 7月 31 13:17:48 2015 (+0800)
 ;;           By: chengxu70
 ;;     Update #:
 ;; URL:
@@ -51,7 +51,7 @@
 (add-to-list 'load-path "~/.emacs.d/lisps/")
 
 ;; 5 Enter Emacs
-;(setq inhibit-startup-message t)
+;; (setq inhibit-startup-message t)
 
 ;; 6 Exiting Emacs
 
@@ -65,7 +65,6 @@
 
 ;; 14 Controlling the Display
 (require 'display-conf)
-
 ;; 15 Searching and Replacement
 ;; (require 'search-replace-conf)
 
@@ -74,32 +73,30 @@
 
 ;; 20 Multiple Windows
 (require 'window-mgr-conf)
-
+;; 21 Frames and Graphical Displays
+(require 'frames-conf)
 ;; 22 international character set support
 (require 'international-character-conf)
 
+;; 24 Indentation
+(require 'indentation-conf)
+;; 25 Commands for Human Languages
+(require 'text-conf)
+;; 26 Editing Programs
+(require 'program-conf)
+;; 27 Compiling and Testing Programs
+;; (require 'compile-test-conf)
+;; 28 Maintaining Large Programs
+;; (require 'maintain-program-project)
 ;; 43 Saving Emacs Sessions
 ;; (desktop-save-mode 1)
 
 ;; 47 Emacs Lisp Packages
 (require 'packages-conf)
+;; 48 Customization
+;; (require 'customization-conf)
 
-(defun load-package-init-files()
-  "load most packages init files"
-  (require 'init-helm)
-  (require 'init-multiple-cursors)
-  (require 'init-window-numbering)
-  (require 'frames-conf)				;21
-  (require 'international-conf)			;22
-  (require 'indentation-conf)			;24
-  (require 'text-conf)					;25
-  (require 'program-conf)				;26
-  (require 'compile-test-conf)			;27
-  (require 'vc-conf)					;28
-  (require 'customization-conf)			;48
-  (require 'init-header2)
-  )
-(add-hook 'after-init-hook 'load-package-init-files)
+
 ;; GNU Emacs Lisp reference manual.
 
 ;; An Introduction to Programming in Emacs Lisp.

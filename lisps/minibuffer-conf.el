@@ -1,15 +1,15 @@
-;;; text-conf.el ---
+;;; minibuffer-conf.el ---
 ;;
-;; Filename: text-conf.el
-;; Description:
-;; Author: phenix34433 <phenix3443@gmail.com>
-;; Maintainer: phenix3443
-;; Created: 周三 十二月 24 11:07:52 2014 (+0800)
+;; Filename: minibuffer-conf.el
+;; Description: phenix3443 <phenix3443@gmail.com>
+;; Author: phenix3443
+;; Maintainer:
+;; Created: 周五 7月 31 12:18:25 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周五 7月 31 12:49:20 2015 (+0800)
-;;           By: chengxu70
-;;     Update #: 7
+;; Last-Updated:
+;;           By:
+;;     Update #: 2
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -45,14 +45,9 @@
 ;;
 ;;; Code:
 
-;; 25.2 sentences
-(setq sentence-end "\\([。！？]\\|……\\|[.?!][]\"')}]*\\($\\|[ \t]\\)\\)[ \t\n]*")
-(setq sentence-end-double-space nil)
+;; 8.4 Completion
 
-;;;25.10 TeX Mode
+(provide 'minibuffer-conf)
 
-;; 25.9 Org mode
-
-(provide 'text-conf)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; text-conf.el ends here
+;;; minibuffer-conf.el ends here

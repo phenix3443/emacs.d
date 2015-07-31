@@ -1,15 +1,15 @@
-;;; text-conf.el ---
+;;; init-guide-key.el ---
 ;;
-;; Filename: text-conf.el
+;; Filename: init-guide-key.el
 ;; Description:
-;; Author: phenix34433 <phenix3443@gmail.com>
+;; Author: phenix3443 <phenix3443@gmail.com>
 ;; Maintainer: phenix3443
-;; Created: 周三 十二月 24 11:07:52 2014 (+0800)
+;; Created: 周五 7月 31 13:20:24 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周五 7月 31 12:49:20 2015 (+0800)
-;;           By: chengxu70
-;;     Update #: 7
+;; Last-Updated:
+;;           By:
+;;     Update #: 1
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -45,14 +45,12 @@
 ;;
 ;;; Code:
 
-;; 25.2 sentences
-(setq sentence-end "\\([。！？]\\|……\\|[.?!][]\"')}]*\\($\\|[ \t]\\)\\)[ \t\n]*")
-(setq sentence-end-double-space nil)
+(require-package 'guide-key)
+(require 'guide-key)
+(setq guide-key/guide-key-sequence t)
+(setq guide-key/idle-delay 0.1)
+(guide-key-mode 1)
 
-;;;25.10 TeX Mode
-
-;; 25.9 Org mode
-
-(provide 'text-conf)
+(provide 'init-guide-key)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; text-conf.el ends here
+;;; init-guide-key.el ends here

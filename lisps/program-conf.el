@@ -4,12 +4,12 @@
 ;; Description:
 ;; Author: phenix3443 <phenix3443@gmail.com>
 ;; Maintainer: phenix3443 <phenix3443@gmail.com>
-;; Created: ÖÜÁù 12ÔÂ 20 00:50:11 2014 (+0800)
+;; Created:
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周四 7月 16 22:43:37 2015 (+0800)
-;;           By: phenix
-;;     Update #: 29
+;; Last-Updated: 周五 7月 31 12:59:05 2015 (+0800)
+;;           By: chengxu70
+;;     Update #: 31
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -50,8 +50,6 @@
 ;; 26.4.3 matching parentheses
 (show-paren-mode t)
 (electric-pair-mode t)
-;; (require 'init-paredit)
-(require 'init-smartparens)
 
 ;; 26.5.2 Multiple Lines of Comments
 
@@ -73,40 +71,10 @@
 
 (global-set-key (kbd "C-;") 'comment-dwim-line)
 ;; 26.8 Completion for symbol names
-(require 'init-yasnippet)
-;; auto-complete configure
-;; (require 'init-popwin)
-;; (require 'init-company)
-(require 'init-auto-complete)
+
 ;; 27.5 Finding Syntax Error on The Fly
-(require 'init-flycheck)
-
-;;project support
-(require 'init-projectile)
-(require 'init-cedet)
-
 
 ;;28 tags
-(require 'init-helm-gtags)
-
-;; Lua mode
-(require-package 'lua-mode)
-(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
-(add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
-(add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
-(setq lua-indent-level 4)
-
-;; python mode
-(require-package 'jedi)
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
-
-;; c sharp mode
-(require-package 'csharp-mode)
-
-;; mardown mode
-(require 'init-markdown)
-
 
 (provide 'program-conf)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

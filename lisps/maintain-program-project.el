@@ -1,15 +1,15 @@
-;;; text-conf.el ---
+;;; maintain-program-project.el ---
 ;;
-;; Filename: text-conf.el
+;; Filename: maintain-program-project.el
 ;; Description:
-;; Author: phenix34433 <phenix3443@gmail.com>
-;; Maintainer: phenix3443
-;; Created: 周三 十二月 24 11:07:52 2014 (+0800)
+;; Author:
+;; Maintainer:
+;; Created: 周五 7月 31 13:11:59 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周五 7月 31 12:49:20 2015 (+0800)
-;;           By: chengxu70
-;;     Update #: 7
+;; Last-Updated:
+;;           By:
+;;     Update #: 1
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -45,14 +45,7 @@
 ;;
 ;;; Code:
 
-;; 25.2 sentences
-(setq sentence-end "\\([。！？]\\|……\\|[.?!][]\"')}]*\\($\\|[ \t]\\)\\)[ \t\n]*")
-(setq sentence-end-double-space nil)
 
-;;;25.10 TeX Mode
-
-;; 25.9 Org mode
-
-(provide 'text-conf)
+(provide 'maintain-program-project)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; text-conf.el ends here
+;;; maintain-program-project.el ends here
