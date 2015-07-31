@@ -1,48 +1,48 @@
-;;; init-auctex.el --- 
-;; 
+;;; init-auctex.el ---
+;;
 ;; Filename: init-auctex.el
-;; Description: 
+;; Description:
 ;; Author: phenix3443 <phenix3443@gmail.com>
-;; Maintainer: 
+;; Maintainer: phenix3443
 ;; Created: 周六 三月  7 16:12:38 2015 (+0800)
-;; Version: 
+;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 
-;;           By: 
-;;     Update #: 0
-;; URL: 
-;; Doc URL: 
-;; Keywords: 
-;; Compatibility: 
-;; 
+;; Last-Updated:
+;;           By:
+;;     Update #: 1
+;; URL:
+;; Doc URL:
+;; Keywords:
+;; Compatibility:
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
-;;; Commentary: 
-;; 
-;; 
-;; 
+;;
+;;; Commentary:
+;;
+;;
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;;; Change Log:
-;; 
-;; 
+;;
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
 ;; the Free Software Foundation, either version 3 of the License, or (at
 ;; your option) any later version.
-;; 
+;;
 ;; This program is distributed in the hope that it will be useful, but
 ;; WITHOUT ANY WARRANTY; without even the implied warranty of
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 ;; General Public License for more details.
-;; 
+;;
 ;; You should have received a copy of the GNU General Public License
 ;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
-;; 
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;;; Code:
 
 ;;; required by text-conf.el, from auctex-manual
@@ -55,7 +55,7 @@
 (add-hook 'LaTeX-mode-hook 'LaTex-math-mode)
 ;; 2.6 Completion
 
-;; 2.10 Filling 
+;; 2.10 Filling
 (add-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
 ;; 3.2 Folding
 (add-hook 'LaTeX-mode-hook (lambda ()
