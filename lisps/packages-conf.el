@@ -81,7 +81,7 @@
   (require 'init-smartparens)
   (require 'init-yasnippet)
   ;; auto-complete configure
-  ;; (require 'init-popwin)
+  (require 'init-popwin)
   ;; (require 'init-company)
   (require 'init-auto-complete)
   (require 'init-flycheck)
