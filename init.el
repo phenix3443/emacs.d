@@ -7,7 +7,7 @@
 ;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
-;; Last-Updated: 周五 7月 31 13:17:48 2015 (+0800)
+;; Last-Updated: 周四 8月 13 16:35:33 2015 (+0800)
 ;;           By: chengxu70
 ;;     Update #:
 ;; URL:
@@ -111,12 +111,12 @@
 ;; (require 'auth-source)
 ;; (add-to-list 'auth-sources "~/.emacs.d/.authinfo.gpg")
 ;; start pageant first
-(when (equal system-type 'windows-nt)
-  (let ((str (shell-command-to-string "tasklist /FI \"IMAGENAME eq pageant.exe\"")))
-	(when (not (string-match "pageant.exe" str))
-	  (when (executable-find "pageant")
-		;;  (shell-command-to-string "taskkill /IM pageant.exe")
-		(start-process "pageant" nil "pageant")))))
+;; (when (equal system-type 'windows-nt)
+;;   (let ((str (shell-command-to-string "tasklist /FI \"IMAGENAME eq pageant.exe\"")))
+;; 	(when (not (string-match "pageant.exe" str))
+;; 	  (when (executable-find "pageant")
+;; 		;;  (shell-command-to-string "taskkill /IM pageant.exe")
+;; 		(start-process "pageant" nil "pageant")))))
 
 ;; Autotype	Features for frequently-entered text.
 ;; Calc	Calc is an advanced calculator and mathematical tool.
