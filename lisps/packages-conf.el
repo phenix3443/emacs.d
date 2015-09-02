@@ -45,11 +45,12 @@
 ;;
 ;;; Code:
 (require 'package)
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
-(when (>= emacs-major-version 24)
-  (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-						   ("melpa" . "http://melpa.milkbox.net/packages/")
-						   ("marmalade" . "https://marmalade-repo.org/packages/"))))
 (package-initialize)
 
 ; make sure to have downloaded archive description. Or use package-archive-contents as suggested by Nicolas Dudebout
