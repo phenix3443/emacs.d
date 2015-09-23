@@ -1,59 +1,59 @@
-;;; init-paredit.el --- 
-;; 
+;;; init-paredit.el ---
+;;
 ;; Filename: init-paredit.el
-;; Description: 
+;; Description:
 ;; Author: phenix3443<phenix3443@gmail.com>
-;; Maintainer: 
+;; Maintainer:
 ;; Created: 周三 十二月 24 11:19:44 2014 (+0800)
-;; Version: 
+;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周五 十二月 26 20:44:17 2014 (+0800)
-;;           By: chengxu70
-;;     Update #: 10
-;; URL: 
-;; Doc URL: 
-;; Keywords: 
-;; Compatibility: 
-;; 
+;; Last-Updated: 周三 9月 23 21:30:23 2015 (+0800)
+;;           By: phenix
+;;     Update #: 12
+;; URL:
+;; Doc URL:
+;; Keywords:
+;; Compatibility:
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
-;;; Commentary: 
-;; 
-;; 
-;; 
+;;
+;;; Commentary:
+;;
+;;
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;;; Change Log:
-;; 
-;; 
+;;
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
 ;; the Free Software Foundation, either version 3 of the License, or (at
 ;; your option) any later version.
-;; 
+;;
 ;; This program is distributed in the hope that it will be useful, but
 ;; WITHOUT ANY WARRANTY; without even the implied warranty of
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 ;; General Public License for more details.
-;; 
+;;
 ;; You should have received a copy of the GNU General Public License
 ;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
-;; 
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;;; Code:
 
 (require-package 'paredit)
-(autoload 'enable-paredit-mode "paredit")
+(autoload 'enable-paredit-mode "paredit" t)
 (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
 
-(eval-after-load 'paredit
-  '(progn
-	 (dolist (binding (list (kbd "C-<left>") (kbd "C-<right>")
-							(kbd "C-M-<left>") (kbd "C-M-<right>")))
-	   (define-key paredit-mode-map binding nil))))
+;; (eval-after-load 'paredit
+;;   '(progn
+;; 	 (dolist (binding (list (kbd "C-<left>") (kbd "C-<right>")
+;; 							(kbd "C-M-<left>") (kbd "C-M-<right>")))
+;; 	   (define-key paredit-mode-map binding nil))))
 
 ;; (require-package 'paredit-everywhere)
 ;; (add-hook 'prog-mode-hook 'paredit-everywhere-mode)
