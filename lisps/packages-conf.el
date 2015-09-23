@@ -7,9 +7,9 @@
 ;; Created: 周三 二月  4 18:42:43 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 一  9月 21 00:26:59 2015 (+0800)
+;; Last-Updated: 三  9月 23 11:44:48 2015 (+0800)
 ;;           By: ubuntu
-;;     Update #: 16
+;;     Update #: 17
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -74,7 +74,7 @@
   (require 'init-auto-complete)
   (require 'init-cedet)
   (require 'init-chinese-pyim)
-    ;; (require 'init-company)
+  ;; (require 'init-company)
   (require 'init-flycheck)
   (require 'init-guide-key)
   (require 'init-header2)
