@@ -7,8 +7,8 @@
 ;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
-;; Last-Updated: 周四 8月 13 16:35:33 2015 (+0800)
-;;           By: chengxu70
+;; Last-Updated: 日  9月 20 23:38:23 2015 (+0800)
+;;           By: ubuntu
 ;;     Update #:
 ;; URL:
 ;; Doc URL:
@@ -122,6 +122,8 @@
 ;; Calc	Calc is an advanced calculator and mathematical tool.
 
 ;; CC mode Mode for editing C, C++, Objective C, Java, Pike, and IDL code.
+;; 3 Getting Started
+(setq-default c-basic-offset 4)
 (setq c-default-style '((java-mode . "java")
 						(awk-mode . "awk")
 						(other . "linux")))
@@ -186,7 +188,7 @@
   ;("https" . "127.0.0.1:10086")
   ))
 
-;; VIP	An older VI emulator.
+;; Vip	An older VI emulator.
 ;; Viper	VI emulator.
 ;; Widget	Library for graphical widgets.
 ;; Wisent	An Emacs implementation of the GNU Compiler Compiler Bison.
