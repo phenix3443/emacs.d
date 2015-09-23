@@ -182,9 +182,11 @@
 ;; URL	Library for manipulating and retrieving URLs and URIs.
 ;; 5 General Facilities
 ;; 5.2 Proxies and Gatewaying
- ;; (setq url-proxy-services
- ;; '(("http" . "127.0.0.1:10086")
- ;; ("https" . "127.0.0.1:10086")))
+  (setq url-proxy-services
+  '(
+  ;("http" . "127.0.0.1:10086")
+  ;("https" . "127.0.0.1:10086")
+  ))
 
 ;; Vip	An older VI emulator.
 ;; Viper	VI emulator.
