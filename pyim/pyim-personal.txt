@@ -11,11 +11,13 @@ bian-xie 编写
 biao-zhun 标准
 bu-shi 不是
 bu-zhi-dao 不知道
+c 词
 c-sh 测试
 ce-shi 测试
 ch-x 程序 重新
 cheng-xu 程序
 chong-xin 重新
+ci 词
 cong 从
 d 的
 d-j 搭建 大俭
@@ -28,10 +30,13 @@ deng 等
 deng-ruan-jian 等软件
 f-m 方面
 fang-mian 方面
+g 挂
+g-b 光标
 g-ch 工程
 g-f 规範
 g-g 各个
 g-j 工具
+g-s 跟随
 g-sh 改朔
 g-sh-sh-m-h 该说什么好
 g-zh 更正 耿正
@@ -39,9 +44,12 @@ gai 该
 gai-shuo 改朔
 gai-shuo-shen-me-hao 该说什么好
 ge-ge 各个
+gen-sui 跟随
 geng-zheng 更正 耿正
 gong-cheng 工程
 gong-ju 工具
+gua 挂
+guang-biao 光标
 gui-fan 规範
 h-x 或许
 hao 好
@@ -50,8 +58,10 @@ j-l 建立 僭乐 监利
 jia 加
 jian-le 僭乐
 jian-li 建立 监利
+k 框
 k-zh 控制
 kong-zhi 控制
+kuang 框
 l-sh 来说
 lai-shuo 来说
 le 了 乐
@@ -61,8 +71,10 @@ mu-di 目的 墓地
 p-zh 配置 培植
 pei-zhi 配置 培植
 pian 篇
+r 让
 r-h 如何
 r-j 软件
+rang 让
 ru-he 如何
 ruan-jian 软件
 rui 锐
@@ -95,7 +107,9 @@ wei-hu 维护
 wen 文
 wen-zhang 文章
 wen-zhong 汶中
+x 选
 x-b-x-y-g 现编写一个
+x-c-k 选词框
 x-m 项目
 x-y 像要
 x-zh 修正
@@ -105,6 +119,8 @@ xiang 想
 xiang-mu 项目
 xiang-yao 像要
 xiu-zheng 修正
+xuan 选
+xuan-ci-kuang 选词框
 y-g 一个
 y-j 以及
 y-z-c-sh 用做测试
