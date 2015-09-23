@@ -3,13 +3,13 @@
 ;; Filename: packages-conf.el
 ;; Description:
 ;; Author: phenix3443 <phenix3443@gmail.com>
-;; Maintainer: phenix3443
+;; Maintainer: phenix3443 <phenix3443@gmail.com>
 ;; Created: 周三 二月  4 18:42:43 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周五 7月 31 13:21:37 2015 (+0800)
-;;           By: chengxu70
-;;     Update #: 9
+;; Last-Updated: 一  9月 21 00:26:59 2015 (+0800)
+;;           By: ubuntu
+;;     Update #: 16
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -48,7 +48,7 @@
 (when (< emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 (package-initialize)
@@ -69,33 +69,31 @@
 
 (defun load-package-init-files()
   "load most packages init files"
-  (require 'init-helm)
-  (require 'init-multiple-cursors)
-  (require 'init-window-numbering)
-  (require 'init-chinese-pyim)
-  (require 'init-indent-guidle)
   (require 'init-auctex)
+  (require 'init-auto-compile)
+  (require 'init-auto-complete)
+  (require 'init-cedet)
+  (require 'init-chinese-pyim)
+    ;; (require 'init-company)
+  (require 'init-flycheck)
+  (require 'init-guide-key)
+  (require 'init-header2)
+  (require 'init-helm)
+  (require 'init-helm-gtags)
+  (require 'init-indent-guidle)
+  (require 'init-lua-mode)
+  (require 'init-markdown-mode)
+  (require 'init-multiple-cursors)
   (require 'init-org)
   (require 'init-org2blog)
   (require 'init-pangu-spacing)
-  ;; (require 'init-paredit)
+  (require 'init-paredit)
+  (require 'init-popwin)  ;; auto-complete configure
+  (require 'init-projectile);;project support
   (require 'init-smartparens)
-  (require 'init-yasnippet)
-  ;; auto-complete configure
-  (require 'init-popwin)
-  ;; (require 'init-company)
-  (require 'init-auto-complete)
-  (require 'init-flycheck)
-  ;;project support
-  (require 'init-projectile)
-  (require 'init-cedet)
-  (require 'init-helm-gtags)
-  (require 'init-lua-mode)
-  (require 'init-markdown-mode)
-  (require 'init-auto-compile)
-  (require 'init-header2)
   (require 'init-themes)
-  (require 'init-guide-key)
+  (require 'init-window-numbering)
+  (require 'init-yasnippet)
   )
 (add-hook 'after-init-hook 'load-package-init-files)
 
