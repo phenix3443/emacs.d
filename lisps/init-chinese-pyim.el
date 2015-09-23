@@ -3,13 +3,13 @@
 ;; Filename: init-chinese-pyim.el
 ;; Description:
 ;; Author: phenix3443 <phenix3443@gmail.com>
-;; Maintainer: phenix3443
+;; Maintainer: phenix3443 <phenix3443@gmail.com>
 ;; Created: 周五 7月 31 12:34:32 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 2
+;;     Update #: 4
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -50,7 +50,8 @@
 (require 'chinese-pyim)
 (setq pyim-dicts '((:name "BigDict" :file "~/.emacs.d/pyim/pyim-bigdict.txt" :coding utf-8-unix)))
 (setq default-input-method "chinese-pyim")
-
+;; 让选词框跟随光标
+(setq pyim-use-tooltip t)
 
 (provide 'init-chinese-pyim)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

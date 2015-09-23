@@ -7,9 +7,9 @@
 ;; Created: 周三 二月  4 18:42:43 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周五 7月 31 13:21:37 2015 (+0800)
-;;           By: chengxu70
-;;     Update #: 9
+;; Last-Updated: 周一 9月 21 00:30:00 2015 (+0800)
+;;           By: phenix
+;;     Update #: 11
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -48,7 +48,7 @@
 (when (< emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 (package-initialize)
@@ -78,11 +78,11 @@
   (require 'init-org)
   (require 'init-org2blog)
   (require 'init-pangu-spacing)
-  ;; (require 'init-paredit)
+  (require 'init-paredit)
   (require 'init-smartparens)
   (require 'init-yasnippet)
   ;; auto-complete configure
-  (require 'init-popwin)
+  ;; (require 'init-popwin)
   ;; (require 'init-company)
   (require 'init-auto-complete)
   (require 'init-flycheck)
