@@ -7,15 +7,9 @@
 ;; Created: 周三 二月  4 18:42:43 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-<<<<<<< HEAD
-;; Last-Updated: 周一 9月 21 00:30:00 2015 (+0800)
+;; Last-Updated: 周二 9月 29 00:28:12 2015 (+0800)
 ;;           By: phenix
-;;     Update #: 11
-=======
-;; Last-Updated: 一  9月 21 00:26:59 2015 (+0800)
-;;           By: ubuntu
-;;     Update #: 16
->>>>>>> 125675a40796c339356536b0ab249b110931ab1c
+;;     Update #: 20
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -81,13 +75,17 @@
   (require 'init-cedet)
   (require 'init-chinese-pyim)
   ;; (require 'init-company)
+  (require 'init-csharp-mode)
+  (require 'init-ecb)
   (require 'init-flycheck)
+  ;; (require 'init-ggtags)
   (require 'init-guide-key)
   (require 'init-header2)
   (require 'init-helm)
   (require 'init-helm-gtags)
   (require 'init-indent-guidle)
   (require 'init-lua-mode)
+  (require 'init-magit)
   (require 'init-markdown-mode)
   (require 'init-multiple-cursors)
   (require 'init-org)
@@ -96,6 +94,7 @@
   (require 'init-paredit)
   (require 'init-popwin)  ;; auto-complete configure
   (require 'init-projectile);;project support
+  (require 'init-python-mode)
   (require 'init-smartparens)
   (require 'init-themes)
   (require 'init-window-numbering)
