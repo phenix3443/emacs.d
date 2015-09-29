@@ -1,48 +1,48 @@
-;;; init-org.el --- 
-;; 
+;;; init-org.el ---
+;;
 ;; Filename: init-org.el
-;; Description: 
+;; Description:
 ;; Author: phenix3443 <phenix3443@gmail.com>
-;; Maintainer: 
+;; Maintainer:
 ;; Created: 周六 三月  7 16:09:24 2015 (+0800)
-;; Version: 
+;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 
-;;           By: 
-;;     Update #: 0
-;; URL: 
-;; Doc URL: 
-;; Keywords: 
-;; Compatibility: 
-;; 
+;; Last-Updated:
+;;           By:
+;;     Update #: 15
+;; URL:
+;; Doc URL:
+;; Keywords:
+;; Compatibility:
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
-;;; Commentary: 
-;; 
-;; 
-;; 
+;;
+;;; Commentary:
+;;
+;;
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;;; Change Log:
-;; 
-;; 
+;;
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
 ;; the Free Software Foundation, either version 3 of the License, or (at
 ;; your option) any later version.
-;; 
+;;
 ;; This program is distributed in the hope that it will be useful, but
 ;; WITHOUT ANY WARRANTY; without even the implied warranty of
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 ;; General Public License for more details.
-;; 
+;;
 ;; You should have received a copy of the GNU General Public License
 ;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
-;; 
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;;; Code:
 
 ;;; required by text-conf.el, from org manual(http://orgmode.org/org.html)
@@ -75,7 +75,7 @@
 (setq org-html-table-default-attributes '(:border "1" :cellspacing "0" :cellpadding "6" :rules "groups" :frame "box"))
 ;;14 Working with source code
 ;;14.2 Editing source code
-(setq org-src-lang-modes 
+(setq org-src-lang-modes
 	  '(("asymptote" . asy)
 		("c" . c)
 		("c++" . c++)
@@ -107,6 +107,31 @@
 							(set-face-attribute 'org-level-1 nil :height 1.6 :bold t)
 							(set-face-attribute 'org-level-2 nil :height 1.4 :bold t)
 							(set-face-attribute 'org-level-3 nil :height 1.2 :bold t)))
+
+(require 'ox-publish)
+(setq blog-dir "~/projects/phennix3443.github.io/")
+(when (equal system-type 'windows-nt)
+  (setq blog-dir "D:/projects/phenix3443.github.io/"))
+(setq org-publish-project-alist
+      '(
+		("org-notes"
+		 :base-directory "D:/projects/phenix3443.github.io/org/"
+		 :base-extension "org"
+		 :publishing-directory "D:/projects/phenix3443.github.io/public_html/"
+		 :recursive t
+		 :publishing-function org-html-publish-to-html
+		 :headline-levels 4             ; Just the default for this project.
+		 :auto-preamble t
+		 )
+		("org-static"
+		 :base-directory "D:/projects/phenix3443.github.io/org/"
+		 :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+		 :publishing-directory "D:/projects/phenix3443.github.io/public_html/"
+		 :recursive t
+		 :publishing-function org-publish-attachment
+		 )
+		("org" :components ("org-notes" "org-static"))
+      ))
 (provide 'init-org)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
