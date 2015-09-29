@@ -75,8 +75,8 @@
   (require 'init-cedet)
   (require 'init-chinese-pyim)
   ;; (require 'init-company)
-  (require 'init-csharp-mode)
-  (require 'init-ecb)
+  ;;(require 'init-csharp-mode)
+  ;;(require 'init-ecb)
   (require 'init-flycheck)
   ;; (require 'init-ggtags)
   (require 'init-guide-key)
@@ -94,7 +94,7 @@
   (require 'init-paredit)
   (require 'init-popwin)  ;; auto-complete configure
   (require 'init-projectile);;project support
-  (require 'init-python-mode)
+  ;;(require 'init-python-mode)
   (require 'init-smartparens)
   (require 'init-themes)
   (require 'init-window-numbering)
