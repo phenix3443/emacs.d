@@ -7,9 +7,9 @@
 ;; Created: 周三 十二月 24 11:19:44 2014 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周三 9月 23 21:30:23 2015 (+0800)
+;; Last-Updated: 周二 9月 29 20:51:20 2015 (+0800)
 ;;           By: phenix
-;;     Update #: 12
+;;     Update #: 14
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -48,12 +48,6 @@
 (require-package 'paredit)
 (autoload 'enable-paredit-mode "paredit" t)
 (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
-
-;; (eval-after-load 'paredit
-;;   '(progn
-;; 	 (dolist (binding (list (kbd "C-<left>") (kbd "C-<right>")
-;; 							(kbd "C-M-<left>") (kbd "C-M-<right>")))
-;; 	   (define-key paredit-mode-map binding nil))))
 
 ;; (require-package 'paredit-everywhere)
 ;; (add-hook 'prog-mode-hook 'paredit-everywhere-mode)
