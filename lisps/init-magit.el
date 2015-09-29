@@ -2,14 +2,14 @@
 ;;
 ;; Filename: vc-conf.el
 ;; Description:
-;; Author: phenix3443<phenix3443@gmail.com>
-;; Maintainer: phenix3443<phenix3443@gmail.com>
+;; Author: phenix3443 <phenix3443@gmail.com>
+;; Maintainer: phenix3443 <phenix3443@gmail.com>
 ;; Created: 周二 七月 14 12:32:43 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 2
+;;     Update #: 3
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -45,15 +45,13 @@
 ;;
 ;;; Code:
 
-
-
 (require-package 'magit)
 
 (with-eval-after-load 'info
   (info-initialize)
   (add-to-list 'Info-directory-list (file-name-directory (find-library-name "magit"))))
 
-(provide 'vc-conf)
+(provide 'init-magit)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; vc-conf.el ends here
+;;; init-magit.el ends here

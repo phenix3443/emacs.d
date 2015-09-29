@@ -7,9 +7,9 @@
 ;; Created: 周二 一月 13 19:41:57 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周五 7月 31 12:20:18 2015 (+0800)
-;;           By: chengxu70
-;;     Update #: 29
+;; Last-Updated: 周三 9月 23 21:43:12 2015 (+0800)
+;;           By: phenix
+;;     Update #: 33
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -65,8 +65,8 @@
 ;; 	  helm-lisp-fuzzy-completion t)
 ;; (setq helm-candidate-number-limit 100)
 ;; enable fuzzy matching globally in all functions helmized by helm-mode
-(setq helm-mode-fuzzy-match t
-	  helm-completion-in-region-fuzzy-match t)
+(setq helm-mode-fuzzy-match t)
+(setq helm-completion-in-region-fuzzy-match t)
 
 ;; helm-locate 使用es.exe的时候everything必须要启动
 (when (equal system-type 'windows-nt)

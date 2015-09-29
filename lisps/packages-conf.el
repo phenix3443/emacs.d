@@ -7,9 +7,9 @@
 ;; Created: 周三 二月  4 18:42:43 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 三  9月 23 11:44:48 2015 (+0800)
-;;           By: ubuntu
-;;     Update #: 17
+;; Last-Updated: 周二 9月 29 00:28:12 2015 (+0800)
+;;           By: phenix
+;;     Update #: 20
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -75,13 +75,17 @@
   (require 'init-cedet)
   (require 'init-chinese-pyim)
   ;; (require 'init-company)
+  ;;(require 'init-csharp-mode)
+  ;;(require 'init-ecb)
   (require 'init-flycheck)
+  ;; (require 'init-ggtags)
   (require 'init-guide-key)
   (require 'init-header2)
   (require 'init-helm)
   (require 'init-helm-gtags)
   (require 'init-indent-guidle)
   (require 'init-lua-mode)
+  (require 'init-magit)
   (require 'init-markdown-mode)
   (require 'init-multiple-cursors)
   (require 'init-org)
@@ -90,6 +94,7 @@
   (require 'init-paredit)
   (require 'init-popwin)  ;; auto-complete configure
   (require 'init-projectile);;project support
+  ;;(require 'init-python-mode)
   (require 'init-smartparens)
   (require 'init-themes)
   (require 'init-window-numbering)
