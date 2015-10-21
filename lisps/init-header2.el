@@ -7,9 +7,9 @@
 ;; Created: 周四 十二月 18 16:03:28 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: (conf-package.el package.el)
-;; Last-Updated: 周日 9月 20 23:28:31 2015 (+0800)
-;;           By: phenix
-;;     Update #: 6
+;; Last-Updated: 四 10月 22 00:41:34 2015 (+0800)
+;;           By: ubuntu
+;;     Update #: 7
 ;; URL:
 ;; Doc URL:
 ;; Keywords: auto make file header
@@ -52,8 +52,7 @@
 ;; add a file headers when create a new file
 (autoload 'auto-make-header "header2")
 (add-hook 'emacs-lisp-mode-hook 'auto-make-header)
-(add-hook 'c-mode-common-hook 'auto-make-header)
-(add-hook 'lua-mode-hook 'auto-make-header)
+
 (provide 'init-header2)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-header2.el ends here
