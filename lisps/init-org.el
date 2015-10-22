@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 20
+;;     Update #: 25
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -99,15 +99,17 @@
 (setq org-src-preserve-indentation nil)
 
 ;; 15.8 A cleaner outline view
-(setq org-startup-indented t)
 (setq org-startup-folded nil)
-(setq org-list-indent-offset 2)
-(setq org-src-fontify-natively t)
+;; (setq org-startup-indented t)
+;; (setq org-startup-with-inline-images t)
+(setq org-startup-with-latex-preview t)
+;; (setq org-list-indent-offset 2)
+;; (setq org-src-fontify-natively t)
 
-(add-hook 'org-mode-hook '(lambda()
-							(set-face-attribute 'org-level-1 nil :height 1.6 :bold t)
-							(set-face-attribute 'org-level-2 nil :height 1.4 :bold t)
-							(set-face-attribute 'org-level-3 nil :height 1.2 :bold t)))
+;; (add-hook 'org-mode-hook '(lambda()
+							;; (set-face-attribute 'org-level-1 nil :height 1.6 :bold t)
+							;; (set-face-attribute 'org-level-2 nil :height 1.4 :bold t)
+							;; (set-face-attribute 'org-level-3 nil :height 1.2 :bold t)))
 
 (require 'ox-publish)
 (setq blog-dir "~/projects/phennix3443.github.io/")
