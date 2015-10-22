@@ -7,9 +7,9 @@
 ;; Created: 周三 十二月 24 11:07:52 2014 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周五 7月 31 12:49:20 2015 (+0800)
-;;           By: chengxu70
-;;     Update #: 7
+;; Last-Updated: 周四 10月 22 21:15:42 2015 (+0800)
+;;           By: phenix
+;;     Update #: 11
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -49,9 +49,11 @@
 (setq sentence-end "\\([。！？]\\|……\\|[.?!][]\"')}]*\\($\\|[ \t]\\)\\)[ \t\n]*")
 (setq sentence-end-double-space nil)
 
-;;;25.10 TeX Mode
-
+;; 25.5 Filling Text
+;; (add-hook 'org-mode-hook 'turn-on-auto-fill)
+(setq-default auto-fill-function 'do-auto-fill)
 ;; 25.9 Org mode
+;; 25.10 TeX Mode
 
 (provide 'text-conf)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
