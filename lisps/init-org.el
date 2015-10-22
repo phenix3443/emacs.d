@@ -3,13 +3,13 @@
 ;; Filename: init-org.el
 ;; Description:
 ;; Author: phenix3443 <phenix3443@gmail.com>
-;; Maintainer:
+;; Maintainer: phenix3443
 ;; Created: 周六 三月  7 16:09:24 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 15
+;;     Update #: 20
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -52,7 +52,7 @@
 
 (require 'cdlatex)
 (require 'htmlize)
-
+(require 'iimage)
 
 (global-set-key "\C-c'" 'org-src-mode)
 (global-set-key "\C-cl" 'org-store-link)
@@ -60,21 +60,22 @@
 (global-set-key "\C-cb" 'org-iswitchb)
 (add-hook 'org-mode-hook 'turn-on-org-cdlatex)
 
-;;3 Tables
+;; 3 Tables
 (setq org-ascii-table-keep-all-vertical-lines t)
-;;3.2 Column width and alignment
+;; 3.2 Column width and alignment
 (setq org-startup-align-all-tables t)
+;; 4.4 Handling links
 
-;;12 Exporting
-;;12.3 Export setting
+;; 12 Exporting
+;; 12.3 Export setting
 (setq org-export-with-section-numbers 3)
-;;12.6 HTML export
-;;12.6.2 HTML doctypes
+;; 12.6 HTML export
+;; 12.6.2 HTML doctypes
 (setq org-html-doctype "html4-transitional")
-;;12.6.6 Tables
+;; 12.6.6 Tables
 (setq org-html-table-default-attributes '(:border "1" :cellspacing "0" :cellpadding "6" :rules "groups" :frame "box"))
-;;14 Working with source code
-;;14.2 Editing source code
+;; 14 Working with source code
+;; 14.2 Editing source code
 (setq org-src-lang-modes
 	  '(("asymptote" . asy)
 		("c" . c)
@@ -97,7 +98,7 @@
 (setq org-edit-src-content-indentation 2)
 (setq org-src-preserve-indentation nil)
 
-;;15.8 A cleaner outline view
+;; 15.8 A cleaner outline view
 (setq org-startup-indented t)
 (setq org-startup-folded nil)
 (setq org-list-indent-offset 2)
