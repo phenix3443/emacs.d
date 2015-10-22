@@ -7,9 +7,9 @@
 ;; Created: 周三 二月  4 18:42:43 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周二 9月 29 00:28:12 2015 (+0800)
+;; Last-Updated: 周四 10月 22 14:10:58 2015 (+0800)
 ;;           By: phenix
-;;     Update #: 20
+;;     Update #: 21
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -83,6 +83,7 @@
   (require 'init-header2)
   (require 'init-helm)
   (require 'init-helm-gtags)
+  (require 'init-iimage)
   (require 'init-indent-guidle)
   (require 'init-lua-mode)
   (require 'init-magit)
