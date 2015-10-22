@@ -2,14 +2,14 @@
 ;;
 ;; Filename: init-iimage.el
 ;; Description:
-;; Author:
-;; Maintainer:
+;; Author: phenix3443 <phenix3443@gmail.com>
+;; Maintainer: phenix3443
 ;; Created: 周四 10月 22 13:30:10 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 3
+;;     Update #: 13
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -45,11 +45,10 @@
 ;;
 ;;; Code:
 (require 'iimage)
-(turn-on-iimage-mode)
-(iimage-mode-buffer)
-(add-to-list 'iimage-mode-image-regex-alist
-             (cons (concat "\\[\\[file:\\(~?" iimage-mode-image-filename-regex
-                           "\\)\\]")  1))
+
+(setq iimage-mode-image-search-path '(list "." "./img"))
+;; (add-hook 'text-mode-hook 'iimage-mode)
+
 (provide 'init-iimage)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
