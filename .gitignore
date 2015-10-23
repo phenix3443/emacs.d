@@ -1,7 +1,6 @@
 recentf
 session.*
 .emacs.desktop
-.projectile
 auto-save-list
 elpa/
 .emacs.desktop
@@ -28,7 +27,6 @@ gtags.files
 win_apps/glo651wb
 win_apps/pygments
 tmp-dir
-gtags.files
 tramp
 Everything.db
 Everything.ini
