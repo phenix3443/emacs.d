@@ -7,9 +7,9 @@
 ;; Created: 周三 十二月 24 11:07:52 2014 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周四 10月 22 21:15:42 2015 (+0800)
+;; Last-Updated: 周五 10月 23 20:00:34 2015 (+0800)
 ;;           By: phenix
-;;     Update #: 11
+;;     Update #: 12
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -51,7 +51,7 @@
 
 ;; 25.5 Filling Text
 ;; (add-hook 'org-mode-hook 'turn-on-auto-fill)
-(setq-default auto-fill-function 'do-auto-fill)
+;; (setq-default auto-fill-function 'do-auto-fill)
 ;; 25.9 Org mode
 ;; 25.10 TeX Mode
 
