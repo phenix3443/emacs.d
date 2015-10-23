@@ -6,11 +6,6 @@ cd %~dp0\
 rem emacs.d安装路径
 set emacs_d_path=%APPDATA%\.emacs.d
 
-echo 删除已有的HOME环境变量
-wmic ENVIRONMENT where "name='HOME'" delete
-echo 添加HOME环境变量
-wmic ENVIRONMENT create name="HOME",username="<system>",VariableValue=%APPDATA%
-
 echo Path环境变量中添加Python27的可执行文件路径，包括通过pip安装的
 rem python27安装路径
 set python_install_path=C:\Python27
