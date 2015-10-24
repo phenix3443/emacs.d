@@ -7,9 +7,9 @@
 ;; Created: 周三 二月  4 18:42:43 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周四 10月 22 14:10:58 2015 (+0800)
+;; Last-Updated: 周六 10月 24 17:53:40 2015 (+0800)
 ;;           By: phenix
-;;     Update #: 21
+;;     Update #: 22
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -96,6 +96,7 @@
   (require 'init-popwin)  ;; auto-complete configure
   (require 'init-projectile);;project support
   (require 'init-python-mode)
+  (require 'init-session)
   (require 'init-smartparens)
   (require 'init-themes)
   (require 'init-window-numbering)
