@@ -7,7 +7,7 @@
 ;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
-;; Last-Updated: 周六 10月 24 17:50:06 2015 (+0800)
+;; Last-Updated: 周六 10月 24 17:52:58 2015 (+0800)
 ;;           By: phenix
 ;;     Update #:
 ;; URL:
@@ -90,9 +90,6 @@
 ;; (require 'maintain-program-project)
 ;; 43 Saving Emacs Sessions
 ;; (desktop-save-mode 1)
-(require-package 'session)
-(require 'session)
-(add-hook 'after-init-hook 'session-initialize)
 
 ;; 47 Emacs Lisp Packages
 (require 'packages-conf)
