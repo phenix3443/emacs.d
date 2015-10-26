@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 25
+;;     Update #: 56
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -76,27 +76,51 @@
 (setq org-html-table-default-attributes '(:border "1" :cellspacing "0" :cellpadding "6" :rules "groups" :frame "box"))
 ;; 14 Working with source code
 ;; 14.2 Editing source code
-(setq org-src-lang-modes
-	  '(("asymptote" . asy)
-		("c" . c)
-		("c++" . c++)
-		("cpp" . c++)
-		("calc" . fundamental)
-		("ditaa" . artist)
-		("dot" . fundamental)
-		("elisp" . emacs-lisp)
-		("ocaml" . tuareg)
-		("screen" . shell-script)
-		("bash" . sh)
-		("sql" . sql)
-		("sqlite" . sql)
-		("xml" . nxml)))
+(setq org-edit-src-auto-save-idle-delay 15)
+;; (setq org-src-lang-modes
+;; 	  '(("asymptote" . asy)
+;; 		("c" . c)
+;; 		("c++" . c++)
+;; 		("cpp" . c++)
+;; 		("calc" . fundamental)
+;; 		("ditaa" . artist)
+;; 		("dot" . fundamental)
+;; 		("elisp" . emacs-lisp)
+;; 		("ocaml" . tuareg)
+;; 		("screen" . shell-script)
+;; 		("bash" . sh)
+;; 		("sql" . sql)
+;; 		("sqlite" . sql)
+;; 		("xml" . nxml)))
 (setq org-src-window-setup 'reorganize-frame)
+(setq org-src-preserve-indentation t)
 (setq org-src-ask-before-returning-to-edit-buffer nil)
+(setq org-src-fontify-natively t)
+(defface org-block-begin-line
+  '((t (:underline "#A7A6AA" :foreground "#008ED1" :background "#EAEAFF")))
+  "Face used for the line delimiting the begin of source blocks.")
 
-(setq org-edit-src-block-indentation 2)
-(setq org-edit-src-content-indentation 2)
-(setq org-src-preserve-indentation nil)
+(defface org-block-background
+  '((t (:background "#FFFFEA")))
+  "Face used for the source block background.")
+
+(defface org-block-end-line
+  '((t (:overline "#A7A6AA" :foreground "#008ED1" :background "#EAEAFF")))
+  "Face used for the line delimiting the end of source blocks.")
+
+;; 14.3 Exporting code blocks
+;; (setq org-export-babel-evaluate 'inline)
+(add-hook 'org-babel-post-tangle-hook
+		  (lambda () (message "I'm in %s" (buffer-file-name)) ))
+;; 14.7 Languages
+(org-babel-do-load-languages
+      'org-babel-load-languages
+      '(
+		(C . t)
+		(emacs-lisp . t)
+		(python . t)
+        (R . t)
+		(sh . t)))
 
 ;; 15.8 A cleaner outline view
 (setq org-startup-folded nil)
@@ -104,7 +128,7 @@
 ;; (setq org-startup-with-inline-images t)
 (setq org-startup-with-latex-preview t)
 ;; (setq org-list-indent-offset 2)
-;; (setq org-src-fontify-natively t)
+
 
 ;; (add-hook 'org-mode-hook '(lambda()
 							;; (set-face-attribute 'org-level-1 nil :height 1.6 :bold t)
@@ -117,23 +141,27 @@
   (setq blog-dir "D:/projects/phenix3443.github.io/"))
 (setq org-publish-project-alist
       '(
-		("org-notes"
+		("org-blog-notes"
 		 :base-directory "D:/projects/phenix3443.github.io/org/"
 		 :base-extension "org"
 		 :publishing-directory "D:/projects/phenix3443.github.io/public_html/"
 		 :recursive t
+		 :htmlized-source t
 		 :publishing-function org-html-publish-to-html
 		 :headline-levels 4             ; Just the default for this project.
 		 :auto-preamble t
+		 :html-extension "html"
+		 :table-of-contents t ;; 导出目录
+		 :body-only t ;; Only export section between <body></body>
 		 )
-		("org-static"
+		("org-blog-static"
 		 :base-directory "D:/projects/phenix3443.github.io/org/"
 		 :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
 		 :publishing-directory "D:/projects/phenix3443.github.io/public_html/"
 		 :recursive t
 		 :publishing-function org-publish-attachment
 		 )
-		("org" :components ("org-notes" "org-static"))
+		("blog" :components ("org-blog-notes" "org-blog-static"))
       ))
 (provide 'init-org)
 
