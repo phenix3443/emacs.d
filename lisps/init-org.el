@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 56
+;;     Update #: 58
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -77,23 +77,8 @@
 ;; 14 Working with source code
 ;; 14.2 Editing source code
 (setq org-edit-src-auto-save-idle-delay 15)
-;; (setq org-src-lang-modes
-;; 	  '(("asymptote" . asy)
-;; 		("c" . c)
-;; 		("c++" . c++)
-;; 		("cpp" . c++)
-;; 		("calc" . fundamental)
-;; 		("ditaa" . artist)
-;; 		("dot" . fundamental)
-;; 		("elisp" . emacs-lisp)
-;; 		("ocaml" . tuareg)
-;; 		("screen" . shell-script)
-;; 		("bash" . sh)
-;; 		("sql" . sql)
-;; 		("sqlite" . sql)
-;; 		("xml" . nxml)))
 (setq org-src-window-setup 'reorganize-frame)
-(setq org-src-preserve-indentation t)
+(setq org-src-preserve-indentation nil)
 (setq org-src-ask-before-returning-to-edit-buffer nil)
 (setq org-src-fontify-natively t)
 (defface org-block-begin-line
