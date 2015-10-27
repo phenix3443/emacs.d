@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 5
+;;     Update #: 6
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -47,7 +47,7 @@
 
 (require-package 'guide-key)
 (require 'guide-key)
-(setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-c p" "C-c g"))
+(setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-c" "C-c"))
 ;; (setq guide-key/recursive-key-sequence-flag t)
 (setq guide-key/highlight-command-regexp
       '("rectangle"
