@@ -7,9 +7,9 @@
 ;; Created: 周三 二月  4 18:42:43 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周六 10月 24 17:53:40 2015 (+0800)
+;; Last-Updated: 周二 10月 27 15:56:28 2015 (+0800)
 ;;           By: phenix
-;;     Update #: 22
+;;     Update #: 23
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -91,6 +91,7 @@
   (require 'init-multiple-cursors)
   (require 'init-org)
   (require 'init-org2blog)
+  (require 'init-org-page)
   (require 'init-pangu-spacing)
   (require 'init-paredit)
   (require 'init-popwin)  ;; auto-complete configure
