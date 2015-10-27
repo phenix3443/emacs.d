@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 58
+;;     Update #: 77
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -74,9 +74,11 @@
 (setq org-html-doctype "html4-transitional")
 ;; 12.6.6 Tables
 (setq org-html-table-default-attributes '(:border "1" :cellspacing "0" :cellpadding "6" :rules "groups" :frame "box"))
+
 ;; 14 Working with source code
 ;; 14.2 Editing source code
 (setq org-edit-src-auto-save-idle-delay 15)
+;; (setq org-edit-src-turn-on-auto-save t)
 (setq org-src-window-setup 'reorganize-frame)
 (setq org-src-preserve-indentation nil)
 (setq org-src-ask-before-returning-to-edit-buffer nil)
@@ -84,17 +86,16 @@
 (defface org-block-begin-line
   '((t (:underline "#A7A6AA" :foreground "#008ED1" :background "#EAEAFF")))
   "Face used for the line delimiting the begin of source blocks.")
-
 (defface org-block-background
   '((t (:background "#FFFFEA")))
   "Face used for the source block background.")
-
 (defface org-block-end-line
   '((t (:overline "#A7A6AA" :foreground "#008ED1" :background "#EAEAFF")))
   "Face used for the line delimiting the end of source blocks.")
 
 ;; 14.3 Exporting code blocks
 ;; (setq org-export-babel-evaluate 'inline)
+;; 14.4 Extracting source code
 (add-hook 'org-babel-post-tangle-hook
 		  (lambda () (message "I'm in %s" (buffer-file-name)) ))
 ;; 14.7 Languages
@@ -106,6 +107,13 @@
 		(python . t)
         (R . t)
 		(sh . t)))
+;; 14.8 Header arguments
+;; 14.8.1 Using header arguments
+(setq org-babel-default-header-args
+	  (append '((:padline . "true")(:comments . "yes")(:mkdirp . "yes"))  org-babel-default-header-args))
+;; (setq org-babel-default-header-args
+;; 	  (cons '(:tangle . "yes")
+;; 			(assq-delete-all :tangle org-babel-default-header-args)))
 
 ;; 15.8 A cleaner outline view
 (setq org-startup-folded nil)
