@@ -3,13 +3,13 @@
 ;; Filename: init-paredit.el
 ;; Description:
 ;; Author: phenix3443<phenix3443@gmail.com>
-;; Maintainer:
+;; Maintainer: phenix3443
 ;; Created: 周三 十二月 24 11:19:44 2014 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周二 9月 29 20:51:20 2015 (+0800)
+;; Last-Updated: 周二 10月 27 12:06:35 2015 (+0800)
 ;;           By: phenix
-;;     Update #: 14
+;;     Update #: 23
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -47,7 +47,17 @@
 
 (require-package 'paredit)
 (autoload 'enable-paredit-mode "paredit" t)
+
 (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
+
+(eval-after-load'paredit
+ '(progn
+	(define-key paredit-mode-map (kbd "<C-S-0>") 'paredit-forward-slurp-sexp)
+	(define-key paredit-mode-map (kbd "<C-S-9>") 'paredit-backward-slurp-sexp)
+	(define-key paredit-mode-map (kbd "<C-S-]>") 'paredit-forward-barf-sexp)
+	(define-key paredit-mode-map (kbd "<C-S-[>") 'paredit-backward-barf-sexp)
+	(define-key paredit-mode-map (kbd "<C-right>") nil)
+	(define-key paredit-mode-map (kbd "<C-left>")  nil)))
 
 ;; (require-package 'paredit-everywhere)
 ;; (add-hook 'prog-mode-hook 'paredit-everywhere-mode)
