@@ -7,9 +7,9 @@
 ;; Created: 周三 十二月 24 11:19:44 2014 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周二 10月 27 12:06:35 2015 (+0800)
+;; Last-Updated: 周四 10月 29 10:10:33 2015 (+0800)
 ;;           By: phenix
-;;     Update #: 23
+;;     Update #: 26
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -50,14 +50,13 @@
 
 (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
 
-(eval-after-load'paredit
- '(progn
-	(define-key paredit-mode-map (kbd "<C-S-0>") 'paredit-forward-slurp-sexp)
-	(define-key paredit-mode-map (kbd "<C-S-9>") 'paredit-backward-slurp-sexp)
-	(define-key paredit-mode-map (kbd "<C-S-]>") 'paredit-forward-barf-sexp)
-	(define-key paredit-mode-map (kbd "<C-S-[>") 'paredit-backward-barf-sexp)
-	(define-key paredit-mode-map (kbd "<C-right>") nil)
-	(define-key paredit-mode-map (kbd "<C-left>")  nil)))
+(with-eval-after-load 'paredit
+  (define-key paredit-mode-map (kbd "C-)") 'paredit-forward-slurp-sexp)
+  (define-key paredit-mode-map (kbd "C-(") 'paredit-backward-slurp-sexp)
+  (define-key paredit-mode-map (kbd "C-}") 'paredit-forward-barf-sexp)
+  (define-key paredit-mode-map (kbd "C-{") 'paredit-backward-barf-sexp)
+  (define-key paredit-mode-map (kbd "C-<right>") nil)
+  (define-key paredit-mode-map (kbd "C-<left>")  nil))
 
 ;; (require-package 'paredit-everywhere)
 ;; (add-hook 'prog-mode-hook 'paredit-everywhere-mode)
