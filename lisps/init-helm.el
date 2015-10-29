@@ -7,9 +7,9 @@
 ;; Created: 周二 一月 13 19:41:57 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周三 9月 23 21:43:12 2015 (+0800)
+;; Last-Updated: 周四 10月 29 10:23:18 2015 (+0800)
 ;;           By: phenix
-;;     Update #: 33
+;;     Update #: 37
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -93,20 +93,20 @@
 (setq helm-apropos-function-list t)
 
 ;; key binding
-(global-set-key (kbd "C-c h") 'helm-command-prefix)
-(global-unset-key (kbd "C-x c"))
+(with-eval-after-load 'helm-mode
+					 (define-key helm-map (kbd "C-c h") 'helm-command-prefix)
+					 (define-key helm-map (kbd "M-x") 'helm-M-x)
+					 (define-key helm-map (kbd "M-y") 'helm-show-kill-ring)
+					 (define-key helm-map (kbd "<f8>") 'helm-semantic-or-imenu)
+					 (define-key helm-map (kbd "C-x C-f") 'helm-find-files)
+					 (define-key helm-map (kbd "C-h SPC") 'helm-all-mark-rings)
+					 (define-key helm-map (kbd "C-c h o") 'helm-occur)
+					 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
+					 (define-key helm-map (kbd "C-i")
+					   'helm-execute-persistent-action) ; make TAB works in terminal
+					 (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+					 )
 
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-x b") 'helm-mini)
-(global-set-key (kbd "M-y") 'helm-show-kill-ring)
-(global-set-key (kbd "<f8>") 'helm-semantic-or-imenu)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-h SPC") 'helm-all-mark-rings)
-(global-set-key (kbd "C-c h o") 'helm-occur)
-
-(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
-(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
-(define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 (require 'helm-eshell)
 
 (add-hook 'eshell-mode-hook
