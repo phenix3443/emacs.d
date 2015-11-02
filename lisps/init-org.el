@@ -112,7 +112,7 @@
 
 		 ;; 13.1.5 Options for the exporters
 		 :headline-levels 4             ; Just the default for this project.
-
+		 :with-sub-superscript nil
 		 :html-extension "html"
 		 :style-include-default nil
 		 ;; :html-head "<script type=\"text/javascript\" src=\"./js/org-info.js\">"
