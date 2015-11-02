@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 159
+;;     Update #: 162
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -102,7 +102,7 @@
 
 		 ;; 13.1.3 Selecting files
 		 :base-extension "org"			;仅处理.org格式文件
-		 ;; :exclude
+		 :exclude "*~"
 		 ;; :include
 		 :recursive t
 
@@ -153,6 +153,7 @@
 ;; (setq org-edit-src-turn-on-auto-save t)
 (setq org-src-window-setup 'current-window)
 (setq org-src-preserve-indentation nil)
+(setq org-edit-src-content-indentation 4)
 (setq org-src-ask-before-returning-to-edit-buffer nil)
 (setq org-src-fontify-natively t)
 (defface org-block-begin-line
