@@ -7,9 +7,9 @@
 ;; Created: 周二 一月 13 19:42:55 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周四 10月 29 09:51:50 2015 (+0800)
+;; Last-Updated: 周一 11月  2 15:02:20 2015 (+0800)
 ;;           By: phenix
-;;     Update #: 20
+;;     Update #: 22
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -45,8 +45,6 @@
 ;;
 ;;; Code:
 
-;; https://github.com/bbatsov/projectile
-;; requried by program-conf.el
 (require-package 'projectile)
 
 (require 'projectile)
