@@ -7,9 +7,9 @@
 ;; Created: 周二 一月 13 19:41:57 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 一 11月  2 14:04:11 2015 (+0800)
+;; Last-Updated: 一 11月  2 16:47:18 2015 (+0800)
 ;;           By: ubuntu
-;;     Update #: 48
+;;     Update #: 49
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -57,7 +57,7 @@
 ;; Fuzzy matching
 (setq helm-recentf-fuzzy-match t
 	  helm-buffers-fuzzy-matching t
-	  helm-locate-fuzzy-match t
+	  helm-locate-fuzzy-match nil
 	  helm-M-x-fuzzy-match t
 	  helm-semantic-fuzzy-match t
 	  helm-imenu-fuzzy-match t
@@ -101,7 +101,6 @@
 (global-unset-key (kbd "C-x c"))
 (define-key helm-map (kbd "M-x") 'helm-M-x)
 (define-key helm-map (kbd "M-y") 'helm-show-kill-ring)
-(define-key helm-map (kbd "<f8>") 'helm-semantic-or-imenu)
 (define-key helm-map (kbd "C-x C-f") 'helm-find-files)
 (define-key helm-map (kbd "C-h SPC") 'helm-all-mark-rings)
 (define-key helm-map (kbd "C-c h o") 'helm-occur)
