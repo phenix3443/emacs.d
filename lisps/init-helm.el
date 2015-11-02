@@ -7,9 +7,9 @@
 ;; Created: 周二 一月 13 19:41:57 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周一 11月  2 10:27:36 2015 (+0800)
-;;           By: phenix
-;;     Update #: 44
+;; Last-Updated: 一 11月  2 14:04:11 2015 (+0800)
+;;           By: ubuntu
+;;     Update #: 48
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -55,15 +55,16 @@
 (helm-autoresize-mode 1)
 
 ;; Fuzzy matching
-;; (setq helm-recentf-fuzzy-match t
-;; 	  helm-buffers-fuzzy-matching t
-;; 	  helm-locate-fuzzy-match t
-;; 	  helm-M-x-fuzzy-match t
-;; 	  helm-semantic-fuzzy-match t
-;; 	  helm-imenu-fuzzy-match t
-;; 	  helm-apropos-fuzzy-match t
-;; 	  helm-lisp-fuzzy-completion t)
-;; (setq helm-candidate-number-limit 100)
+(setq helm-recentf-fuzzy-match t
+	  helm-buffers-fuzzy-matching t
+	  helm-locate-fuzzy-match t
+	  helm-M-x-fuzzy-match t
+	  helm-semantic-fuzzy-match t
+	  helm-imenu-fuzzy-match t
+	  helm-apropos-fuzzy-match t
+	  helm-lisp-fuzzy-completion t)
+(setq helm-candidate-number-limit 100)
+
 ;; enable fuzzy matching globally in all functions helmized by helm-mode
 (setq helm-mode-fuzzy-match t)
 (setq helm-completion-in-region-fuzzy-match t)
