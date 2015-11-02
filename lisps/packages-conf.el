@@ -7,9 +7,9 @@
 ;; Created: 周三 二月  4 18:42:43 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周二 10月 27 15:56:28 2015 (+0800)
+;; Last-Updated: 周一 11月  2 16:52:30 2015 (+0800)
 ;;           By: phenix
-;;     Update #: 23
+;;     Update #: 25
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -80,7 +80,7 @@
   (require 'init-flycheck)
   ;; (require 'init-ggtags)
   (require 'init-guide-key)
-  (require 'init-header2)
+  ;; (require 'init-header2)
   (require 'init-helm)
   (require 'init-helm-gtags)
   (require 'init-iimage)
