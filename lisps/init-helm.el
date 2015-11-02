@@ -2,14 +2,14 @@
 ;;
 ;; Filename: init-helm.el
 ;; Description:
-;; Author: phenix3443 <phenix3443@gmail.com>
-;; Maintainer: phenix3443
-;; Created: 周二 一月 13 19:41:57 2015 (+0800)
+;; Author:
+;; Maintainer:
+;; Created: 周一 11月  2 16:51:45 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周一 11月  2 14:14:12 2015 (+0800)
-;;           By: phenix
-;;     Update #: 49
+;; Last-Updated:
+;;           By:
+;;     Update #: 1
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -44,6 +44,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
+
+
 
 (require-package 'helm)
 
@@ -101,7 +103,6 @@
 (global-unset-key (kbd "C-x c"))
 (define-key helm-map (kbd "M-x") 'helm-M-x)
 (define-key helm-map (kbd "M-y") 'helm-show-kill-ring)
-(define-key helm-map (kbd "<f8>") 'helm-semantic-or-imenu)
 (define-key helm-map (kbd "C-x C-f") 'helm-find-files)
 (define-key helm-map (kbd "C-h SPC") 'helm-all-mark-rings)
 (define-key helm-map (kbd "C-c h o") 'helm-occur)
@@ -118,6 +119,9 @@
 
 
 (provide 'init-helm)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; init-helm.el ends here
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-helm.el ends here

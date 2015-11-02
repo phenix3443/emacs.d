@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 157
+;;     Update #: 164
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -102,7 +102,7 @@
 
 		 ;; 13.1.3 Selecting files
 		 :base-extension "org"			;仅处理.org格式文件
-		 ;; :exclude
+		 :exclude "*~"
 		 ;; :include
 		 :recursive t
 
@@ -151,8 +151,9 @@
 ;; 14.2 Editing source code
 (setq org-edit-src-auto-save-idle-delay 15)
 ;; (setq org-edit-src-turn-on-auto-save t)
-(setq org-src-window-setup 'reorganize-frame)
+(setq org-src-window-setup 'current-window)
 (setq org-src-preserve-indentation nil)
+(setq org-edit-src-content-indentation 4)
 (setq org-src-ask-before-returning-to-edit-buffer nil)
 (setq org-src-fontify-natively t)
 (defface org-block-begin-line
@@ -193,12 +194,6 @@
 ;; (setq org-startup-with-inline-images t)
 (setq org-startup-with-latex-preview t)
 ;; (setq org-list-indent-offset 2)
-
-
-;; (add-hook 'org-mode-hook '(lambda()
-							;; (set-face-attribute 'org-level-1 nil :height 1.6 :bold t)
-							;; (set-face-attribute 'org-level-2 nil :height 1.4 :bold t)
-							;; (set-face-attribute 'org-level-3 nil :height 1.2 :bold t)))
 
 (provide 'init-org)
 
