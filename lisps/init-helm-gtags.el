@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 3
+;;     Update #: 37
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -51,35 +51,46 @@
 (require-package 'helm-gtags)
 
 (add-hook 'prog-mode-hook 'helm-gtags-mode)
-
 (custom-set-variables
- '(helm-gtags-ignore-case t)
- '(helm-gtags-auto-update t)
- '(helm-gtags-use-input-at-cursor t)
- '(helm-gtags-pulse-at-cursor t)
  '(helm-gtags-prefix-key (kbd "C-c g"))
- '(helm-gtags-suggested-key-mapping t))
+ '(helm-gtags-ignore-case t)
+ '(helm-gtags-read-only nil)
+ '(helm-gtags-use-input-at-cursor t)
+ '(helm-gtags-highlight-candidate t)
+ '(helm-gtags-display-style 'detail)
+ '(helm-gtags-auto-update t)
+ '(helm-gtags-update-interval-second 60)
+ '(helm-gtags-pulse-at-cursor t)
+ '(helm-gtags-fuzzy-match nil)
+ '(helm-gtags-direct-helm-completing t)
+)
+
 
 ;; key bindings
-(eval-after-load "helm-gtags"
-  '(progn
-	 (let ((prefix helm-gtags-prefix-key))
-	   (define-key helm-gtags-mode-map (concat prefix "a") 'helm-gtags-tags-in-this-function)
-	   (define-key helm-gtags-mode-map (concat prefix "c") 'helm-gtags-create-tags)
-	   (define-key helm-gtags-mode-map (concat prefix "u") 'helm-gtags-update-tags)
-	   (define-key helm-gtags-mode-map (concat prefix "h") 'helm-gtags-display-browser)
-	   (define-key helm-gtags-mode-map "\C-]" 'helm-gtags-find-tag-from-here)
-	   (define-key helm-gtags-mode-map "\C-t" 'helm-gtags-pop-stack)
-	   (define-key helm-gtags-mode-map (concat prefix "P") 'helm-gtags-find-files)
-	   (define-key helm-gtags-mode-map (concat prefix "f") 'helm-gtags-parse-file)
-	   (define-key helm-gtags-mode-map (concat prefix "g") 'helm-gtags-find-pattern)
-	   (define-key helm-gtags-mode-map (concat prefix "s") 'helm-gtags-find-symbol)
-	   (define-key helm-gtags-mode-map (concat prefix "r") 'helm-gtags-find-rtag)
-	   (define-key helm-gtags-mode-map (concat prefix "d") 'helm-gtags-find-tag)
-	   (define-key helm-gtags-mode-map (kbd "M-.") 'helm-gtags-dwim)
-	   ;; common
-	   (define-key helm-gtags-mode-map "\e*" 'helm-gtags-pop-stack)
-	   (define-key helm-gtags-mode-map "\C-x4." 'helm-gtags-find-tag-other-window))))
+(with-eval-after-load "helm-gtags"
+  (let ((prefix helm-gtags-prefix-key))
+	(define-key helm-gtags-mode-map (concat prefix "a") 'helm-gtags-tags-in-this-function)
+	(define-key helm-gtags-mode-map (concat prefix "A") 'helm-gtags-select)
+	(define-key helm-gtags-mode-map (concat prefix "b") 'helm-gtags-pop-stack)
+	(define-key helm-gtags-mode-map (concat prefix "c") 'helm-gtags-clear-stack)
+	(define-key helm-gtags-mode-map (concat prefix "C") 'helm-gtags-clear-all-stacks)
+	(define-key helm-gtags-mode-map (concat prefix "d") 'helm-gtags-display-browser)
+	(define-key helm-gtags-mode-map (concat prefix "f") 'helm-gtags-find-files)
+	(define-key helm-gtags-mode-map (concat prefix "F") 'helm-gtags-parse-file)
+	(define-key helm-gtags-mode-map (concat prefix "g") 'helm-gtags-create-tags)
+	(define-key helm-gtags-mode-map (concat prefix "h") 'helm-gtags-find-tag-from-here)
+	(define-key helm-gtags-mode-map (concat prefix "n") 'helm-gtags-next-history)
+	(define-key helm-gtags-mode-map (concat prefix "p") 'helm-gtags-previous-history)
+	(define-key helm-gtags-mode-map (concat prefix "P") 'helm-gtags-pop-stack)
+	(define-key helm-gtags-mode-map (concat prefix "r") 'helm-gtags-find-rtag)
+	(define-key helm-gtags-mode-map (concat prefix "R") 'helm-gtags-resume)
+	(define-key helm-gtags-mode-map (concat prefix "s") 'helm-gtags-find-symbol)
+	(define-key helm-gtags-mode-map (concat prefix "S") 'helm-gtags-show-stack)
+	(define-key helm-gtags-mode-map (concat prefix "t") 'helm-gtags-find-tag)
+	(define-key helm-gtags-mode-map (concat prefix "4 t") 'helm-gtags-find-tag-other-window)
+	(define-key helm-gtags-mode-map (concat prefix "u") 'helm-gtags-update-tags)
+	(define-key helm-gtags-mode-map (concat prefix ".") 'helm-gtags-dwim)
+	))
 (require 'helm-gtags)
 
 (provide 'init-helm-gtags)
