@@ -7,9 +7,9 @@
 ;; Created: 周六 一月 17 10:10:24 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周五 7月 31 12:43:02 2015 (+0800)
-;;           By: chengxu70
-;;     Update #: 10
+;; Last-Updated: 一 11月  2 16:46:53 2015 (+0800)
+;;           By: ubuntu
+;;     Update #: 12
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -46,27 +46,10 @@
 ;;; Code:
 
 ;;24.3 Tabs vs Spaces
-(add-hook 'prog-mode-hook
-		  '(lambda()
-			 (setq tab-width 4)))
-;;24.4 convenience feature for indentation
+(setq-default tab-width 4)
 (setq tab-always-indent 'complete)
 (electric-indent-mode t)
 (provide 'indentation-conf)
 
-
-;;;
-;; (require-package 'highlight-indentation)
-;; (require 'highlight-indentation)
-;; (defun aj-toggle-fold ()
-;;   "Toggle fold all lines larger than indentation on current line"
-;;   (interactive)
-;;   (let ((col 1))
-;;     (save-excursion
-;;       (back-to-indentation)
-;;       (setq col (+ 1 (current-column)))
-;;       (set-selective-display
-;;        (if selective-display nil (or col 1))))))
-;; (global-set-key [(M C i)] 'aj-toggle-fold)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; indentation-conf.el ends here
