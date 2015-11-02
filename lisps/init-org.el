@@ -171,6 +171,7 @@
 ;; 14.4 Extracting source code
 (add-hook 'org-babel-post-tangle-hook
 		  (lambda () (message "I'm in %s" (buffer-file-name)) ))
+(setq org-src)
 ;; 14.7 Languages
 (org-babel-do-load-languages
       'org-babel-load-languages
@@ -187,6 +188,9 @@
 ;; (setq org-babel-default-header-args
 ;; 	  (cons '(:tangle . "yes")
 ;; 			(assq-delete-all :tangle org-babel-default-header-args)))
+;; 15 Miscellaneous
+;; 15.4 Code evaluation and security issues
+(setq org-confirm-babel-evaluate nil)
 
 ;; 15.8 A cleaner outline view
 (setq org-startup-folded nil)
