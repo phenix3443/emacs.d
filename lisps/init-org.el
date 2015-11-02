@@ -9,7 +9,7 @@
 ;; Package-Requires: ()
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 77
+;;     Update #: 157
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -73,7 +73,79 @@
 ;; 12.6.2 HTML doctypes
 (setq org-html-doctype "html4-transitional")
 ;; 12.6.6 Tables
-(setq org-html-table-default-attributes '(:border "1" :cellspacing "0" :cellpadding "6" :rules "groups" :frame "box"))
+;; (setq org-html-table-default-attributes '(:border "1" :cellspacing "0" :cellpadding "6" :rules "groups" :frame "box"))
+;; 12.6.12 JavaScript supported display of web pages
+;; (setq org-html-infojs-options '((path . "../scripts/org-info.js")
+;; 								(view . "showall")
+;; 								(toc . :with-toc)
+;; 								(ftoc . "0")
+;; 								(tdepth . "max")
+;; 								(sdepth . "max")
+;; 								(mouse . "underline")
+;; 								(buttons . "0")
+;; 								(ltoc . "1")
+;; 								(up . :html-link-up)
+;; 								(home . :html-link-home)))
+
+;; 13 Publishing
+(require 'ox-publish)
+;; 13.1 Configuration
+;; 13.1.1 The variable org-publish-project-alist
+(setq org-publish-project-alist
+      '(
+		("org"
+		 ;; 13.1.2 Sources and destinations for files
+		 :base-directory "~/projects/org-notes/org/" ;设置存放.org文件位置
+		 :publishing-directory "~/projects/phenix3443.github.io/" ;导出html文件位置
+		 ;; :preparation-function
+		 ;; :completion-function
+
+		 ;; 13.1.3 Selecting files
+		 :base-extension "org"			;仅处理.org格式文件
+		 ;; :exclude
+		 ;; :include
+		 :recursive t
+
+		 ;; 13.1.4 Publishing action
+		 :publishing-function org-html-publish-to-html
+		 :htmlized-source t
+
+		 ;; 13.1.5 Options for the exporters
+		 :headline-levels 4             ; Just the default for this project.
+
+		 :html-extension "html"
+		 :style-include-default nil
+		 ;; :html-head "<script type=\"text/javascript\" src=\"./js/org-info.js\">"
+		 ;; 13.1.7 Generating a sitemap
+		 :auto-sitemap t
+		 ;; 13.1.8 Generating an index
+		 :makeindex t
+		 )
+
+		("static"
+		 :base-directory "~/projects/org-notes/org/"
+		 :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+		 :publishing-directory "~/projects/phenix3443.github.io/"
+		 :recursive t
+		 :publishing-function org-publish-attachment
+		 )
+		("github" :components ("org" "static"))))
+;; 13.4 Triggering publication
+;; (setq org-publish-use-timestamps-flag nil)
+
+(when (equal system-type 'windows-nt)
+  (setq org-plist (cdr (assoc "org" org-publish-project-alist)))
+  (plist-put org-plist :base-directory "D:/projects/org-notes/org/")
+  (plist-put org-plist :publishing-directory "D:/projects/phenix3443.github.io/")
+
+  (setq static-plist (cdr (assoc "static" org-publish-project-alist)))
+  (plist-put static-plist :base-directory "D:/projects/org-notes/org/")
+  (plist-put static-plist :publishing-directory "D:/projects/phenix3443.github.io/"))
+
+  ;; (setq org-babel-default-header-args
+		;; (cons '(:base-directory "D:/projects/org-notes/org/")
+			  ;; (assq-delete-all org org-publish-project-alist)
+ ;; )))
 
 ;; 14 Working with source code
 ;; 14.2 Editing source code
@@ -128,34 +200,6 @@
 							;; (set-face-attribute 'org-level-2 nil :height 1.4 :bold t)
 							;; (set-face-attribute 'org-level-3 nil :height 1.2 :bold t)))
 
-(require 'ox-publish)
-(setq blog-dir "~/projects/phennix3443.github.io/")
-(when (equal system-type 'windows-nt)
-  (setq blog-dir "D:/projects/phenix3443.github.io/"))
-(setq org-publish-project-alist
-      '(
-		("org-blog-notes"
-		 :base-directory "D:/projects/phenix3443.github.io/org/"
-		 :base-extension "org"
-		 :publishing-directory "D:/projects/phenix3443.github.io/public_html/"
-		 :recursive t
-		 :htmlized-source t
-		 :publishing-function org-html-publish-to-html
-		 :headline-levels 4             ; Just the default for this project.
-		 :auto-preamble t
-		 :html-extension "html"
-		 :table-of-contents t ;; 导出目录
-		 :body-only t ;; Only export section between <body></body>
-		 )
-		("org-blog-static"
-		 :base-directory "D:/projects/phenix3443.github.io/org/"
-		 :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-		 :publishing-directory "D:/projects/phenix3443.github.io/public_html/"
-		 :recursive t
-		 :publishing-function org-publish-attachment
-		 )
-		("blog" :components ("org-blog-notes" "org-blog-static"))
-      ))
 (provide 'init-org)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

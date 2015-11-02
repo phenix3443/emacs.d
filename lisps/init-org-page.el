@@ -1,15 +1,15 @@
-;;; init-projectile.el ---
+;;; init-org-page.el ---
 ;;
-;; Filename: init-projectile.el
+;; Filename: init-org-page.el
 ;; Description:
-;; Author: phenix3443(phenix3443@gmail.com)
-;; Maintainer: phenix3443
-;; Created: 周二 一月 13 19:42:55 2015 (+0800)
+;; Author:
+;; Maintainer:
+;; Created: 周二 10月 27 15:57:08 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: 周四 10月 29 09:51:50 2015 (+0800)
-;;           By: phenix
-;;     Update #: 20
+;; Last-Updated:
+;;           By:
+;;     Update #: 6
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -45,33 +45,10 @@
 ;;
 ;;; Code:
 
-;; https://github.com/bbatsov/projectile
-;; requried by program-conf.el
-(require-package 'projectile)
+(require-package 'org-page)
+(require 'org-page)
 
-(require 'projectile)
-(projectile-global-mode)
-;; Helm Integration
-(require-package 'helm-projectile)
-(require 'helm-projectile)
-(helm-projectile-on)
-
-(require-package 'helm-ag)
-
-;; indexing and caching
-(when (equal system-type 'windows-nt)
-  (setq projectile-enable-caching t))
-;; switching projects
-(setq projectile-switch-project-action 'helm-projectile-find-file)
-;; completion
-(setq projectile-completion-system 'helm)
-
-;;perspective
-(require-package 'perspective)
-(persp-mode)
-(require-package 'persp-projectile)
-
-(provide 'init-projectile)
+(provide 'init-org-page)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-projectile.el ends here
+;;; init-org-page.el ends here
