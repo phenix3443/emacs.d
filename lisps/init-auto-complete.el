@@ -7,9 +7,9 @@
 ;; Created: 五  4月 17 14:57:48 2015 (+0800)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: Mon Apr 20 17:48:37 2015 (+0800)
-;;           By: ubuntu-desktop
-;;     Update #: 4
+;; Last-Updated: 一 11月  2 14:03:23 2015 (+0800)
+;;           By: ubuntu
+;;     Update #: 5
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -147,8 +147,7 @@
 
 (define-key ac-menu-map (kbd "C-n") 'ac-next)
 (define-key ac-menu-map (kbd "C-p") 'ac-previous)
-(define-key ac-mode-map (kbd "C-c h") 'ac-last-quick-help)
-(define-key ac-mode-map (kbd "C-c H") 'ac-last-help)
+
 
 (provide 'init-auto-complete)
 
