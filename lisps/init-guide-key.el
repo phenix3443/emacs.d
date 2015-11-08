@@ -50,6 +50,7 @@
 (setq guide-key/guide-key-sequence '("C-x r"
 									 "C-x 4"
 									 "C-c p" ;projectile
+									 "C-c p s"
 									 "C-c h" ;helm
 									 "C-c g" ;gtags
 									 "C-c C-e"))
