@@ -65,13 +65,18 @@
 ;; 3.2 Column width and alignment
 (setq org-startup-align-all-tables t)
 ;; 4.4 Handling links
+(setq org-file-apps '((auto-mode . emacs)
+                      ("\\.mm\\'" . default)
+                      ("\\.x?html?\\'" . "okular %s")
+                      ("\\.pdf\\'" . "okular %s")
+					  ))
 
 ;; 12 Exporting
 ;; 12.3 Export setting
 (setq org-export-with-section-numbers 3)
 ;; 12.6 HTML export
 ;; 12.6.2 HTML doctypes
-(setq org-html-doctype "html4-transitional")
+;; (setq org-html-doctype "html4-transitional")
 ;; 12.6.6 Tables
 ;; (setq org-html-table-default-attributes '(:border "1" :cellspacing "0" :cellpadding "6" :rules "groups" :frame "box"))
 ;; 12.6.12 JavaScript supported display of web pages
@@ -86,6 +91,26 @@
 ;; 								(ltoc . "1")
 ;; 								(up . :html-link-up)
 ;; 								(home . :html-link-home)))
+
+;; 12.7 LaTeX and PDF export
+(add-hook'org-mode-hook
+          (lambda ()
+            (setq org-latex-default-packages-alist
+                  (delete'("AUTO" "inputenc" t) org-latex-default-packages-alist))
+            ))
+
+(add-to-list 'org-latex-packages-alist '("" "xeCJK" t))
+;; 12.7.2 LaTeX specific export settings
+(setq org-latex-pdf-process
+      '("xelatex -interaction nonstopmode -output-directory %o %f"
+        "xelatex -interaction nonstopmode -output-directory %o %f"
+        "xelatex -interaction nonstopmode -output-directory %o %f"))
+
+;; 12.7.3 Header and sectioning structure
+;; 设置article header
+(setcar (cdr (assoc "article" org-latex-classes))
+"\\documentclass[12pt,a4paper]{article} \\usepackage[margin=2cm]{geometry} \\usepackage{fontspec} \\usepackage{xeCJK} \\setCJKmainfont{AR PL UKai CN} \\setmainfont{DejaVu Serif} \\setmonofont{DejaVu Sans Mono} \\setsansfont{DejaVu Sans} \\usepackage{hyperref} \\hypersetup{
+  colorlinks=true, linkcolor=[rgb]{0,0.37,0.53}, citecolor=[rgb]{0,0.47,0.68}, filecolor=[rgb]{0,0.37,0.53}, urlcolor=[rgb]{0,0.37,0.53},pagebackref=true,  linktoc=all}")
 
 ;; 13 Publishing
 (require 'ox-publish)
@@ -142,10 +167,10 @@
   (plist-put static-plist :base-directory "D:/projects/org-notes/org/")
   (plist-put static-plist :publishing-directory "D:/projects/phenix3443.github.io/"))
 
-  ;; (setq org-babel-default-header-args
-		;; (cons '(:base-directory "D:/projects/org-notes/org/")
-			  ;; (assq-delete-all org org-publish-project-alist)
- ;; )))
+;; (setq org-babel-default-header-args
+;; (cons '(:base-directory "D:/projects/org-notes/org/")
+;; (assq-delete-all org org-publish-project-alist)
+;; )))
 
 ;; 14 Working with source code
 ;; 14.2 Editing source code
@@ -174,13 +199,13 @@
 (setq org-src)
 ;; 14.7 Languages
 (org-babel-do-load-languages
-      'org-babel-load-languages
-      '(
-		(C . t)
-		(emacs-lisp . t)
-		(python . t)
-        (R . t)
-		(sh . t)))
+ 'org-babel-load-languages
+ '(
+   (C . t)
+   (emacs-lisp . t)
+   (python . t)
+   (R . t)
+   (sh . t)))
 ;; 14.8 Header arguments
 ;; 14.8.1 Using header arguments
 (setq org-babel-default-header-args
