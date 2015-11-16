@@ -93,11 +93,12 @@
 ;; 								(home . :html-link-home)))
 
 ;; 12.7 LaTeX and PDF export
-(add-hook'org-mode-hook
-          (lambda ()
-            (setq org-latex-default-packages-alist
-                  (delete'("AUTO" "inputenc" t) org-latex-default-packages-alist))
-            ))
+(require 'ox-latex)
+;; (add-hook'org-mode-hook
+;;           (lambda ()
+;;             (setq org-latex-default-packages-alist
+;;                   (delete'("AUTO" "inputenc" t) org-latex-default-packages-alist))
+;;             ))
 
 (add-to-list 'org-latex-packages-alist '("" "xeCJK" t))
 ;; 12.7.2 LaTeX specific export settings
