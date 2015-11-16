@@ -53,7 +53,10 @@
 ;; (add-hook 'org-mode-hook 'turn-on-auto-fill)
 ;; (setq-default auto-fill-function 'do-auto-fill)
 ;; 25.9 Org mode
+
 ;; 25.10 TeX Mode
+;; 25.10.3 TeX Printing Command
+;; (setq latex-run-command "xelatex")
 
 (provide 'text-conf)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
