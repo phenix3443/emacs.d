@@ -69,10 +69,10 @@
 
 (defun load-package-init-files()
   "load most packages init files"
-  (require 'init-auctex)
+  ;; (require 'init-auctex)
   (require 'init-auto-compile)
   (require 'init-auto-complete)
-  (require 'init-cedet)
+;  (require 'init-cedet)
   (require 'init-chinese-pyim)
   ;; (require 'init-company)
   (require 'init-csharp-mode)
