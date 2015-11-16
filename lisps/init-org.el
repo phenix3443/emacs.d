@@ -67,7 +67,7 @@
 ;; 4.4 Handling links
 (setq org-file-apps '((auto-mode . emacs)
                       ("\\.mm\\'" . default)
-                      ("\\.x?html?\\'" . "okular %s")
+                      ("\\.x?html?\\'" . default)
                       ("\\.pdf\\'" . "okular %s")
 					  ))
 
