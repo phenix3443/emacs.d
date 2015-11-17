@@ -94,13 +94,15 @@
 
 ;; 12.7 LaTeX and PDF export
 (require 'ox-latex)
-;; (add-hook'org-mode-hook
-;;           (lambda ()
-;;             (setq org-latex-default-packages-alist
-;;                   (delete'("AUTO" "inputenc" t) org-latex-default-packages-alist))
-;;             ))
+(add-hook'org-mode-hook
+          (lambda ()
+            (setq org-latex-default-packages-alist
+                  (delete'("AUTO" "inputenc" t) org-latex-default-packages-alist))
+            ))
 
 (add-to-list 'org-latex-packages-alist '("" "xeCJK" t))
+(add-to-list 'org-latex-packages-alist '("" "listings" t))
+(add-to-list 'org-latex-packages-alist '("" "color" t))
 ;; 12.7.2 LaTeX specific export settings
 (setq org-latex-pdf-process
       '("xelatex -interaction nonstopmode -output-directory %o %f"
@@ -110,8 +112,10 @@
 ;; 12.7.3 Header and sectioning structure
 ;; 设置article header
 (setcar (cdr (assoc "article" org-latex-classes))
-"\\documentclass[12pt,a4paper]{article} \\usepackage[margin=2cm]{geometry} \\usepackage{fontspec} \\usepackage{xeCJK} \\setCJKmainfont{AR PL UKai CN} \\setmainfont{DejaVu Serif} \\setmonofont{DejaVu Sans Mono} \\setsansfont{DejaVu Sans} \\usepackage{hyperref} \\hypersetup{
-  colorlinks=true, linkcolor=[rgb]{0,0.37,0.53}, citecolor=[rgb]{0,0.47,0.68}, filecolor=[rgb]{0,0.37,0.53}, urlcolor=[rgb]{0,0.37,0.53},pagebackref=true,  linktoc=all}")
+"\\documentclass[12pt,a4paper]{article} \\usepackage[margin=2cm]{geometry} \\usepackage{fontspec} \\usepackage[slantfont,boldfont,CJKnumber,CJKtextspaces]{xeCJK} \\setCJKmainfont{AR PL UKai CN} \\setmainfont{DejaVu Serif} \\setmonofont{DejaVu Sans Mono} \\setsansfont{DejaVu Sans} \\usepackage[colorlinks,linkcolor=blue,anchorcolor=red,citecolor=green,urlcolor=blue]{hyperref}")
+(when (equal system-type 'windows-nt)
+  (setcar (cdr (assoc "article" org-latex-classes))
+"\\documentclass[12pt,a4paper]{ctexart}"))
 
 ;; 13 Publishing
 (require 'ox-publish)
