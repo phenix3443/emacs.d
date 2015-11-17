@@ -201,7 +201,6 @@
 ;; 14.4 Extracting source code
 (add-hook 'org-babel-post-tangle-hook
 		  (lambda () (message "I'm in %s" (buffer-file-name)) ))
-(setq org-src)
 ;; 14.7 Languages
 (org-babel-do-load-languages
  'org-babel-load-languages
