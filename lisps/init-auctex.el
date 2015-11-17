@@ -46,8 +46,11 @@
 ;;; Code:
 
 (require-package 'auctex)
-;; 1.3  5.3
+
+;; 1.3 Quick Start
 (setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
 (setq TeX-PDF-mode t)
 (setq TeX-view-program-selection '((output-pdf "Okular")))
 
@@ -82,8 +85,8 @@
 ;; 5.2 Multifile Documents
 (setq Tex-save-query nil)
 ;; 5.3  Automatic Parsing of TeX Files
-(setq TeX-parse-self t)
-(setq-default TeX-master nil)
+
+
 
 (provide 'init-auctex)
 
