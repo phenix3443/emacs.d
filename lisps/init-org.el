@@ -78,7 +78,8 @@
 ;; 12.6.2 HTML doctypes
 ;; (setq org-html-doctype "html4-transitional")
 ;; 12.6.6 Tables
-;; (setq org-html-table-default-attributes '(:border "1" :cellspacing "0" :cellpadding "6" :rules "groups" :frame "box"))
+(setq org-html-table-default-attributes '(:border "1" :cellspacing "0" :cellpadding "6" :rules "groups" :frame "hsides" :width "auto"))
+
 ;; 12.6.12 JavaScript supported display of web pages
 ;; (setq org-html-infojs-options '((path . "../scripts/org-info.js")
 ;; 								(view . "showall")
