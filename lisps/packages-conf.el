@@ -48,8 +48,9 @@
 (when (< emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
 
 (package-initialize)
 
@@ -69,7 +70,7 @@
 
 (defun load-package-init-files()
   "load most packages init files"
-  ;; (require 'init-auctex)
+  (require 'init-auctex)
   (require 'init-auto-compile)
   (require 'init-auto-complete)
 ;  (require 'init-cedet)
