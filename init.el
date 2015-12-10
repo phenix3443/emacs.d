@@ -48,6 +48,13 @@
 ;; 按照 https://www.gnu.org/software/emacs/manual/ 出现顺序加载配置文件
 ;; GNU Emacs manual
 ;; (setq debug-on-error t)
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (add-to-list 'load-path "~/.emacs.d/lisps/")
 
 ;; 5 Enter Emacs
@@ -193,3 +200,28 @@
 ;; Widget	Library for graphical widgets.
 ;; Wisent	An Emacs implementation of the GNU Compiler Compiler Bison.
 ;; Woman	Browsing UN*X pages without man.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(helm-gtags-auto-update t)
+ '(helm-gtags-direct-helm-completing t)
+ '(helm-gtags-display-style (quote detail))
+ '(helm-gtags-fuzzy-match nil)
+ '(helm-gtags-highlight-candidate t)
+ '(helm-gtags-ignore-case t)
+ '(helm-gtags-prefix-key (kbd "C-c g"))
+ '(helm-gtags-pulse-at-cursor t)
+ '(helm-gtags-read-only nil)
+ '(helm-gtags-update-interval-second 60)
+ '(helm-gtags-use-input-at-cursor t)
+ '(package-selected-packages
+   (quote
+	(lua-mode indent-guide helm-gtags helm guide-key flycheck csharp-mode chinese-pyim fuzzy pos-tip auto-complete popup auto-compile))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
