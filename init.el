@@ -191,8 +191,8 @@
 ;; 5.2 Proxies and Gatewaying
   (setq url-proxy-services
   '(
-  ;("http" . "127.0.0.1:10086")
-  ;("https" . "127.0.0.1:10086")
+ ;("http" . "127.0.0.1:10086")
+ ;("https" . "127.0.0.1:10086")
   ))
 
 ;; Vip	An older VI emulator.
@@ -218,7 +218,7 @@
  '(helm-gtags-use-input-at-cursor t)
  '(package-selected-packages
    (quote
-	(lua-mode indent-guide helm-gtags helm guide-key flycheck csharp-mode chinese-pyim fuzzy pos-tip auto-complete popup auto-compile))))
+	(jedi persp-projectile perspective helm-ag helm-projectile projectile paredit pangu-spacing org-page org2blog htmlize cdlatex multiple-cursors markdown-mode magit lua-mode indent-guide helm-gtags helm guide-key flycheck csharp-mode chinese-pyim fuzzy pos-tip auto-complete popup auto-compile auctex))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
