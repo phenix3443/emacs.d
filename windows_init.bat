@@ -1,15 +1,15 @@
 @echo off
-echo Ä¬ÈÏ½«ÅäÖÃÎÄ¼ş·ÅÔÚ%APPDATA%\.emacs.dÖĞ
+echo é»˜è®¤å°†é…ç½®æ–‡ä»¶æ”¾åœ¨%APPDATA%\.emacs.dä¸­
 rem git clone git@github.com:phenix3443/emacs.d.git %APPDATA%\.emacs.d
 cd %~dp0\
 
 echo check python2.7
 rem todo: check python2.7, if not installed, install it
-rem python27°²×°Â·¾¶
+rem python27å®‰è£…è·¯å¾„
 set python_install_path=C:\Python27
 set path=%path%;%python_install_path%;%python_install_path%\Scripts\
 wmic ENVIRONMENT where "name='path' and username='<system>'" set VariableValue="%path%"
-echo °²×°Pygments
+echo å®‰è£…Pygments
 pip install Pygments
 
 set path=%path%;%APPDATA%\.emacs.d\win_apps\
@@ -19,11 +19,14 @@ echo install GNU Global
 win_apps\unzip -d win_apps\ -o win_apps\glo651wb.zip
 set path=%path%;%APPDATA%\.emacs.d\win_apps\glo651wb\bin\
 wmic ENVIRONMENT where "name='path' and username='<system>'" set VariableValue="%path%"
-cp \win_apps\.globalrc %APPDATA%
+copy \win_apps\.globalrc %APPDATA%
 
+rem æ·»åŠ  gnu global ä½¿ç”¨çš„ç¯å¢ƒå˜é‡
+ wmic ENVIRONMENT create name="GTAGSCONF",username="<system>",VariableValue="%APPDATA%\.emacs.d\win_apps\glo651wb\share\gtags\gtags.conf"
+ wmic ENVIRONMENT create name="GTAGSLABEL",username="<system>",VariableValue="pygments"
 gtags --debug
 
 echo Done successfully!
-echo ÏÖÔÚÆô¶¯emacsÖ®ºóÏÈ´ÓelpaÏÂÔØÏàÓ¦µÄÀ©Õ¹²å¼ş
+echo ç°åœ¨å¯åŠ¨emacsä¹‹åå…ˆä»elpaä¸‹è½½ç›¸åº”çš„æ‰©å±•æ’ä»¶
 
 pause
