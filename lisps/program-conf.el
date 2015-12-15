@@ -69,7 +69,7 @@
 				  (point))))
 	(comment-or-uncomment-region start end)))
 
-(global-set-key (kbd "C-M-;") 'comment-dwim-line)
+(global-set-key (kbd "C-;") 'comment-dwim-line)
 ;; 26.8 Completion for symbol names
 
 ;; 27.5 Finding Syntax Error on The Fly
