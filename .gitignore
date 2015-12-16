@@ -1,6 +1,7 @@
 recentf
 session.*
 .emacs.desktop
+elpa/
 auto-save-list
 .emacs.desktop
 themes/*/
