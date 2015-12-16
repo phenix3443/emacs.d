@@ -64,11 +64,11 @@
 ;;(setq window-system-default-frame-alist '() )
 
 ;;trasparent transparency of emacs
-(defun transparency (value)
-  "Sets the transparency of the frame window. 0=transparent/100=opaque"
-  (interactive "Transparency Value 0 - 100 opaque:")
-  (set-frame-parameter (selected-frame) 'alpha value))
-(transparency 100)
+;; (defun transparency (value)
+;;   "Sets the transparency of the frame window. 0=transparent/100=opaque"
+;;   (interactive "Transparency Value 0 - 100 opaque:")
+;;   (set-frame-parameter (selected-frame) 'alpha value))
+;; (transparency 100)
 
 ;; 21.12 Scroll Bars
 (set-scroll-bar-mode nil)
