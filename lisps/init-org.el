@@ -78,7 +78,8 @@
 ;; 12.6.2 HTML doctypes
 ;; (setq org-html-doctype "html4-transitional")
 ;; 12.6.6 Tables
-(setq org-html-table-default-attributes '(:border "1" :cellspacing "0" :cellpadding "6" :rules "groups" :frame "box" :width "auto"))
+(setq org-html-table-default-attributes '(:border "1" :cellspacing "0" :cellpadding "6" :rules "groups" :frame "hsides" :width "auto"))
+
 ;; 12.6.12 JavaScript supported display of web pages
 ;; (setq org-html-infojs-options '((path . "../scripts/org-info.js")
 ;; 								(view . "showall")
@@ -125,8 +126,8 @@
       '(
 		("org"
 		 ;; 13.1.2 Sources and destinations for files
-		 :base-directory "~/projects/org-notes/org/" ;设置存放.org文件位置
-		 :publishing-directory "~/projects/phenix3443.github.io/" ;导出html文件位置
+		 :base-directory "~/github/org-notes/org/" ;设置存放.org文件位置
+		 :publishing-directory "~/github/phenix3443.github.io/" ;导出html文件位置
 		 ;; :preparation-function
 		 ;; :completion-function
 
@@ -153,9 +154,9 @@
 		 )
 
 		("static"
-		 :base-directory "~/projects/org-notes/org/"
+		 :base-directory "~/github/org-notes/org/"
 		 :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-		 :publishing-directory "~/projects/phenix3443.github.io/"
+		 :publishing-directory "~/github/phenix3443.github.io/"
 		 :recursive t
 		 :publishing-function org-publish-attachment
 		 )
@@ -165,12 +166,12 @@
 
 (when (equal system-type 'windows-nt)
   (setq org-plist (cdr (assoc "org" org-publish-project-alist)))
-  (plist-put org-plist :base-directory "D:/projects/org-notes/org/")
+  (plist-put org-plist :base-directory "D:/github/org-notes/org/")
   (plist-put org-plist :publishing-directory "D:/projects/phenix3443.github.io/")
 
   (setq static-plist (cdr (assoc "static" org-publish-project-alist)))
-  (plist-put static-plist :base-directory "D:/projects/org-notes/org/")
-  (plist-put static-plist :publishing-directory "D:/projects/phenix3443.github.io/"))
+  (plist-put static-plist :base-directory "D:/github/org-notes/org/")
+  (plist-put static-plist :publishing-directory "D:/github/phenix3443.github.io/"))
 
 ;; (setq org-babel-default-header-args
 ;; (cons '(:base-directory "D:/projects/org-notes/org/")
@@ -201,7 +202,6 @@
 ;; 14.4 Extracting source code
 (add-hook 'org-babel-post-tangle-hook
 		  (lambda () (message "I'm in %s" (buffer-file-name)) ))
-(setq org-src)
 ;; 14.7 Languages
 (org-babel-do-load-languages
  'org-babel-load-languages
