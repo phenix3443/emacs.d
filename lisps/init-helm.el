@@ -45,10 +45,6 @@
 ;;
 ;;; Code:
 
-
-
-(require-package 'helm)
-
 (require 'helm-config)
 
 ;; enable modes
@@ -71,6 +67,9 @@
 (setq helm-mode-fuzzy-match t)
 (setq helm-completion-in-region-fuzzy-match t)
 
+;; use locate by regex
+(when (equal system-type 'gnu/linux)
+  (setq helm-locate-command "locate %s -e -A --regex %s"))
 ;; helm-locate 使用es.exe的时候everything必须要启动
 (when (equal system-type 'windows-nt)
   (let ((str (shell-command-to-string "tasklist /FI \"IMAGENAME eq Everything.exe\"")))

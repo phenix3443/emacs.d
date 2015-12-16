@@ -48,6 +48,13 @@
 ;; 按照 https://www.gnu.org/software/emacs/manual/ 出现顺序加载配置文件
 ;; GNU Emacs manual
 ;; (setq debug-on-error t)
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (add-to-list 'load-path "~/.emacs.d/lisps/")
 
 ;; 5 Enter Emacs
@@ -177,6 +184,12 @@
 ;; Tramp	Transparent remote file access system.
 (require 'tramp)
 (setq tramp-default-user "phenix")
+(cond
+ ((eq system-type 'windows-nt)
+  (setq tramp-default-method "pscp"))
+ ((eq system-type 'gnu/linux)
+  (setq tramp-default-method "ssh")))
+
 (setq password-cache-expiry 86400)
 
 ;; URL	Library for manipulating and retrieving URLs and URIs.
@@ -184,8 +197,8 @@
 ;; 5.2 Proxies and Gatewaying
   (setq url-proxy-services
   '(
-  ;("http" . "127.0.0.1:10086")
-  ;("https" . "127.0.0.1:10086")
+ ;("http" . "127.0.0.1:10086")
+ ;("https" . "127.0.0.1:10086")
   ))
 
 ;; Vip	An older VI emulator.
