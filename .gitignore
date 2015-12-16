@@ -1,8 +1,9 @@
 recentf
 session.*
-.emacs.desktop
-auto-save-list
 elpa/
+.emacs.desktop
+elpa/
+auto-save-list
 .emacs.desktop
 themes/*/
 .netrc
