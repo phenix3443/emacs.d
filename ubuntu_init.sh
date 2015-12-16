@@ -1,23 +1,27 @@
 #!/bin/bash
-cd ~/.emacs.d/
+
 # install Exuberant Ctags
-mdir ~/projects/
-cd ~/projects/
-wget -P ~/Downloads http://prdownloads.sourceforge.net/ctags/ctags-5.8.tar.gz
-tar zxf ~/Downloads/ctags-5.8.tar.gz
-cd ctags-5.8 && ./configure && make && sudo make install && make clean
+sudo apt-get install -y exuberant-ctags
 
 # install pygment
-sudo apt-get install -y python python-pip
+sudo apt-get install -y python python-dev python-pip
 sudo pip install Pygments
 
 # install GNU global
-cd ~/projects/
-sudo apt-get -y install libncurses5-dev
+sudo apt-get -y install libncurses-dev
 wget -P ~/Downloads http://tamacom.com/global/global-6.5.1.tar.gz
 tar zxf ~/Downloads/global-6.5.1.tar.gz
 cd global-6.5.1 && ./configure && make && sudo make install && make clean
 
+rm -fr global-6.5.1
+rm -f global-*.tar.gz
+
+echo "export GTAGSCONF=/usr/local/share/gtags/gtags.conf" >> ~/.bashrc
+echo "GTAGSLABEL=pygments" >> ~/.bashrc
+
+cd ~/.emacs.d/
+export GTAGSCONF=/usr/local/share/gtags/gtags.conf
+GTAGSLABEL=pygments
 gtags --debug
 
 echo Done successfully!
