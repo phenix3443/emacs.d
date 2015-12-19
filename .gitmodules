@@ -1,0 +1,4 @@
+[submodule "emacs-private"]
+	path = emacs-private
+	url = git@gitlab.com:phenix3443/emacs-private.git
+	branch = win-home
