@@ -1,3 +1,0 @@
-[submodule "private"]
-	path = private
-	url = git@gitlab.com:phenix3443/emacs-private.git
