@@ -5,7 +5,6 @@ elpa/
 auto-save-list
 .emacs.desktop
 themes/*/
-.netrc
 .session
 .python-environments
 *.elc
@@ -24,10 +23,10 @@ GPATH
 GRTAGS
 GTAGS
 gtags.files
-win_apps/glo651wb
-win_apps/pygments
+win_apps/glo651wb/
 tmp-dir
 tramp
 Everything.db
 Everything.ini
 helm-adaptive-history
+network-security.data
