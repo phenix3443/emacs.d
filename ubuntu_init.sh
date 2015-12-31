@@ -21,7 +21,7 @@ echo "GTAGSLABEL=pygments" >> ~/.bashrc
 
 cd ~/.emacs.d/
 export GTAGSCONF=/usr/local/share/gtags/gtags.conf
-GTAGSLABEL=pygments
+exprot GTAGSLABEL=pygments
 gtags --debug
 
 echo Done successfully!
