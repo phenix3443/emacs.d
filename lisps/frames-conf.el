@@ -54,9 +54,7 @@
 (let ((en-font (font-candidate "DejaVu Sans Mono-14" "Consolas-14"))
       (zh-font (font-candidate "Microsoft Yahei-14" "文泉驿微米黑 14")))
   ;;set en-font
-  (setq default-frame-alist
-		(list '(alpha 100 50)
-			  (cons 'font en-font)))
+  (setq default-frame-alist (list (cons 'font en-font)))
   ;; set zh-font
   (dolist (charset '(kana han symbol cjk-misc bopomofo))
 	(set-fontset-font "fontset-default" charset zh-font)))
