@@ -24,6 +24,8 @@ GRTAGS
 GTAGS
 gtags.files
 win_apps/glo651wb/
+win_apps/make-3.81-bin
+win_apps/texinfo-4.13a-bin
 tmp-dir
 tramp
 Everything.db
