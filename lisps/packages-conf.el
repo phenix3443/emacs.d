@@ -55,7 +55,11 @@
 	(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
   (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/")))
 
+;; disable automatic loading of packages after init.el is done
+(setq package-enable-at-startup nil)
+;; and force it to happen now
 (package-initialize)
+;; NOW you can (require) your ELPA packages and configure them as normal
 
 ; make sure to have downloaded archive description. Or use package-archive-contents as suggested by Nicolas Dudebout
 (or (file-exists-p package-user-dir)
@@ -70,18 +74,18 @@
         (package-refresh-contents)
         (require-package package min-version t)))))
 
-
+;; 加载elpa包的配置
 (defun load-package-init-files()
   "load most packages init files"
   (require 'init-auctex)
   (require 'init-auto-compile)
   (require 'init-auto-complete)
-  (require 'init-cedet)
+
   (require 'init-chinese-pyim)
   ;; (require 'init-company)
   (require 'init-csharp-mode)
   ;;(require 'init-ecb)
-  (require 'init-flycheck)
+  ;; (require 'init-flycheck)
   ;; (require 'init-ggtags)
   (require 'init-guide-key)
   ;; (require 'init-header2)
