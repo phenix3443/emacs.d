@@ -49,12 +49,6 @@
 ;; GNU Emacs manual
 ;; (setq debug-on-error t)
 
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-(package-initialize)
-
 (add-to-list 'load-path "~/.emacs.d/lisps/")
 
 ;; 5 Enter Emacs
@@ -140,6 +134,7 @@
 ;; Dired-X	Extra Dired features.
 ;; Ebrowse	C++ class browser.
 ;; EDE	Package to simplify building and debugging programs.
+(require 'init-cedet)
 ;; EDT	EDT Emulator.
 ;; Ediff	Visual interface for comparing and merging programs.
 ;; EIEIO	Common Lisp Object System library for Emacs.
@@ -195,11 +190,11 @@
 ;; URL	Library for manipulating and retrieving URLs and URIs.
 ;; 5 General Facilities
 ;; 5.2 Proxies and Gatewaying
-  (setq url-proxy-services
-  '(
- ;("http" . "127.0.0.1:10086")
- ;("https" . "127.0.0.1:10086")
-  ))
+;; (setq url-proxy-services
+;; 	  '(
+;; 		("http" . "127.0.0.1:10086")
+;; 		("https" . "127.0.0.1:10086")
+;; 		))
 
 ;; Vip	An older VI emulator.
 ;; Viper	VI emulator.
