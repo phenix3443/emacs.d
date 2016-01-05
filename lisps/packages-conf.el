@@ -44,7 +44,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
-(require 'package)
+
 (when (< emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
@@ -57,15 +57,15 @@
 
 ;; disable automatic loading of packages after init.el is done
 (setq package-enable-at-startup nil)
-;; and force it to happen now
-(package-initialize)
+
+
 ;; NOW you can (require) your ELPA packages and configure them as normal
 
 ; make sure to have downloaded archive description. Or use package-archive-contents as suggested by Nicolas Dudebout
 (or (file-exists-p package-user-dir)
     (package-refresh-contents))
 (defun require-package (package &optional min-version no-refresh)
-  "Ask elpa to install given PACKAGE."
+  "refresh package archives, check package presence and install if it's not installed"
   (if (package-installed-p package min-version)
       t
     (if (or (assoc package package-archive-contents) no-refresh)
@@ -110,8 +110,12 @@
   (require 'init-themes)
   (require 'init-window-numbering)
   (require 'init-yasnippet)
+  (require 'init-protobuf-mode)
   )
 (add-hook 'after-init-hook 'load-package-init-files)
+
+;; and force it to happen now
+(package-initialize)
 
 (provide 'packages-conf)
 

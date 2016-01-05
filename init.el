@@ -88,12 +88,18 @@
 ;; 27 Compiling and Testing Programs
 ;; (require 'compile-test-conf)
 ;; 28 Maintaining Large Programs
+;; 38 Using Emacs as a Server
+;; (require'server)
+;; (unless (server-running-p)
+;;   (server-start))
+
 ;; (require 'maintain-program-project)
 ;; 43 Saving Emacs Sessions
 ;; (desktop-save-mode 1)
 
 ;; 47 Emacs Lisp Packages
-(require 'packages-conf)
+(require 'package)
+
 ;; 48 Customization
 ;; (require 'customization-conf)
 
