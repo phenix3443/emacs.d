@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# compile & install cedet
+sudo apt-get install -y texinfo
+cd ~/.emacs.d/3rd-party/cedet
+make
+cd contrib/
+make
 # install Exuberant Ctags
 sudo apt-get install -y exuberant-ctags
 
@@ -23,6 +29,7 @@ cd ~/.emacs.d/
 export GTAGSCONF=/usr/local/share/gtags/gtags.conf
 exprot GTAGSLABEL=pygments
 gtags --debug
+
 
 echo Done successfully!
 echo Restart emacs and wait a moment for installing dependency packages from ELPA;
