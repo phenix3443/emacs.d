@@ -49,8 +49,10 @@
 ;;; required by program-conf.el
 
 (require-package 'helm-gtags)
+(require 'helm-gtags)
 
 (add-hook 'prog-mode-hook 'helm-gtags-mode)
+
 (custom-set-variables
  '(helm-gtags-prefix-key (kbd "C-c g"))
  '(helm-gtags-ignore-case t)
@@ -64,7 +66,6 @@
  '(helm-gtags-fuzzy-match nil)
  '(helm-gtags-direct-helm-completing t)
 )
-
 
 ;; key bindings
 (with-eval-after-load "helm-gtags"
@@ -91,7 +92,6 @@
 	(define-key helm-gtags-mode-map (concat prefix "u") 'helm-gtags-update-tags)
 	(define-key helm-gtags-mode-map (concat prefix ".") 'helm-gtags-dwim)
 	))
-(require 'helm-gtags)
 
 (provide 'init-helm-gtags)
 
