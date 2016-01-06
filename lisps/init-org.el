@@ -49,7 +49,7 @@
 
 (require-package 'cdlatex)
 (require-package 'htmlize)
-
+(require-package 'org)
 (require 'cdlatex)
 (require 'htmlize)
 (require 'iimage)
