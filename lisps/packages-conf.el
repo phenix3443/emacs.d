@@ -44,7 +44,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
-
+(require 'package)
 (when (< emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
@@ -104,7 +104,6 @@
   (require 'init-paredit)
   (require 'init-popwin)  ;; auto-complete configure
   (require 'init-projectile);;project support
-  (require 'init-python-mode)
   (require 'init-session)
   (require 'init-smartparens)
   (require 'init-themes)
