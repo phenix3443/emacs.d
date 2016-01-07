@@ -54,6 +54,7 @@
 (if (equal system-type 'windows-nt)
 	(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
   (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/")))
+
 (if (fboundp 'gnutls-available-p)
     (fmakunbound 'gnutls-available-p))
 (setq tls-program '("gnutls-cli --tofu -p %p %h")
@@ -68,7 +69,7 @@
 
 ;; NOW you can (require) your ELPA packages and configure them as normal
 
-; make sure to have downloaded archive description. Or use package-archive-contents as suggested by Nicolas Dudebout
+										; make sure to have downloaded archive description. Or use package-archive-contents as suggested by Nicolas Dudebout
 (or (file-exists-p package-user-dir)
     (package-refresh-contents))
 (defun require-package (package &optional min-version no-refresh)
