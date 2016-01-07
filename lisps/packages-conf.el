@@ -55,13 +55,13 @@
 	(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
   (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/")))
 
-(if (fboundp 'gnutls-available-p)
-    (fmakunbound 'gnutls-available-p))
-(setq tls-program '("gnutls-cli --tofu -p %p %h")
-      imap-ssl-program '("gnutls-cli --tofu -p %p %s")
-      smtpmail-stream-type 'starttls
-      starttls-extra-arguments '("--tofu")
-      )
+;; (if (fboundp 'gnutls-available-p)
+;;     (fmakunbound 'gnutls-available-p))
+;; (setq tls-program '("gnutls-cli --tofu -p %p %h")
+;;       imap-ssl-program '("gnutls-cli --tofu -p %p %s")
+;;       smtpmail-stream-type 'starttls
+;;       starttls-extra-arguments '("--tofu")
+;;       )
 
 ;; disable automatic loading of packages after init.el is done
 (setq package-enable-at-startup nil)
