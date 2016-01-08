@@ -48,13 +48,10 @@
 (when (< emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
 
-(if (equal system-type 'windows-nt)
-	(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
-  (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/")))
 
+;; gnutls connect failure
+;; https://github.com/nicferrier/elmarmalade/issues/55
 ;; (if (fboundp 'gnutls-available-p)
 ;;     (fmakunbound 'gnutls-available-p))
 ;; (setq tls-program '("gnutls-cli --tofu -p %p %h")
@@ -62,6 +59,9 @@
 ;;       smtpmail-stream-type 'starttls
 ;;       starttls-extra-arguments '("--tofu")
 ;;       )
+
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
+
 
 ;; disable automatic loading of packages after init.el is done
 (setq package-enable-at-startup nil)
