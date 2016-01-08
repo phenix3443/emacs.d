@@ -151,7 +151,8 @@
 ;; Dired-X	Extra Dired features.
 ;; Ebrowse	C++ class browser.
 ;; EDE	Package to simplify building and debugging programs.
-(require 'init-cedet)
+(when (not (equal system-type 'windows-nt))
+  (require 'init-cedet))
 ;; EDT	EDT Emulator.
 ;; Ediff	Visual interface for comparing and merging programs.
 ;; EIEIO	Common Lisp Object System library for Emacs.
