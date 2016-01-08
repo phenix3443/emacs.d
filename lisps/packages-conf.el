@@ -49,8 +49,6 @@
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
 
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-
 ;; gnutls connect failure
 ;; https://github.com/nicferrier/elmarmalade/issues/55
 ;; (if (fboundp 'gnutls-available-p)
