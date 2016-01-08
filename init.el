@@ -60,8 +60,6 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-(package-initialize)
-
 (add-to-list 'load-path "~/.emacs.d/lisps/")
 
 ;; 5 Enter Emacs
@@ -153,7 +151,8 @@
 ;; Dired-X	Extra Dired features.
 ;; Ebrowse	C++ class browser.
 ;; EDE	Package to simplify building and debugging programs.
-(require 'init-cedet)
+(when (not (equal system-type 'windows-nt))
+  (require 'init-cedet))
 ;; EDT	EDT Emulator.
 ;; Ediff	Visual interface for comparing and merging programs.
 ;; EIEIO	Common Lisp Object System library for Emacs.
