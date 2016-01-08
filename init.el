@@ -65,6 +65,11 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
 (package-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/lisps/")
@@ -158,8 +163,7 @@
 ;; Dired-X	Extra Dired features.
 ;; Ebrowse	C++ class browser.
 ;; EDE	Package to simplify building and debugging programs.
-(when (not (equal system-type 'windows-nt))
-  (require 'init-cedet))
+;;  (require 'init-cedet)
 ;; EDT	EDT Emulator.
 ;; Ediff	Visual interface for comparing and merging programs.
 ;; EIEIO	Common Lisp Object System library for Emacs.
@@ -226,3 +230,15 @@
 ;; Widget	Library for graphical widgets.
 ;; Wisent	An Emacs implementation of the GNU Compiler Compiler Bison.
 ;; Woman	Browsing UN*X pages without man.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (auctex))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
