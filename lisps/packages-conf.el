@@ -58,6 +58,7 @@
 ;;       smtpmail-stream-type 'starttls
 ;;       starttls-extra-arguments '("--tofu")
 ;;       )
+
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
 
@@ -67,7 +68,7 @@
 
 ;; NOW you can (require) your ELPA packages and configure them as normal
 
-; make sure to have downloaded archive description. Or use package-archive-contents as suggested by Nicolas Dudebout
+										; make sure to have downloaded archive description. Or use package-archive-contents as suggested by Nicolas Dudebout
 (or (file-exists-p package-user-dir)
     (package-refresh-contents))
 (defun require-package (package &optional min-version no-refresh)
