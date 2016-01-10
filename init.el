@@ -137,6 +137,7 @@
 ;; Ada-mode(Emacs mode for editing Ada code.)
 
 ;; Auth-source Emacs library for storing and sharing secret data.
+(require 'auth-source)
 ;; 在window下莫名卡顿，先注释
 ;; (require 'auth-source)
 ;; (add-to-list 'auth-sources "~/.emacs.d/.authinfo.gpg")

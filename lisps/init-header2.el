@@ -45,7 +45,7 @@
 ;;
 ;;; Code:
 
-(require-package 'header2)
+(require 'header2)
 ;; update file headers when save a file
 (autoload 'auto-update-file-header "header2")
 (add-hook 'write-file-hooks 'auto-update-file-header)

@@ -45,10 +45,6 @@
 ;;
 ;;; Code:
 
-;;; https://https://github.com/syohex/emacs-helm-gtags
-;;; required by program-conf.el
-
-(require-package 'helm-gtags)
 (require 'helm-gtags)
 
 (add-hook 'prog-mode-hook 'helm-gtags-mode)
