@@ -45,8 +45,9 @@
 ;;
 ;;; Code:
 
-(require-package 'magit)
+(require 'magit)
 
+(require 'find-func)
 (with-eval-after-load 'info
   (info-initialize)
   (add-to-list 'Info-directory-list (file-name-directory (find-library-name "magit"))))

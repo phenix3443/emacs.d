@@ -1,4 +1,3 @@
-[submodule "emacs-private"]
-	path = emacs-private
-	url = git@gitlab.com:phenix3443/emacs-private.git
-	branch = win-home
+[submodule "3rd-party/cedet"]
+	path = 3rd-party/cedet
+	url = http://git.code.sf.net/p/cedet/git

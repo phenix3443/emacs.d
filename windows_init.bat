@@ -3,6 +3,18 @@ echo 默认将配置文件放在%APPDATA%\.emacs.d中
 rem git clone git@github.com:phenix3443/emacs.d.git %APPDATA%\.emacs.d
 cd %~dp0\
 
+echo gnutls-64
+win_apps\unzip -d win_apps\gnutls-3.4.7-w64 win_apps\gnutls-3.4.7-w64
+set path=%path%;%APPDATA%\.emacs.d\win_apps\make-3.81 .zip\bin\;
+wmic ENVIRONMENT where "name='path' and username='<system>'" set VariableValue="%path%"
+
+echo compile cedet
+set path=%path%;%APPDATA%\.emacs.d\win_apps\
+cd %APPDATA%\.emacs.d\3rd-party/cedet\
+make
+cd contrib\
+make
+
 echo check python2.7
 rem todo: check python2.7, if not installed, install it
 rem python27安装路径
