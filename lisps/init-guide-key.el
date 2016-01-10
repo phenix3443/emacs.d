@@ -44,8 +44,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
-
-(require-package 'guide-key)
 (require 'guide-key)
 (setq guide-key/guide-key-sequence '("C-x r"
 									 "C-x 4"
