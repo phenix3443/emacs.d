@@ -45,9 +45,12 @@
 ;;
 ;;; Code:
 
-;;48.1.7 custom themes
-;;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/replace-colorthemes" )
-;;(load-theme 'wombat t)
+;; 48.1.4 Saving Customizations
+(setq custom-file "~/.emacs.d/emacs-custom.el")
+
+;; 48.1.7 custom themes
+
+
 
 (provide 'customization-conf)
 

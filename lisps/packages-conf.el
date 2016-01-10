@@ -50,7 +50,7 @@
   (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
 
 (add-to-list 'package-archives
-             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+             '("melpa" . "https://melpa.org/packages/"))
 
 ;; gnutls connect failure
 ;; https://github.com/nicferrier/elmarmalade/issues/55
@@ -62,10 +62,12 @@
 ;;       starttls-extra-arguments '("--tofu")
 ;;       )
 
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
 
-;; (setq package-enable-at-startup nil)
+(add-to-list 'package-archives
+			 '("popkit" . "http://elpa.popkit.org/packages/"))
 
+(setq package-enable-at-startup nil)
 
 (or (file-exists-p package-user-dir)
     (package-refresh-contents))
@@ -86,6 +88,7 @@
 (require-package 'chinese-pyim)
 ;; (require-package 'company)
 (require-package 'csharp-mode)
+(require-package 'cdlatex)
 (require-package 'ecb)
 (require-package 'flycheck)
 ;; (require-package 'ggtags)
@@ -94,6 +97,7 @@
 (require-package 'helm)
 (require-package 'helm-ag)
 (require-package 'helm-gtags)
+(require-package 'htmlize)
 (require-package 'indent-guide)
 (require-package 'lua-mode)
 (require-package 'magit)
@@ -115,14 +119,13 @@
 (require-package 'window-numbering)
 (require-package 'yasnippet)
 
-
 ;; 加载elpa包的配置
 (defun init-elpa-packages ()
   "load most packages init files"
   ;; (require 'init-auctex)
   (require 'init-auto-compile)
   (require 'init-auto-complete)
-  (require 'init-chinese-pyim)
+  ;; (require 'init-chinese-pyim)
   ;; (require 'init-company)
   (require 'init-csharp-mode)
   ;;(require 'init-ecb)
@@ -156,6 +159,10 @@
 
   )
 (add-hook 'after-init-hook 'init-elpa-packages)
+
+(add-to-list 'package-directory-list "~/.emacs.d/3rd-party/")
+
+(package-initialize)
 
 (provide 'packages-conf)
 
