@@ -46,7 +46,7 @@
 ;;; Code:
 
 ;; add space between Chinese and English characters.
-(require-package 'pangu-spacing)
+
 (require 'pangu-spacing)
 (global-pangu-spacing-mode 1)
 (pangu-spacing-modify-buffer)

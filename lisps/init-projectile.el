@@ -45,16 +45,12 @@
 ;;
 ;;; Code:
 
-(require-package 'projectile)
-
 (require 'projectile)
 (projectile-global-mode)
 ;; Helm Integration
 (require-package 'helm-projectile)
 (require 'helm-projectile)
 (helm-projectile-on)
-
-(require-package 'helm-ag)
 
 ;; indexing and caching
 (when (equal system-type 'windows-nt)
@@ -65,9 +61,9 @@
 (setq projectile-completion-system 'helm)
 
 ;;perspective
-(require-package 'perspective)
-(persp-mode)
-(require-package 'persp-projectile)
+
+
+
 
 (provide 'init-projectile)
 

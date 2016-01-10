@@ -44,7 +44,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
-(require-package 'multiple-cursors)
+
 (require 'multiple-cursors)
 (global-set-key (kbd "C-c m e") 'mc/edit-lines)
 (global-set-key (kbd "C-c m p") 'mc/mark-previous-like-this)
