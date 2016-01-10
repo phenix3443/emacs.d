@@ -1,3 +1,4 @@
+
 ;;; init-helm.el ---
 ;;
 ;; Filename: init-helm.el
@@ -44,7 +45,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
-(require-package 'helm)
+
 (require 'helm-config)
 
 ;; enable modes

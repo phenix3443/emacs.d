@@ -1,4 +1,4 @@
-(require-package 'flycheck)
+
 (require 'flycheck)
 
 (add-hook 'prog-mode-hook '(lambda()

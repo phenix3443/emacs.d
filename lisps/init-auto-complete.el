@@ -44,12 +44,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
+(require 'auto-complete)
 
-;;; required by program-conf.el
-;;; https://github.com/auto-complete/auto-complete
-(require-package 'popup)
-(require-package 'auto-complete)
-
+;; (require-package 'popup)
 
 ;; 3.2 install script
 (require 'auto-complete)
