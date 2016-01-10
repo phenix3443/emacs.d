@@ -44,8 +44,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
-(require-package 'popwin)
-
 (require 'popwin)
 
 (setq popwin:special-display-config nil)

@@ -49,6 +49,18 @@
 ;; GNU Emacs manual
 ;; (setq debug-on-error t)
 
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -94,12 +106,18 @@
 ;; 27 Compiling and Testing Programs
 ;; (require 'compile-test-conf)
 ;; 28 Maintaining Large Programs
+;; 38 Using Emacs as a Server
+;; (require'server)
+;; (unless (server-running-p)
+;;   (server-start))
+
 ;; (require 'maintain-program-project)
 ;; 43 Saving Emacs Sessions
 ;; (desktop-save-mode 1)
 
 ;; 47 Emacs Lisp Packages
 (require 'packages-conf)
+
 ;; 48 Customization
 ;; (require 'customization-conf)
 
@@ -114,6 +132,7 @@
 ;; Ada-mode(Emacs mode for editing Ada code.)
 
 ;; Auth-source Emacs library for storing and sharing secret data.
+(require 'auth-source)
 ;; 在window下莫名卡顿，先注释
 ;; (require 'auth-source)
 ;; (add-to-list 'auth-sources "~/.emacs.d/.authinfo.gpg")
@@ -140,6 +159,8 @@
 ;; Dired-X	Extra Dired features.
 ;; Ebrowse	C++ class browser.
 ;; EDE	Package to simplify building and debugging programs.
+(when (not (equal system-type 'windows-nt))
+  (require 'init-cedet))
 ;; EDT	EDT Emulator.
 ;; Ediff	Visual interface for comparing and merging programs.
 ;; EIEIO	Common Lisp Object System library for Emacs.
@@ -182,24 +203,24 @@
 ;; Todo mode	Keeping track of things to do.
 
 ;; Tramp	Transparent remote file access system.
-(require 'tramp)
-(setq tramp-default-user "phenix")
-(cond
- ((eq system-type 'windows-nt)
-  (setq tramp-default-method "pscp"))
- ((eq system-type 'gnu/linux)
-  (setq tramp-default-method "ssh")))
+;; (require 'tramp)
 
-(setq password-cache-expiry 86400)
+;; (cond
+;;  ((eq system-type 'windows-nt)
+;;   (setq tramp-default-method "pscp"))
+;;  ((eq system-type 'gnu/linux)
+;;   (setq tramp-default-method "ssh")))
+
+;; (setq password-cache-expiry 86400)
 
 ;; URL	Library for manipulating and retrieving URLs and URIs.
 ;; 5 General Facilities
 ;; 5.2 Proxies and Gatewaying
-  (setq url-proxy-services
-  '(
- ;("http" . "127.0.0.1:10086")
- ;("https" . "127.0.0.1:10086")
-  ))
+;; (setq url-proxy-services
+;; 	  '(
+;; 		("http" . "127.0.0.1:10086")
+;; 		("https" . "127.0.0.1:10086")
+;; 		))
 
 ;; Vip	An older VI emulator.
 ;; Viper	VI emulator.
