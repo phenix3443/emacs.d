@@ -16,7 +16,9 @@
  '(helm-gtags-read-only t)
  '(helm-gtags-update-interval-second 60)
  '(helm-gtags-use-input-at-cursor t)
- '(package-selected-packages (quote (helm-projectile org-page org cdlatex fuzzy auctex))))
+ '(package-selected-packages
+   (quote
+	(header2 ggtags ecb xcscope sr-speedbar load-dir req-package org cdlatex fuzzy auctex))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
