@@ -76,7 +76,7 @@
 		  ("org"
 		   ;; 13.1.2 Sources and destinations for files
 		   :base-directory "~/github/org-notes/org/" ;设置存放.org文件位置
-		   :publishing-directory "~/github/org-notes/penix3443.github.io/" ;导出html文件位置
+		   :publishing-directory "~/github/org-notes/phenix3443.github.io/" ;导出html文件位置
 		   ;; :preparation-function
 		   ;; :completion-function
 
@@ -105,7 +105,7 @@
 		  ("static"
 		   :base-directory "~/github/org-notes/org/"
 		   :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-		   :publishing-directory "~/github/phenix3443.github.io/"
+		   :publishing-directory "~/github/org-notes/phenix3443.github.io/"
 		   :recursive t
 		   :publishing-function org-publish-attachment
 		   )
@@ -116,7 +116,7 @@
   (when (equal system-type 'windows-nt)
 	(setq org-plist (cdr (assoc "org" org-publish-project-alist)))
 	(plist-put org-plist :base-directory "D:/github/org-notes/org/")
-	(plist-put org-plist :publishing-directory "D:/projects/org-notes/phenix3443.github.io/")
+	(plist-put org-plist :publishing-directory "D:/github/org-notes/phenix3443.github.io/")
 
 	(setq static-plist (cdr (assoc "static" org-publish-project-alist)))
 	(plist-put static-plist :base-directory "D:/github/org-notes/org/")
