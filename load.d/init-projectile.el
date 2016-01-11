@@ -1,6 +1,6 @@
 (require 'req-package)
 (req-package projectile
-  :require perspective helm-projectile
+  :require perspective helm-projectile helm-ag
   :config
   (projectile-global-mode)
   ;; Helm Integration
