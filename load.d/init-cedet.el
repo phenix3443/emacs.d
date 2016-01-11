@@ -1,8 +1,8 @@
 (require 'req-package)
 (req-package 'cedet
   :config
-  (load-file "~/.emacs.d/3rd-party/cedet/cedet-devel-load.el")
-  (add-to-list'load-path "~/.emacs.d/3rd-party/cedet/contrib")
+  ;(load-file "~/.emacs.d/3rd-party/cedet/cedet-devel-load.el")
+  ;(add-to-list'load-path "~/.emacs.d/3rd-party/cedet/contrib")
 
   ;; load contrib library
   (require'eassist)
