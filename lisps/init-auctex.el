@@ -44,8 +44,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
-
-(require-package 'auctex)
+(require 'auctex)
 
 ;; 1.3 Quick Start
 (setq TeX-auto-save t)

@@ -45,11 +45,6 @@
 ;;
 ;;; Code:
 
-;;; required by text-conf.el, from org manual(http://orgmode.org/org.html)
-
-(require-package 'cdlatex)
-(require-package 'htmlize)
-(require-package 'org)
 (require 'cdlatex)
 (require 'htmlize)
 (require 'iimage)

@@ -45,7 +45,8 @@
 ;;
 ;;; Code:
 
-(require-package 'paredit)
+(require 'paredit)
+
 (autoload 'enable-paredit-mode "paredit" t)
 
 (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
