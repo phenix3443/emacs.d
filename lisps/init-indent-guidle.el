@@ -46,7 +46,7 @@
 ;;; Code:
 
 ;;; show vertical lines to guide indentation
-(require-package 'indent-guide)
+(require 'indent-guide)
 (indent-guide-global-mode)
 (setq indent-guide-delay 0.1)
 ;; (setq indent-guide-recursive t)

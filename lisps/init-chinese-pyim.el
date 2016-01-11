@@ -44,9 +44,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;; Code:
-;; Set up my private Chinese environment.
-;; https://github.com/tumashu/chinese-pyim
-(require-package 'chinese-pyim)
+
 (require 'chinese-pyim)
 (setq pyim-dicts '((:name "BigDict" :file "~/.emacs.d/pyim/pyim-bigdict.txt" :coding utf-8-unix)))
 (setq default-input-method "chinese-pyim")
