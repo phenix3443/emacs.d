@@ -49,6 +49,9 @@
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
 
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
+
 ;; gnutls connect failure
 ;; https://github.com/nicferrier/elmarmalade/issues/55
 ;; (if (fboundp 'gnutls-available-p)
@@ -59,18 +62,16 @@
 ;;       starttls-extra-arguments '("--tofu")
 ;;       )
 
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
 
+(add-to-list 'package-archives
+			 '("popkit" . "http://elpa.popkit.org/packages/"))
 
-;; disable automatic loading of packages after init.el is done
 (setq package-enable-at-startup nil)
 
-
-;; NOW you can (require) your ELPA packages and configure them as normal
-
-										; make sure to have downloaded archive description. Or use package-archive-contents as suggested by Nicolas Dudebout
 (or (file-exists-p package-user-dir)
     (package-refresh-contents))
+
 (defun require-package (package &optional min-version no-refresh)
   "refresh package archives, check package presence and install if it's not installed"
   (if (package-installed-p package min-version)
@@ -81,14 +82,50 @@
         (package-refresh-contents)
         (require-package package min-version t)))))
 
+(require-package 'auctex)
+(require-package 'auto-compile)
+(require-package 'auto-complete)
+(require-package 'chinese-pyim)
+;; (require-package 'company)
+(require-package 'csharp-mode)
+(require-package 'cdlatex)
+(require-package 'ecb)
+(require-package 'flycheck)
+;; (require-package 'ggtags)
+(require-package 'guide-key)
+(require-package 'header2)
+(require-package 'helm)
+(require-package 'helm-ag)
+(require-package 'helm-gtags)
+(require-package 'htmlize)
+(require-package 'indent-guide)
+(require-package 'lua-mode)
+(require-package 'magit)
+(require-package 'markdown-mode)
+(require-package 'multiple-cursors)
+(require-package 'org)
+(require-package 'org2blog)
+(require-package 'pangu-spacing)
+(require-package 'paredit)
+(require-package 'perspective)
+(require-package 'persp-projectile)
+(require-package 'popwin)
+(require-package 'projectile)
+(require-package 'protobuf-mode)
+(require-package 'session)
+(require-package 'smartparens)
+(require-package 'color-theme-sanityinc-tomorrow)
+(require-package 'use-package)
+(require-package 'window-numbering)
+(require-package 'yasnippet)
+
 ;; 加载elpa包的配置
-(defun load-package-init-files()
+(defun init-elpa-packages ()
   "load most packages init files"
-  (require 'init-auctex)
+  ;; (require 'init-auctex)
   (require 'init-auto-compile)
   (require 'init-auto-complete)
-
-  (require 'init-chinese-pyim)
+  ;; (require 'init-chinese-pyim)
   ;; (require 'init-company)
   (require 'init-csharp-mode)
   ;;(require 'init-ecb)
@@ -109,18 +146,22 @@
   (require 'init-org-page)
   (require 'init-pangu-spacing)
   (require 'init-paredit)
+  (require 'init-perspective)
   (require 'init-popwin)  ;; auto-complete configure
   (require 'init-projectile);;project support
+  (require 'init-protobuf-mode)
   (require 'init-session)
   (require 'init-smartparens)
   (require 'init-themes)
+  (require 'init-use-package)
   (require 'init-window-numbering)
   (require 'init-yasnippet)
-  (require 'init-protobuf-mode)
-  )
-(add-hook 'after-init-hook 'load-package-init-files)
 
-;; and force it to happen now
+  )
+(add-hook 'after-init-hook 'init-elpa-packages)
+
+(add-to-list 'package-directory-list "~/.emacs.d/3rd-party/")
+
 (package-initialize)
 
 (provide 'packages-conf)
