@@ -1,6 +1,5 @@
-(require 'use-package)
-(use-package helm
-  :ensure t
+(require 'req-package)
+(req-package helm
   :init
   (require 'helm-config)
   (global-set-key (kbd "C-c h") 'helm-command-prefix)
