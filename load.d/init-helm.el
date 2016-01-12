@@ -1,7 +1,19 @@
-(require 'req-package)
-(req-package helm
-  :config
+(require 'use-package)
+(use-package helm
+  :ensure t
+  :init
   (require 'helm-config)
+  (global-set-key (kbd "C-c h") 'helm-command-prefix)
+  :bind (
+		 ("M-x"     . helm-M-x)
+         ("C-x C-b" . helm-buffer-list)
+         ("C-x C-f" . helm-find-files)
+		 ("C-c h o" . helm-occur)
+		 ;;:map helm-map ("o" . helm-occur)
+		 )
+
+  :config
+  ;; (require 'helm-config)
 
   ;; enable modes
   (helm-mode 1)
@@ -50,28 +62,11 @@
 
   (setq helm-apropos-function-list t)
 
-  ;; key binding
-  ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
-  ;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
-  ;; cannot change `helm-command-prefix-key'once `helm-config' is loaded.
-  (global-set-key (kbd "C-c h") 'helm-command-prefix)
-  (global-unset-key (kbd "C-x c"))
-  (define-key helm-map (kbd "M-x") 'helm-M-x)
-  (define-key helm-map (kbd "M-y") 'helm-show-kill-ring)
-  (define-key helm-map (kbd "C-x C-f") 'helm-find-files)
-  (define-key helm-map (kbd "C-h SPC") 'helm-all-mark-rings)
-  (define-key helm-map (kbd "C-c h o") 'helm-occur)
-  (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
-  (define-key helm-map (kbd "C-i")  'helm-execute-persistent-action) ; make TAB works in terminal
-  (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
-
   (require 'helm-eshell)
 
   (add-hook 'eshell-mode-hook
 			#'(lambda ()
 				(define-key eshell-mode-map (kbd "C-c C-l")  'helm-eshell-history)))
-  (define-key shell-mode-map (kbd "C-c C-l") 'helm-comint-input-ring)
-
   )
 
 (provide 'init-helm)
