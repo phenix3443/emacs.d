@@ -1,5 +1,6 @@
 (require 'req-package)
 (req-package company
+  :disable t
   :config
   (setq company-idle-delay 0.1)
   (setq company-minimum-prefix-length 2)
