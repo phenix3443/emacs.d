@@ -1,5 +1,6 @@
 (require 'req-package)
 (req-package header2
+  :disable t
   :config
   ;; update file headers when save a file
   (autoload 'auto-update-file-header "header2")
