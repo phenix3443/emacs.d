@@ -21,6 +21,9 @@
 (add-to-list 'package-archives
 			 '("popkit" . "http://elpa.popkit.org/packages/"))
 
+(add-to-list 'package-archives
+             '("elpy" . "https://jorgenschaefer.github.io/packages/"))
+
 (setq package-enable-at-startup nil)
 
 (or (file-exists-p package-user-dir)
