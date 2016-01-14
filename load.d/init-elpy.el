@@ -1,6 +1,6 @@
 (require 'req-package)
 
-(req-package elpa
+(req-package elpy
   :config
   (elpy-enable)
   )
