@@ -24,7 +24,7 @@
 
 (global-set-key (kbd "C-;") 'comment-dwim-line)
 ;; 26.7 Hideshow minor mode
-(add-hook 'prog-mode 'hs-minor-mode)
+(add-hook 'prog-mode-hook 'hs-minor-mode)
 ;; 26.8 Completion for symbol names
 
 ;; 27.5 Finding Syntax Error on The Fly
