@@ -1,5 +1,6 @@
 (require 'req-package)
 (req-package chinese-pyim
+  :disable t
   :config
   (setq pyim-dicts '((:name "BigDict" :file "~/.emacs.d/pyim/pyim-bigdict.txt" :coding utf-8-unix)))
   (setq default-input-method "chinese-pyim")
