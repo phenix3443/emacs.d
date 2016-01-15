@@ -27,6 +27,8 @@
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 ;; 26.8 Completion for symbol names
 
+;; 26.11 Other Features Useful for Editing Programs
+(add-hook 'prog-mode-hook ((lambda () (superword-mode t))))
 ;; 27.5 Finding Syntax Error on The Fly
 
 ;; 28 tags
