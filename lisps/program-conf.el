@@ -31,6 +31,7 @@
 (add-hook 'prog-mode-hook ((lambda ()
 							 (superword-mode t)
 							 (electric-layout-mode t))))
+;; (global-prettify-symbols-mode t)
 ;; 27.5 Finding Syntax Error on The Fly
 
 ;; 28 tags
