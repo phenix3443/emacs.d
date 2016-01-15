@@ -2,5 +2,6 @@
 
 (req-package fill-column-indicator
   :config
-  (fci-mode)
+  (require 'fill-column-indicator)
+  (add-hook 'prog-mode-hook (lambda () (fci-mode 1)))
   )
