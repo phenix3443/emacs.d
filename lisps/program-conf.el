@@ -23,6 +23,8 @@
 	(comment-or-uncomment-region start end)))
 
 (global-set-key (kbd "C-;") 'comment-dwim-line)
+;; 26.6.3 Emacs Lisp Documentation Lookup
+(add-hook 'emacs-lisp-mode-hook (lambda () (eldoc-mode t)))
 ;; 26.7 Hideshow minor mode
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 ;; 26.8 Completion for symbol names
