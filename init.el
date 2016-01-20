@@ -1,3 +1,5 @@
+;; -*- coding:utf-8; -*-
+
 ;;; init.el --- emacs init file
 ;;
 ;; Filename: init.el
@@ -7,7 +9,7 @@
 ;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
 ;; Version: 1.0
 ;; Package-Requires: ()
-;; Last-Updated: 周六 10月 24 17:52:58 2015 (+0800)
+;; Last-Updated: 周六 10 月 24 17:52:58 2015 (+0800)
 ;;           By: phenix
 ;;     Update #:
 ;; URL:
@@ -138,7 +140,7 @@
 
 ;; Auth-source Emacs library for storing and sharing secret data.
 (require 'auth-source)
-;; 在window下莫名卡顿，先注释
+;; 在 window 下莫名卡顿，先注释
 ;; (require 'auth-source)
 ;; (add-to-list 'auth-sources "~/.emacs.d/.authinfo.gpg")
 ;; start pageant first
@@ -231,28 +233,3 @@
 ;; Widget	Library for graphical widgets.
 ;; Wisent	An Emacs implementation of the GNU Compiler Compiler Bison.
 ;; Woman	Browsing UN*X pages without man.
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(helm-gtags-auto-update t)
- '(helm-gtags-cache-select-result t)
- '(helm-gtags-direct-helm-completing t)
- '(helm-gtags-display-style (quote detail))
- '(helm-gtags-fuzzy-match nil)
- '(helm-gtags-highlight-candidate t)
- '(helm-gtags-ignore-case t)
- '(helm-gtags-parse-file (quote root))
- '(helm-gtags-prefix-key (kbd "C-c g"))
- '(helm-gtags-pulse-at-cursor t)
- '(helm-gtags-read-only t)
- '(helm-gtags-update-interval-second 60)
- '(helm-gtags-use-input-at-cursor t)
- '(package-selected-packages (quote (org cdlatex fuzzy auctex))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
