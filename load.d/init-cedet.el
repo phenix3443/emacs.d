@@ -1,37 +1,49 @@
+;; -*- coding:utf-8; -*-
+
 (require 'req-package)
-(req-package 'cedet
-  :config
-  ;(load-file "~/.emacs.d/3rd-party/cedet/cedet-devel-load.el")
-  ;(add-to-list'load-path "~/.emacs.d/3rd-party/cedet/contrib")
+(req-package cedet
+  :disable t
+  :init
+  (load-file "~/.emacs.d/3rd-party/cedet/cedet-devel-load.el")
+  (add-to-list'load-path "~/.emacs.d/3rd-party/cedet/contrib")
 
   ;; load contrib library
   (require'eassist)
+  :config
+
 
   ;; ede
+  (require 'ede)
   (setq ede-locate-setup-options '(ede-locate-global ede-locate-base))
   (global-ede-mode t)
-  (setq ede-project-placeholder-cache-file "~/.emacs.d/tmp-dir/ede-projects.el")
+  (setq ede-project-placeholder-cache-file
+		"~/.emacs.d/tmp-dir/ede-projects.el")
 
   ;; configure from semantic manual
 
   ;; 2.1 Semantic mode
-  (setq semantic-default-submodes '(global-semanticdb-minor-mode
-									global-semantic-decoration-mode
-									;;global-semantic-highlight-func-mode
-									global-semantic-idle-local-symbol-highlight-mode
-									global-semantic-idle-scheduler-mode
-									global-semantic-idle-summary-mode
-									global-semantic-idle-completions-mode
-									;;global-semantic-mru-bookmark-mode
-									;;global-semantic-stickyfunc-mode
-									))
+  (setq semantic-default-submodes
+		'(global-semanticdb-minor-mode
+		  global-semantic-decoration-mode
+		  ;;global-semantic-highlight-func-mode
+		  global-semantic-idle-local-symbol-highlight-mode
+		  global-semantic-idle-scheduler-mode
+		  global-semantic-idle-summary-mode
+		  global-semantic-idle-completions-mode
+		  ;;global-semantic-mru-bookmark-mode
+		  ;;global-semantic-stickyfunc-mode
+		  ))
   ;; 2.2.1 Semanticdb Tag Storage
-  (setq semantic-default-save-directory "~/.emacs.d/tmp-dir/semanticdb/")
+  (setq semantic-default-save-directory
+		"~/.emacs.d/tmp-dir/semanticdb/")
 
   ;; global support
-  (setq cedet-global-command "global")
-  (semanticdb-enable-gnu-global-databases'c-mode t)
-  (semanticdb-enable-gnu-global-databases'c++-mode t)
+
+  ;; (setq cedet-global-command "global")
+  ;; (when(cedet-gnu-global-version-check t)
+  ;; 	(semanticdb-enable-gnu-global-databases 'c-mode t)
+  ;; 	(semanticdb-enable-gnu-global-databases 'c++-mode t))
+
 
   ;; 2.2.2.2 SemanticDB project roots
   (defun get-semantic-project-root()
@@ -40,8 +52,10 @@
   (add-hook 'semanticdb-project-root-functions 'projectile-project-root)
 
   ;; 2.2.2.3 Include Paths
-  (defvar user-include-dirs (list "." "./include" ".." "../include" "/opt/lixian/include" "/opt/lixian/include/appframe/"))
-  (defvar win-include-dirs (list "C:/MinGW/include" "C:/msys64/usr/include" "C:/Program Files (x86)/Microsoft Visual Studio 11.0/VC/include"))
+  (defvar user-include-dirs
+	(list "." "./include" ".." "../include" "/opt/lixian/include" "/opt/lixian/include/appframe/"))
+  (defvar win-include-dirs
+	(list "C:/MinGW/include" "C:/msys64/usr/include" "C:/Program Files (x86)/Microsoft Visual Studio 11.0/VC/include"))
   (require 'semantic/bovine/c)
 
   (let ((include-dirs user-include-dirs))
