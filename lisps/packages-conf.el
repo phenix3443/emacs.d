@@ -1,3 +1,5 @@
+;; -*- coding:utf-8; -*-
+
 (require 'package)
 (when (< emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
@@ -39,7 +41,7 @@
         (package-refresh-contents)
         (require-package package min-version t)))))
 
-;; 加载elpa包的配置
+;; 加载 elpa 包的配置
 (defun init-elpa-packages ()
   "load elpa packages"
   (require-package 'req-package)
