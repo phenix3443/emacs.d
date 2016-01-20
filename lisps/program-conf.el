@@ -1,7 +1,10 @@
+;; -*- coding:utf-8; -*-
+
 ;; 26.1 major mode for programming languages
 ;; 26.4 Commands for Editing with Parentheses
 ;; 26.4.3 matching parentheses
 (show-paren-mode t)
+
 (electric-pair-mode t)
 
 ;; 26.5.2 Multiple Lines of Comments
