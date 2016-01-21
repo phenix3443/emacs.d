@@ -1,16 +1,13 @@
 ;; -*- coding:utf-8; -*-
 
 (require 'req-package)
-(req-package cedet
-  :disable t
+(use-package cedet
+  ;; :disable t
+  :load-path "3rd-party/edet-1.1/"
   :init
-  (load-file "~/.emacs.d/3rd-party/cedet/cedet-devel-load.el")
-  (add-to-list'load-path "~/.emacs.d/3rd-party/cedet/contrib")
+  (load-file "~/.emacs.d/3rd-party/cedet-1.1/common/cedet.el")
 
-  ;; load contrib library
-  (require'eassist)
   :config
-
 
   ;; ede
   (require 'ede)
