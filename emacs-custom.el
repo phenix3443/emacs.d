@@ -18,7 +18,8 @@
  '(helm-gtags-use-input-at-cursor t)
  '(package-selected-packages
    (quote
-	(header2 ggtags ecb xcscope sr-speedbar load-dir req-package org cdlatex fuzzy auctex))))
+	(auto-highlight-symbol xcscope window-numbering sr-speedbar smartparens session req-package protobuf-mode persp-projectile paredit pangu-spacing org2blog org-page multiple-cursors markdown-mode magit lua-mode load-dir jedi indent-guide highlight-symbol helm-projectile helm-gtags helm-ag header2 guide-key ggtags fuzzy flycheck fill-column-indicator elpy ecb csharp-mode color-theme-sanityinc-tomorrow chinese-pyim cdlatex auto-compile auctex)))
+ '(session-use-package t nil (session)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
