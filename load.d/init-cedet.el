@@ -1,8 +1,8 @@
 ;; -*- coding:utf-8; -*-
 
 (require 'req-package)
-(use-package cedet
-  ;; :disable t
+(req-package cedet
+  :disable t
   :load-path "3rd-party/edet-1.1/"
   :init
   (load-file "~/.emacs.d/3rd-party/cedet-1.1/common/cedet.el")
