@@ -1,7 +1,8 @@
 ;; -*- coding:utf-8; -*-
 (require 'use-package)
-(use-package ecb
-  :ensure t
+(req-package ecb
+  :disable t
+
   :config
   (setq ecb-tree-buffer-style 'ascii-guides)
   )
