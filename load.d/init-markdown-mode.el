@@ -1,6 +1,9 @@
-(require 'req-package)
+;; -*- coding:utf-8; -*-
 
-(req-package markdown-mode
+(require 'use-package)
+
+(use-package markdown-mode
+  :ensure t
   :config
   (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
   (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))

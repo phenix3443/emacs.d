@@ -1,6 +1,9 @@
-(require 'req-package)
+;; -*- coding:utf-8; -*-
 
-(req-package window-numbering
+(require 'use-package)
+
+(use-package window-numbering
+  :ensure t
   :config
   (window-numbering-mode 1)
   )

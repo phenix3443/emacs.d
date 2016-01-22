@@ -1,6 +1,9 @@
-(require 'req-package)
-(req-package org
-  :require cdlatex htmlize iimage
+;; -*- coding:utf-8; -*-
+
+(require 'use-package)
+
+(use-package org
+  :ensure t
   :config
 
   (global-set-key "\C-c'" 'org-src-mode)
@@ -60,7 +63,7 @@
 		  "xelatex -interaction nonstopmode -output-directory %o %f"))
 
   ;; 12.7.3 Header and sectioning structure
-  ;; 设置article header
+  ;; 设置 article header
   (setcar (cdr (assoc "article" org-latex-classes))
 		  "\\documentclass[12pt,a4paper]{article} \\usepackage[margin=2cm]{geometry} \\usepackage{fontspec} \\usepackage[slantfont,boldfont,CJKnumber,CJKtextspaces]{xeCJK} \\setCJKmainfont{AR PL UKai CN} \\setmainfont{DejaVu Serif} \\setmonofont{DejaVu Sans Mono} \\setsansfont{DejaVu Sans} \\usepackage[colorlinks,linkcolor=blue,anchorcolor=red,citecolor=green,urlcolor=blue]{hyperref}")
   (when (equal system-type 'windows-nt)
@@ -75,13 +78,13 @@
 		'(
 		  ("org"
 		   ;; 13.1.2 Sources and destinations for files
-		   :base-directory "~/github/org-notes/org/" ;设置存放.org文件位置
-		   :publishing-directory "~/github/org-notes/phenix3443.github.io/" ;导出html文件位置
+		   :base-directory "~/github/org-notes/org/" ;设置存放.org 文件位置
+		   :publishing-directory "~/github/org-notes/phenix3443.github.io/" ;导出 html 文件位置
 		   ;; :preparation-function
 		   ;; :completion-function
 
 		   ;; 13.1.3 Selecting files
-		   :base-extension "org"			;仅处理.org格式文件
+		   :base-extension "org"			;仅处理.org 格式文件
 		   :exclude "*~"
 		   ;; :include
 		   :recursive t

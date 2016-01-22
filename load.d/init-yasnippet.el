@@ -1,5 +1,9 @@
-(require 'req-package)
-(req-package yasnippet
+;; -*- coding:utf-8; -*-
+
+(require 'use-package)
+
+(use-package yasnippet
+  :ensure t
   :config
   (yas-global-mode 1)
   ;; Remove Yasnippet's default tab key binding

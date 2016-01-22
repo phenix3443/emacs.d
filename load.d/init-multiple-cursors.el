@@ -1,6 +1,10 @@
-(require 'req-package)
+;; -*- coding:utf-8; -*-
 
-(req-package multiple-cursors
+(require 'use-package)
+
+(use-package multiple-cursors
+  :ensure t
+  :disabled t
   :config
   (global-set-key (kbd "C-c m e") 'mc/edit-lines)
   (global-set-key (kbd "C-c m p") 'mc/mark-previous-like-this)

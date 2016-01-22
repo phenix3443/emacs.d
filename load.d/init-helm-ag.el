@@ -1,11 +1,9 @@
 ;; -*- coding:utf-8; -*-
 
 (require 'use-package)
-
-(use-package elpy
+(use-package helm-ag
   :ensure t
-  :disabled t
   :config
-  (elpy-enable)
+
   )
-(provide 'init-elpy)
+(provide 'init-helm-ag)

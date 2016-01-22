@@ -1,5 +1,9 @@
-(require 'req-package)
-(req-package helm
+;; -*- coding:utf-8; -*-
+
+(require 'use-package)
+
+(use-package helm
+  :ensure t
   :init
   (require 'helm-config)
   (global-set-key (kbd "C-c h") 'helm-command-prefix)
@@ -37,7 +41,7 @@
   ;; use locate by regex
   (when (equal system-type 'gnu/linux)
 	(setq helm-locate-command "locate %s -e -A --regex %s"))
-  ;; helm-locate 使用es.exe的时候everything必须要启动
+  ;; helm-locate 使用 es.exe 的时候 everything 必须要启动
   (when (equal system-type 'windows-nt)
 	(let ((str (shell-command-to-string "tasklist /FI \"IMAGENAME eq Everything.exe\"")))
 	  (when (not (string-match "Everything.exe" str))
@@ -67,5 +71,8 @@
 			#'(lambda ()
 				(define-key eshell-mode-map (kbd "C-c C-l")  'helm-eshell-history)))
   )
+
+
+
 
 (provide 'init-helm)

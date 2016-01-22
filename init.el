@@ -72,6 +72,11 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
 (package-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/lisps/")
@@ -155,12 +160,6 @@
 ;; Calc	Calc is an advanced calculator and mathematical tool.
 
 ;; CC mode Mode for editing C, C++, Objective C, Java, Pike, and IDL code.
-;; 3 Getting Started
-(setq-default c-basic-offset 4)
-(setq c-default-style '((java-mode . "java")
-						(awk-mode . "awk")
-						(other . "linux")))
-
 ;; CL	GNU Emacs Common Lisp support.
 ;; D-Bus	Emacs API for using the D-Bus message bus system.
 ;; Dired-X	Extra Dired features.

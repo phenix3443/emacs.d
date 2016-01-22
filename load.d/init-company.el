@@ -1,6 +1,10 @@
-(require 'req-package)
-(req-package company
-  :disable t
+;; -*- coding:utf-8; -*-
+
+(require 'use-package)
+
+(use-package company
+  :ensure t
+  :disabled t
   :config
   (setq company-idle-delay 0.1)
   (setq company-minimum-prefix-length 2)

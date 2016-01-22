@@ -1,5 +1,9 @@
-(require 'req-package)
-(req-package magit
+;; -*- coding:utf-8; -*-
+
+(require 'use-package)
+
+(use-package magit
+  :ensure t
   :config
   (require 'find-func)
   (with-eval-after-load 'info
