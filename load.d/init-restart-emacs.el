@@ -1,11 +1,7 @@
 ;; -*- coding:utf-8; -*-
-
 (require 'use-package)
 
-(use-package elpy
+(use-package restart-emacs
   :ensure t
-  :disabled t
   :config
-  (elpy-enable)
   )
-(provide 'init-elpy)

@@ -1,6 +1,9 @@
-(require 'req-package)
-(req-package projectile
-  :require perspective helm-projectile helm-ag
+;; -*- coding:utf-8; -*-
+
+(require 'use-package)
+
+(use-package projectile
+  :ensure t
   :config
   (projectile-global-mode)
   ;; Helm Integration
@@ -16,5 +19,10 @@
   (setq projectile-completion-system 'helm)
 
   )
-
+  
+(use-package perspective
+  :ensure t)
+(use-package helm-projectile
+  :ensure t
+  )
 (provide 'init-projectile)

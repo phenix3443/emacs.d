@@ -1,8 +1,9 @@
 ;; -*- coding:utf-8; -*-
 
-(require 'req-package)
-;;; Code:
-(req-package color-theme-sanityinc-tomorrow
+(require 'use-package)
+
+(use-package color-theme-sanityinc-tomorrow
+  :ensure t
   :config
   (color-theme-sanityinc-tomorrow--define-theme eighties)
   )

@@ -1,8 +1,10 @@
-(require 'req-package)
-(req-package auto-complete
-  :require popup pos-tip popwin
-  :config
+;; -*- coding:utf-8; -*-
 
+(require 'use-package)
+
+(use-package auto-complete
+  :ensure t
+  :config
   ;; 3.2 install script
   (require 'auto-complete)
   (require 'auto-complete-config)
@@ -76,7 +78,6 @@
   ;; 8.6 stop Flymake on completion
   (setq ac-stop-flymake-on-completing t)
   ;; 8.7 use fuzzy matching
-  (require-package 'fuzzy)
   (setq ac-use-fuzzy t)
   ;; 8.9 use candidate suggestion
   (setq ac-comphist t)

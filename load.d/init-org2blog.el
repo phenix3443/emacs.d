@@ -1,6 +1,9 @@
-(require 'req-package)
-(req-package org2blog
-  :require netrc xml-rpc metaweblog org
+;; -*- coding:utf-8; -*-
+
+(require 'use-package)
+
+(use-package org2blog
+  :ensure t
   :config
 
   (require 'org2blog-autoloads)

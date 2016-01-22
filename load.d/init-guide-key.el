@@ -1,5 +1,10 @@
-(require 'req-package)
-(req-package guide-key
+;; -*- coding:utf-8; -*-
+
+(require 'use-package)
+
+(use-package guide-key
+  :ensure t
+
   :config
   (setq guide-key/guide-key-sequence
 		'("C-x r"

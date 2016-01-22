@@ -1,5 +1,9 @@
-(require 'req-package)
-(req-package paredit
+;; -*- coding:utf-8; -*-
+
+(require 'use-package)
+
+(use-package paredit
+  :ensure t
   :config
 
   (autoload 'enable-paredit-mode "paredit" t)
