@@ -3,24 +3,22 @@
 (require 'use-package)
 
 (use-package cedet
-  :ensure t
-  :disabled t
-  ;; :load-path "3rd-party/edet-1.1/"
-  ;; :init
-  ;; (load-file "~/.emacs.d/3rd-party/cedet-1.1/common/cedet.el")
-
-  ;; :config
-
-  ;; ;; ede
+  :load-path "3rd-party/cedet/"
+  :init
+  (setq byte-compile-warnings nil)
+  (load-file "~/.emacs.d/3rd-party/cedet/cedet-devel-load.el")
+  :config
+  ;
+  ;; ede
   ;; (require 'ede)
   ;; (setq ede-locate-setup-options '(ede-locate-global ede-locate-base))
   ;; (global-ede-mode t)
   ;; (setq ede-project-placeholder-cache-file
   ;; 		"~/.emacs.d/tmp-dir/ede-projects.el")
 
-  ;; ;; configure from semantic manual
+  ;; configure from semantic manual
 
-  ;; ;; 2.1 Semantic mode
+  ;; 2.1 Semantic mode
   ;; (setq semantic-default-submodes
   ;; 		'(global-semanticdb-minor-mode
   ;; 		  global-semantic-decoration-mode
@@ -32,19 +30,19 @@
   ;; 		  ;;global-semantic-mru-bookmark-mode
   ;; 		  ;;global-semantic-stickyfunc-mode
   ;; 		  ))
-  ;; ;; 2.2.1 Semanticdb Tag Storage
+  ;; 2.2.1 Semanticdb Tag Storage
   ;; (setq semantic-default-save-directory
-  ;; 		"~/.emacs.d/tmp-dir/semanticdb/")
+  		;; "~/.emacs.d/tmp-dir/semanticdb/")
 
-  ;; ;; global support
+  ;; global support
 
-  ;; ;; (setq cedet-global-command "global")
-  ;; ;; (when(cedet-gnu-global-version-check t)
-  ;; ;; 	(semanticdb-enable-gnu-global-databases 'c-mode t)
-  ;; ;; 	(semanticdb-enable-gnu-global-databases 'c++-mode t))
+  ;; (setq cedet-global-command "global")
+  ;; (when(cedet-gnu-global-version-check t)
+  ;; 	(semanticdb-enable-gnu-global-databases 'c-mode t)
+  ;; 	(semanticdb-enable-gnu-global-databases 'c++-mode t))
 
 
-  ;; ;; 2.2.2.2 SemanticDB project roots
+  ;; 2.2.2.2 SemanticDB project roots
   ;; (defun get-semantic-project-root()
   ;; 	(let((semantic-projct-root-markers . '(".git" ".svn" "GTAGS" "TAGS")))
   ;; 	  ))
@@ -67,8 +65,8 @@
   ;; 			(semantic-add-system-include dir 'c++-mode))
   ;; 		  include-dirs))
 
-  ;; (semantic-mode 1)
-  ;; (semantic-load)
+  (semantic-mode 1)
+  ;(semantic-load-enable-minimum-features)
   )
 
 (provide 'init-cedet)
