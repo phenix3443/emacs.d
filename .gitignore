@@ -37,3 +37,4 @@ srecode-map.el
 network-security.data
 .org-id-locations
 /server
+emacs-custom.el
