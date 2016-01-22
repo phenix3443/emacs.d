@@ -38,3 +38,4 @@ network-security.data
 .org-id-locations
 /server
 emacs-custom.el
+3rd-party/cedet
