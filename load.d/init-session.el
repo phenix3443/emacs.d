@@ -1,5 +1,9 @@
-(require 'req-package)
-(req-package session
+;; -*- coding:utf-8; -*-
+
+(require 'use-package)
+
+(use-package session
+  :ensure t
   :config
   (session-initialize)
   )

@@ -1,6 +1,9 @@
-(require 'req-package)
-(req-package helm-gtags
-  :require helm
+;; -*- coding:utf-8; -*-
+
+(require 'use-package)
+
+(use-package helm-gtags
+  :ensure t
   :config
   (add-hook 'prog-mode-hook 'helm-gtags-mode)
 

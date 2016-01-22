@@ -1,10 +1,10 @@
 ;; -*- coding:utf-8; -*-
 
 (require 'use-package)
-(req-package auto-highlight-symbol
 
+(use-package auto-highlight-symbol
+  :ensure t
   :config
-  (require 'linkd)
   (global-auto-highlight-symbol-mode t)
   )
 

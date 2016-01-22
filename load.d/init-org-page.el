@@ -1,5 +1,9 @@
-(require 'req-package)
-(req-package org-page
+;; -*- coding:utf-8; -*-
+
+(require 'use-package)
+
+(use-package org-page
+  :ensure t
   :config
   )
 

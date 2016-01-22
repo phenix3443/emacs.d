@@ -1,5 +1,10 @@
-(require 'req-package)
-(req-package auctex
+;; -*- coding:utf-8; -*-
+
+(require 'use-package)
+(use-package auctex
+  :ensure t
+  :mode ("\\.tex\\'" . latex-mode)
+  :commands (latex-mode LaTeX-mode plain-tex-mode)
   :config
   ;; 1.3 Quick Start
   (setq TeX-auto-save t)

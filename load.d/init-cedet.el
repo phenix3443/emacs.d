@@ -1,71 +1,74 @@
 ;; -*- coding:utf-8; -*-
 
-(require 'req-package)
-(req-package cedet
-  :disable t
-  :load-path "3rd-party/edet-1.1/"
-  :init
-  (load-file "~/.emacs.d/3rd-party/cedet-1.1/common/cedet.el")
+(require 'use-package)
 
-  :config
+(use-package cedet
+  :ensure t
+  :disabled t
+  ;; :load-path "3rd-party/edet-1.1/"
+  ;; :init
+  ;; (load-file "~/.emacs.d/3rd-party/cedet-1.1/common/cedet.el")
 
-  ;; ede
-  (require 'ede)
-  (setq ede-locate-setup-options '(ede-locate-global ede-locate-base))
-  (global-ede-mode t)
-  (setq ede-project-placeholder-cache-file
-		"~/.emacs.d/tmp-dir/ede-projects.el")
+  ;; :config
 
-  ;; configure from semantic manual
+  ;; ;; ede
+  ;; (require 'ede)
+  ;; (setq ede-locate-setup-options '(ede-locate-global ede-locate-base))
+  ;; (global-ede-mode t)
+  ;; (setq ede-project-placeholder-cache-file
+  ;; 		"~/.emacs.d/tmp-dir/ede-projects.el")
 
-  ;; 2.1 Semantic mode
-  (setq semantic-default-submodes
-		'(global-semanticdb-minor-mode
-		  global-semantic-decoration-mode
-		  ;;global-semantic-highlight-func-mode
-		  global-semantic-idle-local-symbol-highlight-mode
-		  global-semantic-idle-scheduler-mode
-		  global-semantic-idle-summary-mode
-		  global-semantic-idle-completions-mode
-		  ;;global-semantic-mru-bookmark-mode
-		  ;;global-semantic-stickyfunc-mode
-		  ))
-  ;; 2.2.1 Semanticdb Tag Storage
-  (setq semantic-default-save-directory
-		"~/.emacs.d/tmp-dir/semanticdb/")
+  ;; ;; configure from semantic manual
 
-  ;; global support
+  ;; ;; 2.1 Semantic mode
+  ;; (setq semantic-default-submodes
+  ;; 		'(global-semanticdb-minor-mode
+  ;; 		  global-semantic-decoration-mode
+  ;; 		  ;;global-semantic-highlight-func-mode
+  ;; 		  global-semantic-idle-local-symbol-highlight-mode
+  ;; 		  global-semantic-idle-scheduler-mode
+  ;; 		  global-semantic-idle-summary-mode
+  ;; 		  global-semantic-idle-completions-mode
+  ;; 		  ;;global-semantic-mru-bookmark-mode
+  ;; 		  ;;global-semantic-stickyfunc-mode
+  ;; 		  ))
+  ;; ;; 2.2.1 Semanticdb Tag Storage
+  ;; (setq semantic-default-save-directory
+  ;; 		"~/.emacs.d/tmp-dir/semanticdb/")
 
-  ;; (setq cedet-global-command "global")
-  ;; (when(cedet-gnu-global-version-check t)
-  ;; 	(semanticdb-enable-gnu-global-databases 'c-mode t)
-  ;; 	(semanticdb-enable-gnu-global-databases 'c++-mode t))
+  ;; ;; global support
+
+  ;; ;; (setq cedet-global-command "global")
+  ;; ;; (when(cedet-gnu-global-version-check t)
+  ;; ;; 	(semanticdb-enable-gnu-global-databases 'c-mode t)
+  ;; ;; 	(semanticdb-enable-gnu-global-databases 'c++-mode t))
 
 
-  ;; 2.2.2.2 SemanticDB project roots
-  (defun get-semantic-project-root()
-	(let((semantic-projct-root-markers . '(".git" ".svn" "GTAGS" "TAGS")))
-	  ))
-  (add-hook 'semanticdb-project-root-functions 'projectile-project-root)
+  ;; ;; 2.2.2.2 SemanticDB project roots
+  ;; (defun get-semantic-project-root()
+  ;; 	(let((semantic-projct-root-markers . '(".git" ".svn" "GTAGS" "TAGS")))
+  ;; 	  ))
+  ;; (add-hook 'semanticdb-project-root-functions 'projectile-project-root)
 
-  ;; 2.2.2.3 Include Paths
-  (defvar user-include-dirs
-	(list "." "./include" ".." "../include" "/opt/lixian/include" "/opt/lixian/include/appframe/"))
-  (defvar win-include-dirs
-	(list "C:/MinGW/include" "C:/msys64/usr/include" "C:/Program Files (x86)/Microsoft Visual Studio 11.0/VC/include"))
-  (require 'semantic/bovine/c)
+  ;; ;; 2.2.2.3 Include Paths
+  ;; (defvar user-include-dirs
+  ;; 	(list "." "./include" ".." "../include" "/opt/lixian/include" "/opt/lixian/include/appframe/"))
+  ;; (defvar win-include-dirs
+  ;; 	(list "C:/MinGW/include" "C:/msys64/usr/include" "C:/Program Files (x86)/Microsoft Visual Studio 11.0/VC/include"))
+  ;; (require 'semantic/bovine/c)
 
-  (let ((include-dirs user-include-dirs))
-	(when (eq system-type 'window-nt)
-	  (semantic-reset-system-include 'c-mode)
-	  (semantic-reset-system-include 'c++-mode)
-	  (append include-dirs win-include-dirs))
-	(mapc (lambda (dir)
-			(semantic-add-system-include dir 'c-mode)
-			(semantic-add-system-include dir 'c++-mode))
-		  include-dirs))
+  ;; (let ((include-dirs user-include-dirs))
+  ;; 	(when (eq system-type 'window-nt)
+  ;; 	  (semantic-reset-system-include 'c-mode)
+  ;; 	  (semantic-reset-system-include 'c++-mode)
+  ;; 	  (append include-dirs win-include-dirs))
+  ;; 	(mapc (lambda (dir)
+  ;; 			(semantic-add-system-include dir 'c-mode)
+  ;; 			(semantic-add-system-include dir 'c++-mode))
+  ;; 		  include-dirs))
 
-  (semantic-mode 1)
+  ;; (semantic-mode 1)
+  ;; (semantic-load)
   )
 
 (provide 'init-cedet)

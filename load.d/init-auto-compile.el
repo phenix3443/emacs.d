@@ -1,6 +1,9 @@
-(require 'req-package)
+;; -*- coding:utf-8; -*-
 
-(req-package auto-compile
+(require 'use-package)
+
+(use-package auto-compile
+  :ensure t
   :config
   (setq load-prefer-newer t)
   (auto-compile-on-load-mode 1)

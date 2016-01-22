@@ -1,6 +1,10 @@
-(require 'req-package)
-(req-package header2
-  :disable t
+;; -*- coding:utf-8; -*-
+
+(require 'use-package)
+
+(use-package header2
+  :ensure t
+  :disabled t
   :config
   ;; update file headers when save a file
   (autoload 'auto-update-file-header "header2")
