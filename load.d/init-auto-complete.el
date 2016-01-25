@@ -8,7 +8,6 @@
   ;; 3.2 install script
   (require 'auto-complete)
   (require 'auto-complete-config)
-  (ac-config-default)
 
   ;; Candidate Suggestion
   (setq ac-comphist-file "~/.emacs.d/tmp-dir/ac-comphist.dat")
@@ -48,11 +47,13 @@
   (defun ac-4-css-mode ()
 	(setq ac-sources (append '(ac-source-css-property) ac-sources)))
 
+
+
   ;; 7 tips
   ;; 7.1
   (setq ac-auto-start 2)
   ;; 7.6 not to use quick help
-  (setq ac-use-quick-help nil)
+  ;; (setq ac-use-quick-help nil)
 
   ;; 7.7. Change a height of completion menu
   ;;(setq ac-menu-height 20)
@@ -91,16 +92,15 @@
   (add-hook 'prog-mode-hook '(lambda() (auto-complete-mode t)))
 
   ;; key binding
-  (ac-set-trigger-key "TAB")
-  (ac-set-trigger-key "<tab>")
   ;; (global-set-key (kbd "C-i") 'auto-expand)
   ;; (global-set-key (kbd "C-m") 'auto-complete)
 
-  (define-key ac-completing-map (kbd "M-/") 'ac-stop)
+  ;; (define-key ac-completing-map (kbd "M-/") 'ac-stop)
 
-  (define-key ac-menu-map (kbd "C-n") 'ac-next)
-  (define-key ac-menu-map (kbd "C-p") 'ac-previous)
+  ;; (define-key ac-menu-map (kbd "C-n") 'ac-next)
+  ;; (define-key ac-menu-map (kbd "C-p") 'ac-previous)
 
+  (ac-config-default)
 )
 
 (provide 'init-auto-complete)
