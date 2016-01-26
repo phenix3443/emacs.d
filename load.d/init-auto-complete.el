@@ -8,46 +8,51 @@
   ;; 3.2 install script
   (require 'auto-complete)
   (require 'auto-complete-config)
-  (ac-config-default)
+  ;; (ac-config-default)
 
+  ;; 4.5 Help
+  (setq ac-use-quick-help t)
+  (setq ac-quick-help-delay 3.0)
+
+  ;; 5.4 Trigger Key
+  ;; (ac-set-trigger-key "TAB")
   ;; Candidate Suggestion
-  (setq ac-comphist-file "~/.emacs.d/tmp-dir/ac-comphist.dat")
+  (setq ac-comphist-file "~/.emacs.d/auto-complete/ac-comphist.dat")
   ;; 5.6.1 completion by dictionary
-  (setq ac-user-dictionary-files "~/.emacs.d/tmp-dir/.dict")
-  ;;(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-
+  (add-to-list 'ac-user-dictionary-files
+			   "~/.emacs.d/auto-complete/user.dict")
+  ;; 5.6.2 Major Mode Dictionary and Extension Dictionary
+  (add-to-list 'ac-dictionary-directories
+			   "~/.emacs.d/auto-complete/")
+  ;; 6 source
   ;; 6.1 using sources
+  ;; 6.2 Builtin Sources
   (set-default 'ac-sources
-			   '(ac-source-words-in-buffer
-				 ac-source-words-in-same-mode-buffers))
+			   '(ac-source-abbrev
+				 ac-source-dictionary
+				 ac-source-filename
+				 ac-source-files-in-current-dir
+				 ac-source-imenu
+				 ac-source-words-in-all-buffer
+				 ac-source-words-in-buffer
+				 ac-source-words-in-same-mode-buffers
+				 ac-source-yasnippet
+				 ))
 
-  (defun ac-4-prog-mode()
-	(setq ac-sources (append '(ac-source-yasnippet
-							   ac-source-gtags
-							   ac-source-semantic
-							   ac-source-imenu) ac-sources)))
-  (add-hook 'prog-mode-hook 'ac-4-prog-mode)
+  (add-hook 'prog-mode-hook '(lambda ()
+							   (append '(ac-source-gtags
+										 ac-source-semantic
+										 ac-source-semantic-raw)
+									   ac-sources)))
+  (add-hook 'emacs-lisp-mode-hook '(lambda ()
+									 (append '(ac-source-features
+											   ac-source-functions
+											   ac-source-symbols
+											   ac-source-variables)
+											 ac-sources)))
 
-  (defun ac-4-emacs-lisp-mode()
-	(setq ac-sources (append '(ac-source-abbrev
-							   ac-source-dictionary
-							   ac-source-features
-							   ac-source-filename
-							   ac-source-functions
-							   ac-source-symbols
-							   ac-source-variables) ac-sources)))
-  (add-hook 'emacs-lisp-mode-hook 'ac-4-emacs-lisp-mode)
-
-  (defun ac-4-c-cpp-mode ()
-	(setq ac-sources (append '() ac-sources))
-	(setq ac-omni-completion-sources (list (cons "\\." '(ac-source-semantic))
-										   (cons "->" '(ac-source-semantic)))))
-
-  (add-hook 'c-mode-common-hook 'ac-4-c-cpp-mode)
-
-  (defun ac-4-css-mode ()
-	(setq ac-sources (append '(ac-source-css-property) ac-sources)))
-
+  (add-hook 'css-mode-hook '(lambda ()
+							  (append '(ac-source-css-property) ac-sources)))
   ;; 7 tips
   ;; 7.1
   (setq ac-auto-start 2)
@@ -64,7 +69,6 @@
   (setq ac-ignore-case 'smart)
 
   ;; 7.17. Show help beautifully
-
   (setq ac-quick-help-prefer-pos-tip t)
 
   ;; 8.1 Delay time to start completion in real number seconds
@@ -82,25 +86,15 @@
   ;; 8.9 use candidate suggestion
   (setq ac-comphist t)
   ;; 8.12. use quick help
-  (setq ac-use-quick-help t)
+  ;; (setq ac-use-quick-help t)
   ;; 8.13 Delay time to show quick help in real number seconds.
-  (setq ac-quick-help-delay 3.0)
+  ;; (setq ac-quick-help-delay 3.0)
   ;; 8.25 "Do What I Mean" function
   (setq ac-dwim t)
 
-  (add-hook 'prog-mode-hook '(lambda() (auto-complete-mode t)))
+  ;; 9.34 global-auto-complete-mode
+  (global-auto-complete-mode t)
 
-  ;; key binding
-  (ac-set-trigger-key "TAB")
-  (ac-set-trigger-key "<tab>")
-  ;; (global-set-key (kbd "C-i") 'auto-expand)
-  ;; (global-set-key (kbd "C-m") 'auto-complete)
-
-  (define-key ac-completing-map (kbd "M-/") 'ac-stop)
-
-  (define-key ac-menu-map (kbd "C-n") 'ac-next)
-  (define-key ac-menu-map (kbd "C-p") 'ac-previous)
-
-)
+  )
 
 (provide 'init-auto-complete)
