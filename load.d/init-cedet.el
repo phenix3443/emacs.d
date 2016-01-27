@@ -23,7 +23,7 @@
   		'(global-semanticdb-minor-mode
   		  global-semantic-decoration-mode
   		  ;;global-semantic-highlight-func-mode
-  		  global-semantic-idle-local-symbol-highlight-mode
+  		  ;; global-semantic-idle-local-symbol-highlight-mode
   		  global-semantic-idle-scheduler-mode
   		  global-semantic-idle-summary-mode
   		  global-semantic-idle-completions-mode
