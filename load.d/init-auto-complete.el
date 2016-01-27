@@ -8,9 +8,11 @@
   ;; 3.2 install script
   (require 'auto-complete)
   (require 'auto-complete-config)
-  ;; (ac-config-default)
+  (ac-config-default)
 
   ;; 6.2 Builtin Sources
+  (use-package ac-helm
+	:ensure t)
   (setq-default ac-sources
 			   '(ac-source-abbrev
 				 ac-source-dictionary
@@ -76,7 +78,7 @@
   (setq ac-quick-help-prefer-pos-tip t)
 
   ;; 9.24 ac-auto-start
-  (setq ac-auto-start 4)
+  (setq ac-auto-start 2)
 
   ;; 9.27 ac-ignore-case
   (setq ac-ignore-case 'smart)
@@ -84,8 +86,7 @@
   (setq ac-dwim t)
   ;; 9.29 ac-use-menu-map
   (setq ac-use-menu-map t)
-  ;; 9.34 global-auto-complete-mode
-  (global-auto-complete-mode t)
+
   ;; 9.35 ac-user-dictionary
   (add-to-list 'ac-user-dictionary
 			   "~/.emacs.d/auto-complete/")
@@ -95,6 +96,11 @@
   ;; 9.37 ac-dictionary-directories
   (add-to-list 'ac-dictionary-directories
 			   "~/.emacs.d/auto-complete/")
+
+  ;; 9.34 global-auto-complete-mode
+  (global-auto-complete-mode t)
+
   )
+
 
 (provide 'init-auto-complete)
