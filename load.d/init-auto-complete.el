@@ -8,99 +8,99 @@
   ;; 3.2 install script
   (require 'auto-complete)
   (require 'auto-complete-config)
+  (ac-config-default)
 
-  ;; Candidate Suggestion
-  (setq ac-comphist-file "~/.emacs.d/tmp-dir/ac-comphist.dat")
-  ;; 5.6.1 completion by dictionary
-  (setq ac-user-dictionary-files "~/.emacs.d/tmp-dir/.dict")
-  ;;(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+  ;; 6.2 Builtin Sources
+  (use-package ac-helm
+	:ensure t)
+  (setq-default ac-sources
+			   '(ac-source-abbrev
+				 ac-source-dictionary
+				 ac-source-filename
+				 ac-source-files-in-current-dir
+				 ac-source-imenu
+				 ac-source-words-in-all-buffer
+				 ac-source-words-in-buffer
+				 ac-source-words-in-same-mode-buffers
+				 ac-source-yasnippet
+				 ))
 
-  ;; 6.1 using sources
-  (set-default 'ac-sources
-			   '(ac-source-words-in-buffer
-				 ac-source-words-in-same-mode-buffers))
+  (add-hook 'prog-mode-hook (lambda ()
+							   (append '(ac-source-gtags
+										 ac-source-semantic
+										 ac-source-semantic-raw)
+									   ac-sources)))
+  (add-hook 'emacs-lisp-mode-hook (lambda ()
+									 (append '(ac-source-features
+											   ac-source-functions
+											   ac-source-symbols
+											   ac-source-variables)
+											 ac-sources)))
 
-  (defun ac-4-prog-mode()
-	(setq ac-sources (append '(ac-source-yasnippet
-							   ac-source-gtags
-							   ac-source-semantic
-							   ac-source-imenu) ac-sources)))
-  (add-hook 'prog-mode-hook 'ac-4-prog-mode)
+  (add-hook 'css-mode-hook (lambda ()
+							  (append '(ac-source-css-property) ac-sources)))
 
-  (defun ac-4-emacs-lisp-mode()
-	(setq ac-sources (append '(ac-source-abbrev
-							   ac-source-dictionary
-							   ac-source-features
-							   ac-source-filename
-							   ac-source-functions
-							   ac-source-symbols
-							   ac-source-variables) ac-sources)))
-  (add-hook 'emacs-lisp-mode-hook 'ac-4-emacs-lisp-mode)
+  ;; 7.16 Show a lastly completed candidate help
+  (define-key ac-mode-map (kbd "C-c c h") 'ac-last-quick-help)
+  (define-key ac-mode-map (kbd "C-c c H") 'ac-last-help)
 
-  (defun ac-4-c-cpp-mode ()
-	(setq ac-sources (append '() ac-sources))
-	(setq ac-omni-completion-sources (list (cons "\\." '(ac-source-semantic))
-										   (cons "->" '(ac-source-semantic)))))
+  ;; 9 Configuration
+  ;; 9.1 Delay time to start completion in real number seconds
+  (setq ac-delay 0.3)
+  ;; 9.2 Show completion menu automatically
+  (setq ac-auto-show-menu 0.8)
+  ;; 9.3 show completion menu immediately on auto-complete command
+  (setq ac-show-menu-immediately-on-auto-complete t)
+  ;; 9.4 expand a common part of whole candidates
+  (setq ac-expand-on-auto-complete t)
 
-  (add-hook 'c-mode-common-hook 'ac-4-c-cpp-mode)
-
-  (defun ac-4-css-mode ()
-	(setq ac-sources (append '(ac-source-css-property) ac-sources)))
-
-
-
-  ;; 7 tips
-  ;; 7.1
-  (setq ac-auto-start 2)
-  ;; 7.6 not to use quick help
-  ;; (setq ac-use-quick-help nil)
-
-  ;; 7.7. Change a height of completion menu
+  ;; 9.6 stop Flymake on completion
+  (setq ac-stop-flymake-on-completing t)
+  ;; 9.7 use fuzzy matching
+  (setq ac-use-fuzzy t)
+  ;; 9.9 use candidate suggestion
+  (setq ac-comphist t)
+  ;; 9.11 ac-comphist-file
+  (setq ac-comphist-file "~/.emacs.d/auto-complete/ac-comphist.dat")
+  ;; 9.12. use quick help
+  (setq ac-use-quick-help t)
+  ;; 9.13 Delay time to show quick help in real number seconds.
+  (setq ac-quick-help-delay 3.0)
+  ;; 9.14 ac-menu-height
   ;;(setq ac-menu-height 20)
-
-  ;; 7.8  Enable auto-complete-mode automatically for specific modes
-  ;;(setq ac-modes (append '(prog-mode) ac-modes))
-
-  ;; 7.9 Ignore case
-  (setq ac-ignore-case 'smart)
-
-  ;; 7.17. Show help beautifully
+  ;; 9.16 ac-quick-help-prefer-pos-tip
+  (use-package pos-tip
+	:ensure t
+	:config
+	(when (equal system-type 'windows-nt)
+	  (setq pos-tip-w32-saved-max-width-height t)))
 
   (setq ac-quick-help-prefer-pos-tip t)
 
-  ;; 8.1 Delay time to start completion in real number seconds
-  (setq ac-delay 0.3)
-  ;; 8.2 Show completion menu automatically
-  (setq ac-auto-show-menu t)
-  ;; 8.3 show completion menu immediately on auto-complete command
-  (setq ac-show-menu-immediately-on-auto-complete t)
-  ;; 8.4 expand a common part of whole candidates
-  (setq ac-expand-on-auto-complete t)
-  ;; 8.6 stop Flymake on completion
-  (setq ac-stop-flymake-on-completing t)
-  ;; 8.7 use fuzzy matching
-  (setq ac-use-fuzzy t)
-  ;; 8.9 use candidate suggestion
-  (setq ac-comphist t)
-  ;; 8.12. use quick help
-  (setq ac-use-quick-help t)
-  ;; 8.13 Delay time to show quick help in real number seconds.
-  (setq ac-quick-help-delay 3.0)
-  ;; 8.25 "Do What I Mean" function
+  ;; 9.24 ac-auto-start
+  (setq ac-auto-start 2)
+
+  ;; 9.27 ac-ignore-case
+  (setq ac-ignore-case 'smart)
+  ;; 9.28 ac-dwim
   (setq ac-dwim t)
+  ;; 9.29 ac-use-menu-map
+  (setq ac-use-menu-map t)
 
-  (add-hook 'prog-mode-hook '(lambda() (auto-complete-mode t)))
+  ;; 9.35 ac-user-dictionary
+  (add-to-list 'ac-user-dictionary
+			   "~/.emacs.d/auto-complete/")
+  ;; 9.36 ac-user-dictionary-files
+  (add-to-list 'ac-user-dictionary-files
+			   "~/.emacs.d/auto-complete/user.dict")
+  ;; 9.37 ac-dictionary-directories
+  (add-to-list 'ac-dictionary-directories
+			   "~/.emacs.d/auto-complete/")
 
-  ;; key binding
-  ;; (global-set-key (kbd "C-i") 'auto-expand)
-  ;; (global-set-key (kbd "C-m") 'auto-complete)
+  ;; 9.34 global-auto-complete-mode
+  (global-auto-complete-mode t)
 
-  ;; (define-key ac-completing-map (kbd "M-/") 'ac-stop)
+  )
 
-  ;; (define-key ac-menu-map (kbd "C-n") 'ac-next)
-  ;; (define-key ac-menu-map (kbd "C-p") 'ac-previous)
-
-  (ac-config-default)
-)
 
 (provide 'init-auto-complete)
