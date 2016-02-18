@@ -22,13 +22,13 @@
   (setq semantic-default-submodes
   		'(global-semanticdb-minor-mode
   		  ;; global-semantic-decoration-mode
-  		  ;; global-semantic-highlight-func-mode
-  		  ;; global-semantic-idle-local-symbol-highlight-mode
+  		  global-semantic-highlight-func-mode
+  		  global-semantic-idle-local-symbol-highlight-mode
   		  ;; global-semantic-idle-scheduler-mode
-  		  ;; global-semantic-idle-summary-mode
+  		  global-semantic-idle-summary-mode
   		  ;; global-semantic-idle-completions-mode
-  		  ;; global-semantic-mru-bookmark-mode
-  		  ;; global-semantic-stickyfunc-mode
+  		  global-semantic-mru-bookmark-mode
+  		  global-semantic-stickyfunc-mode
   		  ))
   ;; 2.2.1 Semanticdb Tag Storage
   (setq semantic-default-save-directory
