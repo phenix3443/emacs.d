@@ -12,8 +12,8 @@
 (add-to-list 'package-archives
 			 '("marmalade" . "http://marmalade-repo.org/packages/"))
 
-;(add-to-list 'package-archives
-;			 '("popkit" . "http://elpa.popkit.org/packages/"))
+(add-to-list 'package-archives
+			 '("popkit" . "http://elpa.popkit.org/packages/"))
 
 ;;(add-to-list 'package-archives
 ;;             '("elpy" . "https://jorgenschaefer.github.io/packages/"))
@@ -24,6 +24,10 @@
   (package-install 'use-package))
 
 (require 'use-package)
+(use-package dash
+  :ensure t)
+  
+(require 'dash)
 (use-package load-dir
   :ensure t
   :init
