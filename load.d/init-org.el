@@ -2,6 +2,9 @@
 
 (require 'use-package)
 
+(use-package cdlatex
+  :ensure t)
+
 (use-package org
   :ensure t
   :config

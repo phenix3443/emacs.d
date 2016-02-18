@@ -21,14 +21,14 @@
   ;; 2.1 Semantic mode
   (setq semantic-default-submodes
   		'(global-semanticdb-minor-mode
-  		  global-semantic-decoration-mode
-  		  ;;global-semantic-highlight-func-mode
+  		  ;; global-semantic-decoration-mode
+  		  global-semantic-highlight-func-mode
   		  global-semantic-idle-local-symbol-highlight-mode
-  		  global-semantic-idle-scheduler-mode
+  		  ;; global-semantic-idle-scheduler-mode
   		  global-semantic-idle-summary-mode
-  		  global-semantic-idle-completions-mode
-  		  ;;global-semantic-mru-bookmark-mode
-  		  ;;global-semantic-stickyfunc-mode
+  		  ;; global-semantic-idle-completions-mode
+  		  global-semantic-mru-bookmark-mode
+  		  global-semantic-stickyfunc-mode
   		  ))
   ;; 2.2.1 Semanticdb Tag Storage
   (setq semantic-default-save-directory
@@ -49,9 +49,15 @@
 
   ;; 2.2.2.3 Include Paths
   (defvar user-include-dirs
-  	(list "." "./include" ".." "../include" "/opt/lixian/include" "/opt/lixian/include/appframe/"))
+  	(list "." "./include"
+		  ".." "../include"
+		  "/opt/lixian/include"
+		  "/opt/lixian/include/appframe/"))
   (defvar win-include-dirs
-  	(list "C:/MinGW/include" "C:/msys64/usr/include" "C:/Program Files (x86)/Microsoft Visual Studio 11.0/VC/include"))
+  	(list "C:/MinGW/include"
+		  "C:/msys64/usr/include"
+		  "C:/Program Files (x86)/Microsoft Visual Studio 11.0/VC/include"
+		  "D:/xunlei/code/opt-lixian/include"))
   (require 'semantic/bovine/c)
 
   (let ((include-dirs user-include-dirs))
