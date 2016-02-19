@@ -4,6 +4,7 @@
 ;; 26.4 Commands for Editing with Parentheses
 ;; 26.4.3 matching parentheses
 (show-paren-mode t)
+(setq show-paren-style 'expression)
 
 (electric-pair-mode t)
 
