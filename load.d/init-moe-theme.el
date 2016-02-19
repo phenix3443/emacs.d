@@ -16,6 +16,7 @@
 	;; (Available colors: blue, orange, green ,magenta, yellow, purple, red, cyan, w/b.)
     (moe-theme-set-color 'orange)
 
+	(require powerline)
 	(powerline-moe-theme)
 
     ;; Finally, apply moe-theme now.
