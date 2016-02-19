@@ -4,7 +4,8 @@
 
 (use-package color-theme-sanityinc-tomorrow
   :ensure t
+  :disabled t
   :config
   (color-theme-sanityinc-tomorrow--define-theme eighties)
   )
-(provide 'init-themes)
+(provide 'init-sanityinc-tomorrow-theme)
