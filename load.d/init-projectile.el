@@ -12,14 +12,17 @@
 
   ;; indexing and caching
   (when (equal system-type 'windows-nt)
+	(setq projectile-indexing-method 'alien)
 	(setq projectile-enable-caching t))
+
   ;; switching projects
-  (setq projectile-switch-project-action 'helm-projectile-find-file)
+  (setq projectile-switch-project-action 'helm-projectile)
+
   ;; completion
   (setq projectile-completion-system 'helm)
 
   )
-  
+
 (use-package perspective
   :ensure t)
 (use-package helm-projectile
