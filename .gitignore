@@ -39,3 +39,4 @@ network-security.data
 /server
 emacs-custom.el
 3rd-party/cedet
+.last-package-update-day
