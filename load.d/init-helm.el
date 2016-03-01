@@ -22,6 +22,7 @@
   (helm-mode 1)
   (helm-adaptive-mode 1)
   (helm-autoresize-mode 1)
+  (helm-projectile-on)
 
   ;; Fuzzy matching
   (setq helm-recentf-fuzzy-match t
