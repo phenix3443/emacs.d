@@ -5,7 +5,7 @@
   :ensure t
   :config
   ;; updata installed package at startup
-  (auto-package-update-maybe)
+  ;; (auto-package-update-maybe)
 
   ;; set update time
   (auto-package-update-at-time "10:00")
