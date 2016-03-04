@@ -2,15 +2,14 @@
 
 (require 'package)
 
-
 (add-to-list 'package-directory-list "~/.emacs.d/3rd-party/")
 
 (setq package-enable-at-startup nil)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
+;(add-to-list 'package-archives
+;             '("melpa" . "https://melpa.org/packages/"))
 
-(add-to-list 'package-archives
-			 '("marmalade" . "http://marmalade-repo.org/packages/"))
+;(add-to-list 'package-archives
+;			 '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 (add-to-list 'package-archives
 			 '("popkit" . "http://elpa.popkit.org/packages/"))
