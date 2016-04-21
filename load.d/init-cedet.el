@@ -5,6 +5,7 @@
 (use-package cedet
   :load-path "3rd-party/cedet-git/"
   :init
+  :disabled t
   (setq byte-compile-warnings nil)
   ;; (load-file "~/.emacs.d/3rd-party/cedet-git/cedet-devel-load.el")
   :config
