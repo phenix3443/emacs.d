@@ -4,6 +4,7 @@
 
 (use-package auto-complete
   :ensure t
+  :disabled t
   :config
   ;; 3.2 install script
   (require 'auto-complete)
@@ -11,8 +12,8 @@
   (ac-config-default)
 
   ;; 6.2 Builtin Sources
-  (use-package ac-helm
-	:ensure t)
+
+
   (setq-default ac-sources
 			   '(ac-source-abbrev
 				 ac-source-dictionary
@@ -39,6 +40,7 @@
 
   (add-hook 'css-mode-hook (lambda ()
 							  (append '(ac-source-css-property) ac-sources)))
+
 
   ;; 7.16 Show a lastly completed candidate help
   (define-key ac-mode-map (kbd "C-c c h") 'ac-last-quick-help)
@@ -102,5 +104,42 @@
 
   )
 
+(use-package ac-html
+  :ensure t
+  :config
+  (add-hook 'html-mode-hook 'ac-html-enable)
+
+  ;; (add-to-list 'web-mode-ac-sources-alist
+			   ;; '("html" . (
+						   ;; attribute-value better to be first
+						   ;; ac-source-html-attribute-value
+						   ;; ac-source-html-tag
+						   ;; ac-source-html-attribute)))
+  )
+
+(use-package auto-complete-c-headers
+  :ensure t
+  :disabled t
+  :config
+  (require 'auto-complete-c-headers)
+  (add-to-list 'ac-sources 'ac-source-c-headers)
+  )
+
+(use-package auto-complete-clang
+  :ensure t
+  :disabled t
+  :config
+  (require 'auto-complete-clang)
+  (defun my-ac-cc-mode-setup ()
+	(setq ac-sources (append '(ac-source-clang) ac-sources)))
+  (add-hook 'c-mode-common-hook 'my-ac-cc-mode-setup)
+)
+
+(use-package auto-complete-exuberant-ctags
+  :ensure t
+  :disabled t
+  :config
+  (require 'auto-complete-exuberant-ctags)
+  (ac-exuberant-ctags-setup))
 
 (provide 'init-auto-complete)
