@@ -77,6 +77,14 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
+
+;; Load CEDET.
+;; See cedet/common/cedet.info for configuration details.
+;; IMPORTANT: Tou must place this *before* any CEDET component
+;; gets activated by another package (Gnus, auth-source, ...).
+
+(load-file "~/.emacs.d/3rd-party/cedet-git/cedet-devel-load.el")
+
 (package-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/lisps/")

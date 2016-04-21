@@ -1,5 +1,5 @@
 @echo off
-echo 默认将配置文件放在%APPDATA%\.emacs.d中
+echo 默认将配置文件放在%APPDATA%\.emacs.d 中
 rem git clone git@github.com:phenix3443/emacs.d.git %APPDATA%\.emacs.d
 cd %~dp0\
 
@@ -10,18 +10,16 @@ wmic ENVIRONMENT where "name='path' and username='<system>'" set VariableValue="
 
 echo compile cedet
 set path=%path%;%APPDATA%\.emacs.d\win_apps\
-cd %APPDATA%\.emacs.d\3rd-party/cedet\
-make
-cd contrib\
-make
+cd %APPDATA%\.emacs.d\3rd-party/cedet-git\
+
 
 echo check python2.7
 rem todo: check python2.7, if not installed, install it
-rem python27安装路径
+rem python27 安装路径
 set python_install_path=C:\Python27
 set path=%path%;%python_install_path%;%python_install_path%\Scripts\
 wmic ENVIRONMENT where "name='path' and username='<system>'" set VariableValue="%path%"
-echo 安装Pygments
+echo 安装 Pygments
 pip install Pygments
 
 set path=%path%;%APPDATA%\.emacs.d\win_apps\
@@ -39,6 +37,6 @@ rem 添加 gnu global 使用的环境变量
 gtags --debug
 
 echo Done successfully!
-echo 现在启动emacs之后先从elpa下载相应的扩展插件
+echo 现在启动 emacs 之后先从 elpa 下载相应的扩展插件
 
 pause
