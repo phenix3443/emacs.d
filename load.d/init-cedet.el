@@ -3,10 +3,10 @@
 (require 'use-package)
 
 (use-package cedet
-  :load-path "3rd-party/cedet/"
+  :load-path "3rd-party/cedet-git/"
   :init
   (setq byte-compile-warnings nil)
-  (load-file "~/.emacs.d/3rd-party/cedet/cedet-devel-load.el")
+  ;; (load-file "~/.emacs.d/3rd-party/cedet-git/cedet-devel-load.el")
   :config
   ;
   ;; ede
@@ -29,6 +29,7 @@
   		  ;; global-semantic-idle-completions-mode
   		  global-semantic-mru-bookmark-mode
   		  global-semantic-stickyfunc-mode
+		  global-cedet-m3-minor-mode
   		  ))
   ;; 2.2.1 Semanticdb Tag Storage
   (setq semantic-default-save-directory
