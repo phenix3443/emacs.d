@@ -32,7 +32,7 @@ echo "export GTAGSCONF=/usr/local/share/gtags/gtags.conf" >> ~/.bashrc
 echo "GTAGSLABEL=pygments" >> ~/.bashrc
 
 # ycmd
-sudo apt-get install build-essential cmake python-dev
+sudo apt-get install build-essential cmake python-dev clang llvm libclang
 cd ${CUR_DIR}/3rd-party/ycmd/
 ./build.py --all
 cd ${CUR_DIR}
