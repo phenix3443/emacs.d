@@ -83,7 +83,7 @@
 ;; IMPORTANT: Tou must place this *before* any CEDET component
 ;; gets activated by another package (Gnus, auth-source, ...).
 
-(load-file "~/.emacs.d/3rd-party/cedet-git/cedet-devel-load.el")
+;; (load-file "~/.emacs.d/3rd-party/cedet-git/cedet-devel-load.el")
 
 (package-initialize)
 
