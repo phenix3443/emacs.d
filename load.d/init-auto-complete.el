@@ -12,34 +12,32 @@
   (ac-config-default)
 
   ;; 6.2 Builtin Sources
-
-
   (setq-default ac-sources
-			   '(ac-source-abbrev
-				 ac-source-dictionary
-				 ac-source-filename
-				 ac-source-files-in-current-dir
-				 ac-source-imenu
-				 ac-source-words-in-all-buffer
-				 ac-source-words-in-buffer
-				 ac-source-words-in-same-mode-buffers
-				 ac-source-yasnippet
-				 ))
+				'(ac-source-abbrev
+				  ac-source-dictionary
+				  ac-source-filename
+				  ac-source-files-in-current-dir
+				  ac-source-imenu
+				  ac-source-words-in-all-buffer
+				  ac-source-words-in-buffer
+				  ac-source-words-in-same-mode-buffers
+				  ac-source-yasnippet
+				  ))
 
   (add-hook 'prog-mode-hook (lambda ()
-							   (append '(ac-source-gtags
-										 ac-source-semantic
-										 ac-source-semantic-raw)
-									   ac-sources)))
+							  (append '(ac-source-gtags
+										ac-source-semantic
+										ac-source-semantic-raw)
+									  ac-sources)))
   (add-hook 'emacs-lisp-mode-hook (lambda ()
-									 (append '(ac-source-features
-											   ac-source-functions
-											   ac-source-symbols
-											   ac-source-variables)
-											 ac-sources)))
+									(append '(ac-source-features
+											  ac-source-functions
+											  ac-source-symbols
+											  ac-source-variables)
+											ac-sources)))
 
   (add-hook 'css-mode-hook (lambda ()
-							  (append '(ac-source-css-property) ac-sources)))
+							 (append '(ac-source-css-property) ac-sources)))
 
 
   ;; 7.16 Show a lastly completed candidate help
@@ -102,44 +100,46 @@
   ;; 9.34 global-auto-complete-mode
   (global-auto-complete-mode t)
 
+  ;; 一些辅助的库
+  ;; (use-package ac-html
+  ;; 	:ensure t
+  ;; 	:config
+  ;; 	(add-hook 'html-mode-hook 'ac-html-enable)
+
+	;; (add-to-list 'web-mode-ac-sources-alist
+	;; '("html" . (
+	;; attribute-value better to be first
+	;; ac-source-html-attribute-value
+	;; ac-source-html-tag
+	;; ac-source-html-attribute)))
+	;; )
+
+  (use-package auto-complete-c-headers
+	:ensure t
+	;; :disabled t
+	:config
+	(require 'auto-complete-c-headers)
+	(add-to-list 'ac-sources 'ac-source-c-headers)
+	)
+
+  (use-package auto-complete-clang
+	:ensure t
+	;; :disabled t
+	:config
+	(defun my-ac-cc-mode-setup ()
+	  (setq ac-sources (append '(ac-source-clang) ac-sources)))
+	(add-hook 'c-mode-common-hook 'my-ac-cc-mode-setup)
+	)
+
+  (use-package auto-complete-exuberant-ctags
+	:ensure t
+	;; :disabled t
+	:config
+	(ac-exuberant-ctags-setup)
+	)
+
   )
 
-(use-package ac-html
-  :ensure t
-  :config
-  (add-hook 'html-mode-hook 'ac-html-enable)
 
-  ;; (add-to-list 'web-mode-ac-sources-alist
-			   ;; '("html" . (
-						   ;; attribute-value better to be first
-						   ;; ac-source-html-attribute-value
-						   ;; ac-source-html-tag
-						   ;; ac-source-html-attribute)))
-  )
-
-(use-package auto-complete-c-headers
-  :ensure t
-  ;; :disabled t
-  :config
-  (require 'auto-complete-c-headers)
-  (add-to-list 'ac-sources 'ac-source-c-headers)
-  )
-
-(use-package auto-complete-clang
-  :ensure t
-  :disabled t
-  :config
-  (require 'auto-complete-clang)
-  (defun my-ac-cc-mode-setup ()
-	(setq ac-sources (append '(ac-source-clang) ac-sources)))
-  (add-hook 'c-mode-common-hook 'my-ac-cc-mode-setup)
-)
-
-(use-package auto-complete-exuberant-ctags
-  :ensure t
-  ;; :disabled t
-  :config
-  (require 'auto-complete-exuberant-ctags)
-  (ac-exuberant-ctags-setup))
 
 (provide 'init-auto-complete)
