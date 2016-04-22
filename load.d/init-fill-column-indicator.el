@@ -4,6 +4,7 @@
 
 (use-package fill-column-indicator
   :ensure t
+  :disabled t
   :config
   (require 'fill-column-indicator)
   (add-hook 'prog-mode-hook (lambda () (fci-mode 1)))
@@ -16,3 +17,5 @@
 				  (advice-remove 'fci-mode #'fci-mode-override-advice)
 				  result)))
   )
+
+(provide 'fill-column-indicator)
