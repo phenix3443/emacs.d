@@ -4,7 +4,7 @@
 
 (use-package auto-complete
   :ensure t
-  :disabled t
+  ;; :disabled t
   :config
   ;; 3.2 install script
   (require 'auto-complete)
@@ -119,7 +119,7 @@
 
 (use-package auto-complete-c-headers
   :ensure t
-  :disabled t
+  ;; :disabled t
   :config
   (require 'auto-complete-c-headers)
   (add-to-list 'ac-sources 'ac-source-c-headers)
@@ -137,7 +137,7 @@
 
 (use-package auto-complete-exuberant-ctags
   :ensure t
-  :disabled t
+  ;; :disabled t
   :config
   (require 'auto-complete-exuberant-ctags)
   (ac-exuberant-ctags-setup))
