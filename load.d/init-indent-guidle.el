@@ -4,6 +4,7 @@
 
 (use-package indent-guide
   :ensure t
+  :disabled t
   :config
   (setq indent-guide-delay 0.1)
   (indent-guide-global-mode)
