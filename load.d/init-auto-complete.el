@@ -4,7 +4,7 @@
 
 (use-package auto-complete
   :ensure t
-  ;; :disabled t
+  :disabled t
   :config
   ;; 3.2 install script
   (require 'auto-complete)
@@ -100,20 +100,6 @@
   ;; 9.34 global-auto-complete-mode
   (global-auto-complete-mode t)
 
-  ;; 一些辅助的库
-  ;; (use-package ac-html
-  ;; 	:ensure t
-  ;; 	:config
-  ;; 	(add-hook 'html-mode-hook 'ac-html-enable)
-
-	;; (add-to-list 'web-mode-ac-sources-alist
-	;; '("html" . (
-	;; attribute-value better to be first
-	;; ac-source-html-attribute-value
-	;; ac-source-html-tag
-	;; ac-source-html-attribute)))
-	;; )
-
   (use-package auto-complete-c-headers
 	:ensure t
 	;; :disabled t
@@ -122,9 +108,24 @@
 	(add-to-list 'ac-sources 'ac-source-c-headers)
 	)
 
+  (use-package ac-clang
+	:ensure t
+	:disabled t
+	:config
+	;; Configuration of libclang flags
+	;; (setq ac-clang-clang-translation-unit-flags FLAG-STRING)
+	;; (setq ac-clang-clang-complete-at-flags FLAG-STRING)
+	(ac-clang-initialize)
+
+	;; Configuration of CFLAGS
+	;; (setq ac-clang-cflags CFLAGS)
+
+	(ac-clang-activate)
+	)
+
   (use-package auto-complete-clang
 	:ensure t
-	;; :disabled t
+	:disabled t
 	:config
 	(defun my-ac-cc-mode-setup ()
 	  (setq ac-sources (append '(ac-source-clang) ac-sources)))
