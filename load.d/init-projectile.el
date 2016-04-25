@@ -6,9 +6,6 @@
   :ensure t
   :config
   (projectile-global-mode)
-  ;; Helm Integration
-
-  (helm-projectile-on)
 
   ;; indexing and caching
   (when (equal system-type 'windows-nt)
@@ -27,5 +24,7 @@
   :ensure t)
 (use-package helm-projectile
   :ensure t
+  :config
+  (helm-projectile-on)
   )
 (provide 'init-projectile)
