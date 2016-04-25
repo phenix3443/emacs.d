@@ -4,15 +4,34 @@
 
 (use-package company
   :ensure t
-  :disabled t
-
+  :defer t
+  :init (add-hook 'after-init-hook 'global-company-mode)
   :config
-  (setq company-idle-delay 0.1)
-  (setq company-minimum-prefix-length 2)
-  (setq company-backends (append '(company-yasnippet company-elisp) company-backends))
+  (setq company-idle-delay .3)
+  (setq company-echo-delay 0)
+  (setq company-begin-commands '(self-insert-command))
 
-  (add-hook 'after-init-hook 'global-company-mode)
+  ;; (setq company-minimum-prefix-length 2)
+  ;; :bind ("C-;" . company-complete-common)
+  (defun company-prog-mode-setup ()
+	(add-to-list 'company-backends 'company-gtags)
+	(add-to-list 'company-backends 'company-yasnippet)
+	)
 
+  (add-hook 'prog-mode-hook 'company-prog-mode-setup)
+
+  (defun compnay-c-mode-setup ()
+	(add-to-list 'company-backends 'company-irony)
+	)
+
+  (add-hook 'c-mode-hook 'company-c-mode-setup)
+
+
+  (defun company-elisp-mode-setup ()
+	(add-to-list 'company-backends 'company-elisp)
+	)
+
+  (add-hook 'elisp-mode-hook 'company-elisp-mode-setup)
 
   (use-package company-c-headers
   	:ensure t
@@ -32,7 +51,7 @@
   	:config
   	(require 'company-lua)
 	(defun company-lua-mode-setup ()
-	    	(add-to-list 'company-backends 'company-lua))
+	  (add-to-list 'company-backends 'company-lua))
 	(add-hook 'lua-mode-hook 'company-lua-mode-setup)
   	)
 
@@ -52,6 +71,23 @@
   	(require 'company-ycmd)
   	(company-ycmd-setup)
   	)
+
+  (use-package company-irony-c-headers	:ensure t
+	;; :disabled t
+	:config
+	(eval-after-load 'company
+	  '(add-to-list
+		'company-backends 'company-irony-c-headers))
+	)
+
+  (use-package company-irony
+	:ensure t
+	;; :disabled t
+	:defer t
+	:config
+	(eval-after-load 'company
+	  '(add-to-list 'company-backends 'company-irony))
+	)
   )
 
 (provide 'init-company)
