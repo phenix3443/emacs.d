@@ -11,7 +11,7 @@ make
 cd ${CUR_DIR}
 
 # Exuberant Ctags
-sudo apt-get install -y exuberant-ctags
+sudo apt-get install -y exuberant-ctags silversearcher-ag dos2unix
 
 # pygment
 sudo apt-get install -y python python-pip python-dev
@@ -29,13 +29,13 @@ rm -fr global-6.5.4
 rm -f global-*.tar.gz
 
 echo "export GTAGSCONF=/usr/local/share/gtags/gtags.conf" >> ~/.bashrc
-echo "GTAGSLABEL=pygments" >> ~/.bashrc
+echo "export GTAGSLABEL=pygments" >> ~/.bashrc
 
 # for ac-lang
-sudo apt-get install -y  clang llvm libclang
+sudo apt-get install -y  clang llvm libclang-dev
 
 # ycmd
-# sudo apt-get install build-essential cmake python-dev clang llvm libclang
+# sudo apt-get install build-essential cmake python-dev clang llvm libclang-dev
 # cd ${CUR_DIR}/3rd-party/ycmd/
 # ./build.py --all
 # cd ${CUR_DIR}
