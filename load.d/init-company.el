@@ -47,7 +47,7 @@
 
   (use-package company-ycmd
   	:ensure t
-  	;; :disabled t
+  	:disabled t
   	:config
   	(require 'company-ycmd)
   	(company-ycmd-setup)
