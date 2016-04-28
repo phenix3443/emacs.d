@@ -2,7 +2,9 @@
 
 CUR_DIR=$(cd `dirname $0`;pwd)
 
+
 # for cedet ycmd
+
 git submodule update --init --recursive
 
 # cedet
@@ -19,20 +21,18 @@ sudo pip install -y pygments
 
 
 # GNU global
-sudo apt-get -y install libncurses-dev
-wget http://tamacom.com/global/global-6.5.4.tar.gz
-tar zxf global-6.5.4.tar.gz
-cd global-6.5.4 && ./configure && make && sudo make install && make clean
-
-cd ${CUR_DIR}
-rm -fr global-6.5.4
-rm -f global-*.tar.gz
+sudo apt-get -y install global
 
 echo "export GTAGSCONF=/usr/local/share/gtags/gtags.conf" >> ~/.bashrc
 echo "export GTAGSLABEL=pygments" >> ~/.bashrc
 
+# for jedi
+sudo apt-get install -y python python-dev
+sudo pip install --upgrade pip
+sudo pip install --upgrade virtualenv
+
 # for ac-lang
-sudo apt-get install -y  clang llvm libclang-dev
+# sudo apt-get install -y  clang llvm libclang-dev
 
 # ycmd
 # sudo apt-get install build-essential cmake python-dev clang llvm libclang-dev
