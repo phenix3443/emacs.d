@@ -184,5 +184,7 @@
   ;; (setq org-startup-with-inline-images t)
   (setq org-startup-with-latex-preview t)
   ;; (setq org-list-indent-offset 2)
+
+  (setq org-babel-python-command "python3")
   )
 (provide 'init-org)
