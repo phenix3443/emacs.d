@@ -4,6 +4,7 @@
 
 (use-package magit
   :ensure t
+  :bind ([f8] . magit-status)
   :config
   (require 'find-func)
   (with-eval-after-load 'info
