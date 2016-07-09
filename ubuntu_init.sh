@@ -17,7 +17,7 @@ sudo apt-get install -y exuberant-ctags silversearcher-ag dos2unix
 
 # pygment
 sudo apt-get install -y python python-pip python-dev
-sudo pip install -y pygments
+sudo pip install pygments
 
 
 # GNU global
