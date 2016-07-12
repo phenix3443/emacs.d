@@ -5,17 +5,13 @@
 (add-to-list 'package-directory-list "~/.emacs.d/3rd-party/")
 
 (setq package-enable-at-startup nil)
-;(add-to-list 'package-archives
-;             '("melpa" . "https://melpa.org/packages/"))
+(setq package-archives '(
+	("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+	("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+	("Marmalade" ."http://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/")
+	("Org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+))
 
-;(add-to-list 'package-archives
-;			 '("marmalade" . "http://marmalade-repo.org/packages/"))
-
-(add-to-list 'package-archives
-			 '("popkit" . "http://elpa.popkit.org/packages/"))
-
-;;(add-to-list 'package-archives
-;;             '("elpy" . "https://jorgenschaefer.github.io/packages/"))
 (package-initialize)
 
 (unless (package-installed-p 'use-package)
@@ -25,7 +21,7 @@
 (require 'use-package)
 (use-package dash
   :ensure t)
-  
+
 (require 'dash)
 (use-package load-dir
   :ensure t
