@@ -8,7 +8,7 @@
   ;; (auto-package-update-maybe)
 
   ;; set update time
-  (auto-package-update-at-time "10:00")
+  ;; (auto-package-update-at-time "10:00")
 
   ;; update interval
   (setq auto-package-update-interval 3)
@@ -20,5 +20,5 @@
 			(lambda () (message "I will update packages now")))
 
   (add-hook 'auto-package-update-after-hook
-          (lambda () (message "I have finished update packages now")))
+          (restart-emacs))
   )
