@@ -19,6 +19,6 @@
   (add-hook 'auto-package-update-before-hook
 			(lambda () (message "I will update packages now")))
 
-  (add-hook 'auto-package-update-after-hook
-          (restart-emacs))
+  ;; (add-hook 'auto-package-update-after-hook ())
+          
   )
