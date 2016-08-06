@@ -1,158 +1,30 @@
 ;; -*- coding:utf-8; -*-
 
-;;; init.el --- emacs init file
-;;
-;; Filename: init.el
-;; Description:
-;; Author: phenix3443<phenix3443@gmail.com>
-;; Maintainer:
-;; Created: 周四 十二月 18 16:07:09 2014 (+0800)
-;; Version: 1.0
-;; Package-Requires: ()
-;; Last-Updated: 周六 10 月 24 17:52:58 2015 (+0800)
-;;           By: phenix
-;;     Update #:
-;; URL:
-;; Doc URL:
-;; Keywords: init
-;; Compatibility:
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;;; Commentary:
-;;
-;;
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;;; Change Log:
-;;
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;; This program is free software: you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation, either version 3 of the License, or (at
-;; your option) any later version.
-;;
-;; This program is distributed in the hope that it will be useful, but
-;; WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-;; General Public License for more details.
-;;
-;; You should have received a copy of the GNU General Public License
-;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;;; Code:
-
-;; 按照 https://www.gnu.org/software/emacs/manual/ 出现顺序加载配置文件
-;; GNU Emacs manual
-;; (setq debug-on-error t)
-
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-
-;; Load CEDET.
-;; See cedet/common/cedet.info for configuration details.
-;; IMPORTANT: Tou must place this *before* any CEDET component
-;; gets activated by another package (Gnus, auth-source, ...).
-
-;; (load-file "~/.emacs.d/3rd-party/cedet-git/cedet-devel-load.el")
-
 (package-initialize)
-
-(add-to-list 'load-path "~/.emacs.d/lisps/")
 
 ;; 5 Enter Emacs
 ;; (setq inhibit-startup-message t)
 
-;; 6 Exiting Emacs
+(defun load-directory (dir)
+  (let ((load-it (lambda (f)
+		   (load-file (concat (file-name-as-directory dir) f)))
+		 ))
+    (mapc load-it (directory-files dir nil "\\.el$"))))
 
-;; 7 Basic Editing Commands
-(require 'basic-edit-conf)
+;; load emacs builtin feature
+(load-directory "~/.emacs.d/lisps/")
 
-;; 8 The Minibuffer
-
-;; 12 Killing and Moving Text
-;; (require 'killing-conf)
-
-;; 14 Controlling the Display
-(require 'display-conf)
-;; 15 Searching and Replacement
-;; (require 'search-replace-conf)
-
-;; 18 File Handling
-;; (require 'file-conf)
-
-;; 20 Multiple Windows
-(require 'window-mgr-conf)
-;; 21 Frames and Graphical Displays
-(require 'frames-conf)
-;; 22 international character set support
-(require 'international-character-conf)
-
-;; 24 Indentation
-(require 'indentation-conf)
-;; 25 Commands for Human Languages
-(require 'text-conf)
-;; 26 Editing Programs
-(require 'program-conf)
-;; 27 Compiling and Testing Programs
-;; (require 'compile-test-conf)
-;; 28 Maintaining Large Programs
-;; 38 Using Emacs as a Server
-;; (require'server)
-;; (unless (server-running-p)
-;;   (server-start))
-
-;; (require 'maintain-program-project)
-;; 43 Saving Emacs Sessions
-;; (desktop-save-mode 1)
-
-;; 47 Emacs Lisp Packages
-(require 'packages-conf)
-
-;; 48 Customization
-(require 'customization-conf)
+;; load third party packages
+(load-directory "~/.emacs.d/load.d")
 
 
 ;; GNU Emacs Lisp reference manual.
-
 ;; An Introduction to Programming in Emacs Lisp.
 ;; GNU Emacs FAQ.
 ;; GNU Emacs on MS Windows FAQ.
-
 ;; GNU Emacs reference cards.
 ;; Ada-mode(Emacs mode for editing Ada code.)
-
 ;; Auth-source Emacs library for storing and sharing secret data.
-(require 'auth-source)
 ;; 在 window 下莫名卡顿，先注释
 ;; (require 'auth-source)
 ;; (add-to-list 'auth-sources "~/.emacs.d/.authinfo.gpg")
@@ -214,18 +86,6 @@
 ;; Speedbar	File and tag summarizing utility.
 ;; Supercite	Package for citing and attributing messages.
 ;; Todo mode	Keeping track of things to do.
-
-;; Tramp	Transparent remote file access system.
-;; (require 'tramp)
-
-;; (cond
-;;  ((eq system-type 'windows-nt)
-;;   (setq tramp-default-method "pscp"))
-;;  ((eq system-type 'gnu/linux)
-;;   (setq tramp-default-method "ssh")))
-
-;; (setq password-cache-expiry 86400)
-
 ;; URL	Library for manipulating and retrieving URLs and URIs.
 ;; 5 General Facilities
 ;; 5.2 Proxies and Gatewaying
