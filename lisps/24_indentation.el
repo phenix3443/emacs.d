@@ -1,3 +1,4 @@
+;; -*- coding:utf-8; -*-
 
 ;; 24.3 Tabs vs Spaces
 (setq-default indent-tabs-mode t)
@@ -7,4 +8,4 @@
 ;; 24.4 Convenience Features for Indentation
 (setq tab-always-indent nil)
 
-(provide 'indentation-conf)
+(provide '24_indentation)

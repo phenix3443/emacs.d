@@ -40,6 +40,4 @@
 ;; (global-prettify-symbols-mode t)
 ;; 27.5 Finding Syntax Error on The Fly
 
-;; 28 tags
-
-(provide 'program-conf)
+(provide '26_editing_programs)
