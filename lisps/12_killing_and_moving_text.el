@@ -5,4 +5,4 @@
 ;; 12.6 CUA
 ;(cua-mode t)
 
-(provide 'killing-conf)
+(provide '12_killing_and_moving_text)
