@@ -33,4 +33,4 @@
   :config
   (load-dirs)
  )
-(provide 'packages-conf)
+(provide '47_emacs_lisp_packages)
