@@ -32,7 +32,7 @@ sudo pip install --upgrade pip
 sudo pip install --upgrade virtualenv
 
 # for ac-lang
-# sudo apt-get install -y  clang llvm libclang-dev
+sudo apt-get install -y  clang llvm libclang-dev
 
 # ycmd
 # sudo apt-get install build-essential cmake python-dev clang llvm libclang-dev
