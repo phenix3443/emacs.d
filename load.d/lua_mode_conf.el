@@ -4,10 +4,10 @@
 
 (use-package lua-mode
   :ensure t
+  :mode "\\.lua$"
+  :interpreter "lua"
   :config
-  (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
-  (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
-  (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
   (setq lua-indent-level 4)
+  (set lua-indent-string-contents t)
   )
-(provide 'init-lua-mode)
+(provide 'lua_mode_conf)
