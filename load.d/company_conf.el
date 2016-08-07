@@ -4,29 +4,19 @@
 
 (use-package company
   :ensure t
-  :defer t
+  ;; :bind ("C-;" . company-complete-common)
   :init (add-hook 'after-init-hook 'global-company-mode)
   :config
-
   (setq company-minimum-prefix-length 1)
 
-  ;; :bind ("C-;" . company-complete-common)
-
-  ;; (use-package company-c-headers
-  ;; 	:ensure t
-  ;; 	:disabled t
-  ;; 	:config
-  ;; 	(require 'company-c-headers)
-  ;; 	(add-to-list 'company-c-headers-path-system "/usr/include/c++")
-  ;; 	(defun company-c-header-setup ()
-  ;; 	  (add-to-list 'company-backends 'company-c-headers))
-  ;; 	(add-hook 'c-mode-hook 'company-c-header-setup)
-  ;; 	)
+  (use-package company-c-headers
+  	:ensure t
+  	:config
+  	)
 
   (use-package company-lua
   	:ensure t
-  	:disabled t
-  	)
+	)
 
   (use-package company-quickhelp
 	:ensure t
@@ -63,12 +53,10 @@
 	)
 
   (defun company-c-mode-setup ()
-	(set (make-local-variable 'company-backends) '((company-irony-c-headers  company-irony company-yasnippet company-dabbrev company-dabbrev-code company-keywords company-gtags company-files)) ))
-
+	(set (make-local-variable 'company-backends) '((company-c-headers company-irony-c-headers  company-irony company-yasnippet company-dabbrev company-dabbrev-code company-keywords company-gtags company-files)) ))
 
   (add-hook 'c-mode-hook 'company-c-mode-setup)
   (add-hook 'c++-mode-hook 'company-c-mode-setup)
-
 
   (defun company-elisp-mode-setup ()
 	(set (make-local-variable 'company-backends) '((company-elisp company-dabbrev company-dabbrev-code company-yasnippet company-gtags company-files))))
@@ -82,10 +70,12 @@
 
 
   (defun company-python-mode-hook ()
-		(set (make-local-variable 'company-backends) '((company-jedi company-dabbrev company-dabbrev-code company-gtags company-files))))
+	(set (make-local-variable 'company-backends) '((company-jedi company-dabbrev company-dabbrev-code company-gtags company-files))))
 
   (add-hook 'python-mode-hook 'company-python-mode-hook)
 
+  (defun company-ruby-mode-hook ()
+	(set (make-local-variable 'company-backends) '(company-yasnippet)))
   )
 
-(provide 'init-company)
+(provide 'company_conf)
