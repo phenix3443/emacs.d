@@ -2,9 +2,6 @@
 
 (package-initialize)
 
-;; 5 Enter Emacs
-;; (setq inhibit-startup-message t)
-
 (defun load-directory (dir)
   (let ((load-it (lambda (f)
 		   (load-file (concat (file-name-as-directory dir) f)))

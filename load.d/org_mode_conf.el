@@ -81,7 +81,7 @@
 		'(
 		  ("org"
 		   ;; 13.1.2 Sources and destinations for files
-		   :base-directory "~/github/org-notes/org/" ;设置存放.org 文件位置
+		   :base-directory "~/gitlab/org-notes/org/" ;设置存放.org 文件位置
 		   :publishing-directory "~/github/phenix3443.github.io/" ;导出 html 文件位置
 		   ;; :preparation-function
 		   ;; :completion-function
@@ -109,9 +109,9 @@
 		   )
 
 		  ("static"
-		   :base-directory "~/github/org-notes/org/"
+		   :base-directory "~/gitlab/org-notes/org/"
 		   :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-		   :publishing-directory "~/github/phenix3443.github.io/"
+		   :publishing-directory "~/gitlab/phenix3443.github.io/"
 		   :recursive t
 		   :publishing-function org-publish-attachment
 		   )
