@@ -21,7 +21,7 @@
 
 (column-number-mode t)
 
-(seq display-time-24hr-format t)
+(setq display-time-24hr-format t)
 (display-time-mode 1)
 
 (setq display-time-format "%D %a %H:%M")
