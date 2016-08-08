@@ -4,40 +4,28 @@
 
 (use-package helm
   :ensure t
-  :init
-  (require 'helm-config)
-  (global-set-key (kbd "C-c h") 'helm-command-prefix)
+  :bind-keymap ("C-c h" . helm-map)
   :bind (
 		 ("M-x"     . helm-M-x)
          ("C-x C-b" . helm-buffer-list)
          ("C-x C-f" . helm-find-files)
-		 ("C-c h o" . helm-occur)
-		 ;;:map helm-map ("o" . helm-occur)
 		 )
-
   :config
-  ;; (require 'helm-config)
+  (require 'helm-config)
 
   ;; enable modes
   (helm-mode 1)
   (helm-adaptive-mode 1)
-  (helm-autoresize-mode 1)
-  (helm-projectile-on)
 
-  ;; Fuzzy matching
-  (setq helm-recentf-fuzzy-match t
-		helm-buffers-fuzzy-matching t
-		helm-locate-fuzzy-match nil
-		helm-M-x-fuzzy-match t
-		helm-semantic-fuzzy-match t
-		helm-imenu-fuzzy-match t
-		helm-apropos-fuzzy-match t
-		helm-lisp-fuzzy-completion t)
-  (setq helm-candidate-number-limit 100)
+  (helm-projectile-on)
 
   ;; enable fuzzy matching globally in all functions helmized by helm-mode
   (setq helm-mode-fuzzy-match t)
   (setq helm-completion-in-region-fuzzy-match t)
+
+  (helm-autoresize-mode 1)
+
+  (setq helm-candidate-number-limit 100)
 
   ;; use locate by regex
   (when (equal system-type 'gnu/linux)
@@ -73,7 +61,4 @@
 				(define-key eshell-mode-map (kbd "C-c C-l")  'helm-eshell-history)))
   )
 
-
-
-
-(provide 'init-helm)
+(provide 'helm_conf)
