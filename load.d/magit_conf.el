@@ -12,4 +12,4 @@
 	(add-to-list 'Info-directory-list (file-name-directory (find-library-name "magit"))))
   )
 
-(provide 'init-magit)
+(provide 'magit_conf)
