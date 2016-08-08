@@ -15,10 +15,15 @@
 (setq-default indicate-empty-lines t)
 
 ;; 14.18 optional mode line features
+(size-indication-mode 1)
+
 (global-linum-mode t)
+
 (column-number-mode t)
 
+(seq display-time-24hr-format t)
 (display-time-mode 1)
+
 (setq display-time-format "%D %a %H:%M")
 
 
