@@ -11,4 +11,4 @@
 
   )
 
-(provide 'init-flycheck)
+(provide 'flycheck_conf)
