@@ -8,6 +8,6 @@
   :interpreter "lua"
   :config
   (setq lua-indent-level 4)
-  (set lua-indent-string-contents t)
+  (setq lua-indent-string-contents t)
   )
 (provide 'lua_mode_conf)
