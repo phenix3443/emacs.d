@@ -8,4 +8,4 @@
   (session-initialize)
   )
 
-(provide 'init-session)
+(provide 'session_conf)
