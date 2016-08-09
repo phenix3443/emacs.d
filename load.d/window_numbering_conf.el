@@ -7,4 +7,4 @@
   :config
   (window-numbering-mode 1)
   )
-(provide 'init-window-numbering)
+(provide 'window_numbering_conf)
