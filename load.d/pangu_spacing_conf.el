@@ -8,4 +8,4 @@
   (setq pangu-spacing-real-insert-separtor t)
   (global-pangu-spacing-mode 1)
   )
-(provide 'init-pangu-spacing)
+(provide 'pangu_spacing_conf)
