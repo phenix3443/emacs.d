@@ -5,6 +5,9 @@
 (use-package moe-theme
   :ensure t
   :init
+  (use-package powerline
+	:ensure t)
+
   (require 'powerline)
   :config
   ;; Show highlighted buffer-id as decoration. (Default: nil)
