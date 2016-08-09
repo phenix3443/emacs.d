@@ -5,10 +5,10 @@
 (use-package moe-theme
   :ensure t
   :init
-  (use-package powerline
-	:ensure t)
+  ;; (use-package powerline
+  ;; 	:ensure t)
 
-  (require 'powerline)
+  ;; (require 'powerline)
   :config
   ;; Show highlighted buffer-id as decoration. (Default: nil)
   (setq moe-theme-highlight-buffer-id t)
