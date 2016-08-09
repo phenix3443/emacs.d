@@ -4,78 +4,73 @@
 
 (use-package company
   :ensure t
-  ;; :bind ("C-;" . company-complete-common)
-  :init (add-hook 'after-init-hook 'global-company-mode)
   :config
   (setq company-minimum-prefix-length 1)
+  (setq company-global-modes t)
 
-  (use-package company-c-headers
-  	:ensure t
-  	:config
-  	)
-
-  (use-package company-lua
-  	:ensure t
-	)
-
+  (setq company)
   (use-package company-quickhelp
 	:ensure t
-	:disabled t
 	:config
+	(setq company-quickhelp-delay 2)
 	(company-quickhelp-mode 1)
-	(eval-after-load 'company
-	  '(define-key company-active-map (kbd "M-h") #'company-quickhelp-manual-begin))
+
 	)
 
   (use-package company-ycmd
   	:ensure t
   	:disabled t
   	:config
-  	(require 'company-ycmd)
   	(company-ycmd-setup)
   	)
 
-  (use-package company-irony-c-headers
+  (use-package company-irony
 	:ensure t
-	;; :disabled t
 	:config
 	)
 
-  (use-package company-irony
-	:ensure t
-	;; :disabled t
-	:defer t
-	:config
+  (setq common-backends '(company-capf
+						  company-dabbrev
+						  company-dabbrev-code
+						  company-files
+						  company-gtags
+						  company-keywords
+   						 company-yasnippet))
+(setq company--begin-inhibit-commands)
+  (defun company-c/c++-mode-setup ()
+	(set (make-local-variable 'company-backends) (list (append common-backends '(company-irony-c-headers  company-irony)))))
+
+  (add-hook 'c-mode-hook 'company-c/c++-mode-setup)
+  (add-hook 'c++-mode-hook 'company-c/c++-mode-setup)
+
+  (defun company-elisp-mode-setup ()
+	(set (make-local-variable 'company-backends) (list (append common-backends '(company-elisp)))))
+
+  (add-hook 'emacs-lisp-mode-hook 'company-elisp-mode-setup)
+
+  (use-package company-lua
+  	:ensure t
 	)
+
+  (defun company-lua-mode-setup ()
+	(set (make-local-variable 'company-backends) (list (append common-backends '(company-lua)))))
+
+  (add-hook 'lua-mode-hook 'company-lua-mode-setup)
+
   (use-package company-jedi
 	:ensure t
 	:config
 	)
-
-  (defun company-c-mode-setup ()
-	(set (make-local-variable 'company-backends) '((company-c-headers company-irony-c-headers  company-irony company-yasnippet company-dabbrev company-dabbrev-code company-keywords company-gtags company-files)) ))
-
-  (add-hook 'c-mode-hook 'company-c-mode-setup)
-  (add-hook 'c++-mode-hook 'company-c-mode-setup)
-
-  (defun company-elisp-mode-setup ()
-	(set (make-local-variable 'company-backends) '((company-elisp company-dabbrev company-dabbrev-code company-yasnippet company-gtags company-files))))
-
-  (add-hook 'emacs-lisp-mode-hook 'company-elisp-mode-setup)
-
-  (defun company-lua-mode-setup ()
-	(set (make-local-variable 'company-backends) '((company-lua company-dabbrev company-dabbrev-code company-gtags company-files))))
-
-  (add-hook 'lua-mode-hook 'company-lua-mode-setup)
-
-
   (defun company-python-mode-hook ()
-	(set (make-local-variable 'company-backends) '((company-jedi company-dabbrev company-dabbrev-code company-gtags company-files))))
+	(set (make-local-variable 'company-backends) (list (append common-backends '(company-jedi)))))
 
   (add-hook 'python-mode-hook 'company-python-mode-hook)
 
   (defun company-ruby-mode-hook ()
-	(set (make-local-variable 'company-backends) '(company-yasnippet)))
+	(set (make-local-variable 'company-backends) (list (append common-backends '()))))
+
+
   )
+
 
 (provide 'company_conf)
