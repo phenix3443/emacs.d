@@ -20,6 +20,19 @@
 
   (add-hook 'irony-mode-hook 'my-irony-mode-hook)
   (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+
+  (use-package irony-eldoc
+	:ensure t
+	:config
+	(add-hook 'irony-mode-hook 'irony-eldoc))
+
+  (use-package flycheck-irony
+	:ensure t
+	:config
+	(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
+
+  (use)
   )
+
 
 (provide 'irony_conf)
