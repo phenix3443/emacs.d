@@ -4,7 +4,7 @@
 
 (use-package helm
   :ensure t
-  :bind-keymap ("C-c h" . helm-map)
+  :bind-keymap ("C-c h" . helm-command-map)
   :bind (
 		 ("M-x"     . helm-M-x)
          ("C-x C-b" . helm-buffer-list)
