@@ -5,6 +5,7 @@
 (use-package company
   :ensure t
   :config
+  (add-hook 'after-init-hook 'global-company-mode)
   (setq company-minimum-prefix-length 1)
   (setq company-global-modes t)
 
@@ -44,7 +45,7 @@
   (add-hook 'c++-mode-hook 'company-c/c++-mode-setup)
 
   (defun company-elisp-mode-setup ()
-	(set (make-local-variable 'company-backends) (list (append common-backends '(company-elisp)))))
+  	(set (make-local-variable 'company-backends) (list (append common-backends '(company-elisp)))))
 
   (add-hook 'emacs-lisp-mode-hook 'company-elisp-mode-setup)
 
