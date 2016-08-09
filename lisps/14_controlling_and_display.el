@@ -3,8 +3,10 @@
 ;;14.3 Automatic Scrolling
 (setq scroll-conservatively 10000)
 ;;(set-face-attribute 'linum nil :height 100)
+
 ;; 14.12 Font Lock mode
 (add-hook 'prog-mode-hook 'font-lock-mode)
+
 ;; 14.13 interactive highlight
 ;;(global-highlight-changes-mode 1)
 (global-hi-lock-mode 1)
@@ -26,12 +28,7 @@
 
 (setq display-time-format "%D %a %H:%M")
 
-
-;; If not on AC power line, then display battery status on the mode line
-;;(and (require 'battery nil t)
-;;     (functionp battery-status-function)
-;;     (or (equal (cdr (assoc ?L (funcall battery-status-function))) "on-line")
-;;		  (display-battery-mode)))
+(display-battery-mode t)
 
 ;; 14.20 Curssor Display
 (global-hl-line-mode t)
