@@ -12,4 +12,4 @@
   (setq auto-compile-mode-line-counter t)
   )
 
-(provide 'init-auto-compile)
+(provide 'auto_compile_conf)

@@ -13,4 +13,4 @@
   (setq pyim-use-tooltip t)
   )
 
-(provide 'init-chinese-pyim)
+(provide 'chinese_pyim)
