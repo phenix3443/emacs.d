@@ -3,6 +3,7 @@
 (require 'use-package)
 
 (use-package ycmd
+  :init
   :ensure t
   :disabled t
   :config
