@@ -10,11 +10,13 @@
   (setq rm-excluded-modes (list " company"
 								" hs"
 								" yas"
+								" ARev"
 								" ElDoc"
 								" Guide"
 								" Helm"
 								" HelmGtags"
 								" HS"
+								" Org"
 								" Paredit"
 								" Wrap"
 								))
