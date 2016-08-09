@@ -26,7 +26,7 @@
 (setq display-time-24hr-format t)
 (display-time-mode 1)
 
-(setq display-time-format "%D %a %H:%M")
+(setq display-time-format "%m/%d %R %u")
 
 (display-battery-mode t)
 
