@@ -5,3 +5,5 @@
   :ensure t
   :config
   )
+
+(provide 'restart_emacs_conf)
