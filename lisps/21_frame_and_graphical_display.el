@@ -27,7 +27,7 @@
 (set-scroll-bar-mode nil)
 ;; 21.13 Drag and  Drop
 ;; 21.14 Menu Bars
-
+(menu-bar-mode -1)
 ;; 21.15 Toolbar
 (tool-bar-mode -1)
 
