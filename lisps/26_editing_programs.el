@@ -41,14 +41,15 @@
 (global-set-key (kbd "C-;") 'comment-dwim-line)
 ;; 26.6.3 Emacs Lisp Documentation Lookup
 (add-hook 'emacs-lisp-mode-hook (lambda () (eldoc-mode t)))
+
 ;; 26.7 Hideshow minor mode
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 ;; 26.8 Completion for symbol names
 
+;; 26.9 MixedCase Words
+(global-subword-mode 1)
 ;; 26.11 Other Features Useful for Editing Programs
-(add-hook 'prog-mode-hook ((lambda ()
-							 (superword-mode t)
-							 (electric-layout-mode t))))
+(electric-layout-mode t)
 ;; (global-prettify-symbols-mode t)
 ;; 27.5 Finding Syntax Error on The Fly
 
