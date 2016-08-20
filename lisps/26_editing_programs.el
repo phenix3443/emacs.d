@@ -9,6 +9,16 @@
 (setq show-paren-style 'expression)
 
 (electric-pair-mode t)
+(setq electric-pair-preserve-balance t)
+(setq electric-pair-delete-adjacent-pairs t)
+(setq electric-pair-open-newline-between-pairs t)
+(setq electric-pair-skip-whitespace t)
+
+(defvar markdown-electric-pairs '((?* . ?*)) "Electric pairs for markdown-mode")
+(defun markdown-add-electric-pairs ()
+  (setq-local electric-pair-pairs (append electric-pair-pairs markdown-electric-pairs)))
+(add-hook 'markdown-mode-hook 'markdown-add-electric-pairs)
+
 
 ;; 26.5.2 Multiple Lines of Comments
 
