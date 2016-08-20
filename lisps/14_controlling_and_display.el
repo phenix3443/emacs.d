@@ -10,6 +10,7 @@
 ;; 14.13 interactive highlight
 ;;(global-highlight-changes-mode 1)
 (global-hi-lock-mode 1)
+(setq hi-lock-auto-select-face t)
 
 ;; 14.16 Useless Whitespace
 (setq show-trailing-whitespace t)
@@ -33,6 +34,10 @@
 ;; 14.20 Curssor Display
 (global-hl-line-mode t)
 (setq-default cursor-type 'bar)
+;; Set any color as the background face of the current line:
+(set-face-background 'hl-line "#3e4446")
+;; To keep syntax highlighting in the current line:
+(set-face-foreground 'highlight nil)
 
 ;; 14.22 Visual Line mode
 (global-visual-line-mode t)
