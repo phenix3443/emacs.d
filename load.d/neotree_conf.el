@@ -5,7 +5,7 @@
   :ensure t
   :config
   (setq neo-smart-open t)
-  (setq projectile-switch-project-action 'neotree-projectile-action)
+  ;; (setq projectile-switch-project-action 'neotree-projectile-action)
   )
 
 (provide 'neotree_conf)
