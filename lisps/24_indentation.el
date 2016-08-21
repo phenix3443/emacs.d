@@ -7,5 +7,6 @@
 (setq-default tab-stop-list (number-sequence 4 120 4))
 ;; 24.4 Convenience Features for Indentation
 (setq tab-always-indent nil)
+(electric-indent-mode t)
 
 (provide '24_indentation)
