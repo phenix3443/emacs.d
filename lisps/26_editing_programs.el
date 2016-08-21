@@ -49,6 +49,7 @@
 ;; 26.9 MixedCase Words
 (global-subword-mode 1)
 ;; 26.11 Other Features Useful for Editing Programs
+;; (add-to-list 'electric-layout-rules '(?{ . around))
 (electric-layout-mode t)
 ;; (global-prettify-symbols-mode t)
 ;; 27.5 Finding Syntax Error on The Fly
