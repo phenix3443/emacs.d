@@ -4,7 +4,7 @@
 
 (use-package color-theme-sanityinc-tomorrow
   :ensure t
-  ;; :disabled t
+  :disabled t
   :config
   (color-theme-sanityinc-tomorrow--define-theme eighties)
   )
