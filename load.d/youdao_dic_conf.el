@@ -4,7 +4,8 @@
 
 (use-package youdao-dictionary
   :ensure t
+  :disabled t
   :config
   )
 
-(provide youdao_dic_conf)
+(provide 'youdao_dic_conf)
