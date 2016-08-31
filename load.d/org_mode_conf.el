@@ -29,7 +29,8 @@
   ;; Markup for rich export
   ;; 11.7 Embedded LaTeX
   ;; 11.7.2 Subscripts and superscripts（上标和下标）
-  (setq org-use-sub-superscripts "{}")
+  ;; (setq org-use-sub-superscripts '{})
+  (setq org-export-with-sub-superscripts '{})
   ;; 12 Exporting
   ;; 12.3 Export setting
   (setq org-export-with-section-numbers 3)
