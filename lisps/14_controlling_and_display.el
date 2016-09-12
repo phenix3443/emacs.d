@@ -1,9 +1,10 @@
 ;; -*- coding:utf-8; -*-
 
-;;14.3 Automatic Scrolling
+;; 14.3 Automatic Scrolling
 (setq scroll-conservatively 10000)
 ;;(set-face-attribute 'linum nil :height 100)
-
+;; 14.5 narrow
+(put 'narrow-to-region 'disabled nil)
 ;; 14.12 Font Lock mode
 (add-hook 'prog-mode-hook 'font-lock-mode)
 
