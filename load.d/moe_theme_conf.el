@@ -18,11 +18,11 @@
   (setq moe-theme-resize-rst-title '(1.5 1.4 1.3 1.2 1.1 1.0))
 
   (moe-dark)
-  ;; (moe-light)
   ;; (require 'moe-theme-switcher)
 
   ;; Choose a color for mode-line.(Default: blue)
-  (moe-theme-set-color 'orange)
+  ;; (moe-theme-set-color 'orange)
+  (moe-theme-random-color)
   ;; (powerline-moe-theme)
   )
 (provide 'moe_theme_conf)
