@@ -22,7 +22,7 @@
 
   ;; Choose a color for mode-line.(Default: blue)
   ;; (moe-theme-set-color 'orange)
-  (moe-theme-random-color)
+  ;; (moe-theme-random-color)
   ;; (powerline-moe-theme)
   )
 (provide 'moe_theme_conf)
