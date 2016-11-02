@@ -1,13 +1,14 @@
 ;; -*- coding:utf-8 -*-
 
-;; (require 'tramp)
+(require 'tramp)
 
-;; (cond
-;;  ((eq system-type 'windows-nt)
-;;   (setq tramp-default-method "pscp"))
-;;  ((eq system-type 'gnu/linux)
-;;   (setq tramp-default-method "ssh")))
+(cond
+ ((eq system-type 'windows-nt)
+  (setq tramp-default-method "pscp"))
 
-;; (setq password-cache-expiry 86400)
+ ((eq system-type 'gnu/linux)
+  (setq tramp-default-method "rsync")))
+
+(setq password-cache-expiry 86400)
 
 (provide 'tramp_conf)
