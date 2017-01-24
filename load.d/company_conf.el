@@ -9,7 +9,6 @@
   (setq company-minimum-prefix-length 1)
   (setq company-global-modes t)
 
-  (setq company)
   (use-package company-quickhelp
 	:ensure t
 	:config
@@ -37,7 +36,7 @@
 						  company-gtags
 						  company-keywords
    						 company-yasnippet))
-(setq company--begin-inhibit-commands)
+
   (defun company-c/c++-mode-setup ()
 	(set (make-local-variable 'company-backends) (list (append common-backends '(company-irony-c-headers  company-irony)))))
 
