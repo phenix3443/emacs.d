@@ -5,31 +5,9 @@
 (use-package helm-gtags
   :ensure t
   :init
-  ;; (setq 'helm-gtags-prefix-key "\C-cg")
-  :bind (
-		 :map helm-gtags-mode-map
-		 	  ("C-c g a". helm-gtags-tags-in-this-function)
-		 	  ("C-c g A" . helm-gtags-select)
-		 	  ("C-c g b" . helm-gtags-pop-stack)
-		 	  ("C-c g c" . helm-gtags-clear-stack)
-		 	  ("C-c g C" . helm-gtags-clear-all-stacks)
-		 	  ("C-c g d" . helm-gtags-display-browser)
-		 	  ("C-c g f" . helm-gtags-find-files)
-		 	  ("C-c g F" . helm-gtags-parse-file)
-		 	  ("C-c g g" . helm-gtags-create-tags)
-		 	  ("C-c g h" . helm-gtags-find-tag-from-here)
-		 	  ("C-c g n" . helm-gtags-next-history)
-		 	  ("C-c g p" . helm-gtags-previous-history)
-		 	  ("C-c g P" . helm-gtags-pop-stack)
-		 	  ("C-c g r" . helm-gtags-find-rtag)
-		 	  ("C-c g R" . helm-gtags-resume)
-		 	  ("C-c g s" . helm-gtags-find-symbol)
-		 	  ("C-c g S" . helm-gtags-show-stack)
-		 	  ("C-c g t" . helm-gtags-find-tag)
-		 	  ("C-c g 4 t" . helm-gtags-find-tag-other-window)
-		 	  ("C-c g u" . helm-gtags-update-tags)
-		 	  ("C-c g ." . helm-gtags-dwim)
-		 	  )
+  (custom-set-variables
+   '(helm-gtags-prefix-key "\C-c g")
+   '(helm-gtags-suggested-key-mapping t))
   :config
   (add-hook 'prog-mode-hook 'helm-gtags-mode)
 
