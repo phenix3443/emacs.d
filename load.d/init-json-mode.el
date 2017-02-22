@@ -5,6 +5,5 @@
 (use-package json-mode
   :ensure t
   :init
-  :bind ()
   :config
   )
