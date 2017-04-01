@@ -6,7 +6,7 @@
   :ensure t
   :init
   (custom-set-variables
-   ;; '(helm-gtags-prefix-key "\C-c g")
+   '(helm-gtags-prefix-key "\C-c g")
    ;; '(helm-gtags-suggested-key-mapping t)
    )
   :bind (:map helm-gtags-mode-map
