@@ -1,9 +1,3 @@
 [submodule "3rd-party/cedet"]
 	path = 3rd-party/cedet
 	url = http://git.code.sf.net/p/cedet/git
-[submodule "3rd-party/ycmd"]
-	path = 3rd-party/ycmd
-	url = git@github.com:Valloric/ycmd.git
-[submodule "3rd-party/cedet-git"]
-	path = 3rd-party/cedet-git
-	url = git://git.code.sf.net/p/cedet/git
