@@ -4,6 +4,7 @@
 
 (use-package diredful
   :ensure t
+  :disabled t
   :config
   (diredful-mode 1)
 )
