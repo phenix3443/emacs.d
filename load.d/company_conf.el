@@ -29,19 +29,23 @@
 	:config
 	)
 
-  (setq common-backends '(company-capf
+  (setq common-backends '(
+						  company-capf
 						  company-dabbrev
 						  company-dabbrev-code
 						  company-files
 						  company-gtags
 						  company-keywords
-   						 company-yasnippet))
+						  company-yasnippet
+						  ))
 
-  (defun company-c/c++-mode-setup ()
-	(set (make-local-variable 'company-backends) (list (append common-backends '(company-irony-c-headers  company-irony)))))
+  ;; (defun company-c/c++-mode-setup ()
+  ;; 	(set (make-local-variable 'company-backends)
+  ;; 		 (list (append common-backends
+  ;; 					   '(company-irony-c-headers  company-irony)))))
 
-  (add-hook 'c-mode-hook 'company-c/c++-mode-setup)
-  (add-hook 'c++-mode-hook 'company-c/c++-mode-setup)
+  ;; (add-hook 'c-mode-hook 'company-c/c++-mode-setup)
+  ;; (add-hook 'c++-mode-hook 'company-c/c++-mode-setup)
 
   (defun company-elisp-mode-setup ()
   	(set (make-local-variable 'company-backends) (list (append common-backends '(company-elisp)))))
