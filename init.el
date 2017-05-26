@@ -1,7 +1,5 @@
 ;; -*- coding:utf-8; -*-
 
-(package-initialize)
-
 (defun load-directory (dir)
   (let ((load-it (lambda (f)
 		   (load-file (concat (file-name-as-directory dir) f)))
