@@ -2,37 +2,6 @@
 
 (require 'use-package)
 
-(use-package company
-  :ensure t
-  :config
-  (setq company-minimum-prefix-length 1)
-  (setq company-global-modes t)
-
-  (setq common-backends '(company-capf
-						  company-dabbrev
-						  company-dabbrev-code
-						  company-files
-						  company-gtags
-						  company-keywords
-						  company-yasnippet))
-
-  (defun company-c/c++-mode-setup ()
-	(set (make-local-variable 'company-backends)
-		 (list (append common-backends '(
-										 ;; company-irony-c-headers
-										 company-irony
-										 )))))
-
-  (add-hook 'c-mode-hook 'company-c/c++-mode-setup)
-  (add-hook 'c++-mode-hook 'company-c/c++-mode-setup)
-
-  (defun company-elisp-mode-setup ()
-  	(set (make-local-variable 'company-backends)
-		 (list (append common-backends '(
-										 company-elisp
-										 )))))
-  (add-hook 'emacs-lisp-mode-hook 'company-elisp-mode-setup)
-  )
 
 (use-package company-lua
   :ensure t
@@ -67,7 +36,7 @@
 
 (use-package company-ycmd
   :ensure t
-  :disabled t
+  :disabled
   :config
   (company-ycmd-setup)
   )
