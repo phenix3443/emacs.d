@@ -267,6 +267,15 @@
 ;;   (color-theme-sanityinc-tomorrow--define-theme eighties)
 ;;   )
 
+(use-package cmake-mode
+  :mode
+  ("CMakeLists\\.txt\\'" . cmake-mode)
+  ("\\.cmake\\'" . cmake-mode)
+  :ensure t
+  :config
+
+  )
+
 (use-package company
   :ensure t
   :config
@@ -361,16 +370,22 @@
   :if (package-installed-p 'restclient)
   :ensure t)
 
+(use-package crontab-mode
+  :ensure t
+  :mode
+  ("\\.cron\\(tab\\)?\\'" . crontab-mode)
+  ("cron\\(tab\\)?\\."    . crontab-mode)
+  :config
+  )
 
 (use-package helm
   :ensure t
   :bind-keymap ("C-c h" . helm-command-map)
   :bind (
-	 :map helm-command-map
-	      ("M-x"     . helm-M-x)
-	      ("C-x C-b" . helm-buffer-list)
-	      ("C-x C-f" . helm-find-files)
-	      )
+	 ("M-x"     . helm-M-x)
+	 ("C-x C-b" . helm-buffer-list)
+	 ("C-x C-f" . helm-find-files)
+	 )
   :config
   (require 'helm-config)
 
@@ -762,6 +777,25 @@
   (setq org-babel-python-command "python3")
   )
 
+(use-package paredit
+  :ensure t
+  :bind(
+	:map paredit-mode-map
+	     ("C-)" . paredit-forward-slurp-sexp)
+	     ("C-(" . paredit-backward-slurp-sexp)
+	     ("C-}" . paredit-forward-barf-sexp)
+	     ("C-{" . paredit-backward-barf-sexp)
+	     ("C-<right>" . nil)
+	     ("C-<left>" .  nil)
+	     )
+  :config
+  (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
+
+  ;; (require-package 'paredit-everywhere)
+  ;; (add-hook 'prog-mode-hook 'paredit-everywhere-mode)
+  ;; (add-hook 'css-mode-hook 'paredit-everywhere-mode)
+  )
+
 (use-package pangu-spacing
   :ensure t
   :config
@@ -780,6 +814,12 @@
 (use-package restclient
   :ensure t
   :config)
+
+(use-package window-numbering
+  :ensure t
+  :config
+  (window-numbering-mode 1)
+  )
 
 (use-package yasnippet
   :ensure t
