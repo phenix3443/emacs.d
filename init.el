@@ -1,7 +1,7 @@
-					; -*- coding:utf-8; -*-
+;; -*- coding:utf-8; -*-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-					;              自定义函数            ;
+;;		              自定义函数
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun get-package-install-path(package-name)
@@ -13,8 +13,9 @@
 
 ;; (load-directory "~/.emacs.d/lisps/")	;load emacs builtin feature
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-					;              内建配置            ;
+;;		               内建配置
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;; 7.2 change the location of point
 (setq track-eol t)
 ;; 8.4 Completion
@@ -214,7 +215,7 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-					;              第三方插件包            ;
+;;		               第三方插件包
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package auctex
   :ensure t
@@ -237,9 +238,7 @@
   ;; 3.2 Folding
 
   ;; 4.1.2
-  (add-hook'LaTeX-mode-hook
-   '(lambda ()
-      (setq TeX-engine 'xelatex)))
+  (add-hook'LaTeX-mode-hook '(lambda () (setq TeX-engine 'xelatex)))
   (add-hook'LaTeX-mode-hook (lambda()
 			      (add-to-list'TeX-command-list '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t))
 			      (setq TeX-command-default "XeLaTeX")
@@ -264,6 +263,8 @@
 
 (use-package cdlatex
   :ensure t)
+
+
 ;; (use-package color-theme-sanityinc-tomorrow
 ;;   :ensure t
 ;;   :config
@@ -277,8 +278,8 @@
   ("\\.cmake\\'" . cmake-mode)
   :ensure t
   :config
-
   )
+
 
 (use-package company
   :ensure t
@@ -286,14 +287,12 @@
   (setq company-minimum-prefix-length 1)
   (setq company-show-numbers t)
   (global-company-mode)
-
   (setq company-common-backends '(company-capf company-dabbrev company-files :separate))
-
   (defun company-c/c++-mode-setup ()
     (let ((special-backends company-common-backends))
       (if (package-installed-p 'yasnippet)
 	  (add-to-list 'special-backends 'company-yasnippet))
-      (if (package-installed-p 'helml-gtags)
+      (if (package-installed-p 'helm-gtags)
 	  (add-to-list 'special-backends 'company-gtags))
       (if (package-installed-p 'company-irony)
 	  (add-to-list 'special-backends 'company-irony))
@@ -319,6 +318,8 @@
 
   (defun company-lua-mode-setup ()
     (let ((special-backends company-common-backends))
+      (if (package-installed-p 'helm-gtags)
+	  (add-to-list 'special-backends 'company-gtags))
       (if (package-installed-p 'company-lua)
 	  (add-to-list 'special-backends 'company-lua))
       (set (make-local-variable 'company-backends) (list special-backends))))
@@ -326,7 +327,7 @@
 
   (defun company-python-mode-hook ()
     (let ((special-backends company-common-backends))
-      (if (package-installed-p company-jedi)
+      (if (package-installed-p 'company-jedi)
 	  (add-to-list 'special-backends 'company-jedi))
       (set (make-local-variable 'company-backends) (list special-backends))))
   (add-hook 'python-mode-hook 'company-python-mode-hook)
@@ -363,6 +364,7 @@
   :config
   )
 
+
 (use-package company-quickhelp
   :ensure t
   :config
@@ -370,9 +372,11 @@
   (company-quickhelp-mode 1)
   )
 
+
 (use-package company-restclient
   :if (package-installed-p 'restclient)
   :ensure t)
+
 
 (use-package crontab-mode
   :ensure t
@@ -381,6 +385,27 @@
   ("cron\\(tab\\)?\\."    . crontab-mode)
   :config
   )
+
+
+(use-package guide-key
+  :ensure t
+  :config
+  (setq guide-key/guide-key-sequence t)
+
+  (setq guide-key/highlight-command-regexp
+		'("rectangle"
+		  ("register" . font-lock-type-face)
+		  ("bookmark" . "hot pink")))
+
+  (setq guide-key/idle-delay 0.5)
+
+  (setq guide-key/recursive-key-sequence-flag t)
+
+  (setq guide-key/popup-window-position 'bottom)
+
+  (guide-key-mode 1)
+  )
+
 
 (use-package helm
   :ensure t
@@ -437,10 +462,18 @@
 	      (define-key eshell-mode-map (kbd "C-c C-l")  'helm-eshell-history)))
   )
 
+
 (use-package helm-ag
   :ensure t
   :config
   )
+
+
+(use-package helm-descbinds
+  :ensure t
+  :config
+  (helm-descbinds-mode))
+
 
 (use-package helm-gtags
   :ensure t
@@ -450,53 +483,54 @@
    ;; '(helm-gtags-suggested-key-mapping t)
    )
   :bind (:map helm-gtags-mode-map
-			  ("C-c g a" . helm-gtags-tags-in-this-function)
-			  ("C-c g b" . helm-gtags-display-browser)
-			  ("C-c g c" . helm-gtags-clear-cache)
-			  ("C-c g d" . helm-gtags-clear-all-cache)
-			  ("C-c g f" . helm-gtags-find-files)
-			  ("C-c g g" . helm-gtags-create-tags)
-			  ("C-c g u" . helm-gtags-update-tags)
-			  ("C-c g j" . helm-gtags-select)
-			  ("C-c g p" . helm-gtags-pop-stack)
-			  ("C-c g q" . helm-gtags-clear-stack)
-			  ("C-c g Q" . helm-gtags-clear-all-stacks)
-			  ("C-c g s" . helm-gtags-find-symbol)
-			  ("C-c g r" . helm-gtags-find-rtag)
-			  ("C-c g t" . helm-gtags-find-tag)
-  			  ("C-c g ," . helm-gtags-find-tag-from-here)
-			  ("C-c g T" . helm-gtags-find-tag-other-window)
-			  ("C-c g R" . helm-gtags-resume)
-			  ("C-c g P" . helm-gtags-parse-file)
-			  ("C-c g S" . helm-gtags-find-pattern)
-			  ("C-c g ." . helm-gtags-dwim)
-			  ("C-c g <" . helm-gtags-previous-history)
-			  ("C-c g >" . helm-gtags-next-history)
-			  )
+	      ("C-c g a" . helm-gtags-tags-in-this-function)
+	      ("C-c g b" . helm-gtags-display-browser)
+	      ("C-c g c" . helm-gtags-clear-cache)
+	      ("C-c g d" . helm-gtags-clear-all-cache)
+	      ("C-c g f" . helm-gtags-find-files)
+	      ("C-c g g" . helm-gtags-create-tags)
+	      ("C-c g u" . helm-gtags-update-tags)
+	      ("C-c g j" . helm-gtags-select)
+	      ("C-c g p" . helm-gtags-pop-stack)
+	      ("C-c g q" . helm-gtags-clear-stack)
+	      ("C-c g Q" . helm-gtags-clear-all-stacks)
+	      ("C-c g s" . helm-gtags-find-symbol)
+	      ("C-c g r" . helm-gtags-find-rtag)
+	      ("C-c g t" . helm-gtags-find-tag)
+	      ("C-c g ," . helm-gtags-find-tag-from-here)
+	      ("C-c g T" . helm-gtags-find-tag-other-window)
+	      ("C-c g R" . helm-gtags-resume)
+	      ("C-c g P" . helm-gtags-parse-file)
+	      ("C-c g S" . helm-gtags-find-pattern)
+	      ("C-c g ." . helm-gtags-dwim)
+	      ("C-c g <" . helm-gtags-previous-history)
+	      ("C-c g >" . helm-gtags-next-history)
+	      )
   :config
   (add-hook 'prog-mode-hook 'helm-gtags-mode)
-
   (custom-set-variables
-   '(helm-gtags-parse-file 'root)
-   '(helm-gtags-ignore-case t)
-   '(helm-gtags-read-only t)
-   '(helm-gtags-use-input-at-cursor t)
-   '(helm-gtags-highlight-candidate t)
-   '(helm-gtags-display-style 'detail)
    '(helm-gtags-auto-update t)
-   '(helm-gtags-update-interval-second 60)
    '(helm-gtags-cache-select-result t)
-   '(helm-gtags-pulse-at-cursor t)
-   '(helm-gtags-fuzzy-match nil)
    '(helm-gtags-direct-helm-completing t)
+   '(helm-gtags-display-style 'detail)
+   '(helm-gtags-fuzzy-match nil)
+   '(helm-gtags-highlight-candidate t)
+   '(helm-gtags-ignore-case t)
+   '(helm-gtags-parse-file 'root)
+   '(helm-gtags-pulse-at-cursor t)
+   '(helm-gtags-read-only t)
+   '(helm-gtags-update-interval-second 60)
+   '(helm-gtags-use-input-at-cursor t)
    )
-)
+  )
+
 
 (use-package helm-projectile
   :ensure t
   :config
   (helm-projectile-on)
   )
+
 
 (use-package irony
   :ensure t
@@ -529,6 +563,7 @@
 ;;   :config
 ;;   (add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 
+
 (use-package lua-mode
   :ensure t
   :mode "\\.lua$"
@@ -537,6 +572,7 @@
   (setq lua-indent-level 4)
   (setq lua-indent-string-contents t)
   )
+
 
 (use-package magit
   :ensure t
@@ -549,23 +585,22 @@
 ;; (use-package perspective
 ;;   :ensure t)
 
-;; (use-package projectile
-;;   :ensure t
-;;   :config
-;;   (projectile-global-mode)
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-global-mode)
 
-;;   ;; indexing and caching
-;;   (when (equal system-type 'windows-nt)
-;; 	(setq projectile-indexing-method 'alien)
-;; 	(setq projectile-enable-caching t))
+  (when (equal system-type 'windows-nt)
+	(setq projectile-indexing-method 'alien)
+	(setq projectile-enable-caching t))
 
-;;   ;; switching projects
-;;   (setq projectile-switch-project-action 'helm-projectile)
+  ;; switching projects
+  (setq projectile-switch-project-action 'helm-projectile)
 
-;;   ;; completion
-;;   (setq projectile-completion-system 'helm)
+  ;; completion
+  (setq projectile-completion-system 'helm)
 
-;;   )
+  )
 
 ;; (use-package zenburn-theme
 ;;   :ensure t
@@ -573,6 +608,7 @@
 ;;   (add-to-list 'custom-theme-load-path (get-package-install-path "zenburn-theme"))
 ;;   (load-theme 'zenburn t)
 ;;   )
+
 
 (use-package moe-theme
   :ensure t
@@ -593,14 +629,16 @@
   (moe-dark)
   )
 
+
 (use-package org
   :ensure t
+  ;; :bind (
+  ;; 	 ("C-c '" . org-src-mode)
+  ;; 	 ("C-c l" . org-store-link)
+  ;; 	 ("C-c a" . org-agenda)
+  ;; 	 ("C-c b" . org-iswitchb)
+  ;; 	 )
   :config
-
-  (global-set-key "\C-c'" 'org-src-mode)
-  (global-set-key "\C-cl" 'org-store-link)
-  (global-set-key "\C-ca" 'org-agenda)
-  (global-set-key "\C-cb" 'org-iswitchb)
   (add-hook 'org-mode-hook 'turn-on-org-cdlatex)
 
   ;; 3 Tables
@@ -646,8 +684,7 @@
   (add-hook'org-mode-hook
    (lambda ()
      (setq org-latex-default-packages-alist
-	   (delete'("AUTO" "inputenc" t) org-latex-default-packages-alist))
-     ))
+	   (delete'("AUTO" "inputenc" t) org-latex-default-packages-alist))))
 
   (add-to-list 'org-latex-packages-alist '("" "xeCJK" t))
   (add-to-list 'org-latex-packages-alist '("" "listings" t))
@@ -781,6 +818,7 @@
   (setq org-babel-python-command "python3")
   )
 
+
 (use-package paredit
   :ensure t
   :bind(
@@ -807,17 +845,32 @@
   (global-pangu-spacing-mode 1)
   )
 
+
 ;; (use-package powerline
-;; 	:ensure t)
+;;   :ensure t
+;;   )
+
+
+(use-package protobuf-mode
+  :ensure t
+  :mode ".proto$"
+  :config
+  )
 
 (use-package restart-emacs
   :ensure t
   :config
   )
 
+
 (use-package restclient
   :ensure t
   :config)
+
+;; (use-package smart-mode-line
+;;   :ensure t
+;;   :config
+;;   )
 
 (use-package window-numbering
   :ensure t
