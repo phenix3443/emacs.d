@@ -180,6 +180,10 @@
 ;; (add-to-list 'electric-layout-rules '(?{ . around))
 (electric-layout-mode t)
 ;; (global-prettify-symbols-mode t)
+
+
+;; 27.1 Running Compilations under Emacs
+(setq compilation-scroll-output 'first-error)
 ;; 27.5 Finding Syntax Error on The Fly
 
 ;;29.5 Frame Title
