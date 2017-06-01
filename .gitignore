@@ -41,4 +41,5 @@ emacs-custom.el
 3rd-party/cedet
 .last-package-update-day
 iro
-/irony/bin/irony-server
+/irony
+*.orig
