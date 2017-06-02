@@ -261,6 +261,24 @@
   )
 
 
+(use-package auto-highlight-symbol
+  :ensure t
+  :config
+  (global-auto-highlight-symbol-mode t)
+  )
+
+
+(use-package cc-mode
+  :ensure t
+  :config
+  ;; (c-set-offset 'substatement-open 0)
+  ;; (setq c-basic-offset 8)
+  (setq c-default-style '((java-mode . "java")
+			  (awk-mode . "awk")
+			  (other . "linux")))
+  )
+
+
 (use-package cdlatex
   :ensure t)
 
@@ -628,6 +646,10 @@
 
   (moe-dark)
   )
+
+
+(use-package nginx-mode
+  :ensure t)
 
 
 (use-package org
