@@ -605,32 +605,18 @@
   (info-initialize)
   (add-to-list 'Info-directory-list (file-name-directory (find-library-name "magit"))))
 
-;; (use-package perspective
-;;   :ensure t)
 
-(use-package projectile
+(use-package multiple-cursors
   :ensure t
+  :bind (
+	 ("C-c m a" . mc/mark-all-like-this-symbol)
+  	 ("C-c m p" . mc/mark-previous-like-this-symbol)
+	 ("C-c m n" . mc/mark-next-like-this-symbol)
+	 ("C-c m l" . mc/edit-lines)
+	 ("C-c m ." . mc/mark-all-dwin)
+	 )
   :config
-  (projectile-global-mode)
-
-  (when (equal system-type 'windows-nt)
-    (setq projectile-indexing-method 'alien)
-    (setq projectile-enable-caching t))
-
-  ;; switching projects
-  (setq projectile-switch-project-action 'helm-projectile)
-
-  ;; completion
-  (setq projectile-completion-system 'helm)
-
   )
-
-;; (use-package zenburn-theme
-;;   :ensure t
-;;   :config
-;;   (add-to-list 'custom-theme-load-path (get-package-install-path "zenburn-theme"))
-;;   (load-theme 'zenburn t)
-;;   )
 
 
 (use-package moe-theme
@@ -875,9 +861,30 @@
   )
 
 
+;; (use-package perspective
+;;   :ensure t)
+
+
 ;; (use-package powerline
 ;;   :ensure t
 ;;   )
+
+
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-global-mode)
+
+  (when (equal system-type 'windows-nt)
+    (setq projectile-indexing-method 'alien)
+    (setq projectile-enable-caching t))
+
+  ;; switching projects
+  (setq projectile-switch-project-action 'helm-projectile)
+
+  ;; completion
+  (setq projectile-completion-system 'helm)
+  )
 
 
 (use-package protobuf-mode
@@ -885,6 +892,7 @@
   :mode ".proto$"
   :config
   )
+
 
 (use-package restart-emacs
   :ensure t
@@ -896,10 +904,12 @@
   :ensure t
   :config)
 
+
 (use-package smart-mode-line
   :ensure t
   :config
   )
+
 
 (use-package window-numbering
   :ensure t
@@ -907,9 +917,10 @@
   (window-numbering-mode 1)
   )
 
+
 (use-package yasnippet
   :ensure t
-  ;; :bind (
+  ;; :bind(
   ;; 		 :map yas-minor-mode-map
   ;; 		 	  ;; Remove Yasnippet's default tab key binding
   ;; 		 	  ("TAB" . nil)
@@ -920,6 +931,14 @@
   :config
   (yas-global-mode 1)
   )
+
+
+;; (use-package zenburn-theme
+;;   :ensure t
+;;   :config
+;;   (add-to-list 'custom-theme-load-path (get-package-install-path "zenburn-theme"))
+;;   (load-theme 'zenburn t)
+;;   )
 
 ;; load third party packages
 ;; (load-directory "~/.emacs.d/load.d")
