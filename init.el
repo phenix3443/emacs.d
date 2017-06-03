@@ -305,6 +305,7 @@
   (setq company-minimum-prefix-length 1)
   (setq company-show-numbers t)
   (global-company-mode)
+
   (setq company-common-backends '(company-capf company-dabbrev company-files :separate))
   (if (package-installed-p 'yasnippet)
       (add-to-list 'company-common-backends 'company-yasnippet))
@@ -337,8 +338,6 @@
 
   (defun company-lua-mode-setup ()
     (let ((special-backends company-common-backends))
-      (if (package-installed-p 'helm-gtags)
-	  (add-to-list 'special-backends 'company-gtags))
       (if (package-installed-p 'company-lua)
 	  (add-to-list 'special-backends 'company-lua))
       (set (make-local-variable 'company-backends) (list special-backends))))
@@ -354,7 +353,7 @@
   (defun company-restclient-mode-setup()
     (let ((special-backends company-common-backends))
       (if (package-installed-p 'company-restclient)
-	  (add-to-list 'special-backends 'company-cmake))
+	  (add-to-list 'special-backends 'company-restclient))
       (set (make-local-variable 'company-backends) (list special-backends))))
   (add-hook 'restclient-mode-hook 'company-restclient-mode-setup)
 
@@ -412,9 +411,9 @@
   (setq guide-key/guide-key-sequence t)
 
   (setq guide-key/highlight-command-regexp
-		'("rectangle"
-		  ("register" . font-lock-type-face)
-		  ("bookmark" . "hot pink")))
+	'("rectangle"
+	  ("register" . font-lock-type-face)
+	  ("bookmark" . "hot pink")))
 
   (setq guide-key/idle-delay 0.5)
 
@@ -527,19 +526,19 @@
 	      ("C-c g >" . helm-gtags-next-history)
 	      )
   :config
-
   (custom-set-variables
    '(helm-gtags-auto-update t)
-   '(helm-gtags-cache-select-result t)
+   '(helm-gtags-cache-select-result nil)
    '(helm-gtags-direct-helm-completing t)
    '(helm-gtags-display-style 'detail)
    '(helm-gtags-fuzzy-match nil)
    '(helm-gtags-highlight-candidate t)
-   '(helm-gtags-ignore-case t)
+   '(helm-gtags-ignore-case nil)
    '(helm-gtags-parse-file 'root)
+   '(helm-gtags-path-style 'root)
    '(helm-gtags-pulse-at-cursor t)
-   '(helm-gtags-read-only t)
-   '(helm-gtags-update-interval-second 60)
+   '(helm-gtags-read-only nil)
+   '(helm-gtags-update-interval-second 30)
    '(helm-gtags-use-input-at-cursor t)
    )
   )
@@ -615,8 +614,8 @@
   (projectile-global-mode)
 
   (when (equal system-type 'windows-nt)
-	(setq projectile-indexing-method 'alien)
-	(setq projectile-enable-caching t))
+    (setq projectile-indexing-method 'alien)
+    (setq projectile-enable-caching t))
 
   ;; switching projects
   (setq projectile-switch-project-action 'helm-projectile)
@@ -897,10 +896,10 @@
   :ensure t
   :config)
 
-;; (use-package smart-mode-line
-;;   :ensure t
-;;   :config
-;;   )
+(use-package smart-mode-line
+  :ensure t
+  :config
+  )
 
 (use-package window-numbering
   :ensure t
