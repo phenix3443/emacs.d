@@ -360,30 +360,31 @@
   )
 
 (use-package company-irony
-  :if (package-installed-p 'irony)
+  :if (and (package-installed-p 'company) (package-installed-p 'irony))
   :ensure t
   :config
   )
 
 (use-package company-irony-c-headers
-  :if (package-installed-p 'irony)
+  :if (and (package-installed-p 'company) (package-installed-p 'irony))
   :ensure t
   :config)
 
 (use-package company-jedi
-  :if (package-installed-p 'jedi)
+  :if (and (package-installed-p 'company) (package-installed-p 'jedi))
   :ensure t
   :config
   )
 
 (use-package company-lua
-  :if (package-installed-p 'lua-mode)
+  :if (and (package-installed-p 'company) (package-installed-p 'lua-mode))
   :ensure t
   :config
   )
 
 
 (use-package company-quickhelp
+  :if (package-installed-p 'company)
   :ensure t
   :config
   (setq company-quickhelp-delay 2)
@@ -392,7 +393,7 @@
 
 
 (use-package company-restclient
-  :if (package-installed-p 'restclient)
+  :if (and (package-installed-p 'company) (package-installed-p 'restclient))
   :ensure t)
 
 
@@ -425,26 +426,34 @@
   )
 
 
-(use-package helm
-  :ensure t
-  :bind-keymap ("C-c h" . helm-command-map)
-  :bind (
-	 ("M-x"     . helm-M-x)
-	 ("C-x C-b" . helm-buffer-list)
-	 ("C-x C-f" . helm-find-files)
-	 )
-  :config
-  (require 'helm-config)
+;; (defvar helm-command-prefix-key)
+;; (setq helm-command-prefix-key nil)
 
+;; (use-package helm-config
+;;   :demand
+;;   :bind-keymap ("C-c h" . helm-command-map)
+;;   )
+
+(use-package helm
+  :diminish helm-mode
+  :ensure t
+  :init
+  (require 'helm-config)
+  :bind-keymap ("C-c h" . helm-command-map)
+  :bind
+  (
+   ("C-x b" . helm-buffers-list)
+   ;; ("M-y" . helm-show-kill-ring)
+   ("M-x" . helm-M-x)
+   )
+  :config
   ;; enable modes
   (helm-mode 1)
   (helm-adaptive-mode 1)
   ;; enable fuzzy matching globally in all functions helmized by helm-mode
   (setq helm-mode-fuzzy-match t)
   (setq helm-completion-in-region-fuzzy-match t)
-
   (helm-autoresize-mode 1)
-
   (setq helm-candidate-number-limit 100)
 
   ;; use locate by regex
@@ -477,23 +486,25 @@
 
   (add-hook 'eshell-mode-hook
 	    (lambda ()
-	      (define-key eshell-mode-map (kbd "C-c C-l")  'helm-eshell-history)))
-  )
+	      (define-key eshell-mode-map (kbd "C-c C-l")  'helm-eshell-history))))
 
 
 (use-package helm-ag
+  :if (package-installed-p 'helm)
   :ensure t
   :config
   )
 
 
 (use-package helm-descbinds
+  :if (package-installed-p 'helm)
   :ensure t
   :config
   (helm-descbinds-mode))
 
 
 (use-package helm-gtags
+  :if (package-installed-p 'helm)
   :ensure t
   :init
   (add-hook 'prog-mode-hook 'helm-gtags-mode)
@@ -545,6 +556,7 @@
 
 
 (use-package helm-projectile
+  :if (and (package-installed-p 'helm) (package-installed-p 'projectile))
   :ensure t
   :config
   (helm-projectile-on)
@@ -608,13 +620,16 @@
 
 (use-package multiple-cursors
   :ensure t
-  :bind (
-	 ("C-c m a" . mc/mark-all-like-this-symbol)
-  	 ("C-c m p" . mc/mark-previous-like-this-symbol)
-	 ("C-c m n" . mc/mark-next-like-this-symbol)
-	 ("C-c m l" . mc/edit-lines)
-	 ("C-c m ." . mc/mark-all-dwin)
-	 )
+  :bind
+  (("C-c m t" . mc/mark-all-like-this)
+    ("C-c m m" . mc/mark-all-like-this-dwim)
+    ("C-c m l" . mc/edit-lines)
+    ("C-c m e" . mc/edit-ends-of-lines)
+    ("C-c m a" . mc/edit-beginnings-of-lines)
+    ("C-c m n" . mc/mark-next-like-this)
+    ("C-c m p" . mc/mark-previous-like-this)
+    ("C-c m s" . mc/mark-sgml-tag-pair)
+    ("C-c m d" . mc/mark-all-like-this-in-defun))
   :config
   )
 
@@ -622,7 +637,8 @@
 (use-package moe-theme
   :ensure t
   :config
-  (add-to-list 'custom-theme-load-path (get-package-install-path "moe-theme"))
+  ;; (load-theme 'moe-dark)
+  ;; (add-to-list 'custom-theme-load-path (get-package-install-path "moe-theme"))
   (setq moe-theme-highlight-buffer-id t)
 
   (if (package-installed-p 'markdown-mode)
@@ -879,12 +895,14 @@
     (setq projectile-indexing-method 'alien)
     (setq projectile-enable-caching t))
 
-  ;; switching projects
-  (setq projectile-switch-project-action 'helm-projectile)
 
-  ;; completion
-  (setq projectile-completion-system 'helm)
-  )
+  (if (package-installed-p 'helm)
+      (progn
+       ;; switching projects
+       (setq projectile-switch-project-action 'helm-projectile)
+       ;; completion
+       (setq projectile-completion-system 'helm)
+       )))
 
 
 (use-package protobuf-mode
