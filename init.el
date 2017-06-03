@@ -877,9 +877,17 @@
   )
 
 
-;; (use-package perspective
-;;   :ensure t)
+(use-package perspective
+  :ensure t
+  :config
+  (persp-mode)
+  )
 
+(use-package persp-projectile
+  :if (and (package-installed-p 'perspective) (package-installed-p 'projectile))
+  :ensure t
+  :config
+  )
 
 ;; (use-package powerline
 ;;   :ensure t
@@ -891,18 +899,20 @@
   :config
   (projectile-global-mode)
 
-  (when (equal system-type 'windows-nt)
-    (setq projectile-indexing-method 'alien)
-    (setq projectile-enable-caching t))
+  (if (equal system-type 'windows-nt)
+      (progn
+	(setq projectile-indexing-method 'alien)
+	(setq projectile-enable-caching t)
+	))
 
-
-  (if (package-installed-p 'helm)
+  (if (package-installed-p 'helm-projectile)
       (progn
        ;; switching projects
        (setq projectile-switch-project-action 'helm-projectile)
        ;; completion
        (setq projectile-completion-system 'helm)
-       )))
+       ))
+  )
 
 
 (use-package protobuf-mode
