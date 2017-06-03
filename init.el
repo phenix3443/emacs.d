@@ -497,6 +497,7 @@
 (use-package helm-gtags
   :ensure t
   :init
+  (add-hook 'prog-mode-hook 'helm-gtags-mode)
   (custom-set-variables
    '(helm-gtags-prefix-key "\C-c g")
    ;; '(helm-gtags-suggested-key-mapping t)
@@ -526,7 +527,7 @@
 	      ("C-c g >" . helm-gtags-next-history)
 	      )
   :config
-  (add-hook 'prog-mode-hook 'helm-gtags-mode)
+
   (custom-set-variables
    '(helm-gtags-auto-update t)
    '(helm-gtags-cache-select-result t)
@@ -554,8 +555,9 @@
 (use-package irony
   :ensure t
   :init
-  (add-hook 'c++-mode-hook 'irony-mode)
   (add-hook 'c-mode-hook 'irony-mode)
+  (add-hook 'c++-mode-hook 'irony-mode)
+  (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
   ;; (add-hook 'objc-mode-hook 'irony-mode)
   :config
   ;; replace the `completion-at-point' and `complete-symbol' bindings in
@@ -567,15 +569,18 @@
   ;;     'irony-completion-at-point-async))
 
   ;; (add-hook 'irony-mode-hook 'my-irony-mode-hook)
-  (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+
   )
 
 
 (use-package irony-eldoc
   :if (package-installed-p 'irony)
   :ensure t
+  :init
+  (add-hook 'irony-mode-hook 'irony-eldoc)
   :config
-  (add-hook 'irony-mode-hook 'irony-eldoc))
+  )
+
 
 ;; (use-package flycheck-irony
 ;;   :ensure t
@@ -661,8 +666,10 @@
   ;; 	 ("C-c a" . org-agenda)
   ;; 	 ("C-c b" . org-iswitchb)
   ;; 	 )
-  :config
+  :init
   (add-hook 'org-mode-hook 'turn-on-org-cdlatex)
+
+  :config
 
   ;; 3 Tables
   (setq org-ascii-table-keep-all-vertical-lines t)
@@ -853,13 +860,13 @@
 	     ("C-<right>" . nil)
 	     ("C-<left>" .  nil)
 	     )
-  :config
+  :init
   (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
-
+  :config
   ;; (require-package 'paredit-everywhere)
-  ;; (add-hook 'prog-mode-hook 'paredit-everywhere-mode)
   ;; (add-hook 'css-mode-hook 'paredit-everywhere-mode)
   )
+
 
 (use-package pangu-spacing
   :ensure t
