@@ -447,6 +447,7 @@
    ("C-x b" . helm-buffers-list)
    ;; ("M-y" . helm-show-kill-ring)
    ("M-x" . helm-M-x)
+   ("C-x C-f" . helm-find-files)
    )
   :config
   ;; enable modes
@@ -606,7 +607,7 @@
   :mode "\\.lua$"
   :interpreter "lua"
   :config
-  (setq lua-indent-level 4)
+  (setq lua-indent-level 8)
   (setq lua-indent-string-contents t)
   )
 
