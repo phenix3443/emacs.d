@@ -445,6 +445,7 @@
    ("C-x b" . helm-buffers-list)
    ;; ("M-y" . helm-show-kill-ring)
    ("M-x" . helm-M-x)
+   ("C-x C-f" . helm-find-files)
    )
   :config
   ;; enable modes
