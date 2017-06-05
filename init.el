@@ -97,9 +97,11 @@
 (set-scroll-bar-mode nil)
 ;; 21.13 Drag and  Drop
 ;; 21.14 Menu Bars
-;; (menu-bar-mode nil)
+;; (menu-bar-mode -1)
 ;; 21.15 Toolbar
-(tool-bar-mode nil)
+(if window-system
+    (tool-bar-mode -1)
+)
 
 ;; 21.16 Dialog Boxes
 ;; 21.17 Tooltips
@@ -877,16 +879,10 @@
   )
 
 
-(use-package perspective
+(use-package persp-mode
   :ensure t
   :config
-  (persp-mode)
-  )
-
-(use-package persp-projectile
-  :if (and (package-installed-p 'perspective) (package-installed-p 'projectile))
-  :ensure t
-  :config
+  (persp-mode 1)
   )
 
 ;; (use-package powerline
