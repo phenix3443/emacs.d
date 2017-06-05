@@ -605,7 +605,7 @@
   :mode "\\.lua$"
   :interpreter "lua"
   :config
-  (setq lua-indent-level 4)
+  (setq lua-indent-level 8)
   (setq lua-indent-string-contents t)
   )
 
