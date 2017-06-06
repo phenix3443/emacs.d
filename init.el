@@ -607,7 +607,7 @@
   :mode "\\.lua$"
   :interpreter "lua"
   :config
-  (setq lua-indent-level 8)
+  (setq lua-indent-level 4)
   (setq lua-indent-string-contents t)
   )
 
@@ -880,11 +880,11 @@
   )
 
 
-(use-package persp-mode
-  :ensure t
-  :config
-  (persp-mode 1)
-  )
+;; (use-package persp-mode
+;;   :ensure t
+;;   :config
+;;   (persp-mode 1)
+;;   )
 
 ;; (use-package powerline
 ;;   :ensure t
