@@ -222,6 +222,15 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;		               第三方插件包
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; (use-package anaconda-mode
+;;   :ensure t
+;;   :init
+;;   (add-hook 'python-mode-hook 'anaconda-mode)
+;;   (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
+;;   :config
+;;   )
+
+
 (use-package auctex
   :ensure t
   :mode ("\\.tex\\'" . latex-mode)
@@ -311,6 +320,7 @@
   (setq company-show-numbers t)
   (global-company-mode)
 
+  ;; (setq company-common-backends '(company-capf company-dabbrev company-files))
   (setq company-common-backends '(company-capf company-dabbrev company-files :separate))
   (if (package-installed-p 'yasnippet)
       (add-to-list 'company-common-backends 'company-yasnippet))
@@ -352,6 +362,10 @@
     (let ((special-backends company-common-backends))
       (if (package-installed-p 'company-jedi)
 	  (add-to-list 'special-backends 'company-jedi))
+
+      (if (package-installed-p 'company-anaconda)
+	  (add-to-list 'special-backends 'company-anaconda))
+
       (set (make-local-variable 'company-backends) (list special-backends))))
   (add-hook 'python-mode-hook 'company-python-mode-hook)
 
@@ -363,6 +377,13 @@
   (add-hook 'restclient-mode-hook 'company-restclient-mode-setup)
 
   )
+
+;; (use-package company-anaconda
+;;   :ensure t
+;;   :if (and (package-installed-p 'company) (package-installed-p 'anaconda-mode))
+;;   :init
+;;   :config
+;;   )
 
 (use-package company-irony
   :if (and (package-installed-p 'company) (package-installed-p 'irony))
@@ -603,6 +624,19 @@
 ;;   :ensure t
 ;;   :config
 ;;   (add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
+
+
+(use-package jedi
+  :ensure t
+  :init
+  (add-hook 'python-mode-hook 'jedi:setup)
+  :config
+  (setq jedi:Complete-on-dot t)
+
+  (setq jedi:setup-keys t)                      ; optional
+  (setq jedi:complete-on-dot t)                 ; optional
+  )
+
 
 
 (use-package lua-mode
@@ -918,6 +952,15 @@
 (use-package protobuf-mode
   :ensure t
   :mode ".proto$"
+  :config
+  )
+
+
+(use-package python-mode
+  :ensure t
+  :disabled t
+  :mode ".py$"
+  :interpreter "python"
   :config
   )
 
