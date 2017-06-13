@@ -930,9 +930,12 @@
 ;;   (persp-mode 1)
 ;;   )
 
-;; (use-package powerline
-;;   :ensure t
-;;   )
+(use-package powerline
+  :disabled t
+  :ensure t
+  :config
+  (powerline-default-theme)
+  )
 
 
 (use-package projectile
@@ -986,6 +989,8 @@
 (use-package smart-mode-line
   :ensure t
   :config
+  (setq sml/no-confirm-load-theme t)
+  (sml/setup)
   )
 
 
