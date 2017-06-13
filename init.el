@@ -222,13 +222,14 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;		               第三方插件包
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (use-package anaconda-mode
-;;   :ensure t
-;;   :init
-;;   (add-hook 'python-mode-hook 'anaconda-mode)
-;;   (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
-;;   :config
-;;   )
+(use-package anaconda-mode
+  :ensure t
+  :disabled t
+  :init
+  (add-hook 'python-mode-hook 'anaconda-mode)
+  (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
+  :config
+  )
 
 
 (use-package auctex
@@ -397,9 +398,12 @@
   :config)
 
 (use-package company-jedi
-  :if (and (package-installed-p 'company) (package-installed-p 'jedi))
+  :if (and (package-installed-p 'company))
   :ensure t
   :config
+  (setq jedi:complete-on-dot t)
+
+
   )
 
 (use-package company-lua
@@ -430,6 +434,12 @@
   ("cron\\(tab\\)?\\."    . crontab-mode)
   :config
   )
+
+
+;; (use-package elpy
+;;   :ensure t
+;;   :config
+;;   (elpy-enable))
 
 
 (use-package guide-key
@@ -626,16 +636,13 @@
 ;;   (add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 
 
-(use-package jedi
-  :ensure t
-  :init
-  (add-hook 'python-mode-hook 'jedi:setup)
-  :config
-  (setq jedi:Complete-on-dot t)
-
-  (setq jedi:setup-keys t)                      ; optional
-  (setq jedi:complete-on-dot t)                 ; optional
-  )
+;; (use-package jedi
+;;   :ensure t
+;;   :init
+;;   (add-hook 'python-mode-hook 'jedi:setup)
+;;   :config
+;;   ;; (setq jedi:Complete-on-dot t)
+;;   )
 
 
 
