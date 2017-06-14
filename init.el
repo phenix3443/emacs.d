@@ -1,5 +1,8 @@
+;;; package -- Summary
 ;; -*- coding:utf-8; -*-
+;;; Commentary:
 
+;;; code:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;		              自定义函数
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -8,7 +11,10 @@
   (seq-find (lambda (x) (string-match package-name x)) load-path))
 
 (defun load-directory (dir)
-  (let ((load-it (lambda (f) (load-file (concat (file-name-as-directory dir) f)))))
+  (let (
+	(load-it (lambda (f)
+		   (load-file (concat (file-name-as-directory dir) f))))
+	)
     (mapc load-it (directory-files dir nil "\\.el$"))))
 
 ;; (load-directory "~/.emacs.d/lisps/")	;load emacs builtin feature
@@ -222,14 +228,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;		               第三方插件包
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package anaconda-mode
-  :ensure t
-  :disabled t
-  :init
-  (add-hook 'python-mode-hook 'anaconda-mode)
-  (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
-  :config
-  )
 
 
 (use-package auctex
@@ -321,8 +319,8 @@
   (setq company-show-numbers t)
   (global-company-mode)
 
-  ;; (setq company-common-backends '(company-capf company-dabbrev company-files))
-  (setq company-common-backends '(company-capf company-dabbrev company-files :separate))
+  (setq company-common-backends '(company-capf company-dabbrev company-files))
+  ;; (setq company-common-backends '(company-capf company-dabbrev company-files :separate))
   (if (package-installed-p 'yasnippet)
       (add-to-list 'company-common-backends 'company-yasnippet))
   (if (package-installed-p 'helm-gtags)
@@ -364,9 +362,6 @@
       (if (package-installed-p 'company-jedi)
 	  (add-to-list 'special-backends 'company-jedi))
 
-      (if (package-installed-p 'company-anaconda)
-	  (add-to-list 'special-backends 'company-anaconda))
-
       (set (make-local-variable 'company-backends) (list special-backends))))
   (add-hook 'python-mode-hook 'company-python-mode-hook)
 
@@ -379,12 +374,6 @@
 
   )
 
-;; (use-package company-anaconda
-;;   :ensure t
-;;   :if (and (package-installed-p 'company) (package-installed-p 'anaconda-mode))
-;;   :init
-;;   :config
-;;   )
 
 (use-package company-irony
   :if (and (package-installed-p 'company) (package-installed-p 'irony))
@@ -402,8 +391,6 @@
   :ensure t
   :config
   (setq jedi:complete-on-dot t)
-
-
   )
 
 (use-package company-lua
@@ -436,11 +423,11 @@
   )
 
 
-;; (use-package elpy
-;;   :ensure t
-;;   :config
-;;   (elpy-enable))
-
+(use-package flycheck
+  :ensure t
+  :config
+  (global-flycheck-mode t)
+  )
 
 (use-package guide-key
   :ensure t
@@ -475,7 +462,7 @@
   :ensure t
   :init
   (require 'helm-config)
-  :bind-keymap ("C-c h" . helm-command-map)
+  :bind-keymap ("C-c h" . helm-command-map);
   :bind
   (
    ("C-x b" . helm-buffers-list)
@@ -634,16 +621,6 @@
 ;;   :ensure t
 ;;   :config
 ;;   (add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
-
-
-;; (use-package jedi
-;;   :ensure t
-;;   :init
-;;   (add-hook 'python-mode-hook 'jedi:setup)
-;;   :config
-;;   ;; (setq jedi:Complete-on-dot t)
-;;   )
-
 
 
 (use-package lua-mode
