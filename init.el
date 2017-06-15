@@ -11,10 +11,7 @@
   (seq-find (lambda (x) (string-match package-name x)) load-path))
 
 (defun load-directory (dir)
-  (let (
-	(load-it (lambda (f)
-		   (load-file (concat (file-name-as-directory dir) f))))
-	)
+  (let ((load-it (lambda (f) (load-file (concat (file-name-as-directory dir) f)))))
     (mapc load-it (directory-files dir nil "\\.el$"))))
 
 ;; (load-directory "~/.emacs.d/lisps/")	;load emacs builtin feature
@@ -425,8 +422,10 @@
 
 (use-package flycheck
   :ensure t
+  :init
+  (global-flycheck-mode)
   :config
-  (global-flycheck-mode t)
+
   )
 
 (use-package guide-key
