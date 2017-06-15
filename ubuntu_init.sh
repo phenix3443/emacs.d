@@ -25,7 +25,11 @@ sudo apt-get install -y  clang llvm libclang-dev
 #for lua
 sudo apt install luarocks
 # for flycheck
+sudo apt install shellcheck
+sudo apt install cppcheck
 sudo pip install pylint flake8
 sudo luarocks install luacheck
+
+
 echo Prepare work has Done successfully!
 echo Start emacs and wait a moment for installing packages from ELPA
