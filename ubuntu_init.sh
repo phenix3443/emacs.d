@@ -29,7 +29,10 @@ sudo apt install shellcheck
 sudo apt install cppcheck
 sudo pip install pylint flake8
 sudo luarocks install luacheck
-
+# for shellcheck
+# sudo apt install cabal-install
+# git clone git@github.com:koalaman/shellcheck.git
+# cd shellcheck && cabal install
 
 echo Prepare work has Done successfully!
 echo Start emacs and wait a moment for installing packages from ELPA
