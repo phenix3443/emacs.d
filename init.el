@@ -293,12 +293,15 @@
   :ensure t)
 
 
-;; (use-package color-theme-sanityinc-tomorrow
-;;   :ensure t
-;;   :config
-;;   (add-to-list 'custom-theme-load-path (get-package-install-path "color-theme-sanityinc-tomorrow"))
-;;   (color-theme-sanityinc-tomorrow--define-theme eighties)
-;;   )
+(use-package clang-format
+  :ensure t
+  :bind (("C-c i" . clang-format-region)
+	 ("C-c b" . clang-format-buffer))
+
+  :config
+  (setq clang-format-style "google")
+  )
+
 
 (use-package cmake-mode
   :mode
