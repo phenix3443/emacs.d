@@ -296,7 +296,7 @@
 (use-package clang-format
   :ensure t
   :bind (("C-c i" . clang-format-region)
-	 ("C-c b" . clang-format-buffer))
+  	 ("C-c b" . clang-format-buffer))
 
   :config
   (setq clang-format-style "google")
@@ -963,6 +963,17 @@
 (use-package restclient
   :ensure t
   :config)
+
+
+(use-package smart-comment
+  :ensure t
+  :bind ("M-;" . smart-comment))
+
+
+(use-package smart-compile
+  :ensure t
+  :config
+  )
 
 
 (use-package smart-mode-line
