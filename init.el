@@ -428,8 +428,15 @@
   :init
   (global-flycheck-mode)
   :config
-
+  ;; (setq flycheck-clang-include-path '("/usr/local/include/"))
   )
+
+
+(use-package flycheck-irony
+  :ensure t
+  :config
+  (add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
+
 
 (use-package guide-key
   :ensure t
@@ -451,6 +458,9 @@
   )
 
 
+(use-package header2
+  :ensure t
+  )
 ;; (defvar helm-command-prefix-key)
 ;; (setq helm-command-prefix-key nil)
 
@@ -570,7 +580,7 @@
    '(helm-gtags-display-style 'detail)
    '(helm-gtags-fuzzy-match nil)
    '(helm-gtags-highlight-candidate t)
-   '(helm-gtags-ignore-case nil)
+   '(helm-gtags-ignore-case t)
    '(helm-gtags-parse-file 'root)
    '(helm-gtags-path-style 'root)
    '(helm-gtags-pulse-at-cursor t)
@@ -617,12 +627,6 @@
   (add-hook 'irony-mode-hook 'irony-eldoc)
   :config
   )
-
-
-;; (use-package flycheck-irony
-;;   :ensure t
-;;   :config
-;;   (add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 
 
 (use-package lua-mode

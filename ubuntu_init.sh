@@ -29,6 +29,7 @@ sudo apt install shellcheck
 sudo apt install cppcheck
 sudo pip install pylint flake8
 sudo luarocks install luacheck
+sudo apt install cppcheck
 # for shellcheck
 # sudo apt install cabal-install
 # git clone git@github.com:koalaman/shellcheck.git
