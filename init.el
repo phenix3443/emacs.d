@@ -114,12 +114,12 @@
 ;; 21.20 Text-Only Mouse
 
 ;; 24.3 Tabs vs Spaces
-;; (setq-default indent-tabs-mode t)
+(setq-default indent-tabs-mode nil)
 
-;; (setq-default tab-width 4)
+(setq-default tab-width 4)
 ;; (setq-default tab-stop-list (number-sequelnce 4 120 4))
 ;; 24.4 Convenience Features for Indentation
-;; (setq tab-always-indent nil)
+(setq tab-always-indent 'complete)
 (electric-indent-mode t)
 ;; 25.2 sentences
 (setq sentence-end "\\([。！？]\\|……\\|[.?!][]\"')}]*\\($\\|[ \t]\\)\\)[ \t\n]*")
