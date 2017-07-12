@@ -104,7 +104,7 @@
 ;; 21.15 Toolbar
 (if window-system
     (tool-bar-mode -1)
-)
+  )
 
 ;; 21.16 Dialog Boxes
 ;; 21.17 Tooltips
@@ -114,8 +114,7 @@
 ;; 21.20 Text-Only Mouse
 
 ;; 24.3 Tabs vs Spaces
-(setq-default indent-tabs-mode nil)
-
+(setq-default indent-tabs-mode 'complete)
 (setq-default tab-width 4)
 ;; (setq-default tab-stop-list (number-sequelnce 4 120 4))
 ;; 24.4 Convenience Features for Indentation
@@ -208,11 +207,11 @@
 (require 'package)
 (setq package-enable-at-startup nil)
 (setq package-archives '(
-			 ("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-			 ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-			 ("Marmalade" ."http://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/")
-			 ("Org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
-			 ))
+						 ("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+						 ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+						 ("Marmalade" ."http://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/")
+						 ("Org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+						 ))
 (package-initialize)
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -250,12 +249,12 @@
   ;; 4.1.2
   (add-hook'LaTeX-mode-hook '(lambda () (setq TeX-engine 'xelatex)))
   (add-hook'LaTeX-mode-hook (lambda()
-			      (add-to-list'TeX-command-list '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t))
-			      (setq TeX-command-default "XeLaTeX")
-			      (setq TeX-save-query  nil )
-			      (setq TeX-show-compilation nil)
-			      (flyspell-mode t)
-			      ))
+							  (add-to-list'TeX-command-list '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t))
+							  (setq TeX-command-default "XeLaTeX")
+							  (setq TeX-save-query  nil )
+							  (setq TeX-show-compilation nil)
+							  (flyspell-mode t)
+							  ))
 
 
   (setq tex-compile-commands '(("xelatex %r")))
@@ -284,8 +283,8 @@
   ;; (c-set-offset 'substatement-open 0)
   ;; (setq c-basic-offset 8)
   (setq c-default-style '((java-mode . "java")
-			  (awk-mode . "awk")
-			  (other . "linux")))
+						  (awk-mode . "awk")
+						  (other . "linux")))
   )
 
 
@@ -296,7 +295,7 @@
 (use-package clang-format
   :ensure t
   :bind (("C-c i" . clang-format-region)
-  	 ("C-c b" . clang-format-buffer))
+		 ("C-c b" . clang-format-buffer))
 
   :config
   (setq clang-format-style "google")
@@ -329,9 +328,9 @@
   (defun company-c/c++-mode-setup ()
     (let ((special-backends company-common-backends))
       (if (package-installed-p 'company-irony)
-	  (add-to-list 'special-backends 'company-irony))
+		  (add-to-list 'special-backends 'company-irony))
       (if (package-installed-p 'company-irony-c-headers)
-	  (add-to-list 'special-backends 'company-irony-c-headers))
+		  (add-to-list 'special-backends 'company-irony-c-headers))
       (set (make-local-variable 'company-backends) (list special-backends))))
 
   (add-hook 'c-mode-hook 'company-c/c++-mode-setup)
@@ -340,7 +339,7 @@
   (defun company-cmake-mode-setup()
     (let ((special-backends company-common-backends))
       (if (package-install-p 'company-cmake)
-  	  (add-to-list 'special-backends 'company-cmake))
+		  (add-to-list 'special-backends 'company-cmake))
       (set (make-local-variable 'company-backends) (list special-backends))))
   (add-hook 'cmake-mode 'company-cmake-mode-setup)
 
@@ -353,14 +352,14 @@
   (defun company-lua-mode-setup ()
     (let ((special-backends company-common-backends))
       (if (package-installed-p 'company-lua)
-	  (add-to-list 'special-backends 'company-lua))
+		  (add-to-list 'special-backends 'company-lua))
       (set (make-local-variable 'company-backends) (list special-backends))))
   (add-hook 'lua-mode-hook 'company-lua-mode-setup)
 
   (defun company-python-mode-hook ()
     (let ((special-backends company-common-backends))
       (if (package-installed-p 'company-jedi)
-	  (add-to-list 'special-backends 'company-jedi))
+		  (add-to-list 'special-backends 'company-jedi))
 
       (set (make-local-variable 'company-backends) (list special-backends))))
   (add-hook 'python-mode-hook 'company-python-mode-hook)
@@ -368,7 +367,7 @@
   (defun company-restclient-mode-setup()
     (let ((special-backends company-common-backends))
       (if (package-installed-p 'company-restclient)
-	  (add-to-list 'special-backends 'company-restclient))
+		  (add-to-list 'special-backends 'company-restclient))
       (set (make-local-variable 'company-backends) (list special-backends))))
   (add-hook 'restclient-mode-hook 'company-restclient-mode-setup)
 
@@ -444,9 +443,9 @@
   (setq guide-key/guide-key-sequence t)
 
   (setq guide-key/highlight-command-regexp
-	'("rectangle"
-	  ("register" . font-lock-type-face)
-	  ("bookmark" . "hot pink")))
+		'("rectangle"
+		  ("register" . font-lock-type-face)
+		  ("bookmark" . "hot pink")))
 
   (setq guide-key/idle-delay 0.5)
 
@@ -499,16 +498,16 @@
   (when (equal system-type 'windows-nt)
     (let ((str (shell-command-to-string "tasklist /FI \"IMAGENAME eq Everything.exe\"")))
       (when (not (string-match "Everything.exe" str))
-	(when (executable-find "everything")
-	  ;; (shell-command "taskkill /IM everything.exe")
-	  (start-process "everything" nil "everything" "-admin" "-minimized")))))
+		(when (executable-find "everything")
+		  ;; (shell-command "taskkill /IM everything.exe")
+		  (start-process "everything" nil "everything" "-admin" "-minimized")))))
 
   (when (executable-find "curl")
     (setq helm-google-suggest-use-curl-p t))
 
   (when (executable-find "ack-grep")
     (setq helm-grep-default-command "ack-grep -Hn --no-group --no-color %e %p %f"
-	  helm-grep-default-recurse-command "ack-grep -H --no-group --no-color %e %p %f"))
+		  helm-grep-default-recurse-command "ack-grep -H --no-group --no-color %e %p %f"))
 
   (setq helm-split-window-in-side-p t) ; open helm buffer inside current window, not occupy whole other window
   (setq helm-move-to-line-cycle-in-source t) ; move to end or beginning of source when reaching top or bottom of source.
@@ -521,8 +520,8 @@
   (setq helm-apropos-function-list t)
 
   (add-hook 'eshell-mode-hook
-	    (lambda ()
-	      (define-key eshell-mode-map (kbd "C-c C-l")  'helm-eshell-history))))
+			(lambda ()
+			  (define-key eshell-mode-map (kbd "C-c C-l")  'helm-eshell-history))))
 
 
 (use-package helm-ag
@@ -549,29 +548,29 @@
    ;; '(helm-gtags-suggested-key-mapping t)
    )
   :bind (:map helm-gtags-mode-map
-	      ("C-c g a" . helm-gtags-tags-in-this-function)
-	      ("C-c g b" . helm-gtags-display-browser)
-	      ("C-c g c" . helm-gtags-clear-cache)
-	      ("C-c g d" . helm-gtags-clear-all-cache)
-	      ("C-c g f" . helm-gtags-find-files)
-	      ("C-c g g" . helm-gtags-create-tags)
-	      ("C-c g u" . helm-gtags-update-tags)
-	      ("C-c g j" . helm-gtags-select)
-	      ("C-c g p" . helm-gtags-pop-stack)
-	      ("C-c g q" . helm-gtags-clear-stack)
-	      ("C-c g Q" . helm-gtags-clear-all-stacks)
-	      ("C-c g s" . helm-gtags-find-symbol)
-	      ("C-c g r" . helm-gtags-find-rtag)
-	      ("C-c g t" . helm-gtags-find-tag)
-	      ("C-c g ," . helm-gtags-find-tag-from-here)
-	      ("C-c g T" . helm-gtags-find-tag-other-window)
-	      ("C-c g R" . helm-gtags-resume)
-	      ("C-c g P" . helm-gtags-parse-file)
-	      ("C-c g S" . helm-gtags-find-pattern)
-	      ("C-c g ." . helm-gtags-dwim)
-	      ("C-c g <" . helm-gtags-previous-history)
-	      ("C-c g >" . helm-gtags-next-history)
-	      )
+			  ("C-c g a" . helm-gtags-tags-in-this-function)
+			  ("C-c g b" . helm-gtags-display-browser)
+			  ("C-c g c" . helm-gtags-clear-cache)
+			  ("C-c g d" . helm-gtags-clear-all-cache)
+			  ("C-c g f" . helm-gtags-find-files)
+			  ("C-c g g" . helm-gtags-create-tags)
+			  ("C-c g u" . helm-gtags-update-tags)
+			  ("C-c g j" . helm-gtags-select)
+			  ("C-c g p" . helm-gtags-pop-stack)
+			  ("C-c g q" . helm-gtags-clear-stack)
+			  ("C-c g Q" . helm-gtags-clear-all-stacks)
+			  ("C-c g s" . helm-gtags-find-symbol)
+			  ("C-c g r" . helm-gtags-find-rtag)
+			  ("C-c g t" . helm-gtags-find-tag)
+			  ("C-c g ," . helm-gtags-find-tag-from-here)
+			  ("C-c g T" . helm-gtags-find-tag-other-window)
+			  ("C-c g R" . helm-gtags-resume)
+			  ("C-c g P" . helm-gtags-parse-file)
+			  ("C-c g S" . helm-gtags-find-pattern)
+			  ("C-c g ." . helm-gtags-dwim)
+			  ("C-c g <" . helm-gtags-previous-history)
+			  ("C-c g >" . helm-gtags-next-history)
+			  )
   :config
   (custom-set-variables
    '(helm-gtags-auto-update t)
@@ -652,14 +651,14 @@
   :ensure t
   :bind
   (("C-c m t" . mc/mark-all-like-this)
-    ("C-c m m" . mc/mark-all-like-this-dwim)
-    ("C-c m l" . mc/edit-lines)
-    ("C-c m e" . mc/edit-ends-of-lines)
-    ("C-c m a" . mc/edit-beginnings-of-lines)
-    ("C-c m n" . mc/mark-next-like-this)
-    ("C-c m p" . mc/mark-previous-like-this)
-    ("C-c m s" . mc/mark-sgml-tag-pair)
-    ("C-c m d" . mc/mark-all-like-this-in-defun))
+   ("C-c m m" . mc/mark-all-like-this-dwim)
+   ("C-c m l" . mc/edit-lines)
+   ("C-c m e" . mc/edit-ends-of-lines)
+   ("C-c m a" . mc/edit-beginnings-of-lines)
+   ("C-c m n" . mc/mark-next-like-this)
+   ("C-c m p" . mc/mark-previous-like-this)
+   ("C-c m s" . mc/mark-sgml-tag-pair)
+   ("C-c m d" . mc/mark-all-like-this-in-defun))
   :config
   )
 
@@ -708,10 +707,10 @@
   (setq org-startup-align-all-tables t)
   ;; 4.4 Handling links
   (setq org-file-apps '((auto-mode . emacs)
-			("\\.mm\\'" . default)
-			("\\.x?html?\\'" . default)
-			("\\.pdf\\'" . "okular %s")
-			))
+						("\\.mm\\'" . default)
+						("\\.x?html?\\'" . default)
+						("\\.pdf\\'" . "okular %s")
+						))
 
   ;; Markup for rich export
   ;; 11.7 Embedded LaTeX
@@ -745,68 +744,68 @@
   (add-hook'org-mode-hook
    (lambda ()
      (setq org-latex-default-packages-alist
-	   (delete'("AUTO" "inputenc" t) org-latex-default-packages-alist))))
+		   (delete'("AUTO" "inputenc" t) org-latex-default-packages-alist))))
 
   (add-to-list 'org-latex-packages-alist '("" "xeCJK" t))
   (add-to-list 'org-latex-packages-alist '("" "listings" t))
   (add-to-list 'org-latex-packages-alist '("" "color" t))
   ;; 12.7.2 LaTeX specific export settings
   (setq org-latex-pdf-process
-	'("xelatex -interaction nonstopmode -output-directory %o %f"
-	  "xelatex -interaction nonstopmode -output-directory %o %f"
-	  "xelatex -interaction nonstopmode -output-directory %o %f"))
+		'("xelatex -interaction nonstopmode -output-directory %o %f"
+		  "xelatex -interaction nonstopmode -output-directory %o %f"
+		  "xelatex -interaction nonstopmode -output-directory %o %f"))
 
   ;; 12.7.3 Header and sectioning structure
   ;; 设置 article header
   (setcar (cdr (assoc "article" org-latex-classes))
-	  "\\documentclass[12pt,a4paper]{article} \\usepackage[margin=2cm]{geometry} \\usepackage{fontspec} \\usepackage[slantfont,boldfont,CJKnumber,CJKtextspaces]{xeCJK} \\setCJKmainfont{AR PL UKai CN} \\setmainfont{DejaVu Serif} \\setmonofont{DejaVu Sans Mono} \\setsansfont{DejaVu Sans} \\usepackage[colorlinks,linkcolor=blue,anchorcolor=red,citecolor=green,urlcolor=blue]{hyperref}")
+		  "\\documentclass[12pt,a4paper]{article} \\usepackage[margin=2cm]{geometry} \\usepackage{fontspec} \\usepackage[slantfont,boldfont,CJKnumber,CJKtextspaces]{xeCJK} \\setCJKmainfont{AR PL UKai CN} \\setmainfont{DejaVu Serif} \\setmonofont{DejaVu Sans Mono} \\setsansfont{DejaVu Sans} \\usepackage[colorlinks,linkcolor=blue,anchorcolor=red,citecolor=green,urlcolor=blue]{hyperref}")
   (when (equal system-type 'windows-nt)
     (setcar (cdr (assoc "article" org-latex-classes))
-	    "\\documentclass[12pt,a4paper]{ctexart}"))
+			"\\documentclass[12pt,a4paper]{ctexart}"))
 
   ;; 13 Publishing
   (require 'ox-publish)
   ;; 13.1 Configuration
   ;; 13.1.1 The variable org-publish-project-alist
   (setq org-publish-project-alist
-	'(
-	  ("org"
-	   ;; 13.1.2 Sources and destinations for files
-	   :base-directory "~/gitlab/org-notes/org/" ;设置存放.org 文件位置
-	   :publishing-directory "../phenix3443.github.io/" ;导出 html 文件位置
-	   ;; :preparation-function
-	   ;; :completion-function
+		'(
+		  ("org"
+		   ;; 13.1.2 Sources and destinations for files
+		   :base-directory "~/gitlab/org-notes/org/" ;设置存放.org 文件位置
+		   :publishing-directory "../phenix3443.github.io/" ;导出 html 文件位置
+		   ;; :preparation-function
+		   ;; :completion-function
 
-	   ;; 13.1.3 Selecting files
-	   :base-extension "org"			;仅处理.org 格式文件
-	   :exclude "*~"
-	   ;; :include
-	   :recursive t
+		   ;; 13.1.3 Selecting files
+		   :base-extension "org"			;仅处理.org 格式文件
+		   :exclude "*~"
+		   ;; :include
+		   :recursive t
 
-	   ;; 13.1.4 Publishing action
-	   :publishing-function org-html-publish-to-html
-	   :htmlized-source t
+		   ;; 13.1.4 Publishing action
+		   :publishing-function org-html-publish-to-html
+		   :htmlized-source t
 
-	   ;; 13.1.5 Options for the exporters
-	   :headline-levels 4             ; Just the default for this project.
-	   :with-sub-superscript nil
-	   :html-extension "html"
-	   :style-include-default nil
-	   ;; :html-head "<script type=\"text/javascript\" src=\"./js/org-info.js\">"
-	   ;; 13.1.7 Generating a sitemap
-	   :auto-sitemap t
-	   ;; 13.1.8 Generating an index
-	   :makeindex t
-	   )
+		   ;; 13.1.5 Options for the exporters
+		   :headline-levels 4             ; Just the default for this project.
+		   :with-sub-superscript nil
+		   :html-extension "html"
+		   :style-include-default nil
+		   ;; :html-head "<script type=\"text/javascript\" src=\"./js/org-info.js\">"
+		   ;; 13.1.7 Generating a sitemap
+		   :auto-sitemap t
+		   ;; 13.1.8 Generating an index
+		   :makeindex t
+		   )
 
-	  ("static"
-	   :base-directory "~/gitlab/org-notes/org/"
-	   :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-	   :publishing-directory "../phenix3443.github.io/"
-	   :recursive t
-	   :publishing-function org-publish-attachment
-	   )
-	  ("github" :components ("org" "static"))))
+		  ("static"
+		   :base-directory "~/gitlab/org-notes/org/"
+		   :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+		   :publishing-directory "../phenix3443.github.io/"
+		   :recursive t
+		   :publishing-function org-publish-attachment
+		   )
+		  ("github" :components ("org" "static"))))
   ;; 13.4 Triggering publication
   (setq org-publish-use-timestamps-flag t)
 
@@ -847,7 +846,7 @@
   ;; (setq org-export-babel-evaluate 'inline)
   ;; 14.4 Extracting source code
   (add-hook 'org-babel-post-tangle-hook
-	    (lambda () (message "I'm in %s" (buffer-file-name)) ))
+			(lambda () (message "I'm in %s" (buffer-file-name)) ))
   ;; 14.7 Languages
   (org-babel-do-load-languages
    'org-babel-load-languages
@@ -861,7 +860,7 @@
   ;; 14.8 Header arguments
   ;; 14.8.1 Using header arguments
   (setq org-babel-default-header-args
-	(append '((:padline . "true")(:comments . "yes")(:mkdirp . "yes"))  org-babel-default-header-args))
+		(append '((:padline . "true")(:comments . "yes")(:mkdirp . "yes"))  org-babel-default-header-args))
   ;; (setq org-babel-default-header-args
   ;; 	  (cons '(:tangle . "yes")
   ;; 			(assq-delete-all :tangle org-babel-default-header-args)))
@@ -883,14 +882,14 @@
 (use-package paredit
   :ensure t
   :bind(
-	:map paredit-mode-map
-	     ("C-)" . paredit-forward-slurp-sexp)
-	     ("C-(" . paredit-backward-slurp-sexp)
-	     ("C-}" . paredit-forward-barf-sexp)
-	     ("C-{" . paredit-backward-barf-sexp)
-	     ("C-<right>" . nil)
-	     ("C-<left>" .  nil)
-	     )
+		:map paredit-mode-map
+			 ("C-)" . paredit-forward-slurp-sexp)
+			 ("C-(" . paredit-backward-slurp-sexp)
+			 ("C-}" . paredit-forward-barf-sexp)
+			 ("C-{" . paredit-backward-barf-sexp)
+			 ("C-<right>" . nil)
+			 ("C-<left>" .  nil)
+			 )
   :init
   (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
   :config
@@ -928,17 +927,17 @@
 
   (if (equal system-type 'windows-nt)
       (progn
-	(setq projectile-indexing-method 'alien)
-	(setq projectile-enable-caching t)
-	))
+		(setq projectile-indexing-method 'alien)
+		(setq projectile-enable-caching t)
+		))
 
   (if (package-installed-p 'helm-projectile)
       (progn
-       ;; switching projects
-       (setq projectile-switch-project-action 'helm-projectile)
-       ;; completion
-       (setq projectile-completion-system 'helm)
-       ))
+		;; switching projects
+		(setq projectile-switch-project-action 'helm-projectile)
+		;; completion
+		(setq projectile-completion-system 'helm)
+		))
   )
 
 
