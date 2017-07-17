@@ -8,9 +8,11 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun get-package-install-path(package-name)
+  "获取包的安装路径"
   (seq-find (lambda (x) (string-match package-name x)) load-path))
 
 (defun load-directory (dir)
+  "将目录中的所有文件载入"
   (let ((load-it (lambda (f) (load-file (concat (file-name-as-directory dir) f)))))
     (mapc load-it (directory-files dir nil "\\.el$"))))
 
@@ -437,6 +439,19 @@
   (add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 
 
+(use-package go-mode
+  :ensure t
+  :config)
+
+
+(use-package go-eldoc
+  :ensure t
+  :init
+  (add-hook 'go-mode-hook 'go-eldoc-setup)
+  :config
+  )
+
+
 (use-package guide-key
   :ensure t
   :config
@@ -467,6 +482,7 @@
 ;;   :demand
 ;;   :bind-keymap ("C-c h" . helm-command-map)
 ;;   )
+
 
 (use-package helm
   :diminish helm-mode
