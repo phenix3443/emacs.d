@@ -8,9 +8,11 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun get-package-install-path(package-name)
+  "获取包的安装路径"
   (seq-find (lambda (x) (string-match package-name x)) load-path))
 
 (defun load-directory (dir)
+  "将目录中的所有文件载入"
   (let ((load-it (lambda (f) (load-file (concat (file-name-as-directory dir) f)))))
     (mapc load-it (directory-files dir nil "\\.el$"))))
 
@@ -115,11 +117,10 @@
 
 ;; 24.3 Tabs vs Spaces
 (setq-default indent-tabs-mode 'complete)
-
 (setq-default tab-width 4)
 ;; (setq-default tab-stop-list (number-sequelnce 4 120 4))
 ;; 24.4 Convenience Features for Indentation
-;; (setq tab-always-indent nil)
+(setq tab-always-indent 'complete)
 (electric-indent-mode t)
 ;; 25.2 sentences
 (setq sentence-end "\\([。！？]\\|……\\|[.?!][]\"')}]*\\($\\|[ \t]\\)\\)[ \t\n]*")
@@ -439,6 +440,19 @@
   (add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 
 
+(use-package go-mode
+  :ensure t
+  :config)
+
+
+(use-package go-eldoc
+  :ensure t
+  :init
+  (add-hook 'go-mode-hook 'go-eldoc-setup)
+  :config
+  )
+
+
 (use-package guide-key
   :ensure t
   :config
@@ -469,6 +483,7 @@
 ;;   :demand
 ;;   :bind-keymap ("C-c h" . helm-command-map)
 ;;   )
+
 
 (use-package helm
   :diminish helm-mode
