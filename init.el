@@ -424,6 +424,12 @@
   )
 
 
+(use-package dockerfile-mode
+  :ensure t
+  :mode "Dockerfile\\'"
+  :config)
+
+
 (use-package flycheck
   :ensure t
   :init
