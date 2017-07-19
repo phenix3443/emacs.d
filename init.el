@@ -441,7 +441,8 @@
 
 (use-package go-mode
   :ensure t
-  :config)
+  :config
+  (add-hook 'before-save-hook 'gofmt-before-save))
 
 
 (use-package go-eldoc
