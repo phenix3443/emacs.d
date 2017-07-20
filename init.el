@@ -425,6 +425,12 @@
   )
 
 
+(use-package dockerfile-mode
+  :ensure t
+  :mode "Dockerfile\\'"
+  :config)
+
+
 (use-package flycheck
   :ensure t
   :init
@@ -442,7 +448,8 @@
 
 (use-package go-mode
   :ensure t
-  :config)
+  :config
+  (add-hook 'before-save-hook 'gofmt-before-save))
 
 
 (use-package go-eldoc
