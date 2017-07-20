@@ -2,34 +2,39 @@
 
 CUR_DIR=$(cd `dirname $0`;pwd)
 
-sudo apt-get install -y silversearcher-ag dos2unix
+sudo apt install -y silversearcher-ag dos2unix
 
 # GNU global
-sudo apt-get -y install global
+sudo apt install -y global
 # Exuberant Ctags and pygments for global plugin
-sudo apt-get install -y exuberant-ctags python-pygments
+sudo apt install -y exuberant-ctags python-pygments
 
 echo "# gnu global env start" >> ~/.bashrc
 echo "export GTAGSCONF=/usr/local/share/gtags/gtags.conf" >> ~/.bashrc
 echo "export GTAGSLABEL=pygments" >> ~/.bashrc
 echo "# gnu global evn end" >> ~/.bashrc
 
-# for jedi
-sudo apt-get install -y python python-dev
+# python
+sudo apt install python python3
+wget https://bootstrap.pypa.io/get-pip.py
+python get-pip.py
 sudo pip install --upgrade pip
 sudo pip install --upgrade virtualenv
+# for jedi
+sudo apt install -y python-dev
 
 # for ac-lang
-sudo apt-get install -y  clang llvm libclang-dev
+sudo apt install -y  clang llvm libclang-dev
 
 #for lua
-sudo apt install luarocks
+sudo apt install -y luarocks
+
 # for flycheck
 sudo apt install shellcheck
 sudo apt install cppcheck
 sudo pip install pylint flake8
 sudo luarocks install luacheck
-sudo apt install cppcheck
+
 # for shellcheck
 # sudo apt install cabal-install
 # git clone git@github.com:koalaman/shellcheck.git

@@ -1,8 +1,9 @@
-;;; package -- Summary
+;; package -- Summary
 ;; -*- coding:utf-8; -*-
 ;;; Commentary:
 
 ;;; code:
+(toggle-debug-on-error)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;		              自定义函数
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -374,7 +375,14 @@
       (set (make-local-variable 'company-backends) (list special-backends))))
   (add-hook 'restclient-mode-hook 'company-restclient-mode-setup)
 
+  (defun company-go-mode-setup ()
+	(let ((special-backends company-common-backends))
+	  (add-to-list 'special-backends 'company-go)
+      (set (make-local-variable 'company-backends) (list special-backends))))
+  (add-hook 'go-mode-hook 'company-go-mode-setup)
   )
+
+
 
 
 (use-package company-irony
@@ -454,9 +462,8 @@
 
 (use-package go-eldoc
   :ensure t
-  :init
-  (add-hook 'go-mode-hook 'go-eldoc-setup)
   :config
+  (add-hook 'go-mode-hook 'go-eldoc-setup)
   )
 
 
@@ -1131,4 +1138,4 @@
 ;; Widget	Library for graphical widgets.
 ;; Wisent	An Emacs implementation of the GNU Compiler Compiler Bison.
 ;; Woman	Browsing UN*X pages without man.
-p(put 'upcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
