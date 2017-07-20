@@ -1019,6 +1019,10 @@
   )
 
 
+(use-package yaml-mode
+  :ensure t)
+
+
 (use-package yasnippet
   :ensure t
   ;; :bind(
@@ -1127,4 +1131,4 @@
 ;; Widget	Library for graphical widgets.
 ;; Wisent	An Emacs implementation of the GNU Compiler Compiler Bison.
 ;; Woman	Browsing UN*X pages without man.
-(put 'upcase-region 'disabled nil)
+p(put 'upcase-region 'disabled nil)
