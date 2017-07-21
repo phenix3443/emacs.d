@@ -375,11 +375,11 @@
       (set (make-local-variable 'company-backends) (list special-backends))))
   (add-hook 'restclient-mode-hook 'company-restclient-mode-setup)
 
-  (defun company-go-mode-setup ()
-	(let ((special-backends company-common-backends))
-	  (add-to-list 'special-backends 'company-go)
-      (set (make-local-variable 'company-backends) (list special-backends))))
-  (add-hook 'go-mode-hook 'company-go-mode-setup)
+  ;; (defun company-go-mode-setup ()
+  ;; 	(let ((special-backends company-common-backends))
+  ;; 	  (add-to-list 'special-backends 'company-go)
+  ;;     (set (make-local-variable 'company-backends) (list special-backends))))
+  ;; (add-hook 'go-mode-hook 'company-go-mode-setup)
   )
 
 
@@ -439,6 +439,13 @@
   :config)
 
 
+(use-package exec-path-from-shell
+  :ensure t
+  :config
+  (exec-path-from-shell-initialize)
+  )
+
+
 (use-package flycheck
   :ensure t
   :init
@@ -451,13 +458,15 @@
 (use-package flycheck-irony
   :ensure t
   :config
-  (add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
+  (add-hook 'flycheck-mode-hook #'flycheck-irony-setup)
+)
 
 
 (use-package go-mode
   :ensure t
   :config
-  (add-hook 'before-save-hook 'gofmt-before-save))
+  (add-hook 'before-save-hook 'gofmt-before-save)
+)
 
 
 (use-package go-eldoc
