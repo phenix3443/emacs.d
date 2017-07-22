@@ -443,14 +443,6 @@
   :mode "Dockerfile\\'"
   :config)
 
-
-(use-package exec-path-from-shell
-  :ensure t
-  :config
-  (exec-path-from-shell-initialize)
-  )
-
-
 (use-package flycheck
   :ensure t
   :init
@@ -475,8 +467,6 @@
   (setq gopath-bin (concat (getenv "GOPATH") "/bin"))
   (setenv "PATH" (concat (getenv "PATH") ":" goroot-bin ":" gopath-bin))
   ;; (setq exec-path (append exec-path (list goroot-bin gopath-bin)))
-
-  ;; (add-hook 'some-major-mode 'setup-some-mode-env)
   (add-hook 'before-save-hook 'gofmt-before-save)
 )
 
