@@ -375,14 +375,19 @@
       (set (make-local-variable 'company-backends) (list special-backends))))
   (add-hook 'restclient-mode-hook 'company-restclient-mode-setup)
 
-  ;; (defun company-go-mode-setup ()
-  ;; 	(let ((special-backends company-common-backends))
-  ;; 	  (add-to-list 'special-backends 'company-go)
-  ;;     (set (make-local-variable 'company-backends) (list special-backends))))
-  ;; (add-hook 'go-mode-hook 'company-go-mode-setup)
+  (defun company-go-mode-setup ()
+  	(let ((special-backends company-common-backends))
+	  (if (package-installed-p 'company-restclient)
+		  (add-to-list 'special-backends 'company-go))
+      (set (make-local-variable 'company-backends) (list special-backends))))
+  (add-hook 'go-mode-hook 'company-go-mode-setup)
   )
 
 
+(use-package company-go
+  :ensure t
+  :config
+  )
 
 
 (use-package company-irony
