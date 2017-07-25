@@ -2,38 +2,37 @@
 
 CUR_DIR=$(cd `dirname $0`;pwd)
 
-sudo apt-get install -y silversearcher-ag dos2unix
-
-# GNU global
-sudo apt-get -y install global
-# Exuberant Ctags and pygments for global plugin
-sudo apt-get install -y exuberant-ctags python-pygments
-
-echo "# gnu global env start" >> ~/.bashrc
-echo "export GTAGSCONF=/usr/local/share/gtags/gtags.conf" >> ~/.bashrc
-echo "export GTAGSLABEL=pygments" >> ~/.bashrc
-echo "# gnu global evn end" >> ~/.bashrc
-
-# for jedi
-sudo apt-get install -y python python-dev
-sudo pip install --upgrade pip
-sudo pip install --upgrade virtualenv
-
-# for ac-lang
+# for c++
 sudo apt-get install -y  clang llvm libclang-dev
+sudo apt install cppcheck
 
-#for lua
+# for go
+
+# for lua
 sudo apt install luarocks
+sudo luarocks install luacheck
+
 # for flycheck
 sudo apt install shellcheck
-sudo apt install cppcheck
+
+# for python
+sudo apt-get install -y python python-pip
+sudo pip install --upgrade pip
 sudo pip install pylint flake8
-sudo luarocks install luacheck
-sudo apt install cppcheck
+
 # for shellcheck
 # sudo apt install cabal-install
 # git clone git@github.com:koalaman/shellcheck.git
 # cd shellcheck && cabal install
+
+# GNU global
+sudo apt-get install -y silversearcher-ag dos2unix exuberant-ctags global
+sudo pip install pygments
+
+echo "# gnu global env start" >> ~/.bashrc
+echo "export GTAGSCONF=/usr/local/share/gtags/gtags.conf" >> ~/.profile
+echo "export GTAGSLABEL=pygments" >> ~/.profile
+echo "# gnu global evn end" >> ~/.profile
 
 echo Prepare work has Done successfully!
 echo Start emacs and wait a moment for installing packages from ELPA
