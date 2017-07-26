@@ -621,7 +621,7 @@
    '(helm-gtags-display-style 'detail)
    '(helm-gtags-fuzzy-match nil)
    '(helm-gtags-highlight-candidate t)
-   '(helm-gtags-ignore-case t)
+   ;; '(helm-gtags-ignore-case t)
    '(helm-gtags-parse-file 'root)
    '(helm-gtags-path-style 'root)
    '(helm-gtags-pulse-at-cursor t)
