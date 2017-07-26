@@ -2,43 +2,42 @@
 
 CUR_DIR=$(cd `dirname $0`;pwd)
 
-sudo apt install -y silversearcher-ag dos2unix
+# for c++
+sudo apt-get install -y  clang llvm libclang-dev
+sudo apt install cppcheck
 
-# GNU global
-sudo apt install -y global
-# Exuberant Ctags and pygments for global plugin
-sudo apt install -y exuberant-ctags python-pygments
+# for go
 
-echo "# gnu global env start" >> ~/.bashrc
-echo "export GTAGSCONF=/usr/local/share/gtags/gtags.conf" >> ~/.bashrc
-echo "export GTAGSLABEL=pygments" >> ~/.bashrc
-echo "# gnu global evn end" >> ~/.bashrc
-
-# python
-sudo apt install python python3
-wget https://bootstrap.pypa.io/get-pip.py
-python get-pip.py
-sudo pip install --upgrade pip
-sudo pip install --upgrade virtualenv
-# for jedi
-sudo apt install -y python-dev
-
-# for ac-lang
-sudo apt install -y  clang llvm libclang-dev
-
-#for lua
-sudo apt install -y luarocks
+# for lua
+sudo apt install luarocks
+sudo luarocks install luacheck
 
 # for flycheck
 sudo apt install shellcheck
-sudo apt install cppcheck
+
+# for python
+sudo apt-get install -y python python-pip
+sudo pip install --upgrade pip
 sudo pip install pylint flake8
-sudo luarocks install luacheck
 
 # for shellcheck
 # sudo apt install cabal-install
 # git clone git@github.com:koalaman/shellcheck.git
 # cd shellcheck && cabal install
+
+# GNU global
+wget http://tamacom.com/global/global-6.5.7.tar.gz
+tar zxf global-6.5.7.tar.gz
+cd global-6.5.7
+sudo apt install ncurses-dev
+make && sudo make install
+sudo apt-get install -y silversearcher-ag dos2unix exuberant-ctags
+sudo pip install pygments
+
+echo "# gnu global env start" >> ~/.bashrc
+echo "export GTAGSCONF=/usr/local/share/gtags/gtags.conf" >> ~/.profile
+echo "export GTAGSLABEL=pygments" >> ~/.profile
+echo "# gnu global evn end" >> ~/.profile
 
 echo Prepare work has Done successfully!
 echo Start emacs and wait a moment for installing packages from ELPA
