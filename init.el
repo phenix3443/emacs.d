@@ -670,6 +670,12 @@
   )
 
 
+(use-package json-mode
+  :ensure t
+  :mode "\\.json$"
+  :config)
+
+
 (use-package lua-mode
   :ensure t
   :mode "\\.lua$"
