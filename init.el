@@ -321,6 +321,8 @@
   (setq company-show-numbers t)
   (global-company-mode)
 
+  (defvar company-common-backends)
+
   ;; (setq company-common-backends '(company-capf company-dabbrev company-files))
   (setq company-common-backends '(company-files))
   ;; (setq company-common-backends '(company-capf company-dabbrev company-files :separate))
@@ -361,7 +363,7 @@
   (add-hook 'lua-mode-hook 'company-lua-mode-setup)
 
   (defun company-python-mode-hook ()
-    (let ((special-backends company-common-backends))
+    (let ((special-backends '()))
       (if (package-installed-p 'company-jedi)
 		  (add-to-list 'special-backends 'company-jedi))
 
@@ -377,7 +379,7 @@
 
   (defun company-go-mode-setup ()
   	(let ((special-backends company-common-backends))
-	  (if (package-installed-p 'company-restclient)
+	  (if (package-installed-p 'company-go)
 		  (add-to-list 'special-backends 'company-go))
       (set (make-local-variable 'company-backends) (list special-backends))))
   (add-hook 'go-mode-hook 'company-go-mode-setup)
