@@ -16,9 +16,13 @@ sudo luarocks install luacheck
 sudo apt install shellcheck
 
 # for python
-sudo apt-get install -y python python-pip
+sudo apt-get install -y python python-pip python3 python3-pip
 sudo pip install --upgrade pip
 sudo pip install pylint flake8
+
+# for jedi
+sudo pip install virtualenv
+sudo pip install jedi
 
 # for shellcheck
 # sudo apt install cabal-install
