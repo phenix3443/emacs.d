@@ -701,10 +701,15 @@
   :ensure t
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
-         ("\\.md\\'" . markdown-mode)
-         ("\\.markdown\\'" . markdown-mode))
+         ("\\.md\\'" . gfm-mode)
+         ("\\.markdown\\'" . gfm-mode))
   :init
   (setq markdown-command "multimarkdown"))
+
+
+(use-package markdown-preview-mode
+  :ensure t
+  :config)
 
 
 (use-package multiple-cursors
