@@ -5,7 +5,7 @@
 ;;; code:
 (toggle-debug-on-error)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;		              自定义函数
+;;自定义函数
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun get-package-install-path(package-name)
@@ -19,7 +19,7 @@
 
 ;; (load-directory "~/.emacs.d/lisps/")	;load emacs builtin feature
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;		               内建配置
+;;内建配置
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; 7.2 change the location of point
@@ -1063,6 +1063,12 @@
 
 (use-package yaml-mode
   :ensure t)
+
+
+(use-package yapfify
+  :ensure t
+  :config
+  (add-hook 'python-mode-hook 'yapf-mode))
 
 
 (use-package yasnippet

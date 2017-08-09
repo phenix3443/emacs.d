@@ -19,6 +19,7 @@ sudo apt install shellcheck
 sudo apt-get install -y python python-pip python3 python3-pip
 sudo pip install --upgrade pip
 sudo pip install pylint flake8
+sudo pip install yapf
 
 # for jedi
 sudo pip install virtualenv
