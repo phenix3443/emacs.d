@@ -451,6 +451,7 @@
   (global-flycheck-mode)
   :config
   ;; (setq flycheck-clang-include-path '("/usr/local/include/"))
+  (setq flycheck-json-python-json-executable "python3")
   )
 
 
