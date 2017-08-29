@@ -3,7 +3,7 @@
 ;;; Commentary:
 
 ;;; code:
-(toggle-debug-on-error)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;自定义函数
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -21,6 +21,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;内建配置
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; (toggle-debug-on-error)
 
 ;; 7.2 change the location of point
 (setq track-eol t)
@@ -324,8 +326,8 @@
   (defvar company-common-backends)
 
   ;; (setq company-common-backends '(company-capf company-dabbrev company-files))
-  (setq company-common-backends '(company-files))
-  ;; (setq company-common-backends '(company-capf company-dabbrev company-files :separate))
+  ;; (setq company-common-backends '(company-files))
+  (setq company-common-backends '(company-capf company-dabbrev company-files :separate))
   (if (package-installed-p 'yasnippet)
       (add-to-list 'company-common-backends 'company-yasnippet))
   (if (package-installed-p 'helm-gtags)
@@ -466,12 +468,9 @@
   :ensure t
   :config
   (setq gofmt-command "goimports")
-  ;; (setenv "GOPATH" (concat (getenv "HOME") "/gospace"))
-  ;; (setq goroot-bin "/usr/local/go/bin")
-  ;; (setq gopath-bin (concat (getenv "GOPATH") "/bin"))
-  ;; (setenv "PATH" (concat (getenv "PATH") ":" goroot-bin ":" gopath-bin))
-  ;; (setq exec-path (append exec-path (list goroot-bin gopath-bin)))
+  (auto-highlight-symbol-mode)
   (add-hook 'before-save-hook 'gofmt-before-save)
+  (global-auto-highlight-symbol-mode t)	;不知道为何go-mode下该模式自动关闭，待查
 )
 
 
@@ -868,13 +867,13 @@
 		  ("static"
 		   :base-directory "~/gitlab/org-notes/org/"
 		   :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-		   :publishing-directory "../phenix3443.github.io/"
+		   :publishing-directory "~/github/phenix3443.github.io/"
 		   :recursive t
 		   :publishing-function org-publish-attachment
 		   )
 		  ("github" :components ("org" "static"))))
   ;; 13.4 Triggering publication
-  (setq org-publish-use-timestamps-flag nil)
+  (setq org-publish-use-timestamps-flag t)
 
   (when (equal system-type 'windows-nt)
     (setq org-plist (cdr (assoc "org" org-publish-project-alist)))
