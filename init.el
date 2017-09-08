@@ -474,6 +474,11 @@
   (global-auto-highlight-symbol-mode t)	;不知道为何go-mode下该模式自动关闭，待查
 )
 
+(use-package go-dlv
+  :ensure t
+  :config
+
+  )
 
 (use-package go-eldoc
   :ensure t
@@ -874,7 +879,7 @@
 		   )
 		  ("github" :components ("org" "static"))))
   ;; 13.4 Triggering publication
-  (setq org-publish-use-timestamps-flag t)
+  (setq org-publish-use-timestamps-flag nil)
 
   (when (equal system-type 'windows-nt)
     (setq org-plist (cdr (assoc "org" org-publish-project-alist)))
