@@ -1060,6 +1060,28 @@
   )
 
 
+(use-package sql-indent
+  :ensure t
+  :config
+  (eval-after-load "sql"
+	'(load-library "sql-indent"))
+  ;; (setq sql-indent-offset 4)
+  (setq sql-indent-debug t)
+  )
+
+
+(use-package sqlup-mode
+  :ensure t
+  :config
+  ;; Capitalize keywords in SQL mode
+  (add-hook 'sql-mode-hook 'sqlup-mode)
+  ;; Capitalize keywords in an interactive session (e.g. psql)
+  (add-hook 'sql-interactive-mode-hook 'sqlup-mode)
+  ;; Set a global keyword to use sqlup on a region
+  (global-set-key (kbd "C-c u") 'sqlup-capitalize-keywords-in-region)
+  )
+
+
 (use-package window-numbering
   :ensure t
   :config
