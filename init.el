@@ -328,7 +328,7 @@
 
   ;; (setq company-common-backends '(company-capf company-dabbrev company-files))
   ;; (setq company-common-backends '(company-files))
-  (setq company-common-backends '(company-capf company-dabbrev company-files :separate))
+  (setq company-common-backends '(company-capf company-files :separate))
   (if (package-installed-p 'yasnippet)
       (add-to-list 'company-common-backends 'company-yasnippet))
   (if (package-installed-p 'helm-gtags)
