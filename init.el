@@ -469,16 +469,10 @@
   (if (not (string-match "go" compile-command))
       (set (make-local-variable 'compile-command)
            "go build -v && go test -v && go vet"))
-  (auto-highlight-symbol-mode)			;不知道为什么global-auto-highlight-mode在go-mode中关闭了
+  ;(auto-highlight-symbol-mode) ;不知道为什么global-auto-highlight-mode在go-mode中关闭了
+  (go-guru-hl-identifier-mode)
   )
 
-(use-package go-mode
-  :ensure t
-  :config
-  (setq gofmt-command "goimports")
-  (add-hook 'before-save-hook 'gofmt-before-save)
-  (add-hook 'go-mode-hook 'my-go-mode-hook)
-)
 
 (use-package go-dlv
   :ensure t
@@ -490,6 +484,20 @@
   :ensure t
   :config
   (add-hook 'go-mode-hook 'go-eldoc-setup)
+  )
+
+
+(use-package go-guru
+  :ensure t
+  :config)
+
+
+(use-package go-mode
+  :ensure t
+  :config
+  (setq gofmt-command "goimports")
+  (add-hook 'before-save-hook 'gofmt-before-save)
+  (add-hook 'go-mode-hook 'my-go-mode-hook)
   )
 
 
