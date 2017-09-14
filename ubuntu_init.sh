@@ -7,7 +7,12 @@ sudo apt-get install -y  clang llvm libclang-dev
 sudo apt install cppcheck
 
 # for go
+echo "export GOROOT=/usr/local/go" >> ~/.profile
+echo "export GOPATH=$HOME/gospace" >> ~/.profile
+echo "export PATH=$PATH:$GOROOT/bin:$HOME/gospace/bin" >> ~/.profile
 
+go get -u github.com/nsf/gocode
+go get -u github.com/rogpeppe/godef
 # for lua
 sudo apt install luarocks
 sudo luarocks install luacheck
@@ -39,7 +44,7 @@ make && sudo make install
 sudo apt-get install -y silversearcher-ag dos2unix exuberant-ctags
 sudo pip install pygments
 
-echo "# gnu global env start" >> ~/.bashrc
+echo "# gnu global env start" >> ~/.profile
 echo "export GTAGSCONF=/usr/local/share/gtags/gtags.conf" >> ~/.profile
 echo "export GTAGSLABEL=pygments" >> ~/.profile
 echo "# gnu global evn end" >> ~/.profile
