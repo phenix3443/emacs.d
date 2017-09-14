@@ -773,7 +773,6 @@
 (use-package nginx-mode
   :ensure t)
 
-
 (use-package org
   :ensure t
   ;; :bind (
@@ -1093,6 +1092,12 @@
   (add-hook 'sql-interactive-mode-hook 'sqlup-mode)
   ;; Set a global keyword to use sqlup on a region
   (global-set-key (kbd "C-c u") 'sqlup-capitalize-keywords-in-region)
+  )
+
+
+(use-package sr-speedbar
+  :ensure t
+  :config
   )
 
 
