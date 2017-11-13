@@ -121,6 +121,7 @@
 
 ;; 24.3 Tabs vs Spaces
 (setq-default indent-tabs-mode 'complete)
+;; (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 ;; (setq-default tab-stop-list (number-sequelnce 4 120 4))
 ;; 24.4 Convenience Features for Indentation
@@ -469,7 +470,7 @@
   (if (not (string-match "go" compile-command))
       (set (make-local-variable 'compile-command)
            "go build -v && go test -v && go vet"))
-  ;(auto-highlight-symbol-mode) ;不知道为什么global-auto-highlight-mode在go-mode中关闭了
+  ;(auto-highlight-symbol-mode) ;不知道为什么 global-auto-highlight-mode 在 go-mode 中关闭了
   (go-guru-hl-identifier-mode)
   )
 
