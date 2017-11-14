@@ -786,7 +786,7 @@
   (add-hook 'org-mode-hook 'turn-on-org-cdlatex)
 
   :config
-
+  (require 'ox-md nil t)
   ;; 3 Tables
   (setq org-ascii-table-keep-all-vertical-lines t)
   ;; 3.2 Column width and alignment
