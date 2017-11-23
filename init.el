@@ -465,12 +465,10 @@
   (add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 
 (defun my-go-mode-hook ()
-  ;; Customize compile command to run go build
   (if (not (string-match "go" compile-command))
       (set (make-local-variable 'compile-command)
            "go build -v && go test -v && go vet"))
-  ;;(auto-highlight-symbol-mode) ;不知道为什么 global-auto-highlight-mode 在 go-mode 中关闭了
-  (go-guru-hl-identifier-mode)
+  (auto-highlight-symbol-mode) ;不知道为什么 global-auto-highlight-mode 在 go-mode 中关闭了
   )
 
 
@@ -498,6 +496,7 @@
   (setq gofmt-command "goimports")
   (add-hook 'before-save-hook 'gofmt-before-save)
   (add-hook 'go-mode-hook 'my-go-mode-hook)
+  ;; (add-hook 'go-mode-hook #'go-guru-hl-identifier-mode)
   )
 
 
