@@ -383,8 +383,8 @@
 
   (defun company-go-mode-setup ()
   	(let ((special-backends company-common-backends))
-	  (if (package-installed-p 'company-go)
-		  (add-to-list 'special-backends 'company-go))
+  	  (if (package-installed-p 'company-go)
+  		  (add-to-list 'special-backends 'company-go))
       (set (make-local-variable 'company-backends) (list special-backends))))
   (add-hook 'go-mode-hook 'company-go-mode-setup)
   )
@@ -462,15 +462,14 @@
 (use-package flycheck-irony
   :ensure t
   :config
-  (add-hook 'flycheck-mode-hook #'flycheck-irony-setup)
-)
+  (add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 
 (defun my-go-mode-hook ()
   ;; Customize compile command to run go build
   (if (not (string-match "go" compile-command))
       (set (make-local-variable 'compile-command)
            "go build -v && go test -v && go vet"))
-  ;(auto-highlight-symbol-mode) ;不知道为什么 global-auto-highlight-mode 在 go-mode 中关闭了
+  ;;(auto-highlight-symbol-mode) ;不知道为什么 global-auto-highlight-mode 在 go-mode 中关闭了
   (go-guru-hl-identifier-mode)
   )
 
