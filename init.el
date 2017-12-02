@@ -471,11 +471,19 @@
   (auto-highlight-symbol-mode) ;不知道为什么 global-auto-highlight-mode 在 go-mode 中关闭了
   )
 
+(use-package go-gen-test
+  :ensure t
+  :config
+  )
+
+(use-package gotest
+  :ensure t
+  :config
+  )
 
 (use-package go-dlv
   :ensure t
   :config
-
   )
 
 (use-package go-eldoc
