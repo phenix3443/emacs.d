@@ -1125,6 +1125,11 @@
   (add-hook 'python-mode-hook 'yapf-mode))
 
 
+(use-package yasnippet-snippets
+  :ensure t
+  :config)
+
+
 (use-package yasnippet
   :ensure t
   ;; :bind(
