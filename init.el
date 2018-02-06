@@ -907,7 +907,7 @@
            )
           ("github" :components ("org" "static"))))
   ;; 13.4 Triggering publication
-  (setq org-publish-use-timestamps-flag t)
+  (setq org-publish-use-timestamps-flag nil)
 
   (when (equal system-type 'windows-nt)
     (setq org-plist (cdr (assoc "org" org-publish-project-alist)))
