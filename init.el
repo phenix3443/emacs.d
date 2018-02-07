@@ -1006,7 +1006,7 @@
 (use-package pangu-spacing
   :ensure t
   :config
-  (setq pangu-spacing-real-insert-separtor t)
+  ;; (setq pangu-spacing-real-insert-separtor t)
   (global-pangu-spacing-mode 1)
   )
 
