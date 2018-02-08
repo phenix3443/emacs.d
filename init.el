@@ -874,12 +874,12 @@
   ;; 13.1.1 The variable org-publish-project-alist
   (setq org-publish-project-alist
         '(
-          ("org"
+          ("notebook-html"
            ;; 13.1.2 Sources and destinations for files
-           :base-directory "~/gitlab/org-notes/org/" ;设置存放.org 文件位置
-           :publishing-directory "~/github/phenix3443.github.io/" ;导出 html 文件位置
+           :base-directory "~/github/notebook/org/" ;设置存放.org 文件位置
+           :publishing-directory "~/github/notebook/docs/" ;导出 html 文件位置
            ;; :preparation-function
-           ;; :completion-function
+           ;; :completion-function ;用来定义publish结束以后的动作，该项目中用于执行push master
 
            ;; 13.1.3 Selecting files
            :base-extension "org"            ;仅处理.org 格式文件
@@ -892,27 +892,36 @@
            :htmlized-source t
 
            ;; 13.1.5 Options for the exporters
-           :headline-levels 4             ; Just the default for this project.
-           :with-sub-superscript nil
+           :headline-levels 4
+           :with-author
+           :with-date
+           :with-email
+           :with-sub-superscript
+           ;; html export properties
            :html-extension "html"
-           :style-include-default nil
-           ;; :html-head "<script type=\"text/javascript\" src=\"./js/org-info.js\">"
+           :html-head "<script type=\"text/javascript\" src=\"./script/org-info.js\">"
+           :html-link-home "https://phenix3443.github.io/"
+           :html-use-infojs t
+
            ;; 13.1.7 Generating a sitemap
            :auto-sitemap t
+           :sitemap-filename "index.html"
+           :sitemap-title "notebook"
            ;; 13.1.8 Generating an index
-           :makeindex t
+           ;; :makeindex t
            )
 
-          ("static"
-           :base-directory "~/gitlab/org-notes/org/"
+          ("notebook-static"
+           :base-directory "~/github/notebook/org/"
            :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-           :publishing-directory "~/github/phenix3443.github.io/"
+           :publishing-directory "~/github/notebook/docs/"
            :recursive t
            :publishing-function org-publish-attachment
            )
-          ("github" :components ("org" "static"))))
+          ("notebook" :components ("notebook-html" "notebook-static"))))
+
   ;; 13.4 Triggering publication
-  (setq org-publish-use-timestamps-flag nil)
+  (setq org-publish-use-timestamps-flag t)
 
   (when (equal system-type 'windows-nt)
     (setq org-plist (cdr (assoc "org" org-publish-project-alist)))
