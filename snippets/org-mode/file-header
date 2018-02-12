@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: file-header
+# key: fh
+# contributor:phenix3443<phenix3443@gmail.com>
+# --
+# -*- coding:utf-8-*-
+#+TITLE: $1
+#+AUTHOR: ${2:liushangliang}
+#+EMAIL: ${3:phenix3443+github@gmail.com}
+
+$0
