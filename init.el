@@ -1154,14 +1154,6 @@
 
 (use-package yasnippet
   :ensure t
-  ;; :bind(
-  ;;         :map yas-minor-mode-map
-  ;;              ;; Remove Yasnippet's default tab key binding
-  ;;              ("TAB" . nil)
-  ;;              ("<tab>" . nil)
-  ;;              ;; Set Yasnippet's key binding to shift+tab
-  ;;              ("<backtab>" . yas-expand)
-  ;;         )
   :config
   (yas-global-mode 1)
   )
@@ -1173,10 +1165,6 @@
 ;;   (add-to-list 'custom-theme-load-path (get-package-install-path "zenburn-theme"))
 ;;   (load-theme 'zenburn t)
 ;;   )
-
-;; load third party packages
-;; (load-directory "~/.emacs.d/load.d")
-
 
 ;; GNU Emacs Lisp reference manual.
 ;; An Introduction to Programming in Emacs Lisp.
