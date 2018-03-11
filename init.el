@@ -469,6 +469,7 @@
   :config
   ;; (setq flycheck-clang-include-path '("/usr/local/include/"))
   (setq flycheck-json-python-json-executable "python3")
+  ;; (setq flycheck-gcc-language-standard "c++11")
   )
 
 
