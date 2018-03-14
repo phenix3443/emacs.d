@@ -825,7 +825,7 @@
   (setq org-export-with-sub-superscripts '{})
   ;; 12 Exporting
   ;; 12.3 Export setting
-  (setq org-export-with-section-numbers 3)
+  ;; (setq org-export-with-section-numbers 3)
   ;; 12.6 HTML export
   ;; 12.6.2 HTML doctypes
   ;; (setq org-html-doctype "html4-transitional")
