@@ -1,4 +1,5 @@
-;; package -- emacs 配置文件
+;;; package -- emacs 配置文件
+;;; Commentary:
 ;; -*- coding:utf-8; -*-
 
 ;;; code:
