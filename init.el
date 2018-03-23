@@ -827,6 +827,7 @@
   ;; 12.3 Export setting
   ;; (setq org-export-with-section-numbers 3)
   ;; 12.6 HTML export
+  (setq org-html-validation-link nil)
   ;; 12.6.2 HTML doctypes
   ;; (setq org-html-doctype "html4-transitional")
   ;; 12.6.6 Tables
@@ -943,7 +944,7 @@
   (setq org-edit-src-auto-save-idle-delay 15)
   ;; (setq org-edit-src-turn-on-auto-save t)
   (setq org-src-window-setup 'current-window)
-  (setq org-src-preserve-indentation t)
+  (setq org-src-preserve-indentation nil)
   (setq org-edit-src-content-indentation 4)
   (setq org-src-ask-before-returning-to-edit-buffer nil)
   (setq org-src-fontify-natively t)
