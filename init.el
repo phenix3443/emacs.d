@@ -523,6 +523,11 @@
   )
 
 
+(use-package graphviz-dot-mode
+  :ensure t
+  :config)
+
+
 (use-package guide-key
   :ensure t
   :config
