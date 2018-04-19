@@ -297,7 +297,7 @@
   :ensure t
   :config
   ;; (c-set-offset 'substatement-open 0)
-  ;; (setq c-basic-offset 8)
+  (setq-default c-basic-offset 4)
   (setq c-default-style '((java-mode . "java")
                           (awk-mode . "awk")
                           (other . "linux")))
