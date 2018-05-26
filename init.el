@@ -330,7 +330,7 @@
 (use-package company
   :ensure t
   :config
-  (setq company-minimum-prefix-length 1)
+  (setq company-minimum-prefix-length 3)
   (setq company-show-numbers t)
   (global-company-mode)
 
