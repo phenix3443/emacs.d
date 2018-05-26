@@ -13,7 +13,7 @@
   "获取包的安装路径"
   (seq-find (lambda (x) (string-match package-name x)) load-path))
 
-(defun load-directory (dir)
+(defun load-directory(dir)
   "将目录中的所有文件载入"
   (let ((load-it (lambda (f) (load-file (concat (file-name-as-directory dir) f)))))
     (mapc load-it (directory-files dir nil "\\.el$"))))
