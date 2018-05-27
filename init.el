@@ -339,7 +339,8 @@
           company-dabbrev-code
           company-files
           company-gtags
-          company-yasnippet))
+          company-yasnippet
+          company-lsp))
 
   (defun company-c/c++-mode-setup ()
     (set (make-local-variable 'company-backends)
@@ -411,10 +412,12 @@
   :config
   )
 
+
 (use-package company-irony-c-headers
   :if (and (package-installed-p 'company) (package-installed-p 'irony))
   :ensure t
   :config)
+
 
 (use-package company-jedi
   :if (and (package-installed-p 'company))
@@ -423,11 +426,23 @@
   (setq jedi:complete-on-dot t)
   )
 
+
+(use-package lsp-mode
+  :ensure t
+  :config
+  (add-hook 'prog-major-mode #'lsp-prog-major-mode-enable))
+
+
 (use-package company-lua
   :if (and (package-installed-p 'company) (package-installed-p 'lua-mode))
   :ensure t
   :config
   )
+
+
+(use-package company-lsp
+  :ensure t
+  :config)
 
 
 (use-package company-quickhelp
