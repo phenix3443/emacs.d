@@ -1,0 +1,21 @@
+# -*- coding:utf-8-*-
+#+TITLE: 安装说明
+#+AUTHOR: liushangliang
+#+EMAIL: phenix3443+github@gmail.com
+
+* irony-mode
+  需要安装libclang
+  #+BEGIN_SRC sh
+sudo apt install libclang-dev
+  #+END_SRC
+
+* jedi-mode
+  需要安装virtualenv
+  #+BEGIN_SRC sh
+sudo pip3 install virtualenv
+  #+END_SRC
+
+* company-gtags
+  需要安装gnu global, pygments
+
+*
