@@ -330,74 +330,74 @@
 (use-package company
   :ensure t
   :config
-  (setq company-minimum-prefix-length 3)
+  (setq company-minimum-prefix-length 1)
   (setq company-show-numbers t)
   (global-company-mode)
 
-  (defvar company-common-backends)
-
-  ;; (setq company-common-backends '(company-capf company-dabbrev company-files))
-  (setq company-common-backends '(company-files))
-  ;; (setq company-common-backends '(company-capf company-files :separate))
-  (if (package-installed-p 'yasnippet)
-      (add-to-list 'company-common-backends 'company-yasnippet))
-  (if (package-installed-p 'helm-gtags)
-      (add-to-list 'company-common-backends 'company-gtags))
+  (setq company-common-backends
+        '(company-capf
+          company-dabbrev-code
+          company-files
+          company-gtags
+          company-yasnippet))
 
   (defun company-c/c++-mode-setup ()
-    (let ((special-backends company-common-backends))
-      (if (package-installed-p 'company-irony)
-          (add-to-list 'special-backends 'company-irony))
-      (if (package-installed-p 'company-irony-c-headers)
-          (add-to-list 'special-backends 'company-irony-c-headers))
-      (set (make-local-variable 'company-backends) (list special-backends))))
+    (set (make-local-variable 'company-backends)
+         ;; irony should be install
+         (append '(company-clang
+                 company-c-headers
+                 company-irony
+                 company-irony-c-headers
+                 )
+                 company-common-backends
+               )))
 
   (add-hook 'c-mode-hook 'company-c/c++-mode-setup)
   (add-hook 'c++-mode-hook 'company-c/c++-mode-setup)
 
   (defun company-cmake-mode-setup()
-    (let ((special-backends company-common-backends))
-      (if (package-install-p 'company-cmake)
-          (add-to-list 'special-backends 'company-cmake))
-      (set (make-local-variable 'company-backends) (list special-backends))))
+    (set (make-local-variable 'company-backends)
+         (list (append '(company-cmake)  company-common-backends))))
+
   (add-hook 'cmake-mode 'company-cmake-mode-setup)
 
   (defun company-elisp-mode-setup ()
-    (let ((special-backends company-common-backends))
-      (add-to-list 'special-backends 'company-elisp)
-      (set (make-local-variable 'company-backends) (list special-backends))))
+    (set (make-local-variable 'company-backends)
+         (list (append '(company-elisp)  company-common-backends))))
+
   (add-hook 'emacs-lisp-mode-hook 'company-elisp-mode-setup)
 
   (defun company-lua-mode-setup ()
-    (let ((special-backends company-common-backends))
-      (if (package-installed-p 'company-lua)
-          (add-to-list 'special-backends 'company-lua))
-      (set (make-local-variable 'company-backends) (list special-backends))))
+    (set (make-local-variable 'company-backends)
+         (list (append '(company-lua)  company-common-backends))))
+
   (add-hook 'lua-mode-hook 'company-lua-mode-setup)
 
   (defun company-python-mode-hook ()
-    (let ((special-backends '()))
-      (if (package-installed-p 'company-jedi)
-          (add-to-list 'special-backends 'company-jedi))
+    (set (make-local-variable 'company-backends)
+         (list (append '(company-jedi)  company-common-backends))))
 
-      (set (make-local-variable 'company-backends) (list special-backends))))
   (add-hook 'python-mode-hook 'company-python-mode-hook)
 
   (defun company-restclient-mode-setup()
-    (let ((special-backends company-common-backends))
-      (if (package-installed-p 'company-restclient)
-          (add-to-list 'special-backends 'company-restclient))
-      (set (make-local-variable 'company-backends) (list special-backends))))
+    (set (make-local-variable 'company-backends)
+         (list (append '(company-restclient)  company-common-backends))))
+
   (add-hook 'restclient-mode-hook 'company-restclient-mode-setup)
 
   (defun company-go-mode-setup ()
-    (let ((special-backends company-common-backends))
-      (if (package-installed-p 'company-go)
-          (add-to-list 'special-backends 'company-go))
-      (set (make-local-variable 'company-backends) (list special-backends))))
+    (set (make-local-variable 'company-backends)
+         (list (append '(company-go)  company-common-backends))))
+
   (add-hook 'go-mode-hook 'company-go-mode-setup)
   )
 
+(use-package company-c-headers
+  :ensure t
+  :config
+  ;; (add-to-list company-c-headers-path-user ".")
+  ;; (add-to-list company-c-headers-path-system ".")
+  )
 
 (use-package company-go
   :ensure t
