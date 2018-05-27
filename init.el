@@ -345,13 +345,12 @@
   (defun company-c/c++-mode-setup ()
     (set (make-local-variable 'company-backends)
          ;; irony should be install
-         (append '(company-clang
-                 company-c-headers
-                 company-irony
-                 company-irony-c-headers
-                 )
-                 company-common-backends
-               )))
+         (list (append '(
+                         company-clang
+                         company-c-headers
+                         )
+                       company-common-backends
+                       ))))
 
   (add-hook 'c-mode-hook 'company-c/c++-mode-setup)
   (add-hook 'c++-mode-hook 'company-c/c++-mode-setup)
@@ -406,17 +405,15 @@
   )
 
 
-(use-package company-irony
-  :if (and (package-installed-p 'company) (package-installed-p 'irony))
-  :ensure t
-  :config
-  )
+;; (use-package company-irony
+;;   :ensure t
+;;   :config
+;;   )
 
 
-(use-package company-irony-c-headers
-  :if (and (package-installed-p 'company) (package-installed-p 'irony))
-  :ensure t
-  :config)
+;; (use-package company-irony-c-headers
+;;   :ensure t
+;;   :config)
 
 
 (use-package company-jedi
@@ -489,10 +486,10 @@
   )
 
 
-(use-package flycheck-irony
-  :ensure t
-  :config
-  (add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
+;; (use-package flycheck-irony
+;;   :ensure t
+;;   :config
+;;   (add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 
 (defun my-go-mode-hook ()
   (if (not (string-match "go" compile-command))
@@ -705,34 +702,35 @@
   )
 
 
-(use-package irony
-  :ensure t
-  :init
-  (add-hook 'c-mode-hook 'irony-mode)
-  (add-hook 'c++-mode-hook 'irony-mode)
-  (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
-  ;; (add-hook 'objc-mode-hook 'irony-mode)
-  :config
-  ;; replace the `completion-at-point' and `complete-symbol' bindings in
-  ;; irony-mode's buffers by irony-mode's function
-  ;; (defun my-irony-mode-hook ()
-  ;;   (define-key irony-mode-map [remap completion-at-point]
-  ;;     'irony-completion-at-point-async)
-  ;;   (define-key irony-mode-map [remap complete-symbol]
-  ;;     'irony-completion-at-point-async))
+;; (use-package irony
+;;   :disabled t
+;;   :ensure t
+;;   :init
+;;   (add-hook 'c-mode-hook 'irony-mode)
+;;   (add-hook 'c++-mode-hook 'irony-mode)
+;;   (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+;;   ;; (add-hook 'objc-mode-hook 'irony-mode)
+;;   :config
+;;   ;; replace the `completion-at-point' and `complete-symbol' bindings in
+;;   ;; irony-mode's buffers by irony-mode's function
+;;   ;; (defun my-irony-mode-hook ()
+;;   ;;   (define-key irony-mode-map [remap completion-at-point]
+;;   ;;     'irony-completion-at-point-async)
+;;   ;;   (define-key irony-mode-map [remap complete-symbol]
+;;   ;;     'irony-completion-at-point-async))
 
-  ;; (add-hook 'irony-mode-hook 'my-irony-mode-hook)
+;;   ;; (add-hook 'irony-mode-hook 'my-irony-mode-hook)
 
-  )
+;;   )
 
 
-(use-package irony-eldoc
-  :if (package-installed-p 'irony)
-  :ensure t
-  :init
-  (add-hook 'irony-mode-hook 'irony-eldoc)
-  :config
-  )
+;; (use-package irony-eldoc
+;;   :if (package-installed-p 'irony)
+;;   :ensure t
+;;   :init
+;;   (add-hook 'irony-mode-hook 'irony-eldoc)
+;;   :config
+;;   )
 
 
 (use-package json-mode
