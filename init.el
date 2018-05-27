@@ -424,12 +424,6 @@
   )
 
 
-(use-package lsp-mode
-  :ensure t
-  :config
-  (add-hook 'prog-major-mode #'lsp-prog-major-mode-enable))
-
-
 (use-package company-lua
   :if (and (package-installed-p 'company) (package-installed-p 'lua-mode))
   :ensure t
@@ -454,6 +448,19 @@
 (use-package company-restclient
   :if (and (package-installed-p 'company) (package-installed-p 'restclient))
   :ensure t)
+
+(defun cquery//enable ()
+  (condition-case nil
+      (lsp-cquery-enable)
+    (user-error nil)))
+
+(use-package cquery
+  :commands lsp-cquery-enable
+  :init (add-hook 'c-mode-common-hook #'cquery//enable)
+  :ensure t
+  :config
+  (setq cquery-executable (concat (getenv "HOME") "/github/cquery/build/release/bin/cquery"))
+  )
 
 
 (use-package crontab-mode
@@ -737,6 +744,27 @@
   :ensure t
   :mode "\\.json$"
   :config)
+
+(use-package lsp-mode
+  :ensure t
+  :config
+  ;; (lsp-define-stdio-client
+  ;;  ;; This can be a symbol of your choosing. It will be used as a the
+  ;;  ;; prefix for a dynamically generated function "-enable"; in this
+  ;;  ;; case: lsp-prog-major-mode-enable
+  ;;  lsp-prog-major-mode
+  ;;  "language-id"
+  ;;  ;; This will be used to report a project's root directory to the LSP
+  ;;  ;; server.
+  ;;  (lambda () default-directory)
+  ;;  ;; This is the command to start the LSP server. It may either be a
+  ;;  ;; string containing the path of the command, or a list wherein the
+  ;;  ;; car is a string containing the path of the command, and the cdr
+  ;;  ;; are arguments to that command.
+  ;;  '("/my/lsp/server" "and" "args"))
+
+  ;; (add-hook 'c-mode-common-hook #'lsp-prog-major-mode-enable)
+  )
 
 
 (use-package lua-mode
