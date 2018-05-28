@@ -23,4 +23,7 @@ sudo pip3 install virtualenv
 * company-gtags
   需要安装gnu global, pygments
 
-*
+* cqeury
+  #+BEGIN_SRC sh
+sudo apt install clang clang-format
+  #+END_SRC
