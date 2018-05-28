@@ -229,6 +229,7 @@
                          ("Org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
                          ))
 (package-initialize)
+
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
@@ -240,7 +241,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                     第三方插件包
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 
 (use-package auctex
   :ensure t
@@ -329,18 +329,17 @@
 
 (use-package company
   :ensure t
+  :bind (("C-c y" . company-yasnippet))
   :config
   (setq company-minimum-prefix-length 1)
   (setq company-show-numbers t)
   (global-company-mode)
 
-  (setq company-common-backends
-        '(company-capf
-          company-dabbrev-code
-          company-files
-          company-gtags
-          company-yasnippet
-          company-lsp))
+  (setq company-common-backends '(company-capf
+                                  company-dabbrev-code
+                                  company-files
+                                  company-gtags
+                                  ))
 
   (defun company-c/c++-mode-setup ()
     (set (make-local-variable 'company-backends)
@@ -351,7 +350,7 @@
          ;;                 )
          ;;               company-common-backends
          ;;               ))
-         (list '(company-irony company-irony-c-headers))
+         (list '(company-irony company-irony-c-headers) company-common-backends)
 
          ))
 
@@ -372,7 +371,7 @@
 
   (defun company-lua-mode-setup ()
     (set (make-local-variable 'company-backends)
-         (list (append '(company-lua)  company-common-backends))))
+         (list (append '(company-lua company-lsp)  company-common-backends))))
 
   (add-hook 'lua-mode-hook 'company-lua-mode-setup)
 
