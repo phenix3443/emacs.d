@@ -1,4 +1,8 @@
-;; -*- coding:utf-8; -*-
+;;; package --- summary  auto-complete配置
+;;; -*-coding:utf-8 -*-
+;;; commentary:
+
+;;; code:
 
 (require 'use-package)
 
@@ -10,20 +14,20 @@
 
   (add-to-list 'auth-sources "~/.netrc")
   (let ((c_1 (auth-source-user-and-password "panghuli_blog"))
-		(c_2 (auth-source-user-and-password "blog_local")))
-	(setq org2blog/wp-blog-alist
-		  `(("panghuli_blog"
-			 :url "http://blog.panghuli.me/xmlrpc.php"
-			 :username ,(car  c_1)
-			 :password ,(cadr c_1)
-			 :default-title ("未命名")
-			 :default-categories "专业知识")
-			("blog_local"
-			 :url "http://blog.localhost/xmlrpc.php"
-			 :username ,(car c_2)
-			 :password ,(cadr c_2)
-			 :default-title ("未命名")
-			 :default-categories "专业知识"))))
+        (c_2 (auth-source-user-and-password "blog_local")))
+    (setq org2blog/wp-blog-alist
+          `(("panghuli_blog"
+             :url "http://blog.panghuli.me/xmlrpc.php"
+             :username ,(car  c_1)
+             :password ,(cadr c_1)
+             :default-title ("未命名")
+             :default-categories "专业知识")
+            ("blog_local"
+             :url "http://blog.localhost/xmlrpc.php"
+             :username ,(car c_2)
+             :password ,(cadr c_2)
+             :default-title ("未命名")
+             :default-categories "专业知识"))))
 
   ;; use yasnippet snippet instead of blog template
   ;; (setq org2blog/wp-buffer-template "")
@@ -39,9 +43,11 @@
 
   ;; add those languages which are not contained in org2blog/wp-source-langs, but supported by org-mode and syntaxhighlight to below variable
   (setq org2blog/wp-shortcode-langs-map
-		'(("clojure" . "clojure")
-		  ("html" . "html")
-		  ("r" . "r")))
+        '(("clojure" . "clojure")
+          ("html" . "html")
+          ("r" . "r")))
 
   )
-(provide 'init-org2blog)
+
+(provide 'org2blog-cfg)
+;;; org2blog-cfg.el ends here

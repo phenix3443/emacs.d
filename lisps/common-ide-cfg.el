@@ -66,10 +66,6 @@
   )
 
 ;;; 代码编辑
-(use-package header2
-  :ensure t
-  )
-
 (use-package smart-comment
   :ensure t
   :bind ("M-;" . smart-comment))

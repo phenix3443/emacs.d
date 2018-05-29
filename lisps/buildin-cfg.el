@@ -118,8 +118,10 @@
 (setq sentence-end-double-space nil)
 
 ;; 25.5 Filling Text
+(set-default 'fill-column 80)
 ;; (add-hook 'org-mode-hook 'turn-on-auto-fill)
 ;; (setq-default auto-fill-function 'do-auto-fill)
+
 ;; 25.9 Org mode
 
 ;; 25.10 TeX Mode

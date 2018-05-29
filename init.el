@@ -30,6 +30,7 @@
 (require 'golang-ide-cfg)
 (require 'lua-ide-cfg)
 (require 'json-ide-cfg)
+(require 'ruby-ide-cfg)
 (require 'python-ide-cfg)
 (require 'protobuf-ide-cfg)
 (require 'sql-ide-cfg)

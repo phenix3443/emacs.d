@@ -17,12 +17,36 @@
   :config
   )
 
+(use-package indent-guide
+  :ensure t
+  :disabled t
+  :config
+  (setq indent-guide-delay 0.1)
+  (indent-guide-global-mode)
+  ;; (setq indent-guide-recursive t)
+  )
+
+(use-package fill-column-indicator
+  :ensure t
+  :config
+  ;; (add-hook 'prog-mode-hook (lambda () (fci-mode 1)))
+
+  ;; (defun fci-mode-override-advice (&rest args))
+  ;; (advice-add 'org-html-fontify-code :around
+  ;;          (lambda (fun &rest args)
+  ;;            (advice-add 'fci-mode :override #'fci-mode-override-advice)
+  ;;            (let ((result  (apply fun args)))
+  ;;              (advice-remove 'fci-mode #'fci-mode-override-advice)
+  ;;              result)))
+  )
+
 (use-package pangu-spacing
   :ensure t
   :config
   ;; (setq pangu-spacing-real-insert-separtor t)
   (global-pangu-spacing-mode 1)
   )
+
 (use-package window-numbering
   :ensure t
   :config
