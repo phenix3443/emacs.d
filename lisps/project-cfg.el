@@ -3,30 +3,10 @@
 ;;; commentary:
 
 ;;; code:
-
-(use-package helm-projectile
-  :requires (helm projectile)
-  :ensure t
-  :config
-  (helm-projectile-on)
-  )
-
-(use-package helm-descbinds
-  :requires (helm)
-  :ensure t
-  :config
-  (helm-descbinds-mode))
-
-
 (use-package helm-gtags
-  :requires (helm)
   :ensure t
-  :init
-  (add-hook 'prog-mode-hook 'helm-gtags-mode)
-  (custom-set-variables
-   '(helm-gtags-prefix-key "\C-c g")
-   ;; '(helm-gtags-suggested-key-mapping t)
-   )
+  :after (helm)
+  :hook (prog-mode . helm-gtags-mode)
   :bind (:map helm-gtags-mode-map
               ("C-c g a" . helm-gtags-tags-in-this-function)
               ("C-c g b" . helm-gtags-display-browser)
@@ -51,6 +31,7 @@
               ("C-c g <" . helm-gtags-previous-history)
               ("C-c g >" . helm-gtags-next-history)
               )
+
   :config
   (custom-set-variables
    '(helm-gtags-auto-update t)
@@ -69,15 +50,6 @@
    )
   )
 
-;; (use-package persp-mode
-;;   :ensure t
-;;   :config
-;;   (persp-mode 1)
-;;   )
-(use-package sr-speedbar
-  :ensure t
-  :config
-  )
 
 (use-package projectile
   :ensure t
@@ -89,15 +61,33 @@
         (setq projectile-indexing-method 'alien)
         (setq projectile-enable-caching t)
         ))
-
-  (if (package-installed-p 'helm-projectile)
-      (progn
-        ;; switching projects
-        (setq projectile-switch-project-action 'helm-projectile)
-        ;; completion
-        (setq projectile-completion-system 'helm)
-        ))
   )
+
+(use-package helm-projectile
+  :after (helm projectile)
+  :ensure t
+  :config
+  (helm-projectile-on)
+  ;; switching projects
+  (setq projectile-switch-project-action 'helm-projectile)
+  ;; completion
+  (setq projectile-completion-system 'helm)
+  )
+
+;; (use-package persp-mode
+;;   :ensure t
+;;   :config
+;;   (persp-mode 1)
+;;   )
+(use-package sr-speedbar
+  :ensure t
+  :config
+  )
+
+
+(use-package graphviz-dot-mode
+  :ensure t
+  :config)
 
 (provide 'project-cfg)
 

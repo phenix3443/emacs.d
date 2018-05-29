@@ -4,7 +4,7 @@
 
 ;;; code:
 
-
+;;; 代码补全
 (use-package irony
   :ensure t
   :hook c
@@ -39,14 +39,13 @@
   :config
   )
 
-
 (use-package company-irony-c-headers
-  :requires company
+  :requires (company)
   :ensure t
   :config)
 
 (use-package company-c-headers
-  :requires company
+  :requires (company)
   :ensure t
   :config
   ;; (add-to-list company-c-headers-path-user ".")
@@ -66,6 +65,15 @@
   (setq cquery-executable (concat (getenv "HOME") "/github/cquery/build/release/bin/cquery"))
   )
 
+(defun company-c/c++-mode-setup()
+  "C/C++ company补全后端设置"
+  (set (make-local-variable 'company-backends)
+       (list '(company-irony company-irony-c-headers) (car company-backends))))
+
+(add-hook 'c-mode-hook 'company-c/c++-mode-setup)
+(add-hook 'c++-mode-hook 'company-c/c++-mode-setup)
+
+;;; 代码格式化
 (use-package clang-format
   :ensure t
   :bind (("C-c i" . clang-format-region)

@@ -3,30 +3,17 @@
 ;;; commentary:
 
 ;;; code:
-;;; code complete
 
-
-
-(use-package smart-comment
-  :ensure t
-  :bind ("M-;" . smart-comment))
-
-
-(use-package smart-compile
-  :ensure t
-  :config
-  )
-
-(use-package yasnippet-snippets
-  :ensure t
-  :config)
-
-
+;;; 代码补全（code complete）
 (use-package yasnippet
   :ensure t
   :config
   (yas-global-mode 1)
   )
+
+(use-package yasnippet-snippets
+  :ensure t
+  :config)
 
 (use-package company
   :ensure t
@@ -36,63 +23,11 @@
   (setq company-show-numbers t)
   (global-company-mode)
 
-  (setq company-common-backends '(company-capf
-                                  company-dabbrev-code
-                                  company-files
-                                  company-gtags
-                                  ))
-
-  (defun company-c/c++-mode-setup ()
-    (set (make-local-variable 'company-backends)
-         ;; irony should be install
-         ;; (list (append '(
-         ;;                 company-clang
-         ;;                 company-c-headers
-         ;;                 )
-         ;;               company-common-backends
-         ;;               ))
-         (list '(company-irony company-irony-c-headers) company-common-backends)
-
-         ))
-
-  (add-hook 'c-mode-hook 'company-c/c++-mode-setup)
-  (add-hook 'c++-mode-hook 'company-c/c++-mode-setup)
-
-  (defun company-cmake-mode-setup()
-    (set (make-local-variable 'company-backends)
-         (list (append '(company-cmake)  company-common-backends))))
-
-  (add-hook 'cmake-mode 'company-cmake-mode-setup)
-
-  (defun company-elisp-mode-setup ()
-    (set (make-local-variable 'company-backends)
-         (list (append '(company-elisp)  company-common-backends))))
-
-  (add-hook 'emacs-lisp-mode-hook 'company-elisp-mode-setup)
-
-  (defun company-lua-mode-setup ()
-    (set (make-local-variable 'company-backends)
-         (list (append '(company-lua company-lsp)  company-common-backends))))
-
-  (add-hook 'lua-mode-hook 'company-lua-mode-setup)
-
-  (defun company-python-mode-hook ()
-    (set (make-local-variable 'company-backends)
-         (list (append '(company-jedi)  company-common-backends))))
-
-  (add-hook 'python-mode-hook 'company-python-mode-hook)
-
-  (defun company-restclient-mode-setup()
-    (set (make-local-variable 'company-backends)
-         (list (append '(company-restclient)  company-common-backends))))
-
-  (add-hook 'restclient-mode-hook 'company-restclient-mode-setup)
-
-  (defun company-go-mode-setup ()
-    (set (make-local-variable 'company-backends)
-         (list (append '(company-go)  company-common-backends))))
-
-  (add-hook 'go-mode-hook 'company-go-mode-setup)
+  (setq company-backends '((company-capf
+                              company-dabbrev-code
+                              company-files
+                              company-gtags
+                              )))
   )
 
 (use-package company-quickhelp
@@ -127,16 +62,32 @@
 (use-package company-lsp
   :requires lsp-mode
   :ensure t
-  :config)
+  :config
+  )
 
-;;; hilight
+;;; 代码编辑
+(use-package header2
+  :ensure t
+  )
+
+(use-package smart-comment
+  :ensure t
+  :bind ("M-;" . smart-comment))
+
+;;; 编译
+(use-package smart-compile
+  :ensure t
+  :config
+  )
+
+;;; 代码高亮
 (use-package auto-highlight-symbol
   :ensure t
   :config
   (global-auto-highlight-symbol-mode t)
   )
 
-;;; checker
+;;; 语法检查（syntax check）
 (use-package flycheck
   :ensure t
   :init
@@ -150,14 +101,15 @@
 
 
 (use-package flycheck-irony
+  :requires (flycheck irony)
   :ensure t
+  :hook (flycheck . flycheck-irony-setup)
   :config
-  (add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
+)
 
-
-(use-package header2
-  :ensure t
-  )
+;;; other ide
+(use-package nginx-mode
+  :ensure t)
 
 (provide 'common-ide-cfg)
 ;;; common-ide-cfg.el ends here

@@ -19,10 +19,17 @@
   )
 
 (use-package yapfify
-  :hook python
+  :hook (python-mode . yapf-mode)
   :ensure t
   :config
-)
+  )
+
+(defun company-python-mode-hook()
+  "create python company backend"
+  (set (make-local-variable 'company-backends)
+       (list (append '(company-jedi)  (car company-backends)))))
+
+(add-hook 'python-mode-hook 'company-python-mode-hook)
 
 (provide 'python-ide-cfg)
 ;;; python-ide-cfg.el ends here

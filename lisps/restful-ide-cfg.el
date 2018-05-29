@@ -12,5 +12,10 @@
   :requires (company restclient)
   :ensure t)
 
+(defun company-cmake-mode-setup()
+  "create restclient company backend"
+  (set (make-local-variable 'company-backends)
+       (list (append '(company-restclient) (car company-backends)))))
+
 (provide 'restful-ide-cfg)
 ;;; restful-ide-cfg.el ends here

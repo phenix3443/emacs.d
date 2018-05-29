@@ -1,4 +1,4 @@
-;;; package --- summary  一些实用的函数
+;;; package --- summary  一些小的实用的函数，实用纯lisp编写
 ;;; -*-coding:utf-8 -*-
 ;;; commentary:
 
@@ -14,9 +14,6 @@
         (load-it (lambda (f)
                    (load-file (concat (file-name-as-directory dir) f)))))
     (mapc load-it (directory-files dir nil "\\.el$"))))
-
-;; (load-directory "~/.emacs.d/lisps/") ;load emacs builtin feature
-
 
 
 (provide 'misc)

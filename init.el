@@ -4,28 +4,36 @@
 
 ;;; code:
 
-
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
+(require 'package)
+(setq package-enable-at-startup nil)
+(setq package-archives '(
+                         ("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+                         ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+                         ("Marmalade" ."http://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/")
+                         ("Org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+                         ))
 (package-initialize)
 
 (add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisps")))
 
-(require 'misc)                         ;自定义函数
-(require 'buildin-cfg)                  ;内建配置
+(require 'misc)
+(require 'buildin-cfg)
+(require 'aux-utils-cfg)
+(require 'theme-cfg)
+
 (require 'editor-cfg)
 
 (require 'common-ide-cfg)
+(require 'lisp-ide-cfg)
 (require 'cxx-ide-cfg)
+(require 'cmake-ide-cfg)
 (require 'golang-ide-cfg)
 (require 'lua-ide-cfg)
 (require 'json-ide-cfg)
 (require 'python-ide-cfg)
 (require 'protobuf-ide-cfg)
 (require 'sql-ide-cfg)
+
 
 (require 'crontab-ide-cfg)
 (require 'markdown-ide-cfg)
@@ -36,78 +44,6 @@
 (require 'project-cfg)
 (require 'vcs-cfg)
 (require 'org-cfg)
-
-(use-package guide-key
-  :ensure t
-  :config
-  (setq guide-key/guide-key-sequence t)
-
-  (setq guide-key/highlight-command-regexp
-        '("rectangle"
-          ("register" . font-lock-type-face)
-          ("bookmark" . "hot pink")))
-
-  (setq guide-key/idle-delay 0.5)
-
-  (setq guide-key/recursive-key-sequence-flag t)
-
-  (setq guide-key/popup-window-position 'bottom)
-
-  (guide-key-mode 1)
-  )
-
-(use-package graphviz-dot-mode
-  :ensure t
-  :config)
-
-(use-package moe-theme
-  :ensure t
-  :config
-  ;; (load-theme 'moe-dark)
-  ;; (add-to-list 'custom-theme-load-path (get-package-install-path "moe-theme"))
-  (setq moe-theme-highlight-buffer-id t)
-
-  (if (package-installed-p 'markdown-mode)
-      (setq moe-theme-resize-markdown-title '(1.5 1.4 1.3 1.2 1.0 1.0)))
-
-  (if (package-installed-p 'org)
-      (setq moe-theme-resize-org-title '(1.5 1.4 1.3 1.2 1.1 1.0 1.0 1.0 1.0)))
-
-  ;; (setq moe-theme-resize-rst-title '(1.5 1.4 1.3 1.2 1.1 1.0))
-  ;; (if (package-installed-p 'powerline)
-  ;;     (powerline-moe-theme))
-
-  (moe-dark)
-  )
-
-
-(use-package nginx-mode
-  :ensure t)
-
-
-
-(use-package powerline
-  :disabled t
-  :ensure t
-  :config
-  (powerline-default-theme)
-  )
-
-(use-package restart-emacs
-  :ensure t
-  :config
-  )
-
-
-
-
-(use-package smart-mode-line
-  :ensure t
-  :disabled t
-  :config
-  (setq sml/no-confirm-load-theme t)
-  (sml/setup)
-  )
 
 ;; GNU Emacs Lisp reference manual.
 ;; An Introduction to Programming in Emacs Lisp.

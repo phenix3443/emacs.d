@@ -14,10 +14,17 @@
   )
 
 (use-package company-lua
-  :requires (company lua-mode)
+  :requires (company)
   :ensure t
   :config
   )
+
+(defun company-lua-mode-setup()
+  "create lua company backend"
+  (set (make-local-variable 'company-backends)
+       (list (append '(company-lua company-lsp) (car company-backends)))))
+
+(add-hook 'lua-mode-hook 'company-lua-mode-setup)
 
 (provide 'lua-ide-cfg)
 ;;; lua-ide-cfg.el ends here

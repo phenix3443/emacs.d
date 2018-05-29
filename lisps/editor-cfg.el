@@ -18,6 +18,7 @@
   )
 
 (use-package paredit
+  :disabled
   :ensure t
   :bind(
         :map paredit-mode-map

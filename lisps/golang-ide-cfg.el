@@ -10,7 +10,7 @@
   :config
   )
 
-(defun my-go-mode-hook()
+(defun my-golang-compile-hook()
   (if (not (string-match "go" compile-command))
       (set (make-local-variable 'compile-command)
            "go build -v && go test -v && go vet"))
@@ -38,7 +38,6 @@
   (add-hook 'go-mode-hook 'go-eldoc-setup)
   )
 
-
 (use-package go-guru
   :ensure t
   :config)
@@ -49,9 +48,16 @@
   :config
   (setq gofmt-command "goimports")
   (add-hook 'before-save-hook 'gofmt-before-save)
-  (add-hook 'go-mode-hook 'my-go-mode-hook)
+  (add-hook 'go-mode-hook 'my-golang-compile-hook)
   ;; (add-hook 'go-mode-hook #'go-guru-hl-identifier-mode)
   )
+
+(defun company-go-mode-setup()
+  "create golang company backend"
+  (set (make-local-variable 'company-backends)
+       (list (append '(company-go)  (car company-backends)))))
+
+(add-hook 'go-mode-hook 'company-go-mode-setup)
 
 (provide 'golang-ide-cfg)
 ;;; golang-ide-cfg.el ends here

@@ -197,15 +197,7 @@
 ;; (setq custom-enabled-themes '(sanityinc-tomorrow-eighties))
 
 ;; 50.2 Package Installation
-(require 'package)
-(setq package-enable-at-startup nil)
-(setq package-archives '(
-                         ("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-                         ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-                         ("Marmalade" ."http://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/")
-                         ("Org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
-                         ))
-(package-initialize)
+
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -213,8 +205,6 @@
 
 ;; 以下内容在 emacs manual 中没有找到
 ;; (global-superword-mode)
-
-(message "here is download buildin-cfg")
 
 (provide 'buildin-cfg)
 ;;; buildin-cfg.el ends here
