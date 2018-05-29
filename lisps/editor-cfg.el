@@ -17,25 +17,6 @@
   :config
   )
 
-(use-package paredit
-  :disabled
-  :ensure t
-  :bind(
-        :map paredit-mode-map
-             ("C-)" . paredit-forward-slurp-sexp)
-             ("C-(" . paredit-backward-slurp-sexp)
-             ("C-}" . paredit-forward-barf-sexp)
-             ("C-{" . paredit-backward-barf-sexp)
-             ("C-<right>" . nil)
-             ("C-<left>" .  nil)
-             )
-  :init
-  (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
-  :config
-  ;; (require-package 'paredit-everywhere)
-  ;; (add-hook 'css-mode-hook 'paredit-everywhere-mode)
-  )
-
 (use-package pangu-spacing
   :ensure t
   :config
