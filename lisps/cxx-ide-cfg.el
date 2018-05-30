@@ -7,20 +7,20 @@
 ;;; 代码补全
 (use-package irony
   :ensure t
-  :hook c
-  :hook c++
-  :hook (irony . irony-cdb-autosetup-compile-options)
+  :hook (((c-mode c++-mode) . irony-mode)
+         (irony-mode . irony-cdb-autosetup-compile-options)
+         )
   :init
   :config
   ;; replace the `completion-at-point' and `complete-symbol' bindings in
   ;; irony-mode's buffers by irony-mode's function
-  (defun my-irony-mode-hook ()
-    (define-key irony-mode-map [remap completion-at-point]
-      'irony-completion-at-point-async)
-    (define-key irony-mode-map [remap complete-symbol]
-      'irony-completion-at-point-async))
+  ;; (defun my-irony-mode-hook ()
+  ;;   (define-key irony-mode-map [remap completion-at-point]
+  ;;     'irony-completion-at-point-async)
+  ;;   (define-key irony-mode-map [remap complete-symbol]
+  ;;     'irony-completion-at-point-async))
 
-  (add-hook 'irony-mode-hook 'my-irony-mode-hook)
+  ;; (add-hook 'irony-mode-hook 'my-irony-mode-hook)
   )
 
 
