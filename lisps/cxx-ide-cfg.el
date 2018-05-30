@@ -12,6 +12,7 @@
          )
   :init
   :config
+  (setq irony-additional-clang-options '("-std=c++11"))
   ;; replace the `completion-at-point' and `complete-symbol' bindings in
   ;; irony-mode's buffers by irony-mode's function
   ;; (defun my-irony-mode-hook ()
@@ -23,30 +24,25 @@
   ;; (add-hook 'irony-mode-hook 'my-irony-mode-hook)
   )
 
-
-(use-package irony-eldoc
-  :requires (irony)
-  :hook irony
+(use-package company-irony
   :ensure t
-  :init
-  :config
+  :requires (company irony)
   )
 
-
-(use-package company-irony
-  :requires (company irony)
+(use-package irony-eldoc
   :ensure t
-  :config
+  :after (irony)
+  :hook (irony-mode . irony-eldoc)
   )
 
 (use-package company-irony-c-headers
-  :requires (company)
   :ensure t
+  :after (company irony)
   :config)
 
 (use-package company-c-headers
-  :requires (company)
   :ensure t
+  :after (company)
   :config
   ;; (add-to-list company-c-headers-path-user ".")
   ;; (add-to-list company-c-headers-path-system ".")
@@ -91,6 +87,13 @@
   (setq c-default-style '((java-mode . "java")
                           (awk-mode . "awk")
                           (other . "linux")))
+  )
+
+;; 语法检查
+(use-package flycheck-irony
+  :ensure t
+  :after (flycheck irony)
+  :hook (irony-mode . flycheck-irony-setup)
   )
 
 (provide 'cxx-ide-cfg)

@@ -91,17 +91,10 @@
   :config
   ;; (setq flycheck-clang-include-path '("/usr/local/include/"))
   (setq flycheck-json-python-json-executable "python3")
-  ;; (setq flycheck-gcc-language-standard "c++11")
+  (setq flycheck-gcc-language-standard "c++11")
+  (setq flycheck-clang-language-standard "c++11")
   (setq flycheck-emacs-lisp-load-path 'inherit)
   )
-
-
-(use-package flycheck-irony
-  :requires (flycheck irony)
-  :ensure t
-  :hook (flycheck . flycheck-irony-setup)
-  :config
-)
 
 ;;; other ide
 (use-package nginx-mode
