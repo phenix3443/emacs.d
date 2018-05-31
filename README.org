@@ -27,3 +27,5 @@ sudo pip3 install virtualenv
   #+BEGIN_SRC sh
 sudo apt install clang clang-format
   #+END_SRC
+
+* global
