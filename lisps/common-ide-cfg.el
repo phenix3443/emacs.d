@@ -26,6 +26,7 @@
   (setq company-backends '((company-capf
                               company-dabbrev-code
                               company-files
+                              company-keywords
                               company-gtags
                               )))
   )
