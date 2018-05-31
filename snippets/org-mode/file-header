@@ -8,5 +8,6 @@
 #+AUTHOR: ${2:liushangliang}
 #+EMAIL: ${3:phenix3443+github@gmail.com}
 #+STARTUP: overview
-#+OPTIONS: num:nil
+#+OPTIONS: author:nil date:nil creator:nil timestamp:nil validate:nil num:nil
+
 $0
