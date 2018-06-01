@@ -19,8 +19,11 @@
 
 (use-package smartparens
   :ensure t
-  :disabled
   :hook (emacs-lisp-mode . smartparens-mode)
+  ;; :bind (
+  ;;        :map smartparens-mode-map
+  ;;             ("" . sp-beginning-of-next-sexp)
+  ;;             )
   :config
   (require 'smartparens-config))
 

@@ -5,6 +5,7 @@
 ;;; code:
 (use-package paredit
   :ensure t
+  :disabled
   :hook (emacs-lisp-mode . enable-paredit-mode)
   :bind(
         :map paredit-mode-map
