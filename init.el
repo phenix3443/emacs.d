@@ -7,7 +7,7 @@
 (require 'package)
 (setq package-enable-at-startup nil)
 (setq package-archives '(
-                         ("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+                         ("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
                          ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
                          ("Marmalade" ."http://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/")
                          ("Org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
