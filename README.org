@@ -14,12 +14,6 @@ sudo apt install silversearcher-ag
 sudo apt install libclang-dev
   #+END_SRC
 
-* jedi-mode
-  需要安装virtualenv
-  #+BEGIN_SRC sh
-sudo pip3 install virtualenv
-  #+END_SRC
-
 * company-gtags
   需要安装gnu global, pygments
 
