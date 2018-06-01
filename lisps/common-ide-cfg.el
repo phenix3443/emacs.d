@@ -4,7 +4,20 @@
 
 ;;; code:
 
-;;; 代码补全（code complete）
+;;; 编辑辅助(Code generation helpers)
+
+;; 代码模板
+(use-package yasnippet
+  :ensure t
+  :config
+  (yas-global-mode 1)
+  )
+
+(use-package yasnippet-snippets
+  :ensure t
+  :config)
+
+;; 语义补全（code complete）
 (use-package company
   :ensure t
   :bind (("C-c y" . company-yasnippet))
@@ -56,29 +69,11 @@
   :config
   )
 
-;;; 编辑辅助(Code generation helpers)
-(use-package yasnippet
-  :ensure t
-  :config
-  (yas-global-mode 1)
-  )
-
-(use-package yasnippet-snippets
-  :ensure t
-  :config)
-
 (use-package smart-comment
   :ensure t
   :bind ("M-;" . smart-comment))
 
-;;; 代码高亮
-(use-package auto-highlight-symbol
-  :ensure t
-  :config
-  (global-auto-highlight-symbol-mode t)
-  )
-
-;;; Lint, style and syntax checkers
+;; 语法检查（syntax checkers）
 (use-package flycheck
   :ensure t
   :init
@@ -91,7 +86,29 @@
   (setq flycheck-emacs-lisp-load-path 'inherit)
   )
 
-;;; code navigation
+;;; 文档（document）
+;;; 编译（compile）
+(use-package smart-compile
+  :ensure t
+  :config
+  )
+;;; 测试（run test）
+(use-package nginx-mode
+  :ensure t)
+
+;;; 调试（debug）
+;;; 静态检查
+;;; 动态检查
+;;; 性能分析
+
+;;; 导航（navigation）
+;; 高亮
+(use-package auto-highlight-symbol
+  :ensure t
+  :config
+  (global-auto-highlight-symbol-mode t)
+  )
+;; 代码跳转
 (use-package helm-gtags
   :ensure t
   :after (helm)
@@ -138,15 +155,6 @@
    '(helm-gtags-use-input-at-cursor t)
    )
   )
-;;; compile
-(use-package smart-compile
-  :ensure t
-  :config
-  )
-;;; run test
-(use-package nginx-mode
-  :ensure t)
-;;; Interactive environments
 
 (provide 'common-ide-cfg)
 ;;; common-ide-cfg.el ends here

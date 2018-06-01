@@ -71,6 +71,7 @@
 
 ;;; 代码格式化
 (use-package clang-format
+  ; http://clang.llvm.org/docs/ClangFormat.html
   :ensure t
   :bind (("C-c i" . clang-format-region)
          ("C-c b" . clang-format-buffer))
