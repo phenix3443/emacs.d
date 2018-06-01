@@ -17,6 +17,13 @@
   :ensure t
   :config)
 
+(use-package smartparens
+  :ensure t
+  :disabled
+  :hook (emacs-lisp-mode . smartparens-mode)
+  :config
+  (require 'smartparens-config))
+
 ;; 语义补全（code complete）
 (use-package company
   :ensure t

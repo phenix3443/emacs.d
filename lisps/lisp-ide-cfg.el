@@ -4,22 +4,18 @@
 
 ;;; code:
 (use-package paredit
-  :disabled
   :ensure t
+  :hook (emacs-lisp-mode . enable-paredit-mode)
   :bind(
         :map paredit-mode-map
-             ("C-)" . paredit-forward-slurp-sexp)
+             ("C-)" . paredit-forward-slurp-sexp) ;向右吞一个表达式
              ("C-(" . paredit-backward-slurp-sexp)
-             ("C-}" . paredit-forward-barf-sexp)
+             ("C-}" . paredit-forward-barf-sexp) ;向右吐出表达式
              ("C-{" . paredit-backward-barf-sexp)
              ("C-<right>" . nil)
              ("C-<left>" .  nil)
              )
-  :init
-  (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
   :config
-  ;; (require-package 'paredit-everywhere)
-  ;; (add-hook 'css-mode-hook 'paredit-everywhere-mode)
   )
 
 (defun company-elisp-mode-setup()
