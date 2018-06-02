@@ -19,6 +19,10 @@
   (setq guide-key/popup-window-position 'bottom)
   (guide-key-mode 1)
   )
+
+;; (use-package which-key
+;;   :ensure t)
+
 (use-package helm-descbinds
   :after (helm)
   :ensure t

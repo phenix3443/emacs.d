@@ -2,6 +2,23 @@
 ;;; -*-coding:utf-8 -*-
 ;;; commentary:
 ;;; code:
+(use-package smartparens-config
+  :ensure smartparens
+  ;; this config , the guide-key does not show the prompt correctly
+  ;; :bind-keymap ("C-c s" . smartparens-mode-map)
+  ;; :bind
+  ;; (:map smartparens-mode-map
+  ;;       ("c" . sp-beginning-of-next-sexp))
+
+  ;; this config, the guide-key show the prompt correctly
+  :bind
+  (:prefix-map smartparens-mode-map
+               :prefix "C-c s"
+               ("c" . sp-beginning-of-next-sexp))
+
+  )
+
+
 (use-package multiple-cursors
   :ensure t
   :bind

@@ -17,15 +17,6 @@
   :ensure t
   :config)
 
-(use-package smartparens
-  :ensure t
-  :hook (emacs-lisp-mode . smartparens-mode)
-  ;; :bind (
-  ;;        :map smartparens-mode-map
-  ;;             ("" . sp-beginning-of-next-sexp)
-  ;;             )
-  :config
-  (require 'smartparens-config))
 
 ;; 语义补全（code complete）
 (use-package company
