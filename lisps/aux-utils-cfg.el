@@ -23,7 +23,7 @@
   (guide-key-mode 1)
   )
 (use-package helm-descbinds
-  :requires (helm)
+  :after (helm)
   :ensure t
   :config
   (helm-descbinds-mode))
