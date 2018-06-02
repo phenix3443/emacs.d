@@ -6,6 +6,7 @@
 
 (use-package guide-key
   :ensure t
+  :disabled
   :config
   (setq guide-key/guide-key-sequence t)
 
@@ -20,8 +21,11 @@
   (guide-key-mode 1)
   )
 
-;; (use-package which-key
-;;   :ensure t)
+(use-package which-key
+  ;; https://github.com/justbur/emacs-which-key
+  :ensure t
+  :config
+  (which-key-mode))
 
 (use-package helm-descbinds
   :after (helm)
