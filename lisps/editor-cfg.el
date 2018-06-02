@@ -4,17 +4,17 @@
 ;;; code:
 (use-package smartparens-config
   :ensure smartparens
-  ;; this config , the guide-key does not show the prompt correctly
-  ;; :bind-keymap ("C-c s" . smartparens-mode-map)
-  ;; :bind
-  ;; (:map smartparens-mode-map
-  ;;       ("c" . sp-beginning-of-next-sexp))
 
-  ;; this config, the guide-key show the prompt correctly
+  ;; 这种配置和guide-key兼容性有问题
+  :bind-keymap ("C-c s" . smartparens-mode-map)
   :bind
-  (:prefix-map smartparens-mode-map
-               :prefix "C-c s"
-               ("c" . sp-beginning-of-next-sexp))
+  (:map smartparens-mode-map
+        ("c" . sp-beginning-of-next-sexp))
+
+  ;; :bind
+  ;; (:prefix-map smartparens-mode-map
+  ;;              :prefix "C-c s"
+  ;;              ("c" . sp-beginning-of-next-sexp))
 
   )
 
