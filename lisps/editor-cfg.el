@@ -26,7 +26,24 @@
   :bind-keymap ("C-c s" . smartparens-mode-map)
   :bind
   (:map smartparens-mode-map
-        ("c" . sp-beginning-of-next-sexp))
+        ("a" . sp-beginning-of-sexp)
+        ("e" . sp-end-of-sexp)
+        ("f" . sp-forward-sexp)
+        ("b" . sp-backward-sexp)
+        ("p" . sp-previous-sexp)
+        ("u" . sp-up-sexp)
+        ("d" . sp-down-sexp)
+        ("n" . sp-next-sexp)
+        ("k" . sp-kill-sexp)
+        ("t" . sp-transpose-sexp)
+        ("(" . sp-wrap-round)
+        ("[" . sp-wrap-square)
+        ("{" . sp-wrap-curly)
+        ("<right>". sp-forward-slurp-sexp)
+        ("M-<right>" . sp-forward-barf-sexp)
+        ("<left>". sp-backward-slurp-sexp)
+        ("M-<left>". sp-backward-barf-sexp)
+        )
 
   ;; 这种配置可以和 guide-key 兼容
   ;; :bind
