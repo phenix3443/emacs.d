@@ -29,8 +29,8 @@
 ;; 14.18 optional mode line features
 (size-indication-mode 1)
 
-(global-linum-mode t)
-
+;; (global-linum-mode t)
+(linum-mode 0)
 (column-number-mode t)
 
 (setq display-time-24hr-format t)
