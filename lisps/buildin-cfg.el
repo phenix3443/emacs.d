@@ -150,23 +150,6 @@
 
 
 ;; 26.5.2 Multiple Lines of Comments
-;; comment-dwim-line-version-1
-;; (defun comment-dwim-line()
-;;   (interactive)
-;;   (let ((start (line-beginning-position))
-;;  (end (line-end-position)))
-;;     (when (region-active-p)
-;;       (setq start (save-excursion
-;;          (goto-char (region-beginning))
-;;          (beginning-of-line)
-;;          (point))
-;;      end (save-excursion
-;;        (goto-char (region-end))
-;;        (end-of-line)
-;;        (point))))
-;;     (comment-or-uncomment-region start end)))
-
-;; (global-set-key (kbd "C-;") 'comment-dwim-line)
 
 ;; 26.6.3 Emacs Lisp Documentation Lookup
 (add-hook 'emacs-lisp-mode-hook (lambda () (eldoc-mode t)))
