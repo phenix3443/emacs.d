@@ -82,11 +82,34 @@
 (use-package cc-mode
   :ensure t
   :config
-  ;; (c-set-offset 'substatement-open 0)
+  (c-toggle-auto-newline 1)
   (setq-default c-basic-offset 4)
   (setq c-default-style '((java-mode . "java")
                           (awk-mode . "awk")
                           (other . "linux")))
+
+  (defconst my-c-style
+    '((c-tab-always-indent        . t)
+      (c-comment-only-line-offset . 4)
+      (c-hanging-braces-alist     . ((substatement-open after)
+                                     (brace-list-open)))
+      (c-hanging-colons-alist     . ((member-init-intro before)
+                                     (inher-intro)
+                                     (case-label after)
+                                     (label after)
+                                     (access-label after)))
+      (c-cleanup-list             . (scope-operator
+                                     empty-defun-braces
+                                     defun-close-semi))
+      (c-offsets-alist            . ((arglist-close . c-lineup-arglist)
+                                     (substatement-open . 0)
+                                     (case-label        . 4)
+                                     (block-open        . 0)
+                                     (knr-argdecl-intro . -)))
+      (c-echo-syntactic-information-p . t))
+    "My C Programming Style")
+  ;; (c-add-style "PERSONAL" my-c-style)
+  ;; (c-set-style "PERSONAL")
   )
 
 ;; 语法检查
