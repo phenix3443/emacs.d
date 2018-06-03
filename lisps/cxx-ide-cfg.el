@@ -26,7 +26,7 @@
 
 (use-package company-irony
   :ensure t
-  :requires (company irony)
+  :after (company irony)
   )
 
 (use-package irony-eldoc

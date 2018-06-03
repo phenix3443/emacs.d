@@ -6,15 +6,15 @@
 
 
 (use-package cmake-mode
+  :ensure t
   :mode
   ("CMakeLists\\.txt\\'" . cmake-mode)
   ("\\.cmake\\'" . cmake-mode)
-  :ensure t
   :config
   )
 
 (use-package company-cmake
-  :requires (company)
+  :after (company)
   :config
   )
 

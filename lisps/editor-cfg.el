@@ -2,6 +2,23 @@
 ;;; -*-coding:utf-8 -*-
 ;;; commentary:
 ;;; code:
+(use-package paredit
+  :ensure t
+  :disabled
+  :hook (emacs-lisp-mode . enable-paredit-mode)
+  :bind(
+        :map paredit-mode-map
+             ("C-)" . paredit-forward-slurp-sexp) ;向右吞一个表达式
+             ("C-(" . paredit-backward-slurp-sexp)
+             ("C-}" . paredit-forward-barf-sexp) ;向右吐出表达式
+             ("C-{" . paredit-backward-barf-sexp)
+             ("C-<right>" . nil)
+             ("C-<left>" .  nil)
+             )
+  :config
+  )
+
+
 (use-package smartparens-config
   :ensure smartparens
 
@@ -11,6 +28,7 @@
   (:map smartparens-mode-map
         ("c" . sp-beginning-of-next-sexp))
 
+  ;; 这种配置可以和guide-key兼容
   ;; :bind
   ;; (:prefix-map smartparens-mode-map
   ;;              :prefix "C-c s"
@@ -72,8 +90,8 @@
   )
 
 (use-package helm
-  :diminish helm-mode
   :ensure t
+  :diminish helm-mode
   :init
   (require 'helm-config)
   :bind-keymap ("C-c h" . helm-command-map);
@@ -128,7 +146,7 @@
 
 
 (use-package helm-ag
-  :requires (helm)
+  :after (helm)
   :ensure t
   :config
   )

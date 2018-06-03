@@ -5,9 +5,9 @@
 ;;; code:
 
 (use-package sql-indent
+  :ensure t
   :mode "\\.sql$"
   :hook sql
-  :ensure t
   :config
   ;; (setq sql-indent-offset 4)
   (setq sql-indent-debug t)
@@ -17,7 +17,6 @@
 (use-package sqlup-mode
   :ensure t
   :hook (sql sql-interactive)
-  :bind (("C-c u" . sqlup-capitalize-keywords-in-region))
   :config
   )
 

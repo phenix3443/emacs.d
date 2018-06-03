@@ -14,7 +14,7 @@
   )
 
 (use-package company-lua
-  :requires (company)
+  :after (company)
   :ensure t
   :config
   )

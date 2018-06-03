@@ -25,8 +25,8 @@
   )
 
 (use-package powerline
-  :disabled t
   :ensure t
+  :disabled t
   :config
   (powerline-default-theme)
   )

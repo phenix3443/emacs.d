@@ -35,7 +35,6 @@
 (require 'protobuf-ide-cfg)
 (require 'sql-ide-cfg)
 
-
 (require 'crontab-ide-cfg)
 (require 'markdown-ide-cfg)
 (require 'docker-ide-cfg)

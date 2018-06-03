@@ -5,15 +5,8 @@
 ;;; code:
 (use-package org
   :ensure t
-  ;; :bind (
-  ;;     ("C-c '" . org-src-mode)
-  ;;     ("C-c l" . org-store-link)
-  ;;     ("C-c a" . org-agenda)
-  ;;     ("C-c b" . org-iswitchb)
-  ;;     )
+  :hook (org-mode . turn-on-org-cdlatex)
   :init
-  (add-hook 'org-mode-hook 'turn-on-org-cdlatex)
-
   :config
   (require 'ox-md nil t)
   ;; 3 Tables

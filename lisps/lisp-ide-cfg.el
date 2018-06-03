@@ -3,21 +3,6 @@
 ;;; commentary:
 
 ;;; code:
-(use-package paredit
-  :ensure t
-  :disabled
-  :hook (emacs-lisp-mode . enable-paredit-mode)
-  :bind(
-        :map paredit-mode-map
-             ("C-)" . paredit-forward-slurp-sexp) ;向右吞一个表达式
-             ("C-(" . paredit-backward-slurp-sexp)
-             ("C-}" . paredit-forward-barf-sexp) ;向右吐出表达式
-             ("C-{" . paredit-backward-barf-sexp)
-             ("C-<right>" . nil)
-             ("C-<left>" .  nil)
-             )
-  :config
-  )
 
 (defun company-elisp-mode-setup()
   "create lisp company backend"
