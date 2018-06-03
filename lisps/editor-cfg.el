@@ -60,8 +60,9 @@
 (use-package pangu-spacing
   :ensure t
   :config
-  ;; (setq pangu-spacing-real-insert-separtor t)
-  (global-pangu-spacing-mode 1)
+  :hook ((org-mode) . pangu-spacing-mode)
+  :config
+  (setq pangu-spacing-real-insert-separtor t)
   )
 
 (use-package window-numbering
