@@ -66,8 +66,7 @@
   (set (make-local-variable 'company-backends)
        (list '(company-irony company-irony-c-headers) (car company-backends))))
 
-(add-hook 'c-mode-hook 'company-c/c++-mode-setup)
-(add-hook 'c++-mode-hook 'company-c/c++-mode-setup)
+(add-hook 'c-mode-common-hook 'company-c/c++-mode-setup)
 
 ;;; 代码格式化
 (use-package clang-format
