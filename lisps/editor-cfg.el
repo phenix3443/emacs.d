@@ -1,4 +1,4 @@
-;;; package --- summary  editor-cfg配置
+;;; package --- summary  editor-cfg 配置
 ;;; -*-coding:utf-8 -*-
 ;;; commentary:
 ;;; code:
@@ -22,13 +22,13 @@
 (use-package smartparens-config
   :ensure smartparens
 
-  ;; 这种配置和guide-key兼容性有问题
+  ;; 这种配置和 guide-key 兼容性有问题
   :bind-keymap ("C-c s" . smartparens-mode-map)
   :bind
   (:map smartparens-mode-map
         ("c" . sp-beginning-of-next-sexp))
 
-  ;; 这种配置可以和guide-key兼容
+  ;; 这种配置可以和 guide-key 兼容
   ;; :bind
   ;; (:prefix-map smartparens-mode-map
   ;;              :prefix "C-c s"
@@ -91,7 +91,7 @@
 
 (use-package helm
   :ensure t
-  :diminish helm-mode
+  :diminish
   :init
   (require 'helm-config)
   :bind-keymap ("C-c h" . helm-command-map);

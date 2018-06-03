@@ -1,4 +1,4 @@
-;;; package --- summary  project配置
+;;; package --- summary  project 配置
 ;;; -*-coding:utf-8 -*-
 ;;; commentary:
 
@@ -6,6 +6,7 @@
 
 (use-package projectile
   :ensure t
+  :diminish
   :config
   (projectile-mode)
 

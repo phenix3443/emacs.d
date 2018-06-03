@@ -9,6 +9,7 @@
 ;; 代码模板
 (use-package yasnippet
   :ensure t
+  :diminish yas-minor-mode
   :config
   (yas-global-mode 1)
   )
@@ -21,6 +22,7 @@
 ;; 语义补全（code complete）
 (use-package company
   :ensure t
+  :diminish
   :bind (("C-c y" . company-yasnippet))
   :config
   (setq company-minimum-prefix-length 1)
@@ -106,6 +108,7 @@
 ;; 高亮
 (use-package auto-highlight-symbol
   :ensure t
+  :diminish
   :config
   (global-auto-highlight-symbol-mode t)
   )

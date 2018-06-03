@@ -24,16 +24,26 @@
   (moe-dark)
   )
 
+(use-package diminish
+  :ensure t
+  :config
+  (diminish 'auto-revert-mode)
+  (diminish 'visual-line-mode)
+  (diminish 'eldoc-mode)
+  (diminish 'subword-mode)
+  )
+
+
 (use-package powerline
   :ensure t
-  :disabled t
+  :disabled
   :config
   (powerline-default-theme)
   )
 
 (use-package smart-mode-line
   :ensure t
-  :disabled t
+  :disabled
   :config
   (setq sml/no-confirm-load-theme t)
   (sml/setup)

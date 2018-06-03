@@ -6,7 +6,7 @@
 
 (use-package guide-key
   :ensure t
-  :disabled
+  :disabled t
   :config
   (setq guide-key/guide-key-sequence t)
 
@@ -22,10 +22,11 @@
   )
 
 (use-package which-key
-  ;; 由于guide-key与use-package中bind-keymap兼容性不好
-  ;; 加上which-key展示更加好看，所以替代guide-key
+  ;; 由于 guide-key 与 use-package 中 bind-keymap 兼容性不好
+  ;; 加上 which-key 展示更加好看，所以替代 guide-key
   ;; https://github.com/justbur/emacs-which-key
   :ensure t
+  :diminish
   :config
   (which-key-mode))
 
