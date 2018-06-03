@@ -93,6 +93,7 @@
 ;;; 编译（compile）
 (use-package smart-compile
   :ensure t
+  :bind ([f5] . smart-compile)
   :config
   )
 ;;; 测试（run test）
