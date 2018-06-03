@@ -43,6 +43,7 @@
 
 (use-package google-this
   :ensure t
+  :diminish
   :config
   (google-this-mode))
 
