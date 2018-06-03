@@ -22,6 +22,8 @@
   )
 
 (use-package which-key
+  ;; 由于guide-key与use-package中bind-keymap兼容性不好
+  ;; 加上which-key展示更加好看，所以替代guide-key
   ;; https://github.com/justbur/emacs-which-key
   :ensure t
   :config
