@@ -151,5 +151,9 @@
   :config
   )
 
+(use-package htmlize
+  :ensure
+  :config)
+
 (provide 'editor-cfg)
 ;;; editor-cfg.el ends here
