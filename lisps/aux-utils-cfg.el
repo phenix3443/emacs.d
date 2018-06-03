@@ -41,5 +41,10 @@
   :config
   )
 
+(use-package google-this
+  :ensure t
+  :config
+  (google-this-mode))
+
 (provide 'aux-utils-cfg)
 ;;; aux-utils-cfg.el ends here
