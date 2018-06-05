@@ -79,9 +79,6 @@
   :ensure t
   :config (c-toggle-auto-newline 1)
   (setq-default c-basic-offset 4)
-  (setq c-default-style '((java-mode . "java")
-                          (awk-mode . "awk")
-                          (other . "linux")))
   (defconst my-c-style
     '((c-tab-always-indent . t)
       (c-comment-only-line-offset . 4)
@@ -93,15 +90,23 @@
                                  (label after)
                                  (access-label after)))
       (c-cleanup-list . (scope-operator empty-defun-braces defun-close-semi))
-      (c-offsets-alist . ((arglist-close . c-lineup-arglist)
-                          (substatement-open . 0)
-                          (case-label . 4)
-                          (block-open . 0)
-                          (knr-argdecl-intro . -)))
+      (c-offsets-alist . (
+                          (block-close . 0)
+                          (case-label . +)
+                          (defun-block-intro . +)
+                          (defun-close . 0)
+                          (statement . 0)
+                          (statement-block-intro . +)
+                          (statement-case-intro . +)
+                          (topmost-intro . 0)
+                          ))
       (c-echo-syntactic-information-p . t))
     "My C Programming Style")
-  ;; (c-add-style "PERSONAL" my-c-style)
-  ;; (c-set-style "PERSONAL")
+  (c-add-style "lsl" my-c-style)
+  (setq c-default-style '((java-mode . "java")
+                          (awk-mode . "awk")
+                          (other . "linux")))
+
   )
 
 ;; 语法检查
