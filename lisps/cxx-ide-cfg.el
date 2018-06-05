@@ -8,8 +8,7 @@
 (use-package irony
   :ensure t
   :hook (((c-mode c++-mode) . irony-mode)
-         (irony-mode . irony-cdb-autosetup-compile-options)
-         )
+         (irony-mode . irony-cdb-autosetup-compile-options))
   :init
   :config
   (setq irony-additional-clang-options '("-std=c++11"))
@@ -26,14 +25,12 @@
 
 (use-package company-irony
   :ensure t
-  :after (company irony)
-  )
+  :after (company irony))
 
 (use-package irony-eldoc
   :ensure t
   :after (irony)
-  :hook (irony-mode . irony-eldoc)
-  )
+  :hook (irony-mode . irony-eldoc))
 
 (use-package company-irony-c-headers
   :ensure t
@@ -58,8 +55,7 @@
   :init (add-hook 'c-mode-common-hook #'cquery//enable)
   :ensure t
   :config
-  (setq cquery-executable (concat (getenv "HOME") "/github/cquery/build/release/bin/cquery"))
-  )
+  (setq cquery-executable (concat (getenv "HOME") "/github/cquery/build/release/bin/cquery")))
 
 (defun company-c/c++-mode-setup()
   "C/C++ company补全后端设置"
@@ -70,42 +66,38 @@
 
 ;;; 代码格式化
 (use-package clang-format
-  ; http://clang.llvm.org/docs/ClangFormat.html
+                                        ; http://clang.llvm.org/docs/ClangFormat.html
   :ensure t
   :bind (("C-c i" . clang-format-region)
          ("C-c b" . clang-format-buffer))
 
   :config
-  (setq clang-format-style "google")
-  )
+  (setq clang-format-style "google"))
 
-(use-package cc-mode
+(use-package
+  cc-mode
   :ensure t
-  :config
-  (c-toggle-auto-newline 1)
+  :config (c-toggle-auto-newline 1)
   (setq-default c-basic-offset 4)
   (setq c-default-style '((java-mode . "java")
                           (awk-mode . "awk")
                           (other . "linux")))
-
   (defconst my-c-style
-    '((c-tab-always-indent        . t)
+    '((c-tab-always-indent . t)
       (c-comment-only-line-offset . 4)
-      (c-hanging-braces-alist     . ((substatement-open after)
-                                     (brace-list-open)))
-      (c-hanging-colons-alist     . ((member-init-intro before)
-                                     (inher-intro)
-                                     (case-label after)
-                                     (label after)
-                                     (access-label after)))
-      (c-cleanup-list             . (scope-operator
-                                     empty-defun-braces
-                                     defun-close-semi))
-      (c-offsets-alist            . ((arglist-close . c-lineup-arglist)
-                                     (substatement-open . 0)
-                                     (case-label        . 4)
-                                     (block-open        . 0)
-                                     (knr-argdecl-intro . -)))
+      (c-hanging-braces-alist . ((substatement-open after)
+                                 (brace-list-open)))
+      (c-hanging-colons-alist . ((member-init-intro before)
+                                 (inher-intro)
+                                 (case-label after)
+                                 (label after)
+                                 (access-label after)))
+      (c-cleanup-list . (scope-operator empty-defun-braces defun-close-semi))
+      (c-offsets-alist . ((arglist-close . c-lineup-arglist)
+                          (substatement-open . 0)
+                          (case-label . 4)
+                          (block-open . 0)
+                          (knr-argdecl-intro . -)))
       (c-echo-syntactic-information-p . t))
     "My C Programming Style")
   ;; (c-add-style "PERSONAL" my-c-style)
@@ -116,8 +108,7 @@
 (use-package flycheck-irony
   :ensure t
   :after (flycheck irony)
-  :hook (irony-mode . flycheck-irony-setup)
-  )
+  :hook (irony-mode . flycheck-irony-setup))
 
 (provide 'cxx-ide-cfg)
 ;;; cxx-ide-cfg.el ends here
