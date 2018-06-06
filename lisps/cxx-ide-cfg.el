@@ -62,13 +62,14 @@
   (set (make-local-variable 'company-backends)
        (list '(company-irony company-irony-c-headers) (car company-backends))))
 
+
 (add-hook 'c-mode-common-hook 'company-c/c++-mode-setup)
 
 ;;; 代码格式化
 (use-package clang-format
-                                        ; http://clang.llvm.org/docs/ClangFormat.html
   :ensure t
-  :bind (("C-c i" . clang-format-region)
+  :bind (
+         ("C-c i" . clang-format-region)
          ("C-c b" . clang-format-buffer))
 
   :config

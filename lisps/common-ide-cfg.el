@@ -29,12 +29,11 @@
   (setq company-show-numbers t)
   (global-company-mode)
 
-  (setq company-backends '((company-capf
-                              company-dabbrev-code
-                              company-files
-                              company-keywords
-                              company-gtags
-                              )))
+  (setq company-backends '((company-dabbrev-code
+                            company-files
+                            company-keywords
+                            company-gtags
+                            )))
   )
 
 (use-package company-quickhelp
