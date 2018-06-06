@@ -1,0 +1,150 @@
+---
+Language:        Cpp
+BasedOnStyle:  Google
+# 访问说明符（private,public）的偏移。（？没效果）
+AccessModifierOffset: -4
+#  开括号 (开圆括号、开尖括号、开方括号) 后的对齐（？没效果）
+AlignAfterOpenBracket: Align
+# 对齐连续行的赋值操作符
+AlignConsecutiveAssignments: true
+# 对齐连续行中函数声明中的变量名
+AlignConsecutiveDeclarations: false
+# 对齐续行中的转义字符
+AlignEscapedNewlines: Left
+# 对齐二元表达式或三元表达式中的操作符。（？没效果）
+AlignOperands: true
+# 对齐行尾注释
+AlignTrailingComments: true
+# 如果函数声明一行放不下，即使BinPackParameters为false，也允许将函数声明的所有参数放到下一行。(？没效果)
+AllowAllParametersOfDeclarationOnNextLine: true
+# 允许短的块单行出现
+AllowShortBlocksOnASingleLine: false
+# 允许短的case label单行出现
+AllowShortCaseLabelsOnASingleLine: false
+# 允许短的函数单行出现
+AllowShortFunctionsOnASingleLine: Empty
+# 允许短的if语句单行
+AllowShortIfStatementsOnASingleLine: false
+# 允许短的循环语句单行
+AllowShortLoopsOnASingleLine: true
+# 总在定义中的返回类型后换行，该选项已经deprecated。
+AlwaysBreakAfterDefinitionReturnType: None
+# 总在返回类型后换行
+AlwaysBreakAfterReturnType: None
+# 总在多行字符串前换行
+AlwaysBreakBeforeMultilineStrings: true
+# 总在模板声明处换行
+AlwaysBreakTemplateDeclarations: true
+# 如果为false，实参要么放在同一行，要么各自一行
+BinPackArguments: true
+# 如果为false，形参要么放在同一行，要么各自一行
+BinPackParameters: true
+# 大括号之前换行，只有当 BreakBeforeBraces 设置为 Custom 时才有效
+BraceWrapping:
+  # class定义后
+  AfterClass:      true
+  # 控制语句后
+  AfterControlStatement: true
+  # enum定义后
+  AfterEnum:       false
+  # 函数定义后
+  AfterFunction:   false
+  # 命名空间后
+  AfterNamespace:  false
+  # 对象声明后
+  AfterObjCDeclaration: false
+  AfterStruct:     false
+  AfterUnion:      false
+  AfterExternBlock: false
+  BeforeCatch:     false
+  BeforeElse:      false
+  IndentBraces:    false
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+  SplitEmptyNamespace: true
+
+# 二元操作符前换行
+BreakBeforeBinaryOperators: None
+# 大括号前换行
+BreakBeforeBraces: Attach
+# 如果为true，继承冒号前换行
+BreakBeforeInheritanceComma: false
+# 如果为true，三元操作符在换行符后
+BreakBeforeTernaryOperators: true
+# 构造函数初始化列表换行
+BreakConstructorInitializersBeforeComma: false
+# 构造函数换行位置
+BreakConstructorInitializers: BeforeColon
+#
+BreakAfterJavaFieldAnnotations: false
+BreakStringLiterals: true
+ColumnLimit:     80
+CommentPragmas:  '^ IWYU pragma:'
+CompactNamespaces: false
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+ConstructorInitializerIndentWidth: 4
+ContinuationIndentWidth: 4
+Cpp11BracedListStyle: true
+DerivePointerAlignment: true
+DisableFormat:   false
+ExperimentalAutoDetectBinPacking: false
+FixNamespaceComments: true
+ForEachMacros:
+  - foreach
+  - Q_FOREACH
+  - BOOST_FOREACH
+IncludeBlocks:   Preserve
+IncludeCategories:
+  - Regex:           '^<ext/.*\.h>'
+    Priority:        2
+  - Regex:           '^<.*\.h>'
+    Priority:        1
+  - Regex:           '^<.*'
+    Priority:        2
+  - Regex:           '.*'
+    Priority:        3
+IncludeIsMainRegex: '([-_](test|unittest))?$'
+IndentCaseLabels: true
+IndentPPDirectives: None
+IndentWidth:     2
+IndentWrappedFunctionNames: false
+JavaScriptQuotes: Leave
+JavaScriptWrapImports: true
+KeepEmptyLinesAtTheStartOfBlocks: false
+MacroBlockBegin: ''
+MacroBlockEnd:   ''
+MaxEmptyLinesToKeep: 1
+NamespaceIndentation: None
+ObjCBlockIndentWidth: 2
+ObjCSpaceAfterProperty: false
+ObjCSpaceBeforeProtocolList: false
+PenaltyBreakAssignment: 2
+PenaltyBreakBeforeFirstCallParameter: 1
+PenaltyBreakComment: 300
+PenaltyBreakFirstLessLess: 120
+PenaltyBreakString: 1000
+PenaltyExcessCharacter: 1000000
+PenaltyReturnTypeOnItsOwnLine: 200
+PointerAlignment: Left
+RawStringFormats:
+  - Delimiter:       pb
+    Language:        TextProto
+    BasedOnStyle:    google
+ReflowComments:  true
+SortIncludes:    true
+SortUsingDeclarations: true
+SpaceAfterCStyleCast: false
+SpaceAfterTemplateKeyword: true
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeParens: ControlStatements
+SpaceInEmptyParentheses: false
+SpacesBeforeTrailingComments: 2
+SpacesInAngles:  false
+SpacesInContainerLiterals: true
+SpacesInCStyleCastParentheses: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+Standard:        Auto
+TabWidth:        8
+UseTab:          Never
+...
