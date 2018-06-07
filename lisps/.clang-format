@@ -1,6 +1,6 @@
 ---
 Language:        Cpp
-BasedOnStyle:  Google
+# BasedOnStyle:  Google
 # 访问说明符（private,public）的偏移。（？没效果）
 AccessModifierOffset: -4
 #  开括号 (开圆括号、开尖括号、开方括号) 后的对齐（？没效果）
@@ -73,27 +73,41 @@ BreakBeforeInheritanceComma: false
 BreakBeforeTernaryOperators: true
 # 构造函数初始化列表换行
 BreakConstructorInitializersBeforeComma: false
-# 构造函数换行位置
+# 构造函数列表初始化换行位置
 BreakConstructorInitializers: BeforeColon
 #
 BreakAfterJavaFieldAnnotations: false
+# 字符串格式化时换行
 BreakStringLiterals: true
+# 单行长度
 ColumnLimit:     80
+# 一个正则表达式，用于描述具有特殊含义的注释，不应将其分解为行或以其他方式更改。
 CommentPragmas:  '^ IWYU pragma:'
+# 如果为true，则连续的名称空间声明将位于同一行上。如果为false，则每个命名空间都在新行中声明。
 CompactNamespaces: false
+# 如果构造函数初始化列表不适合在一行，将每个初始值单独存放
 ConstructorInitializerAllOnOneLineOrOnePerLine: true
+# 构造函数初始化列表缩进宽度
 ConstructorInitializerIndentWidth: 4
+# 续行的缩进宽度
 ContinuationIndentWidth: 4
+# 如果为true，则将花括号列表格式化为最适合C ++ 11花括号列表的格式。
 Cpp11BracedListStyle: true
+# 如果为true，则分析格式化文件以查找最常见的＆和*对齐。指针和参考对齐方式将根据文件中的偏好进行更新。 PointerAlignment然后仅用作后备。
 DerivePointerAlignment: true
+# 完全禁用格式化
 DisableFormat:   false
-ExperimentalAutoDetectBinPacking: false
+# 如果为true，clang-format会添加缺少的名称空间结束注释并修复无效的现有注释。
 FixNamespaceComments: true
+#
 ForEachMacros:
   - foreach
   - Q_FOREACH
   - BOOST_FOREACH
+
+# 根据该值，可以将多个#include块排序为一个，并根据类别进行划分。
 IncludeBlocks:   Preserve
+# 用于排序分组#include类别的正则表达式。
 IncludeCategories:
   - Regex:           '^<ext/.*\.h>'
     Priority:        2
@@ -103,18 +117,32 @@ IncludeCategories:
     Priority:        2
   - Regex:           '.*'
     Priority:        3
-IncludeIsMainRegex: '([-_](test|unittest))?$'
+
+# 指定file-to-main-include映射中允许的后缀的正则表达式。
+includeIsMainRegex: '([-_](test|unittest))?$'
+# switch语句中将case缩进一个级别
 IndentCaseLabels: true
-IndentPPDirectives: None
-IndentWidth:     2
+# 预处理指令的缩进样式
+IndentPPDirectives:
+# 缩进宽度
+IndentWidth: 4
+# 缩进换行的返回类型后的函数名
 IndentWrappedFunctionNames: false
+# 用于JavaScript字符串的JavaScriptQuoteStyle。
 JavaScriptQuotes: Leave
+# JavaScript import/export 语句是否换行
 JavaScriptWrapImports: true
+# 如果为true，则保留块开始处的空行。
 KeepEmptyLinesAtTheStartOfBlocks: false
+# 匹配块宏开始的正则表达式
 MacroBlockBegin: ''
+# 匹配块宏结束的正则表达式
 MacroBlockEnd:   ''
+# 要保留的连续空行的最大数量。
 MaxEmptyLinesToKeep: 1
+# 缩进命名空间的样式
 NamespaceIndentation: None
+#
 ObjCBlockIndentWidth: 2
 ObjCSpaceAfterProperty: false
 ObjCSpaceBeforeProtocolList: false
@@ -125,26 +153,44 @@ PenaltyBreakFirstLessLess: 120
 PenaltyBreakString: 1000
 PenaltyExcessCharacter: 1000000
 PenaltyReturnTypeOnItsOwnLine: 200
+# 指针和引用的对齐方式
 PointerAlignment: Left
 RawStringFormats:
   - Delimiter:       pb
     Language:        TextProto
     BasedOnStyle:    google
+# If true, clang-format 会重新组织注释
 ReflowComments:  true
+# 如果true，clang-format 会重新排序#include
 SortIncludes:    true
+# 如果true，clang-format 会重新排序 using 声明
 SortUsingDeclarations: true
+# 如果true，c 风格的类型转换后保留空格。
 SpaceAfterCStyleCast: false
+# 如果true，template关键字后保留空格。
 SpaceAfterTemplateKeyword: true
+# 如果false，删除赋值操作符前的空格
 SpaceBeforeAssignmentOperators: true
+# 括号前是否插入空格
 SpaceBeforeParens: ControlStatements
+# 如果true，空的括号中插入空格。
 SpaceInEmptyParentheses: false
+# 行尾注释前的空格
 SpacesBeforeTrailingComments: 2
+# 尖空号内侧空格
 SpacesInAngles:  false
+#
 SpacesInContainerLiterals: true
+# c风格的类型转换括号内部空格
 SpacesInCStyleCastParentheses: false
+# 圆括号内侧的空格
 SpacesInParentheses: false
+# 方括号内的空格
 SpacesInSquareBrackets: false
+# 格式化对应的C++标准
 Standard:        Auto
-TabWidth:        8
+# tab对应的空格数量
+TabWidth:        4
+# 在结果文件中使用制表符的方式
 UseTab:          Never
 ...
