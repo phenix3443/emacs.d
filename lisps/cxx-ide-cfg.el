@@ -51,19 +51,17 @@
     (user-error nil)))
 
 (use-package cquery
-  :disabled
   :commands lsp-cquery-enable
-  :init (add-hook 'c-mode-common-hook #'cquery//enable)
+  :hook (c-mode-common . cquery//enable)
   :ensure t
   :config
   (setq cquery-executable (concat (getenv "HOME") "/github/cquery/build/release/bin/cquery")))
 
-;; (defun company-c/c++-mode-setup()
-;;   "C/C++ company补全后端设置"
-;;   (set (make-local-variable 'company-backends)
-;;        ;; (list '(company-irony company-irony-c-headers) (car company-backends))))
-;;        (list '(company-lsp) )))
-
+(defun company-c/c++-mode-setup()
+  "C/C++ company补全后端设置"
+  (set (make-local-variable 'company-backends)
+       ;; (list '(company-irony company-irony-c-headers) (car company-backends))))
+       (list (append '(company-lsp) (car company-backends)))))
 
 (add-hook 'c-mode-common-hook 'company-c/c++-mode-setup)
 

@@ -24,16 +24,16 @@
   :ensure t
   :diminish
   :bind (("C-c y" . company-yasnippet))
-  :config
-  (setq company-minimum-prefix-length 1)
-  (setq company-show-numbers t)
-  (global-company-mode)
-
+  :init
   (setq company-backends '((company-dabbrev-code
                             company-files
                             company-keywords
                             company-gtags
                             )))
+  :config
+  (setq company-minimum-prefix-length 1)
+  (setq company-show-numbers t)
+  (global-company-mode)
   )
 
 (use-package company-quickhelp
@@ -46,29 +46,25 @@
 
 (use-package lsp-mode
   :ensure t
-  :hook (c-mode-common . lsp-prog-major-mode-enable)
+  :hook (lsp-after-open . lsp-enable-imenu)
   :config
-  (lsp-define-stdio-client
-   ;; This can be a symbol of your choosing. It will be used as a the
-   ;; prefix for a dynamically generated function "-enable"; in this
-   ;; case: lsp-prog-major-mode-enable
-   lsp-prog-major-mode
-   "language-id"
-   ;; This will be used to report a project's root directory to the LSP
-   ;; server.
-   (lambda () default-directory)
-   ;; This is the command to start the LSP server. It may either be a
-   ;; string containing the path of the command, or a list wherein the
-   ;; car is a string containing the path of the command, and the cdr
-   ;; are arguments to that command.
-   '("/my/lsp/server" "and" "args"))
+  (require 'lsp-imenu)
+  )
+
+(use-package lsp-ui
+  :ensure t
+  ;; :after(lsp-mode)
+  ;; :hook (lsp-mode lsp-ui-mode)
+  :config
+  (require 'lsp-ui)
+  (add-hook 'lsp-mode-hook 'lsp-ui-mode)
   )
 
 (use-package company-lsp
   :ensure t
-  :disabled
   :after lsp-mode
   :config
+  (setq company-lsp-enable-recompletion t)
   )
 
 (use-package smart-comment
@@ -113,6 +109,13 @@
   (global-auto-highlight-symbol-mode t)
   )
 ;; 代码跳转
+
+(use-package helm-xref
+  :ensure t
+  :config
+  (setq xref-show-xrefs-function 'helm-xref-show-xrefs)
+  )
+
 (use-package helm-gtags
   :ensure t
   :after (helm)
