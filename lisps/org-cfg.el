@@ -146,7 +146,7 @@
   (setq org-edit-src-auto-save-idle-delay 15)
   ;; (setq org-edit-src-turn-on-auto-save t)
   (setq org-src-window-setup 'current-window)
-  (setq org-src-preserve-indentation nil)
+  (setq org-src-preserve-indentation t)
   (setq org-edit-src-content-indentation 4)
   (setq org-src-ask-before-returning-to-edit-buffer nil)
   (setq org-src-fontify-natively t)
