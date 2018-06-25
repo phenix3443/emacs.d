@@ -7,6 +7,7 @@
 ;;; 代码补全
 (use-package irony
   :ensure t
+  :disabled
   :hook (((c-mode c++-mode) . irony-mode)
          (irony-mode . irony-cdb-autosetup-compile-options))
   :init

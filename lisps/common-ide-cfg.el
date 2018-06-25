@@ -162,5 +162,10 @@
    )
   )
 
+(use-package gist
+  :ensure t
+  :config
+  )
+
 (provide 'common-ide-cfg)
 ;;; common-ide-cfg.el ends here
