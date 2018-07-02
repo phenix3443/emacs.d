@@ -77,8 +77,7 @@
   :config
   (setq clang-format-style "google"))
 
-(use-package
-  cc-mode
+(use-package cc-mode
   :ensure t
   :config (c-toggle-auto-newline 1)
   (setq-default c-basic-offset 4)
@@ -108,7 +107,9 @@
   (c-add-style "lsl" my-c-style)
   (setq c-default-style '((java-mode . "java")
                           (awk-mode . "awk")
-                          (other . "linux")))
+                          ;; (protobuf-mode . "protobuf")
+                          (other . "linux")
+                          ))
 
   )
 

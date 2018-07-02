@@ -7,6 +7,11 @@
   :ensure t
   :mode ".proto$"
   :config
+  ;; (defconst protobuf-style
+  ;;   '((c-basic-offset . 2)
+  ;;     (indent-tabs-mode . nil)))
+
+  ;; (c-add-style "protobuf" protobuf-style t)
   )
 
 (provide 'protobuf-ide-cfg)
