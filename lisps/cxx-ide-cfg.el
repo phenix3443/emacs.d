@@ -7,6 +7,7 @@
 ;;; 代码补全
 (use-package irony
   :ensure t
+  :disabled
   :hook (((c-mode c++-mode) . irony-mode)
          (irony-mode . irony-cdb-autosetup-compile-options))
   :init
@@ -68,6 +69,7 @@
 ;;; 代码格式化
 (use-package clang-format
   :ensure t
+  :commands clang-format-region clang-format-buffer
   :bind (
          ("C-c i" . clang-format-region)
          ("C-c b" . clang-format-buffer))

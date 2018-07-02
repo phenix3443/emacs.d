@@ -119,11 +119,11 @@ IncludeCategories:
     Priority:        3
 
 # 指定file-to-main-include映射中允许的后缀的正则表达式。
-includeIsMainRegex: '([-_](test|unittest))?$'
-# switch语句中将case缩进一个级别
+# includeIsMainRegex: '([-_](test|unittest))?$'
+# # switch语句中将case缩进一个级别
 IndentCaseLabels: true
-# 预处理指令的缩进样式
-IndentPPDirectives:
+# # 预处理指令的缩进样式
+IndentPPDirectives: None
 # 缩进宽度
 IndentWidth: 4
 # 缩进换行的返回类型后的函数名
@@ -142,7 +142,7 @@ MacroBlockEnd:   ''
 MaxEmptyLinesToKeep: 1
 # 缩进命名空间的样式
 NamespaceIndentation: None
-#
+
 ObjCBlockIndentWidth: 2
 ObjCSpaceAfterProperty: false
 ObjCSpaceBeforeProtocolList: false
