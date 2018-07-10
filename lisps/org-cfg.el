@@ -80,8 +80,8 @@
         '(
           ("notebook-html"
            ;; 13.1.2 Sources and destinations for files
-           :base-directory "~/github/notebook/org/" ;设置存放.org 文件位置
-           :publishing-directory "~/github/notebook/docs/" ;导出 html 文件位置
+           :base-directory "/data/github/notebook/org/" ;设置存放.org 文件位置
+           :publishing-directory "/data/github/notebook/docs/" ;导出 html 文件位置
            ;; :preparation-function
            ;; :completion-function ;用来定义publish结束以后的动作，该项目中用于执行push master
 
