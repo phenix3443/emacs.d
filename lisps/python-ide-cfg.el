@@ -6,7 +6,7 @@
 
 ;;; 代码补全（code complete）
 (use-package company-jedi
-  ;; sudo pip3 install jedi
+  ;; sudo pip3 install virtualenv
   :ensure t
   :after (company)
   :config
