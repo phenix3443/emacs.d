@@ -174,7 +174,14 @@
      (python . t)
      (R . t)
      (sh . t)
-     (makefile . t)))
+     (makefile . t)
+     ;; (plantuml . t)
+     ))
+
+  (add-to-list
+  'org-src-lang-modes '("plantuml" . plantuml))
+
+  ;; (setq org-plantuml-jar-path (expand-file-name (concat user-emacs-directory "plantuml.jar")))
   ;; 14.8 Header arguments
   ;; 14.8.1 Using header arguments
   (setq org-babel-default-header-args

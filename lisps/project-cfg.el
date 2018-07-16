@@ -43,6 +43,13 @@
   :ensure t
   :config)
 
+(use-package plantuml-mode
+  :ensure t
+  :mode "\\.plantuml$"
+  :config
+  (setq plantuml-jar-path (concat user-emacs-directory "plantuml.jar"))
+  )
+
 (provide 'project-cfg)
 
 ;;; project-cfg.el ends here
