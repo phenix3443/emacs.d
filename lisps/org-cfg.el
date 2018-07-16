@@ -175,20 +175,22 @@
      (R . t)
      (sh . t)
      (makefile . t)
-     ;; (plantuml . t)
+     ;; (lua . t)
+     (plantuml . t)
      ))
 
-  (add-to-list
-  'org-src-lang-modes '("plantuml" . plantuml))
+  (setq org-plantuml-jar-path
+        (expand-file-name (concat user-emacs-directory "plantuml.jar")))
 
-  ;; (setq org-plantuml-jar-path (expand-file-name (concat user-emacs-directory "plantuml.jar")))
   ;; 14.8 Header arguments
   ;; 14.8.1 Using header arguments
   (setq org-babel-default-header-args
         (append '((:padline . "true")(:comments . "yes")(:mkdirp . "yes"))  org-babel-default-header-args))
+
   ;; (setq org-babel-default-header-args
   ;;      (cons '(:tangle . "yes")
   ;;            (assq-delete-all :tangle org-babel-default-header-args)))
+
   ;; 15 Miscellaneous
   ;; 15.4 Code evaluation and security issues
   (setq org-confirm-babel-evaluate nil)

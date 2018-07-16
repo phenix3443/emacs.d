@@ -48,6 +48,8 @@
   :mode "\\.plantuml$"
   :config
   (setq plantuml-jar-path (concat user-emacs-directory "plantuml.jar"))
+  (add-to-list
+   'org-src-lang-modes '("plantuml" . plantuml))
   )
 
 (provide 'project-cfg)
