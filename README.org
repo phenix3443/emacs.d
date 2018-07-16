@@ -1,25 +1,8 @@
 # -*- coding:utf-8-*-
-#+TITLE: 安装说明
+#+TITLE: 个人 emacs 配置
 #+AUTHOR: liushangliang
 #+EMAIL: phenix3443+github@gmail.com
 
-* heml-ag
-  #+BEGIN_SRC sh
-sudo apt install silversearcher-ag
-  #+END_SRC
+* 概述
 
-* irony-mode
-  需要安装libclang
-  #+BEGIN_SRC sh
-sudo apt install libclang-dev
-  #+END_SRC
-
-* company-gtags
-  需要安装gnu global, pygments
-
-* cqeury
-  #+BEGIN_SRC sh
-sudo apt install clang clang-format
-  #+END_SRC
-
-* global
+* 准备工作
