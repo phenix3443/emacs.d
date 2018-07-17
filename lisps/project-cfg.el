@@ -48,6 +48,7 @@
   :mode "\\.plantuml$"
   :config
   (setq plantuml-jar-path (concat user-emacs-directory "plantuml.jar"))
+  (setq plantuml-output-type "png")
   (add-to-list
    'org-src-lang-modes '("plantuml" . plantuml))
   )
