@@ -137,7 +137,7 @@
     (plist-put static-plist :publishing-directory "D:/github/phenix3443.github.io/"))
 
   ;; (setq org-babel-default-header-args
-  ;; (cons '(:base-directory "D:/projects/org-notes/org/")
+  ;;       (cons '(:base-directory "D:/projects/org-notes/org/")
   ;; (assq-delete-all org org-publish-project-alist)
   ;; )))
 
