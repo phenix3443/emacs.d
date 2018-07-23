@@ -77,11 +77,17 @@
   :init
   (global-flycheck-mode)
   :config
+  ;; c/c++
   ;; (setq flycheck-clang-include-path '("/usr/local/include/"))
-  (setq flycheck-json-python-json-executable "python3")
   (setq flycheck-gcc-language-standard "c++11")
   (setq flycheck-clang-language-standard "c++11")
+  ;; elisp
   (setq flycheck-emacs-lisp-load-path 'inherit)
+  ;; json
+
+  ;; python
+  (setq flycheck-json-python-json-executable "python3")
+  (setq flycheck-python-pylint-executable "/usr/local/bin/pylint")
   )
 
 ;;; 文档（document）
