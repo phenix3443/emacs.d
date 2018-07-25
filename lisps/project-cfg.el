@@ -28,11 +28,20 @@
   (setq projectile-completion-system 'helm)
   )
 
-;; (use-package persp-mode
-;;   :ensure t
-;;   :config
-;;   (persp-mode 1)
-;;   )
+(use-package perspective
+  :ensure t
+  :disabled
+  :config
+  ;; (persp-mode)
+  )
+
+(use-package persp-projectile
+  :after (projectile perspective)
+  :disabled
+  :ensure t
+  :config
+  )
+
 (use-package sr-speedbar
   :ensure t
   :config
