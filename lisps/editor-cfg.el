@@ -8,13 +8,13 @@
   :hook (emacs-lisp-mode . enable-paredit-mode)
   :bind(
         :map paredit-mode-map
-             ("C-)" . paredit-forward-slurp-sexp) ;向右吞一个表达式
-             ("C-(" . paredit-backward-slurp-sexp)
-             ("C-}" . paredit-forward-barf-sexp) ;向右吐出表达式
-             ("C-{" . paredit-backward-barf-sexp)
-             ("C-<right>" . nil)
-             ("C-<left>" .  nil)
-             )
+        ("C-)" . paredit-forward-slurp-sexp) ;向右吞一个表达式
+        ("C-(" . paredit-backward-slurp-sexp)
+        ("C-}" . paredit-forward-barf-sexp) ;向右吐出表达式
+        ("C-{" . paredit-backward-barf-sexp)
+        ("C-<right>" . nil)
+        ("C-<left>" .  nil)
+        )
   :config
   )
 
@@ -129,16 +129,21 @@
   (helm-autoresize-mode 1)
   (setq helm-candidate-number-limit 100)
 
-  ;; use locate by regex
-  (when (equal system-type 'gnu/linux)
-    (setq helm-locate-command "locate %s -e -A --regex %s"))
+  (setq helm-locate-fuzzy-match t)
   ;; helm-locate 使用 es.exe 的时候 everything 必须要启动
   (when (equal system-type 'windows-nt)
-    (let ((str (shell-command-to-string "tasklist /FI \"IMAGENAME eq Everything.exe\"")))
-      (when (not (string-match "Everything.exe" str))
-        (when (executable-find "everything")
-          ;; (shell-command "taskkill /IM everything.exe")
-          (start-process "everything" nil "everything" "-admin" "-minimized")))))
+    (setq helm-locate-fuzzy-match nil)
+    (setq helm-locate-command "es %s -sort run-count %s")
+    (defun helm-es-hook ()
+      (when (and (equal (assoc-default 'name (helm-get-current-source)) "Locate")
+                 (string-match "\\`es" helm-locate-command))
+        (mapc (lambda (file)
+                (call-process "es" nil nil nil
+                              "-inc-run-count" (convert-standard-filename file)))
+              (helm-marked-candidates))))
+    (add-hook 'helm-find-many-files-after-hook 'helm-es-hook)
+    )
+
 
   (when (executable-find "curl")
     (setq helm-google-suggest-use-curl-p t))
