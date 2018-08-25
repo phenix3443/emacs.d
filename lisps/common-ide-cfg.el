@@ -91,6 +91,29 @@
   )
 
 ;;; 文档（document）
+(use-package helm-dash
+  :ensure t
+  :config
+  (setq helm-dash-docsets-path "/data/docsets")
+  (setq helm-dash-common-docsets '(
+                                   "C"
+                                   "C++"
+                                   "Django"
+                                   "Go"
+                                   "Lua"
+                                   "Nginx"
+                                   "Python 3"
+                                   ))
+  )
+
+(use-package zeal-at-point
+  :ensure t
+  :config
+  (add-to-list 'zeal-at-point-mode-alist
+               '(perl-mode . "perl")
+               )
+  )
+
 ;;; 编译（compile）
 (use-package smart-compile
   :ensure t
