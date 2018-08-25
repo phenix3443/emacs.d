@@ -94,7 +94,7 @@
 (use-package helm-dash
   :ensure t
   :config
-  (setq helm-dash-docsets-path "/data/docsets")
+  (setq helm-dash-docsets-path "/data/nuts/docsets")
   (setq helm-dash-common-docsets '(
                                    "C"
                                    "C++"
