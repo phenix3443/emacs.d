@@ -35,6 +35,7 @@
 (require 'protobuf-ide-cfg)
 (require 'sql-ide-cfg)
 (require 'php-ide-cfg)
+(require 'powershell-ide)
 
 (require 'crontab-ide-cfg)
 (require 'markdown-ide-cfg)
