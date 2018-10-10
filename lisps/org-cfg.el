@@ -143,8 +143,9 @@
 
   ;; 14 Working with source code
   ;; 14.2 Editing source code
-  (setq org-edit-src-auto-save-idle-delay 15)
+  (setq org-edit-src-auto-save-idle-delay 5)
   ;; (setq org-edit-src-turn-on-auto-save t)
+  (add-to-list 'org-src-lang-modes '("lua" . lua))
   (setq org-src-window-setup 'current-window)
   (setq org-src-preserve-indentation t)
   (setq org-edit-src-content-indentation 4)
@@ -163,20 +164,28 @@
   ;; 14.3 Exporting code blocks
   ;; (setq org-export-babel-evaluate 'inline)
   ;; 14.4 Extracting source code
-  (add-hook 'org-babel-post-tangle-hook
-            (lambda () (message "I'm in %s" (buffer-file-name)) ))
+  ;; 14.5 Evaluating code blocks
+  ;; (setq org-babel-inline-result-wrap "%s")
   ;; 14.7 Languages
   (org-babel-do-load-languages
    'org-babel-load-languages
    '(
+     (awk . t)
      (C . t)
+     ;; (C++ . t)
+     (css . t)
+     (dot . t)
      (emacs-lisp . t)
-     (python . t)
-     (R . t)
-     (sh . t)
+     (js . t)
+     (lua . t)
      (makefile . t)
-     ;; (lua . t)
      (plantuml . t)
+     (python . t)
+     ;; (powershell . t)
+     (R . t)
+     (ruby . t)
+     (shell . t)
+     (sed . t)
      ))
 
   (setq org-plantuml-jar-path
