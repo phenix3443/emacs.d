@@ -177,7 +177,7 @@
      (dot . t)
      (emacs-lisp . t)
      (js . t)
-     (lua . t)
+     ;; (lua . t)
      (makefile . t)
      (plantuml . t)
      (python . t)
