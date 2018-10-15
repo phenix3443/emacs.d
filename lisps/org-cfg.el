@@ -184,8 +184,7 @@
      ;; (powershell . t)
      (R . t)
      (ruby . t)
-     (shell . t)
-     (sed . t)
+     (sh . t)
      ))
 
   (setq org-plantuml-jar-path
