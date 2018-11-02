@@ -7,8 +7,9 @@
 (use-package projectile
   :ensure t
   :diminish
+  :bind-keymap("C-c p" . projectile-command-map)
   :config
-  (projectile-mode)
+  (projectile-mode +1)
 
   (if (equal system-type 'windows-nt)
       (progn
