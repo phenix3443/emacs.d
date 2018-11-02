@@ -148,7 +148,7 @@
   (add-to-list 'org-src-lang-modes '("lua" . lua))
   (setq org-src-window-setup 'current-window)
   (setq org-src-preserve-indentation t)
-  (setq org-edit-src-content-indentation 4)
+  (setq org-edit-src-content-indentation 0)
   (setq org-src-ask-before-returning-to-edit-buffer nil)
   (setq org-src-fontify-natively t)
   (defface org-block-begin-line
