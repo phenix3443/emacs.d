@@ -47,5 +47,12 @@
   :config
   (google-this-mode))
 
+(use-package bash-completion
+  :ensure t
+  ;; :hook (shell-dynamic-complete-functionos . bash-completion-dynamic-complete)
+  :config
+  (bash-completion-setup)
+  )
+
 (provide 'aux-utils-cfg)
 ;;; aux-utils-cfg.el ends here
