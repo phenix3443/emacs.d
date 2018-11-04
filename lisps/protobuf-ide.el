@@ -14,5 +14,5 @@
   ;; (c-add-style "protobuf" protobuf-style t)
   )
 
-(provide 'protobuf-ide-cfg)
-;;; protobuf-ide-cfg.el ends here
+(provide 'protobuf-ide)
+;;; protobuf-ide.el ends here

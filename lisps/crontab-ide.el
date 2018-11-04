@@ -13,5 +13,5 @@
   )
 
 
-(provide 'crontab-ide-cfg)
-;;; crontab-ide-cfg.el ends here
+(provide 'crontab-ide)
+;;; crontab-ide.el ends here

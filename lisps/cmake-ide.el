@@ -25,5 +25,5 @@
 
 (add-hook 'cmake-mode-hook 'company-cmake-mode-setup)
 
-(provide 'cmake-ide-cfg)
-;;; cmake-ide-cfg.el ends here
+(provide 'cmake-ide)
+;;; cmake-ide.el ends here

@@ -50,5 +50,5 @@
 (use-package cdlatex
   :ensure t)
 
-(provide 'tex-ide-cfg)
-;;; tex-ide-cfg.el ends here
+(provide 'tex-ide)
+;;; tex-ide.el ends here

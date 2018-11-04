@@ -43,5 +43,5 @@
 (setq python-shell-interpreter "ipython"
       python-shell-interpreter-args "-i")
 
-(provide 'python-ide-cfg)
-;;; python-ide-cfg.el ends here
+(provide 'python-ide)
+;;; python-ide.el ends here

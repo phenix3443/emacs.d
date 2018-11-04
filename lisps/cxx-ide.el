@@ -119,5 +119,5 @@
   :after (flycheck irony)
   :hook (irony-mode . flycheck-irony-setup))
 
-(provide 'cxx-ide-cfg)
-;;; cxx-ide-cfg.el ends here
+(provide 'cxx-ide)
+;;; cxx-ide.el ends here

@@ -11,5 +11,5 @@
   :config
   )
 
-(provide 'ruby-ide-cfg)
-;;; ruby-ide-cfg.el ends here
+(provide 'ruby-ide)
+;;; ruby-ide.el ends here

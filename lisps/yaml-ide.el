@@ -7,5 +7,5 @@
 (use-package yaml-mode
   :ensure t)
 
-(provide 'yaml-ide-cfg)
-;;; yaml-ide-cfg.el ends here
+(provide 'yaml-ide)
+;;; yaml-ide.el ends here

@@ -34,5 +34,5 @@
   :config
   )
 
-(provide 'lua-ide-cfg)
-;;; lua-ide-cfg.el ends here
+(provide 'lua-ide)
+;;; lua-ide.el ends here

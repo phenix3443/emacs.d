@@ -13,5 +13,5 @@
   :mode "Dockerfile\\'"
   :config)
 
-(provide 'docker-ide-cfg)
-;;; docker-ide-cfg.el ends here
+(provide 'docker-ide)
+;;; docker-ide.el ends here

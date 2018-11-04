@@ -11,5 +11,5 @@
 
 (add-hook 'emacs-lisp-mode-hook 'company-elisp-mode-setup)
 
-(provide 'lisp-ide-cfg)
-;;; lisp-ide-cfg.el ends here
+(provide 'lisp-ide)
+;;; lisp-ide.el ends here

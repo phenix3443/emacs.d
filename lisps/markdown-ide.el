@@ -17,5 +17,5 @@
   :ensure t
   :config)
 
-(provide 'markdown-ide-cfg)
-;;; markdown-ide-cfg.el ends here
+(provide 'markdown-ide)
+;;; markdown-ide.el ends here

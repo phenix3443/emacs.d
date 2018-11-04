@@ -58,5 +58,5 @@
   )
 
 
-(provide 'golang-ide-cfg)
-;;; golang-ide-cfg.el ends here
+(provide 'golang-ide)
+;;; golang-ide.el ends here

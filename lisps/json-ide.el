@@ -9,5 +9,5 @@
   :mode "\\.json$"
   :config)
 
-(provide 'json-ide-cfg)
-;;; json-ide-cfg.el ends here
+(provide 'json-ide)
+;;; json-ide.el ends here

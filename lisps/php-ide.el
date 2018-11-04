@@ -25,5 +25,5 @@
 (use-package php-eldoc
   :ensure t)
 
-(provide 'php-ide-cfg)
-;;; php-ide-cfg.el ends here
+(provide 'php-ide)
+;;; php-ide.el ends here

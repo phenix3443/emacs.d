@@ -196,5 +196,5 @@
   :config
   )
 
-(provide 'common-ide-cfg)
-;;; common-ide-cfg.el ends here
+(provide 'common-ide)
+;;; common-ide.el ends here

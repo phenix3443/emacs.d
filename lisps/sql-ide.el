@@ -20,5 +20,5 @@
   :config
   )
 
-(provide 'sql-ide-cfg)
-;;; sql-ide-cfg.el ends here
+(provide 'sql-ide)
+;;; sql-ide.el ends here
