@@ -11,6 +11,9 @@
          ("\\.markdown\\'" . markdown-mode))
   )
 
+(use-package markdown-toc
+  :ensure t)
+
 ;; 实时展示
 ;; https://github.com/shime/emacs-livedown
 (use-package livedown
