@@ -4,11 +4,32 @@
 
 ;;; code:
 
-;; (use-package web-mode
-;;   :ensure t
-;;   :mode (("\\.html\\" . web-mode))
-;;   :config
-;;   )
+;; 备选的skewer-mode
+(use-package  impatient-mode
+  :ensure t
+  :hook (
+         (web-mode . impatient-mode)
+         (web-mode . httpd-start)
+         )
+  :config
+  )
+
+(use-package web-mode
+  :ensure t
+  :mode ("\\.html\\'" . web-mode)
+  :config
+  )
+
+(use-package company-web
+  :ensure t
+  :after (company)
+  :config)
+
+(use-package rainbow-mode
+  :ensure t
+  :hook (css-mode . rainbow-mode)
+  :config
+  )
 
 ;; (use-package emmet-mode
 ;;   :ensure t
@@ -19,11 +40,6 @@
 ;; (use-package helm-emmet
 ;;   :ensure t
 ;;   :after (helm emmet)
-;;   :config)
-
-;; (use-package company-web
-;;   :ensure t
-;;   :after (company)
 ;;   :config)
 
 (provide 'web-ide)
