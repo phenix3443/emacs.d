@@ -12,8 +12,8 @@
   )
 
 ;; 实时展示
+;; https://github.com/shime/emacs-livedown
 (use-package livedown
-  :load-path "/data/github/emacs-livedown/"
   :init
   (custom-set-variables
    '(livedown-autostart nil) ; automatically open preview when opening markdown files
