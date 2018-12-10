@@ -20,10 +20,10 @@
 
 (add-hook 'python-mode-hook 'company-python-mode-hook)
 
-(use-package importmagic
-  :ensure t
-  :hook (python-mode . importmagic-mode)
-  )
+;; (use-package importmagic
+;;   :ensure t
+;;   :hook (python-mode . importmagic-mode)
+;;   )
 ;;; 编辑辅助(Code generation helpers)
 
 ;;; Lint, style and syntax checkers
