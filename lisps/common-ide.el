@@ -46,9 +46,9 @@
 
 (use-package lsp-mode
   :ensure t
-  :hook (lsp-after-open . lsp-enable-imenu)
+  ;; :hook (lsp-after-open . lsp-enable-imenu)
   :config
-  (require 'lsp-imenu)
+  ;; (require 'lsp-imenu)
   )
 
 (use-package lsp-ui
