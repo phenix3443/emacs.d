@@ -8,10 +8,11 @@
   :mode ".proto$"
   :config
   ;; (defconst protobuf-style
-  ;;   '((c-basic-offset . 2)
+  ;;   '((c-basic-offset . 4)
   ;;     (indent-tabs-mode . nil)))
 
-  ;; (c-add-style "protobuf" protobuf-style t)
+  ;; (add-hook 'protobuf-mode-hook
+  ;;   (lambda () (c-add-style "my-style" protobuf-style t)))
   )
 
 (provide 'protobuf-ide)
