@@ -46,18 +46,15 @@
 
 (use-package lsp-mode
   :ensure t
-  ;; :hook (lsp-after-open . lsp-enable-imenu)
+  :commands lsp
   :config
-  ;; (require 'lsp-imenu)
   )
 
 (use-package lsp-ui
   :ensure t
-  ;; :after(lsp-mode)
-  ;; :hook (lsp-mode lsp-ui-mode)
+  :commands lsp-ui-mode
+  :after lsp-mode
   :config
-  (require 'lsp-ui)
-  (add-hook 'lsp-mode-hook 'lsp-ui-mode)
   )
 
 (use-package company-lsp
