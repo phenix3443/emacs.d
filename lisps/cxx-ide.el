@@ -59,7 +59,8 @@
 ;;   (setq cquery-executable (concat (getenv "HOME") "/github/cquery/build/release/bin/cquery")))
 
 (defun company-c/c++-mode-setup()
-  "C/C++ company补全后端设置"
+  "C/C++ company补全后端设置."
+
   (set (make-local-variable 'company-backends)
        ;; (list '(company-irony company-irony-c-headers) (car company-backends))))
        (list (append '(company-lsp) (car company-backends)))))
@@ -75,7 +76,7 @@
          ("C-c b" . clang-format-buffer))
 
   :config
-  (setq clang-format-style "google"))
+)
 
 (use-package cc-mode
   :ensure t
