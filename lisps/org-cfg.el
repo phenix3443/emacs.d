@@ -7,6 +7,8 @@
   :ensure t
   :hook (org-mode . turn-on-org-cdlatex)
   :init
+  (setq org-plantuml-jar-path
+        (expand-file-name (concat user-emacs-directory "plantuml.jar")))
   :config
   (require 'ox-md nil t)
   ;; 3 Tables
@@ -187,8 +189,6 @@
      (sh . t)
      ))
 
-  (setq org-plantuml-jar-path
-        (expand-file-name (concat user-emacs-directory "plantuml.jar")))
 
   ;; 14.8 Header arguments
   ;; 14.8.1 Using header arguments
