@@ -46,17 +46,17 @@
   ;; (add-to-list company-c-headers-path-system ".")
   )
 
-(defun cquery//enable()
-  (condition-case nil
-      (lsp-cquery-enable)
-    (user-error nil)))
+;; (defun cquery//enable()
+;;   (condition-case nil
+;;       (lsp-cquery-enable)
+;;     (user-error nil)))
 
-(use-package cquery
-  :commands lsp-cquery-enable
-  :hook (c-mode-common . cquery//enable)
-  :ensure t
-  :config
-  (setq cquery-executable (concat (getenv "HOME") "/github/cquery/build/release/bin/cquery")))
+;; (use-package cquery
+;;   :commands lsp-cquery-enable
+;;   :hook (c-mode-common . cquery//enable)
+;;   :ensure t
+;;   :config
+;;   (setq cquery-executable (concat (getenv "HOME") "/github/cquery/build/release/bin/cquery")))
 
 (defun company-c/c++-mode-setup()
   "C/C++ company补全后端设置"
