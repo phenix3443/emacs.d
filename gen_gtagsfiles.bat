@@ -1,1 +1,0 @@
-where /R . *.lua > gtags.files
