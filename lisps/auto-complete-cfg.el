@@ -4,8 +4,6 @@
 
 ;;; code:
 
-(require 'use-package)
-
 (use-package auto-complete
   :ensure t
   :disabled t

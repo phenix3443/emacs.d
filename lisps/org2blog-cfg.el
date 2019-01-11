@@ -4,8 +4,6 @@
 
 ;;; code:
 
-(require 'use-package)
-
 (use-package org2blog
   :ensure t
   :config
