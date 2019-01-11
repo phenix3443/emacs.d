@@ -19,7 +19,7 @@
   :config)
 
 
-;; 语义补全（code complete）
+;; 代码补全（code complete）
 (use-package company
   :ensure t
   :diminish
@@ -95,7 +95,7 @@
 (use-package helm-dash
   :ensure t
   :config
-  (setq helm-dash-docsets-path "/data/nuts/docsets")
+  (setq helm-dash-docsets-path "~/docsets")
   (setq helm-dash-common-docsets '(
                                    "C"
                                    "C++"
