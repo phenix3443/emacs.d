@@ -48,6 +48,10 @@
   :ensure t
   :commands lsp
   :config
+  (lsp-register-client
+   (make-lsp-client :new-connection (lsp-stdio-connection "lua-lsp")
+                    :major-modes '(lua-mode)
+                    :server-id 'lua-lsp))
   )
 
 (use-package lsp-ui
