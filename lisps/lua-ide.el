@@ -4,9 +4,19 @@
 
 ;;; code:
 (defun company-lua-mode-setup()
-  "create lua company backend"
-  (set (make-local-variable 'company-backends)
-       (list (append '(company-lua company-lsp) (car company-backends)))))
+  "Create lua company backend."
+  (setq-local company-backends '(
+                                 (:separate
+                                  company-lua
+                                  company-keywords
+                                  company-gtags
+                                  company-yasnippet
+                                  )
+                                 company-capf
+                                 company-dabbrev-code
+                                 company-files
+                                 )
+       ))
 
 (use-package lua-mode
   :ensure t
