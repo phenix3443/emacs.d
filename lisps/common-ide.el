@@ -22,7 +22,7 @@
 ;; 代码补全（code complete）
 (use-package company
   :ensure t
-  :diminish
+  ;; :diminish
   :bind (("C-c y" . company-yasnippet))
   :init
   (setq company-backends '((company-dabbrev-code
@@ -48,17 +48,23 @@
   :ensure t
   :commands lsp
   :config
+  ;; 注册lua-lsp
+  ;; (lsp-register-client
+  ;;  (make-lsp-client :new-connection (lsp-stdio-connection "lua-lsp")
+  ;;                   :major-modes '(lua-mode)
+  ;;                   :server-id 'lua-lsp))
+
   (lsp-register-client
-   (make-lsp-client :new-connection (lsp-stdio-connection "lua-lsp")
+   (make-lsp-client :new-connection (lsp-stdio-connection '("/usr/bin/java" "-cp" "/data/nuts/EmmyLua-LS-all.jar" "com.tang.vscode.MainKt"))
                     :major-modes '(lua-mode)
-                    :server-id 'lua-lsp))
+                    :server-id 'lua))
   )
 
 (use-package lsp-ui
   :ensure t
-  :commands lsp-ui-mode
   :after lsp-mode
   :config
+
   )
 
 (use-package company-lsp
