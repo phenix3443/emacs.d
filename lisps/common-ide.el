@@ -47,6 +47,7 @@
 (use-package lsp-mode
   :ensure t
   :commands lsp
+  :hook ((lua-mode) . lsp)
   :config
   ;; 注册lua-lsp
   ;; (lsp-register-client
@@ -54,10 +55,15 @@
   ;;                   :major-modes '(lua-mode)
   ;;                   :server-id 'lua-lsp))
 
+  ;; 注册emmy-lua-lsp
   (lsp-register-client
-   (make-lsp-client :new-connection (lsp-stdio-connection '("/usr/bin/java" "-cp" "/data/nuts/EmmyLua-LS-all.jar" "com.tang.vscode.MainKt"))
+   (make-lsp-client :new-connection (lsp-stdio-connection (list
+                                                           "/usr/bin/java"
+                                                           "-cp"
+                                                           (expand-file-name "EmmyLua-LS-all.jar" user-emacs-directory)
+                                                           "com.tang.vscode.MainKt"))
                     :major-modes '(lua-mode)
-                    :server-id 'lua))
+                    :server-id 'emmy-lua))
   )
 
 (use-package lsp-ui
