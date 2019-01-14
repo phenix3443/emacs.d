@@ -120,7 +120,7 @@
           ("notebook-static"
            :base-directory "~/github/notebook/org/"
            :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-           :publishing-directory "/data/github/notebook/docs/"
+           :publishing-directory "~/github/notebook/docs/"
            :recursive t
            :publishing-function org-publish-attachment
            )
