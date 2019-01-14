@@ -6,7 +6,7 @@
 (defun company-lua-mode-setup()
   "Create lua company backend."
   (setq-local company-backends '(
-                                 (:separate
+                                 (
                                   company-lua
                                   company-keywords
                                   company-gtags

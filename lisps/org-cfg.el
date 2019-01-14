@@ -7,8 +7,7 @@
   :ensure t
   :hook (org-mode . turn-on-org-cdlatex)
   :init
-  (setq org-plantuml-jar-path
-        (expand-file-name (concat user-emacs-directory "plantuml.jar")))
+
   :config
   (require 'ox-md nil t)
   ;; 3 Tables
@@ -209,6 +208,9 @@
   ;; (setq org-startup-with-inline-images t)
   (setq org-startup-with-latex-preview t)
   ;; (setq org-list-indent-offset 2)
+
+  (setq org-plantuml-jar-path
+        (expand-file-name "plantuml.jar" user-emacs-directory))
 
   (setq org-babel-python-command "python3")
   )
