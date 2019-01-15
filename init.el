@@ -30,6 +30,11 @@ There are two things you can do about this warning:
     (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
 
+(package-refresh-contents)
+
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
 (add-to-list 'load-path (expand-file-name "lisps" user-emacs-directory))
 
 (require 'misc)
