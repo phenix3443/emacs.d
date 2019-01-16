@@ -24,7 +24,7 @@
   :ensure t
   :disabled
   :config
-  ;; (persp-mode)
+  (persp-mode)
   )
 
 (use-package persp-projectile
@@ -32,6 +32,7 @@
   :disabled
   :ensure t
   :config
+  ;; (define-key projectile-mode-map (kbd "s-s") 'projectile-persp-switch-project)
   )
 
 (use-package sr-speedbar
