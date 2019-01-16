@@ -58,12 +58,26 @@
 ;;   :config
 ;;   (setq cquery-executable (concat (getenv "HOME") "/github/cquery/build/release/bin/cquery")))
 
+(use-package ccls
+  :ensure t
+  :config
+  ;; (setq ccls-executable "/usr/local/bin/ccls")
+  )
+
 (defun company-c/c++-mode-setup()
   "C/C++ company补全后端设置."
 
-  (set (make-local-variable 'company-backends)
-       ;; (list '(company-irony company-irony-c-headers) (car company-backends))))
-       (list (append '(company-lsp) (car company-backends)))))
+  (setq-local company-backends '(
+                                 (company-lsp
+                                  company-keywords
+                                  company-gtags
+                                  company-yasnippet
+                                  )
+                                 company-capf
+                                 company-dabbrev-code
+                                 company-files
+                                 ))
+  )
 
 (add-hook 'c-mode-common-hook 'company-c/c++-mode-setup)
 
