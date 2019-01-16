@@ -5,8 +5,59 @@
 ;;; code:
 
 ;;; 编辑辅助(Code generation helpers)
+(use-package flycheck
+  :ensure t
+  :init
+  (global-flycheck-mode)
+  :config
+  ;; c/c++
+  ;; (setq flycheck-clang-include-path '("/usr/local/include/"))
+  (setq flycheck-gcc-language-standard "c++11")
+  (setq flycheck-clang-language-standard "c++11")
+  ;; elisp
+  (setq flycheck-emacs-lisp-load-path 'inherit)
+  ;; json
 
-;; 代码模板
+  ;; python
+  (setq flycheck-json-python-json-executable "python3")
+  (setq flycheck-python-pylint-executable "/usr/local/bin/pylint")
+  )
+
+(use-package smart-comment
+  :ensure t
+  :bind ("M-;" . smart-comment))
+
+(use-package auto-highlight-symbol
+  :ensure t
+  :diminish
+  :config
+  (global-auto-highlight-symbol-mode t)
+  )
+
+(use-package helm-dash
+  :ensure t
+  :config
+  (setq helm-dash-docsets-path "~/docsets")
+  (setq helm-dash-common-docsets '(
+                                   "C"
+                                   "C++"
+                                   "Django"
+                                   "Go"
+                                   "Lua"
+                                   "Nginx"
+                                   "Python 3"
+                                   ))
+  )
+
+(use-package zeal-at-point
+  :ensure t
+  :config
+  (add-to-list 'zeal-at-point-mode-alist
+               '(perl-mode . "perl")
+               )
+  )
+
+;; 代码补全（code complete）
 (use-package yasnippet
   :ensure t
   :diminish yas-minor-mode
@@ -18,8 +69,6 @@
   :ensure t
   :config)
 
-
-;; 代码补全（code complete）
 (use-package company
   :ensure t
   ;; :diminish
@@ -83,52 +132,7 @@
   (setq company-lsp-enable-recompletion t)
   )
 
-(use-package smart-comment
-  :ensure t
-  :bind ("M-;" . smart-comment))
-
-;; 语法检查（syntax checkers）
-(use-package flycheck
-  :ensure t
-  :init
-  (global-flycheck-mode)
-  :config
-  ;; c/c++
-  ;; (setq flycheck-clang-include-path '("/usr/local/include/"))
-  (setq flycheck-gcc-language-standard "c++11")
-  (setq flycheck-clang-language-standard "c++11")
-  ;; elisp
-  (setq flycheck-emacs-lisp-load-path 'inherit)
-  ;; json
-
-  ;; python
-  (setq flycheck-json-python-json-executable "python3")
-  (setq flycheck-python-pylint-executable "/usr/local/bin/pylint")
-  )
-
 ;;; 文档（document）
-(use-package helm-dash
-  :ensure t
-  :config
-  (setq helm-dash-docsets-path "~/docsets")
-  (setq helm-dash-common-docsets '(
-                                   "C"
-                                   "C++"
-                                   "Django"
-                                   "Go"
-                                   "Lua"
-                                   "Nginx"
-                                   "Python 3"
-                                   ))
-  )
-
-(use-package zeal-at-point
-  :ensure t
-  :config
-  (add-to-list 'zeal-at-point-mode-alist
-               '(perl-mode . "perl")
-               )
-  )
 
 ;;; 编译（compile）
 (use-package smart-compile
@@ -136,25 +140,14 @@
   :bind ([f5] . smart-compile)
   :config
   )
+
 ;;; 测试（run test）
-(use-package nginx-mode
-  :ensure t)
 
 ;;; 调试（debug）
-;;; 静态检查
-;;; 动态检查
+
 ;;; 性能分析
 
 ;;; 导航（navigation）
-;; 高亮
-(use-package auto-highlight-symbol
-  :ensure t
-  :diminish
-  :config
-  (global-auto-highlight-symbol-mode t)
-  )
-;; 代码跳转
-
 (use-package helm-xref
   :ensure t
   :config
@@ -205,11 +198,6 @@
    '(helm-gtags-update-interval-second 30)
    '(helm-gtags-use-input-at-cursor t)
    )
-  )
-
-(use-package gist
-  :ensure t
-  :config
   )
 
 (provide 'common-ide)

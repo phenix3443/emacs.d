@@ -15,6 +15,13 @@
                    (load-file (concat (file-name-as-directory dir) f)))))
     (mapc load-it (directory-files dir nil "\\.el$"))))
 
+(use-package nginx-mode
+  :ensure t)
+
+(use-package gist
+  :ensure t
+  :config
+  )
 
 (provide 'misc)
 ;;; misc.el ends here
