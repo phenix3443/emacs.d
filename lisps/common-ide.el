@@ -40,6 +40,7 @@
 
 (use-package helm-dash
   :ensure t
+  :bind ("C-c d d" . helm-dash-at-point)
   :hook (go-mode . go-doc)
   :config
   (setq helm-dash-docsets-path "~/docsets")
@@ -47,7 +48,7 @@
 
 (use-package zeal-at-point
   :ensure t
-  :bind ("C-c d" . zeal-at-point)
+  :bind ("C-c d z" . zeal-at-point)
   :config
   (add-to-list 'zeal-at-point-mode-alist '(perl-mode . "perl"))
   (add-to-list 'zeal-at-point-mode-alist '(python-mode . ("python" "django")))
