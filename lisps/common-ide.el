@@ -47,10 +47,10 @@
 
 (use-package zeal-at-point
   :ensure t
+  :bind ("C-c d" . zeal-at-point)
   :config
-  (add-to-list 'zeal-at-point-mode-alist
-               '(perl-mode . "perl")
-               )
+  (add-to-list 'zeal-at-point-mode-alist '(perl-mode . "perl"))
+  (add-to-list 'zeal-at-point-mode-alist '(python-mode . ("python" "django")))
   )
 
 ;; 代码补全（code complete）
