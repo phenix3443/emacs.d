@@ -34,19 +34,15 @@
   (global-auto-highlight-symbol-mode t)
   )
 
+(defun go-doc ()
+  (interactive)
+  (setq-local helm-dash-docsets '("Go")))
+
 (use-package helm-dash
   :ensure t
+  :hook (go-mode . go-doc)
   :config
   (setq helm-dash-docsets-path "~/docsets")
-  (setq helm-dash-common-docsets '(
-                                   "C"
-                                   "C++"
-                                   "Django"
-                                   "Go"
-                                   "Lua"
-                                   "Nginx"
-                                   "Python 3"
-                                   ))
   )
 
 (use-package zeal-at-point
