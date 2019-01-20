@@ -33,6 +33,9 @@
   (setq sml/no-confirm-load-theme t)
   (sml/setup)
   )
+
+
+
 (provide 'theme-cfg)
 
 ;;; theme-cfg.el ends here

@@ -158,7 +158,8 @@
 ;; 26.8 Completion for symbol names
 
 ;; 26.9 MixedCase Words
-(global-subword-mode 1)
+;; (global-subword-mode 1)
+
 ;; 26.11 Other Features Useful for Editing Programs
 ;; (add-to-list 'electric-layout-rules '(?{ . around))
 (electric-layout-mode t)
