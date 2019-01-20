@@ -16,7 +16,6 @@
   (diminish 'auto-revert-mode)
   (diminish 'visual-line-mode)
   (diminish 'eldoc-mode)
-  (diminish 'subword-mode)
   )
 
 

@@ -6,7 +6,7 @@
 
 (use-package projectile
   :ensure t
-  ;; :diminish
+  :diminish
   :bind-keymap("C-c p" . projectile-command-map)
   :config
   (projectile-mode +1)
