@@ -9,12 +9,18 @@
   :config
   )
 
-;; (use-package sqlformat
-;;   :ensure t
-;;   :hook (sql-mode . sqlformat-on-save-mode)
-;;   :config
-;;   (custom-set-default sqlformat-command )
-;; )
+(use-package sql-indent
+  :ensure t
+  :config
+)
+
+(use-package sqlformat
+  :ensure t
+  :hook (sql-mode . sqlformat-on-save-mode)
+  :config
+  (setq sqlformat-command 'pgformatter)
+)
+
 
 (use-package sqlup-mode
   :ensure t
