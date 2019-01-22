@@ -7,6 +7,7 @@
 ;;; 编辑辅助(Code generation helpers)
 (use-package flycheck
   :ensure t
+  :diminish
   :init
   (global-flycheck-mode)
   :config
@@ -95,13 +96,13 @@
   :commands lsp
   :hook ((lua-mode) . lsp)
   :config
-  ;; 注册lua-lsp
+  ;; 注册 lua-lsp
   ;; (lsp-register-client
   ;;  (make-lsp-client :new-connection (lsp-stdio-connection "lua-lsp")
   ;;                   :major-modes '(lua-mode)
   ;;                   :server-id 'lua-lsp))
 
-  ;; 注册emmy-lua-lsp
+  ;; 注册 emmy-lua-lsp
   (lsp-register-client
    (make-lsp-client :new-connection
                     (lsp-stdio-connection
