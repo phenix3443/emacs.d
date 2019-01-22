@@ -1,4 +1,4 @@
-;;; package --- summary  一些小的实用的函数，实用纯lisp编写
+;;; package --- summary  一些小的实用的函数，实用纯 lisp 编写
 ;;; -*-coding:utf-8 -*-
 ;;; commentary:
 
@@ -15,8 +15,6 @@
                    (load-file (concat (file-name-as-directory dir) f)))))
     (mapc load-it (directory-files dir nil "\\.el$"))))
 
-(use-package nginx-mode
-  :ensure t)
 
 (use-package gist
   :ensure t

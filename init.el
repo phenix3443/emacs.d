@@ -59,15 +59,18 @@ There are two things you can do about this warning:
 (require 'powershell-ide)
 (require 'web-ide)
 
+
 (require 'crontab-ide)
 (require 'markdown-ide)
 (require 'docker-ide)
 (require 'tex-ide)
 (require 'yaml-ide)
+(require 'nginx-ide)
 
 (require 'project-cfg)
 (require 'vcs-cfg)
 (require 'org-cfg)
+(require 'github-cfg)
 
 ;; GNU Emacs Lisp reference manual.
 ;; An Introduction to Programming in Emacs Lisp.
