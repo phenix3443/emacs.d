@@ -125,8 +125,6 @@
   ;; enable modes
   (helm-mode 1)
   (helm-adaptive-mode 1)
-  ;; enable fuzzy matching globally in all functions helmized by helm-mode
-  (setq helm-mode-fuzzy-match t)
   (setq helm-completion-in-region-fuzzy-match t)
   (helm-autoresize-mode 1)
   (setq helm-candidate-number-limit 100)
