@@ -1,4 +1,4 @@
-;;; package --- summary  nginx项目相关配置
+;;; package --- summary  nginx IDE 相关配置
 ;;; -*-coding:utf-8 -*-
 ;;; commentary:
 
@@ -9,9 +9,10 @@
 
 (use-package company-nginx
   :ensure t
-  :hook (nginx-mode . #'company-nginx-keywords)
+  :after (nginx-mode)
+  :hook(nginx-mode . company-nginx-keywords)
   :config
-    )
+  )
 
 (provide 'nginx-ide)
 ;;; nginx-ide.el ends here
