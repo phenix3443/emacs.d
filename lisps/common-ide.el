@@ -35,14 +35,9 @@
   (global-auto-highlight-symbol-mode t)
   )
 
-(defun go-doc ()
-  (interactive)
-  (setq-local helm-dash-docsets '("Go")))
-
 (use-package helm-dash
   :ensure t
   :bind ("C-c d d" . helm-dash-at-point)
-  :hook (go-mode . go-doc)
   :config
   (setq helm-dash-docsets-path "~/docsets")
   )
