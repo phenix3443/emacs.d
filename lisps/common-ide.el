@@ -82,7 +82,7 @@
   :ensure t
   :after (company)
   :config
-  (setq company-quickhelp-delay 2)
+  (setq company-quickhelp-delay 1)
   (company-quickhelp-mode 1)
   )
 
