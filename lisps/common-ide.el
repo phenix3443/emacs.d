@@ -86,6 +86,13 @@
   (company-quickhelp-mode 1)
   )
 
+(use-package company-statistics
+  :ensure t
+  :after (company)
+  :config
+  (company-statistics-mode)
+)
+
 (use-package lsp-mode
   :ensure t
   :commands lsp
