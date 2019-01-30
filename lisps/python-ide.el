@@ -1,4 +1,4 @@
-;;; package --- summary python-ide配置
+;;; package --- summary python-ide 配置
 ;;; -*-coding:utf-8 -*-
 ;;; commentary:
 
@@ -6,7 +6,6 @@
 
 ;;; 代码补全（code complete）
 (use-package company-jedi
-  ;; sudo pip3 install virtualenv
   :ensure t
   :after (company)
   :config
@@ -14,16 +13,21 @@
   )
 
 (defun company-python-mode-hook()
-  "create python company backend"
-  (set (make-local-variable 'company-backends)
-       (list (append '(company-jedi)  (car company-backends)))))
+  "Create python company backend."
+  (setq-local company-backends '(
+                                 (
+                                  company-jedi
+                                  )
+                                 company-capf
+                                 company-dabbrev-code
+                                 company-files
+                                 )
+              ))
+
 
 (add-hook 'python-mode-hook 'company-python-mode-hook)
 
-;; (use-package importmagic
-;;   :ensure t
-;;   :hook (python-mode . importmagic-mode)
-;;   )
+
 ;;; 编辑辅助(Code generation helpers)
 
 ;;; Lint, style and syntax checkers
@@ -39,9 +43,8 @@
 ;;; compile
 
 ;;; run test
+
 ;;; Interactive environments
-(setq python-shell-interpreter "ipython"
-      python-shell-interpreter-args "-i")
 
 (provide 'python-ide)
 ;;; python-ide.el ends here
