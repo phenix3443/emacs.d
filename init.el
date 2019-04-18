@@ -81,16 +81,6 @@ There are two things you can do about this warning:
 ;; Ada-mode(Emacs mode for editing Ada code.)
 ;; Auth-source Emacs library for storing and sharing secret data.
 ;; 在 window 下莫名卡顿，先注释
-;; (require 'auth-source)
-;; (add-to-list 'auth-sources "~/.emacs.d/.authinfo.gpg")
-;; start pageant first
-;; (when (equal system-type 'windows-nt)
-;;   (let ((str (shell-command-to-string "tasklist /FI \"IMAGENAME eq pageant.exe\"")))
-;;  (when (not (string-match "pageant.exe" str))
-;;    (when (executable-find "pageant")
-;;      ;;  (shell-command-to-string "taskkill /IM pageant.exe")
-;;      (start-process "pageant" nil "pageant")))))
-
 ;; Autotype Features for frequently-entered text.
 ;; Calc Calc is an advanced calculator and mathematical tool.
 
