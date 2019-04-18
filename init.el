@@ -71,7 +71,7 @@ There are two things you can do about this warning:
 (require 'vcs-cfg)
 (require 'org-cfg)
 (require 'github-cfg)
-(require 'tramp-cfg)
+(require 'ssh-cfg)
 
 ;; GNU Emacs Lisp reference manual.
 ;; An Introduction to Programming in Emacs Lisp.

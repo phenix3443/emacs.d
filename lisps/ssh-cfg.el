@@ -1,8 +1,13 @@
-;;; package --- summary  tramp configure
+;;; package --- summary  ssh configure
 ;;; -*-coding:utf-8 -*-
 ;;; commentary:
 
 ;;; code:
+
+(use-package ssh-config-mode
+  :ensure t
+  :mode "\\.sconf\\'"
+  )
 
 (use-package tramp
   :config
@@ -37,5 +42,6 @@
   :config
   )
 
-(provide 'tramp-cfg)
-;;; tramp-cfg.el ends here
+(provide 'ssh-cfg)
+
+;;; ssh-cfg.el ends here
