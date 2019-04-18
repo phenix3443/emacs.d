@@ -94,6 +94,7 @@
 
 (use-package pangu-spacing
   :ensure t
+  :disabled t
   :diminish
   :config
   ;; :hook ((org-mode markdown-mode) . pangu-spacing-mode)
