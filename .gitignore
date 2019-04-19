@@ -26,4 +26,7 @@ EmmyLua-LS-all.jar
 .lsp-session-v1
 elpa/
 themes/*
-/server
+server/
+company-statistics-cache.el
+tramp
+transient/
