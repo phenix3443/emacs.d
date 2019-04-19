@@ -17,6 +17,7 @@
   (setq-local company-backends '(
                                  (
                                   company-jedi
+                                  ;; company-lsp
                                   )
                                  company-capf
                                  company-dabbrev-code
@@ -37,6 +38,7 @@
   :hook (python-mode . yapf-mode)
   :config
   )
+;; ;;; Lint, style and syntax checkers
 
 ;;; code navigation
 

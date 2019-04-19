@@ -96,8 +96,9 @@
 (use-package lsp-mode
   :ensure t
   :commands lsp
-  :hook ((lua-mode) . lsp)
+  :hook ((lua-mode ) . lsp)
   :config
+
   ;; 注册 lua-lsp
   ;; (lsp-register-client
   ;;  (make-lsp-client :new-connection (lsp-stdio-connection "lua-lsp")
