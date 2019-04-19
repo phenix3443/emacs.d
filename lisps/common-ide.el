@@ -96,7 +96,7 @@
 (use-package lsp-mode
   :ensure t
   :commands lsp
-  :hook ((lua-mode ) . lsp)
+  :hook ((lua-mode) . lsp)
   :config
 
   ;; 注册 lua-lsp
@@ -132,6 +132,21 @@
   :config
   (setq company-lsp-enable-recompletion t)
   )
+
+(use-package lsp-python-ms
+  :demand
+  :ensure nil
+  :load-path "~/github/lsp-python-ms"
+  ;; :after lsp-mode
+  :hook (python-mode . lsp)
+  :config
+  ;; for dev build of language server
+  (setq lsp-python-ms-dir
+        (expand-file-name "~/github/python-language-server/output/bin/Release/"))
+  ;; for executable of language server, if it's not symlinked on your PATH
+  (setq lsp-python-ms-executable "~/github/python-language-server/output/bin/Release/linux-x64/publish/Microsoft.Python.LanguageServer")
+  )
+
 
 ;;; 文档（document）
 

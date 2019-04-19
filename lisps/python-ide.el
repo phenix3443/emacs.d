@@ -7,6 +7,7 @@
 ;;; 代码补全（code complete）
 (use-package company-jedi
   :ensure t
+  :disabled t
   :after (company)
   :config
   (setq jedi:complete-on-dot t)
@@ -15,10 +16,8 @@
 (defun company-python-mode-hook()
   "Create python company backend."
   (setq-local company-backends '(
-                                 (
-                                  company-jedi
-                                  ;; company-lsp
-                                  )
+                                 ;; company-jedi
+                                 company-lsp
                                  company-capf
                                  company-dabbrev-code
                                  company-files
@@ -35,6 +34,7 @@
 (use-package yapfify
   ;; 需要安装 sudo pip3 install yapf
   :ensure t
+  :disabled t
   :hook (python-mode . yapf-mode)
   :config
   )
