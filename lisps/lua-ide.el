@@ -3,8 +3,23 @@
 ;;; commentary:
 
 ;;; code:
-(defun company-lua-mode-setup()
-  "Create lua company backend."
+(use-package company-lua
+  :after (company)
+  :ensure t
+  :config
+  )
+
+(use-package lsp-lua-emmy
+  :demand t
+  :ensure nil
+  :load-path "~/github/lsp-lua-emmy"
+  :hook (lua-mode . lsp)
+  :config
+  (setq lsp-lua-emmy-jar-path "~/.emacs.d/EmmyLua-LS-all.jar")
+  )
+
+(defun set-company-backends-for-lua()
+  "Set lua company backend."
   (setq-local company-backends '(
                                  (
                                   company-lsp
@@ -23,7 +38,7 @@
   :ensure t
   :mode "\\.lua$"
   :interpreter "lua"
-  :hook (lua-mode . company-lua-mode-setup)
+  :hook (lua-mode . set-company-backends-for-lua)
   :bind (:map lua-mode-map
               ("C-c l b" . lua-send-buffer)
               ("C-c l d" . lua-send-defun)
@@ -37,12 +52,6 @@
   (setq lua-indent-level 4)
   (setq lua-indent-string-contents t)
   (setq lua-prefix-key nil)
-  )
-
-(use-package company-lua
-  :after (company)
-  :ensure t
-  :config
   )
 
 (provide 'lua-ide)

@@ -104,19 +104,7 @@
   ;;  (make-lsp-client :new-connection (lsp-stdio-connection "lua-lsp")
   ;;                   :major-modes '(lua-mode)
   ;;                   :server-id 'lua-lsp))
-
-  ;; 注册 emmy-lua-lsp
-  (lsp-register-client
-   (make-lsp-client :new-connection
-                    (lsp-stdio-connection
-                     (list
-                      "/usr/bin/java"
-                      "-cp"
-                      (expand-file-name "EmmyLua-LS-all.jar" user-emacs-directory)
-                      "com.tang.vscode.MainKt"))
-                    :major-modes '(lua-mode)
-                    :server-id 'emmy-lua))
-  )
+)
 
 (use-package lsp-ui
   :ensure t
