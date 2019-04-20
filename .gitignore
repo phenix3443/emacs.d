@@ -30,3 +30,4 @@ server/
 company-statistics-cache.el
 tramp
 transient/
+.lsp-python/
