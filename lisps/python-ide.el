@@ -5,7 +5,7 @@
 ;;; code:
 
 ;;; 代码补全（code complete）
-(defun company-python-mode-hook()
+(defun set-company-backends-for-python ()
   "Create python company backend."
   (setq-local company-backends '(
                                  ;; company-jedi
@@ -19,13 +19,10 @@
                                  )
               ))
 
-(add-hook 'python-mode-hook 'company-python-mode-hook)
-
 (use-package lsp-python-ms
   :demand
   :ensure nil
   :load-path "~/github/lsp-python-ms"
-  ;; :after lsp-mode
   :hook (python-mode . lsp)
   :config
   ;; for dev build of language server
@@ -42,6 +39,12 @@
   :disabled t
   :hook (python-mode . yapf-mode)
   :config
+  )
+
+(use-package python
+  :hook (python-mode . set-company-backends-for-python)
+  :config
+  (setq python-shell-interpreter 'python3)
   )
 ;; ;;; Lint, style and syntax checkers
 
