@@ -136,9 +136,6 @@
   :config
   (add-to-list 'smart-compile-alist
                '(python-mode . "python3 %f"))
-
-  (add-to-list 'smart-compile-alist
-               '(lua-mode . "lua %f"))
   )
 
 ;;; 测试（run test）
