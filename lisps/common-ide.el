@@ -67,11 +67,6 @@
   ;; :diminish
   :bind (("C-c y" . company-yasnippet))
   :init
-  (setq company-backends '((company-dabbrev-code
-                            company-files
-                            company-keywords
-                            company-gtags
-                            )))
   :config
   (setq company-minimum-prefix-length 1)
   (setq company-show-numbers t)
@@ -96,7 +91,7 @@
 (use-package lsp-mode
   :ensure t
   :commands lsp
-  :hook ((lua-mode) . lsp)
+  :hook ((python-mode lua-mode) . lsp)
   :config
 
   ;; 注册 lua-lsp
@@ -104,6 +99,16 @@
   ;;  (make-lsp-client :new-connection (lsp-stdio-connection "lua-lsp")
   ;;                   :major-modes '(lua-mode)
   ;;                   :server-id 'lua-lsp))
+
+  ;; (lsp-register-client
+  ;;  (make-lsp-client :new-connection
+  ;;                   (lsp-stdio-connection
+  ;;                    (list "/usr/bin/java"
+  ;;                          "-cp"
+  ;;                          (expand-file-name "EmmyLua-LS-all.jar" user-emacs-directory)
+  ;;                          "com.tang.vscode.MainKt"))
+  ;;                   :major-modes '(lua-mode)
+  ;;                   :server-id 'emmy-lua-ls))
 )
 
 (use-package lsp-ui

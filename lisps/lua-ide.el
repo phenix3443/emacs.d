@@ -10,19 +10,20 @@
   )
 
 (use-package lsp-lua-emmy
-  :demand t
+  :demand
+  :init
+  (setq lsp-lua-emmy-jar-path (expand-file-name "EmmyLua-LS-all.jar" user-emacs-directory))
   :ensure nil
   :load-path "~/github/lsp-lua-emmy"
   :hook (lua-mode . lsp)
   :config
-  (setq lsp-lua-emmy-jar-path "~/.emacs.d/EmmyLua-LS-all.jar")
   )
 
 (defun set-company-backends-for-lua()
   "Set lua company backend."
   (setq-local company-backends '(
                                  (
-                                  company-lsp
+                                  ;; company-lsp
                                   company-lua
                                   company-keywords
                                   company-gtags
@@ -31,8 +32,7 @@
                                  company-capf
                                  company-dabbrev-code
                                  company-files
-                                 )
-       ))
+                                 )))
 
 (use-package lua-mode
   :ensure t

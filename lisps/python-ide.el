@@ -19,6 +19,8 @@
                                  )
               ))
 
+(add-hook 'python-mode-hook set-)
+
 (use-package lsp-python-ms
   :demand
   :ensure nil
@@ -42,7 +44,7 @@
   )
 
 (use-package python
-  :hook (python-mode . set-company-backends-for-python)
+  ;; :hook (python-mode . set-company-backends-for-python)
   :config
   (setq python-shell-interpreter 'python3)
   )

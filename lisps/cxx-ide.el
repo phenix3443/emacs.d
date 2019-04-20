@@ -64,9 +64,8 @@
   ;; (setq ccls-executable "/usr/local/bin/ccls")
   )
 
-(defun company-c/c++-mode-setup()
+(defun set-company-backends-for-cxx()
   "C/C++ company补全后端设置."
-
   (setq-local company-backends '(
                                  (company-lsp
                                   company-keywords
@@ -79,7 +78,6 @@
                                  ))
   )
 
-(add-hook 'c-mode-common-hook 'company-c/c++-mode-setup)
 
 ;;; 代码格式化
 (use-package clang-format
