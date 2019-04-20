@@ -11,12 +11,11 @@
 
 (use-package lsp-lua-emmy
   :demand
-  :init
-  (setq lsp-lua-emmy-jar-path (expand-file-name "EmmyLua-LS-all.jar" user-emacs-directory))
   :ensure nil
   :load-path "~/github/lsp-lua-emmy"
   :hook (lua-mode . lsp)
   :config
+  (setq lsp-lua-emmy-jar-path (expand-file-name "EmmyLua-LS-all.jar" user-emacs-directory))
   )
 
 (defun set-company-backends-for-lua()

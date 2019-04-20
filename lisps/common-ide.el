@@ -101,7 +101,7 @@
   ;;                   :server-id 'lua-lsp))
 
 
-  (setq lsp-auto-configure nil)         ;改功能会自动执行(push company-lsp company-backends)
+  (setq lsp-auto-configure nil)         ;该功能会自动执行(push company-lsp company-backends)
 )
 
 (use-package lsp-ui
