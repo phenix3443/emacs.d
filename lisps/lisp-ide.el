@@ -4,12 +4,20 @@
 
 ;;; code:
 
-(defun company-elisp-mode-setup()
-  "create lisp company backend"
-  (set (make-local-variable 'company-backends)
-       (list (append '(company-elisp) (car company-backends)))))
+(defun set-company-backends-for-elisp()
+  "Create Lisp company backend."
+  (setq-local company-backends '(
+                                 company-elisp
+                                 company-yasnippet
+                                 company-capf
+                                 company-files
+                                 company-keywords
+                                )))
 
-(add-hook 'emacs-lisp-mode-hook 'company-elisp-mode-setup)
+
+(use-package emacs-lisp-mode
+  :hook (emacs-lisp-mode . set-company-backends-for-elisp)
+  )
 
 (provide 'lisp-ide)
 ;;; lisp-ide.el ends here

@@ -5,10 +5,9 @@
 ;;; code:
 
 ;;; 代码补全（code complete）
-(defun set-company-backends-for-python ()
+(defun set-company-backends-for-python()
   "Create python company backend."
   (setq-local company-backends '(
-                                 ;; company-jedi
                                  (
                                   company-lsp
                                   company-yasnippet
@@ -19,13 +18,11 @@
                                  )
               ))
 
-(add-hook 'python-mode-hook set-)
-
 (use-package lsp-python-ms
   :demand
   :ensure nil
   :load-path "~/github/lsp-python-ms"
-  :hook (python-mode . lsp)
+  ;; :hook (python-mode . lsp)
   :config
   ;; for dev build of language server
   (setq lsp-python-ms-dir
@@ -36,18 +33,22 @@
 ;;; 编辑辅助(Code generation helpers)
 
 ;;; Lint, style and syntax checkers
-(use-package yapfify
-  :ensure t
-  :disabled t
-  :hook (python-mode . yapf-mode)
-  :config
-  )
+;; (use-package yapfify
+;;   :ensure t
+;;   :disabled t
+;;   :hook (python-mode . yapf-mode)
+;;   :config
+;;   )
 
 (use-package python
-  ;; :hook (python-mode . set-company-backends-for-python)
+  :hook (python-mode . set-company-backends-for-python)
   :config
   (setq python-shell-interpreter 'python3)
   )
+
+
+
+
 ;; ;;; Lint, style and syntax checkers
 
 ;;; code navigation

@@ -18,12 +18,15 @@
   :config
   )
 
-(defun company-cmake-mode-setup()
-  "create cmake company backend"
+(defun set-company-backends-for-cmake()
+  "Set company backend for cmake."
   (set (make-local-variable 'company-backends)
        (list (append '(company-cmake) (car company-backends)))))
 
-(add-hook 'cmake-mode-hook 'company-cmake-mode-setup)
+(use-package cmake-mode
+  :hook (cmake-mode . set-company-backends-for-cmake)
+  )
+
 
 (provide 'cmake-ide)
 ;;; cmake-ide.el ends here

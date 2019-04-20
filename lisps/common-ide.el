@@ -100,15 +100,8 @@
   ;;                   :major-modes '(lua-mode)
   ;;                   :server-id 'lua-lsp))
 
-  ;; (lsp-register-client
-  ;;  (make-lsp-client :new-connection
-  ;;                   (lsp-stdio-connection
-  ;;                    (list "/usr/bin/java"
-  ;;                          "-cp"
-  ;;                          (expand-file-name "EmmyLua-LS-all.jar" user-emacs-directory)
-  ;;                          "com.tang.vscode.MainKt"))
-  ;;                   :major-modes '(lua-mode)
-  ;;                   :server-id 'emmy-lua-ls))
+
+  (setq lsp-auto-configure nil)         ;改功能会自动执行(push company-lsp company-backends)
 )
 
 (use-package lsp-ui
@@ -121,8 +114,8 @@
 
 (use-package company-lsp
   :ensure t
-  :after lsp-mode
   :config
+  (setq company-lsp-enable-snippet t)
   (setq company-lsp-enable-recompletion t)
   )
 

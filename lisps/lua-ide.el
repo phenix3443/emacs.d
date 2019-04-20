@@ -23,7 +23,7 @@
   "Set lua company backend."
   (setq-local company-backends '(
                                  (
-                                  ;; company-lsp
+                                  company-lsp
                                   company-lua
                                   company-keywords
                                   company-gtags
