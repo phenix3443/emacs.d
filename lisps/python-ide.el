@@ -8,10 +8,7 @@
 (defun set-company-backends-for-python()
   "Create python company backend."
   (setq-local company-backends '(
-                                 (
-                                  company-lsp
-                                  company-yasnippet
-                                  )
+                                 company-lsp
                                  company-capf
                                  company-dabbrev-code
                                  company-files
