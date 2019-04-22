@@ -5,21 +5,17 @@
 ;;; code:
 
 ;;; 代码补全（code complete）
-(defun set-company-backends-for-python()
-  "Create python company backend."
-  (setq-local company-backends '(
-                                 company-lsp
-                                 company-capf
-                                 company-dabbrev-code
-                                 company-files
-                                 )
-              ))
+(use-package company-jedi
+  :ensure t
+  :after (company)
+  :config
+  (setq jedi:complete-on-dot t)
+  )
 
 (use-package lsp-python-ms
   :demand
   :ensure nil
   :load-path "~/github/lsp-python-ms"
-  ;; :hook (python-mode . lsp)
   :config
   ;; for dev build of language server
   (setq lsp-python-ms-dir
@@ -36,6 +32,18 @@
 ;;   :hook (python-mode . yapf-mode)
 ;;   :config
 ;;   )
+(defun set-company-backends-for-python()
+  "Create python company backend."
+  (setq-local company-backends '(
+                                 (
+                                  company-lsp
+                                  company-jedi
+                                  )
+                                 company-capf
+                                 company-dabbrev-code
+                                 company-files
+                                 )
+              ))
 
 (use-package python
   :hook (python-mode . set-company-backends-for-python)
