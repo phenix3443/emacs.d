@@ -1,4 +1,4 @@
-;;; package --- summary  tramp configure
+;;; package --- summary ssh configure
 ;;; -*-coding:utf-8 -*-
 ;;; commentary:
 
@@ -7,9 +7,6 @@
 (use-package tramp
   :config
   (customize-set-variable 'tramp-verbose 6 "Enable remote command traces")
-  ;; (add-to-list 'tramp-default-proxies-alist
-  ;;              '("tw06116" nil "/ssh:essh:| %h"))
-
   )
 
 (use-package helm-tramp
@@ -36,5 +33,18 @@
   :config
   )
 
-(provide 'tramp-cfg)
-;;; tramp-cfg.el ends here
+;; (use-package ssh-deploy
+;;   :ensure t
+;;   )
+
+(use-package ssh-file-modes
+  :ensure t
+  )
+
+(use-package ssh-config-mode
+  :ensure t
+  :mode "\\.sconf$"
+  )
+
+(provide 'ssh-cfg)
+;;; ssh-cfg.el ends here

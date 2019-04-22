@@ -74,7 +74,7 @@ There are two things you can do about this warning:
 (require 'vcs-cfg)
 (require 'org-cfg)
 (require 'github-cfg)
-(require 'tramp-cfg)
+(require 'ssh-cfg)
 
 ;; test
 ;; (use-package misc)
