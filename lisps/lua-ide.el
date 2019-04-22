@@ -26,7 +26,6 @@
                                   company-lua
                                   company-keywords
                                   company-gtags
-                                  company-yasnippet
                                   )
                                  company-capf
                                  company-dabbrev-code

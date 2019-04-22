@@ -21,7 +21,7 @@
 
   ;; python
   (setq flycheck-json-python-json-executable "python3")
-  (setq flycheck-python-pylint-executable "/usr/local/bin/pylint")
+  (setq flycheck-python-pylint-executable (executable-find "pylint"))
   )
 
 (use-package smart-comment
@@ -106,10 +106,23 @@
 
 (use-package lsp-ui
   :ensure t
-  :after lsp-mode
+  :hook ((lsp-mode . lsp-ui-mode)
+         ;; (lsp-after-open . (lambda () (lsp-ui-flycheck-enable 1)))
+         )
+
+  :bind (:map lsp-ui-mode-map
+              ("C-c r d" . lsp-ui-peek-find-definitions)
+              ("C-c r r" . lsp-ui-peek-find-references)
+              ("C-c r i" . lsp-ui-imenu)
+              ("C-c r F" . lsp-ui-sideline-apply-code-actions)
+              ("C-c r R" . lsp-rename)
+              )
   :config
-  (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
-  (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
+
+  ;; (setq lsp-ui-doc-header t)
+  ;; (setq lsp-ui-doc-include-signature t)
+  ;; (setq lsp-ui-doc-use-webkit t)
+  (setq lsp-ui-sideline-enable nil)
   )
 
 (use-package company-lsp
