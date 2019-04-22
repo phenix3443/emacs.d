@@ -33,12 +33,13 @@
 ;;; 编辑辅助(Code generation helpers)
 
 ;;; Lint, style and syntax checkers
-;; (use-package yapfify
-;;   :ensure t
-;;   :disabled t
-;;   :hook (python-mode . yapf-mode)
-;;   :config
-;;   )
+(use-package yapfify
+  :ensure t
+  :disabled t
+  :hook (python-mode . yapf-mode)
+  :config
+  )
+
 (defun set-company-backends-for-python()
   "Create python company backend."
   (setq-local company-backends '(
