@@ -17,12 +17,19 @@
   :ensure nil
   :load-path "~/github/lsp-python-ms"
   :config
+  ;; ;; for dev build of language server
+  ;; (setq lsp-python-ms-dir
+  ;;       (expand-file-name "~/github/pls/"))
+  ;; ;; for executable of language server, if it's not symlinked on your PATH
+  ;; (setq lsp-python-ms-executable "~/github/pls/Microsoft.Python.LanguageServer")
+
   ;; for dev build of language server
   (setq lsp-python-ms-dir
         (expand-file-name "~/github/python-language-server/output/bin/Release/"))
   ;; for executable of language server, if it's not symlinked on your PATH
   (setq lsp-python-ms-executable "~/github/python-language-server/output/bin/Release/linux-x64/publish/Microsoft.Python.LanguageServer")
   )
+
 ;;; 编辑辅助(Code generation helpers)
 
 ;;; Lint, style and syntax checkers
