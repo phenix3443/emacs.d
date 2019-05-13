@@ -143,7 +143,8 @@
   :bind ([f5] . smart-compile)
   :config
   (add-to-list 'smart-compile-alist
-               '(python-mode . "python3 %f"))
+               '(python-mode . "python3 %f")
+               '(lua-mode . "lua %f"))
   )
 
 ;;; 测试（run test）
