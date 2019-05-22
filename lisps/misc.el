@@ -15,6 +15,8 @@
                    (load-file (concat (file-name-as-directory dir) f)))))
     (mapc load-it (directory-files dir nil "\\.el$"))))
 
+(if (eq system-type 'darwin)
+  (add-to-list 'exec-path "/usr/local/bin"))
 
 (use-package gist
   :ensure t
