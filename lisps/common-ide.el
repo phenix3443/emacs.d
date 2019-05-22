@@ -93,6 +93,8 @@
   :commands lsp
   :hook ((python-mode lua-mode) . lsp)
   :config
+  (setq lsp-prefer-flymake nil)
+  ;; (setq-default flycheck-disabled-checkers '(c/c++-clang c/c++-cppcheck c/c++-gcc))
 
   ;; 注册 lua-lsp
   ;; (lsp-register-client
@@ -142,7 +144,12 @@
   :config
   (add-to-list 'smart-compile-alist
                '(python-mode . "python3 %f"))
+
+  (add-to-list 'smart-compile-alist
+               '(lua-mode . "lua %f"))
+
   )
+
 
 ;;; 测试（run test）
 
