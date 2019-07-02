@@ -20,8 +20,11 @@
 
 (defun set-company-backends-for-cmake()
   "Set company backend for cmake."
-  (set (make-local-variable 'company-backends)
-       (list (append '(company-cmake) (car company-backends)))))
+  (setq-local company-backends '(
+                                 company-cmake
+                                 company-capf
+                                 company-dabbrev-code
+                                 company-files)))
 
 (use-package cmake-mode
   :hook (cmake-mode . set-company-backends-for-cmake)

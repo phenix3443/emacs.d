@@ -74,9 +74,7 @@
                                  company-capf
                                  company-dabbrev-code
                                  company-files
-                                 ))
-  )
-
+                                 )))
 
 ;;; 代码格式化
 (use-package clang-format
