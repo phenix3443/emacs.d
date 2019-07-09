@@ -7,7 +7,7 @@
 ;;; 代码补全
 (use-package irony
   :ensure t
-  :disabled
+  :disabled t
   :hook (((c-mode c++-mode) . irony-mode)
          (irony-mode . irony-cdb-autosetup-compile-options))
   :init
@@ -26,15 +26,18 @@
 
 (use-package company-irony
   :ensure t
+  :disabled t
   :after (company irony))
 
 (use-package irony-eldoc
   :ensure t
+  :disabled t
   :after (irony)
   :hook (irony-mode . irony-eldoc))
 
 (use-package company-irony-c-headers
   :ensure t
+  :disabled t
   :after (company irony)
   :config)
 
@@ -42,9 +45,14 @@
   :ensure t
   :after (company)
   :config
-  ;; (add-to-list company-c-headers-path-user ".")
-  ;; (add-to-list company-c-headers-path-system ".")
   )
+
+;; 语法检查
+(use-package flycheck-irony
+  :ensure t
+  :disabled t
+  :after (flycheck irony)
+  :hook (irony-mode . flycheck-irony-setup))
 
 ;; (defun cquery//enable()
 ;;   (condition-case nil
@@ -60,17 +68,20 @@
 
 (use-package ccls
   :ensure t
+  ;; :hook ((c-mode c++-mode objc-mode) .
+  ;;        (lambda () (require 'ccls) (lsp))))
   :config
+  ;; (setq lsp-prefer-flymake nil)
+  ;; (setq-default flycheck-disabled-checkers '(c/c++-clang c/c++-cppcheck c/c++-gcc))
   )
 
 (defun set-company-backends-for-cxx()
   "C/C++ company补全后端设置."
   (setq-local company-backends '(
-                                 (company-lsp
-                                  company-keywords
-                                  company-gtags
-                                  company-yasnippet
-                                  )
+                                 company-lsp
+                                 company-keywords
+                                 company-gtags
+                                 company-yasnippet
                                  company-capf
                                  company-dabbrev-code
                                  company-files
@@ -89,7 +100,9 @@
 
 (use-package cc-mode
   :ensure t
-  :config (c-toggle-auto-newline 1)
+  :hook ((c-mode c++-mode) . set-company-backends-for-cxx)
+  :config
+  (c-toggle-auto-newline 1)
   (setq-default c-basic-offset 4)
   (defconst my-c-style
     '((c-tab-always-indent . t)
@@ -123,11 +136,6 @@
 
   )
 
-;; 语法检查
-(use-package flycheck-irony
-  :ensure t
-  :after (flycheck irony)
-  :hook (irony-mode . flycheck-irony-setup))
 
 (provide 'cxx-ide)
 ;;; cxx-ide.el ends here

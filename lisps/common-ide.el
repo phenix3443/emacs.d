@@ -91,7 +91,7 @@
 (use-package lsp-mode
   :ensure t
   :commands lsp
-  :hook ((python-mode lua-mode) . lsp)
+  :hook ((c-mode c++-mode python-mode lua-mode) . lsp)
   :config
   (setq lsp-prefer-flymake nil)
   ;; (setq-default flycheck-disabled-checkers '(c/c++-clang c/c++-cppcheck c/c++-gcc))
