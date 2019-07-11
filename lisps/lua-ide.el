@@ -15,7 +15,7 @@
   :load-path "~/github/lsp-lua-emmy"
   :hook (lua-mode . lsp)
   :config
-  (setq lsp-lua-emmy-jar-path (expand-file-name "EmmyLua-LS-all.jar" user-emacs-directory))
+  (setq lsp-lua-emmy-jar-path (expand-file-name "~/EmmyLua-LS-all.jar")) ;要使用绝对路径
   )
 
 (defun set-company-backends-for-lua()
