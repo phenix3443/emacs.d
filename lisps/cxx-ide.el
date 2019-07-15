@@ -84,6 +84,7 @@
   (lsp-find-custom "$ccls/call" '(:callee t))
 
   (lsp-find-custom "$ccls/vars")
+
   ;; Use lsp-goto-implementation or lsp-ui-peek-find-implementation (textDocument/implementation) for derived types/functions
   ;; $ccls/inheritance is more general
 
@@ -123,7 +124,7 @@
   ;; References whose filenames are under this project
   (lsp-ui-peek-find-references nil (list :folders (vector (projectile-project-root))))
 
-  ;; ;; Semantic highlighting
+  ;; Semantic highlighting
   (ccls-use-default-rainbow-sem-highlight)
   )
 
