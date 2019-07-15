@@ -90,7 +90,7 @@
 
 (use-package lsp-mode
   :ensure t
-  :commands lsp
+  :commands (lsp)
   :hook ((c-mode c++-mode python-mode lua-mode) . lsp)
   :config
   (setq lsp-prefer-flymake nil)
@@ -99,6 +99,7 @@
 
 (use-package lsp-ui
   :ensure t
+  :commands lsp-ui-mode
   :hook ((lsp-mode . lsp-ui-mode)
          ;; (lsp-after-open . (lambda () (lsp-ui-flycheck-enable 1)))
          )

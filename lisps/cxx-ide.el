@@ -68,9 +68,7 @@
 
 (use-package ccls
   :ensure t
-  ;; :hook ((c-mode c++-mode objc-mode) .
-  ;;        (lambda () (require 'ccls) (lsp))))
-  :after(lsp lsp-ui projectile)
+  :after (projectile lsp-ui)
   :config
   ;; (setq lsp-prefer-flymake nil)
   ;; (setq-default flycheck-disabled-checkers '(c/c++-clang c/c++-cppcheck c/c++-gcc))
