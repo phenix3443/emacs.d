@@ -53,6 +53,13 @@
   :config
   (bash-completion-setup)
   )
+(use-package helm-system-packages
+  :ensure t
+  :config
+  (require 'em-tramp)
+  (setq password-cache t)
+  (setq password-cache-expiry 3600)
+  )
 
 (provide 'aux-utils-cfg)
 ;;; aux-utils-cfg.el ends here
