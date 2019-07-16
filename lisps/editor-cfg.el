@@ -115,25 +115,26 @@
   :init
   (require 'helm-config)
   :bind-keymap ("C-c h" . helm-command-map);
-  :bind
-  (
-   ("C-x b" . helm-buffers-list)
-   ;; ("M-y" . helm-show-kill-ring)
-   ("M-x" . helm-M-x)
-   ("C-x C-f" . helm-find-files)
-   )
   :config
-  ;; enable modes
+  ;; 官方默认配置
   (helm-mode 1)
+  (define-key global-map [remap find-file] 'helm-find-files)
+  (define-key global-map [remap occur] 'helm-occur)
+  (define-key global-map [remap list-buffers] 'helm-buffers-list)
+  (define-key global-map [remap dabbrev-expand] 'helm-dabbrev)
+  (define-key global-map [remap execute-extended-command] 'helm-M-x)
+  (unless (boundp 'completion-in-region-function)
+    (define-key lisp-interaction-mode-map [remap completion-at-point] 'helm-lisp-completion-at-point)
+    (define-key emacs-lisp-mode-map       [remap completion-at-point] 'helm-lisp-completion-at-point))
+
+  ;; 自定义配置
   (helm-adaptive-mode 1)
-  (setq helm-completion-in-region-fuzzy-match t)
+  (setq helm-completion-in-region-fuzzy-match t) ;补全使用模糊匹配
   (helm-autoresize-mode 1)
   (setq helm-candidate-number-limit 100)
 
-  (setq helm-locate-fuzzy-match t)
   ;; helm-locate 使用 es.exe 的时候 everything 必须要启动
   (when (equal system-type 'windows-nt)
-    (setq helm-locate-fuzzy-match nil)
     (setq helm-locate-command "es %s -sort run-count %s")
     (defun helm-es-hook ()
       (when (and (equal (assoc-default 'name (helm-get-current-source)) "Locate")
@@ -144,29 +145,7 @@
               (helm-marked-candidates))))
     (add-hook 'helm-find-many-files-after-hook 'helm-es-hook)
     )
-
-
-  (when (executable-find "curl")
-    (setq helm-google-suggest-use-curl-p t))
-
-  (when (executable-find "ack-grep")
-    (setq helm-grep-default-command "ack-grep -Hn --no-group --no-color %e %p %f"
-          helm-grep-default-recurse-command "ack-grep -H --no-group --no-color %e %p %f"))
-
-  (setq helm-split-window-in-side-p t) ; open helm buffer inside current window, not occupy whole other window
-  (setq helm-move-to-line-cycle-in-source t) ; move to end or beginning of source when reaching top or bottom of source.
-  (setq helm-ff-search-library-in-sexp t) ; search for library in `require'and `declare-function' sexp.
-  (setq helm-scroll-amount 8) ; scroll 8 lines other window using M-<next>/M-<prior>
-  (setq helm-ff-file-name-history-use-recentf t)
-
-  (add-to-list 'helm-sources-using-default-as-input 'helm-source-man-pages)
-
-  (setq helm-apropos-function-list t)
-
-  (add-hook 'eshell-mode-hook
-            (lambda ()
-              (define-key eshell-mode-map (kbd "C-c C-l")  'helm-eshell-history))))
-
+  )
 
 (use-package helm-ag
   :after (helm)
