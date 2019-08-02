@@ -36,7 +36,10 @@
   :ensure t
   :mode "\\.lua$"
   :interpreter "lua"
-  :hook (lua-mode . set-company-backends-for-lua)
+  :hook (
+         (lua-mode . set-company-backends-for-lua)
+         (lua-mode . untabify-buffer)
+         )
   :bind (:map lua-mode-map
               ("C-c l b" . lua-send-buffer)
               ("C-c l d" . lua-send-defun)

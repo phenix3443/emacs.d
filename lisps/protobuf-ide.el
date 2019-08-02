@@ -6,6 +6,7 @@
 (use-package protobuf-mode
   :ensure t
   :mode ".proto$"
+  :hook (protobuf-mode . untabify-buffer)
   :config
   (defconst protobuf-style
     '((c-basic-offset . 4)

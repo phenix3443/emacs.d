@@ -10,7 +10,9 @@
 (use-package company-nginx
   :ensure t
   :after (nginx-mode)
-  :hook(nginx-mode . company-nginx-keywords)
+  :hook(
+        (nginx-mode . company-nginx-keywords)
+        (nginx-mode . untabify-buffer))
   :config
   )
 

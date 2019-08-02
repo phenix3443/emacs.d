@@ -6,6 +6,7 @@
 (use-package php-mode
   :ensure t
   :config
+  :hook (php-mode . untabify-buffer)
   )
 
 ;; (use-package phpunit

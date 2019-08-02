@@ -5,7 +5,10 @@
 ;;; code:
 (use-package org
   :ensure t
-  :hook (org-mode . turn-on-org-cdlatex)
+  :hook (
+         (org-mode . turn-on-org-cdlatex)
+         (org-mode . untabify-buffer)
+         )
   :init
 
   :config

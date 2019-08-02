@@ -54,7 +54,10 @@
               ))
 
 (use-package python
-  :hook (python-mode . set-company-backends-for-python)
+  :hook (
+         (python-mode . set-company-backends-for-python)
+         (python-mode . untabify-buffer)
+         )
   :config
   (setq python-shell-interpreter 'python3)
   )

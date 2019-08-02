@@ -7,6 +7,7 @@
 (use-package powershell
   :ensure t
   :config
+  :hook (powershell-mode . untabify-buffer)
   )
 
 (provide 'powershell-ide)

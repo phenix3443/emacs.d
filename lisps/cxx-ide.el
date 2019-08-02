@@ -54,18 +54,6 @@
   :after (flycheck irony)
   :hook (irony-mode . flycheck-irony-setup))
 
-;; (defun cquery//enable()
-;;   (condition-case nil
-;;       (lsp-cquery-enable)
-;;     (user-error nil)))
-
-;; (use-package cquery
-;;   :commands lsp-cquery-enable
-;;   :hook (c-mode-common . cquery//enable)
-;;   :ensure t
-;;   :config
-;;   (setq cquery-executable (concat (getenv "HOME") "/github/cquery/build/release/bin/cquery")))
-
 (use-package ccls
   :ensure t
   :after (projectile lsp-ui)
@@ -151,7 +139,10 @@
 
 (use-package cc-mode
   :ensure t
-  :hook ((c-mode c++-mode) . set-company-backends-for-cxx)
+  :hook (
+         ((c-mode c++-mode) . set-company-backends-for-cxx)
+         ((c-mode c++-mode) . untabify-buffer)
+         )
   :config
   (c-toggle-auto-newline 1)
   (setq-default c-basic-offset 4)

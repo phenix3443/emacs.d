@@ -16,7 +16,9 @@
 
 
 (use-package emacs-lisp-mode
-  :hook (emacs-lisp-mode . set-company-backends-for-elisp)
+  :hook (
+         (emacs-lisp-mode . set-company-backends-for-elisp)
+         (emacs-lisp-mode . untabify-buffer))
   )
 
 (provide 'lisp-ide)

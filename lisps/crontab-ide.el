@@ -9,6 +9,7 @@
   :mode
   ("\\.cron\\(tab\\)?\\'" . crontab-mode)
   ("cron\\(tab\\)?\\."    . crontab-mode)
+  :hook (crontab-mode . untabify-buffer)
   :config
   )
 

@@ -6,6 +6,7 @@
 
 (use-package sql-mode
   :mode "\\.sql$"
+  :hook (sql-mode . untabify-buffer)
   :config
   )
 

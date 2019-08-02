@@ -11,6 +11,7 @@
 (use-package dockerfile-mode
   :ensure t
   :mode "Dockerfile\\'"
+  :hook (dockerfile-mode . untabify-buffer)
   :config)
 
 (provide 'docker-ide)

@@ -92,11 +92,9 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (defun untabify-buffer ()
-  "Untabify current buffer"
+  "Untabify current buffer."
   (interactive)
   (untabify (point-min) (point-max)))
-
-(add-hook 'prog-mode-hook 'untabify-buffer)
 
 ;; 24.4 Convenience Features for Indentation
 (setq tab-always-indent 'complete)

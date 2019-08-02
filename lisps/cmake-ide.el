@@ -10,6 +10,7 @@
   :mode
   ("CMakeLists\\.txt\\'" . cmake-mode)
   ("\\.cmake\\'" . cmake-mode)
+  :hook (cmake-mode . untabify-buffer)
   :config
   )
 

@@ -8,6 +8,7 @@
   :ensure t
   :mode "\\.rb\\'"
   :interpreter "ruby"
+  :hook (ruby-mode . untabify-buffer)
   :config
   )
 

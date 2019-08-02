@@ -5,7 +5,9 @@
 ;;; code:
 
 (use-package yaml-mode
-  :ensure t)
+  :ensure t
+  :hook (cmake-mode . untabify-buffer)
+  )
 
 (provide 'yaml-ide)
 ;;; yaml-ide.el ends here
