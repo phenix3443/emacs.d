@@ -22,7 +22,6 @@
 (use-package smartparens-config
   :ensure smartparens
 
-  ;; 这种配置和 guide-key 兼容性有问题
   :bind-keymap ("C-c s" . smartparens-mode-map)
   :bind
   (:map smartparens-mode-map
@@ -44,13 +43,6 @@
         ("<left>". sp-backward-slurp-sexp)
         ("M-<left>". sp-backward-barf-sexp)
         )
-
-  ;; 这种配置可以和 guide-key 兼容
-  ;; :bind
-  ;; (:prefix-map smartparens-mode-map
-  ;;              :prefix "C-c s"
-  ;;              ("c" . sp-beginning-of-next-sexp))
-
   )
 
 

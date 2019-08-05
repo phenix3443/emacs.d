@@ -4,27 +4,7 @@
 
 ;;; code:
 
-(use-package guide-key
-  :ensure t
-  :disabled t
-  :config
-  (setq guide-key/guide-key-sequence t)
-
-  (setq guide-key/highlight-command-regexp
-        '("rectangle"
-          ("register" . font-lock-type-face)
-          ("bookmark" . "hot pink")))
-
-  (setq guide-key/idle-delay 0.5)
-  (setq guide-key/recursive-key-sequence-flag t)
-  (setq guide-key/popup-window-position 'bottom)
-  (guide-key-mode 1)
-  )
-
 (use-package which-key
-  ;; 由于 guide-key 与 use-package 中 bind-keymap 兼容性不好
-  ;; 加上 which-key 展示更加好看，所以替代 guide-key
-  ;; https://github.com/justbur/emacs-which-key
   :ensure t
   :diminish
   :config
