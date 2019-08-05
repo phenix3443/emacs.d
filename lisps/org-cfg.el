@@ -7,7 +7,6 @@
   :ensure t
   :hook (
          (org-mode . turn-on-org-cdlatex)
-         (org-mode . untabify-buffer)
          )
   :init
 
@@ -84,7 +83,7 @@
         '(
           ("notebook-html"
            ;; 13.1.2 Sources and destinations for files
-           :base-directory "~/github/notebook/org/" ;设置存放.org 文件位置
+           :base-directory "~/gitlab/notebook/" ;设置存放.org 文件位置
            :publishing-directory "~/github/notebook/docs/" ;导出 html 文件位置
            ;; :preparation-function
            ;; :completion-function ;用来定义publish结束以后的动作，该项目中用于执行push master
@@ -120,7 +119,7 @@
            )
 
           ("notebook-static"
-           :base-directory "~/github/notebook/org/"
+           :base-directory "~/github/notebook/"
            :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
            :publishing-directory "~/github/notebook/docs/"
            :recursive t
@@ -129,11 +128,11 @@
           ("notebook" :components ("notebook-html" "notebook-static"))))
 
   ;; 13.4 Triggering publication
-  (setq org-publish-use-timestamps-flag t)
+  (setq org-publish-use-timestamps-flag nil)
 
   (when (equal system-type 'windows-nt)
     (setq org-plist (cdr (assoc "org" org-publish-project-alist)))
-    (plist-put org-plist :base-directory "D:/github/org-notes/org/")
+    (plist-put org-plist :base-directory "D:/gitlab/org-notes/")
     (plist-put org-plist :publishing-directory "D:/github/phenix3443.github.io/")
 
     (setq static-plist (cdr (assoc "static" org-publish-project-alist)))
@@ -155,15 +154,6 @@
   (setq org-edit-src-content-indentation 0)
   (setq org-src-ask-before-returning-to-edit-buffer nil)
   (setq org-src-fontify-natively t)
-  (defface org-block-begin-line
-    '((t (:underline "#A7A6AA" :foreground "#008ED1" :background "#EAEAFF")))
-    "Face used for the line delimiting the begin of source blocks.")
-  (defface org-block-background
-    '((t (:background "#FFFFEA")))
-    "Face used for the source block background.")
-  (defface org-block-end-line
-    '((t (:overline "#A7A6AA" :foreground "#008ED1" :background "#EAEAFF")))
-    "Face used for the line delimiting the end of source blocks.")
 
   ;; 14.3 Exporting code blocks
   ;; (setq org-export-babel-evaluate 'inline)

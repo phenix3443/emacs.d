@@ -97,7 +97,6 @@
   ;; :disabled t
   :diminish
   :config
-  ;; :hook ((org-mode markdown-mode) . pangu-spacing-mode)
   :config
   (global-pangu-spacing-mode 1)
   ;; (setq pangu-spacing-real-insert-separtor t)
