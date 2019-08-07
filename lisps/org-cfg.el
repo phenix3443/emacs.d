@@ -7,7 +7,7 @@
   :ensure t
   :hook (
          (org-mode . turn-on-org-cdlatex)
-         (org-mode-hook . '(lambda ()
+         (org-mode . (lambda ()
                              (setq-local pangu-spacing-real-insert-separtor t)))
          )
   :init
