@@ -108,8 +108,8 @@
               )
   :config
 
-  ;; (setq lsp-ui-doc-header t)
-  ;; (setq lsp-ui-doc-include-signature t)
+  (setq lsp-ui-doc-header t)
+  (setq lsp-ui-doc-include-signature t)
   ;; (setq lsp-ui-doc-use-webkit t)
   (setq lsp-ui-sideline-enable nil)
   )
