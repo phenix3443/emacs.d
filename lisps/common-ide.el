@@ -90,8 +90,7 @@
 
 (use-package lsp-mode
   :ensure t
-  :commands (lsp)
-  :hook ((c-mode c++-mode python-mode lua-mode) . lsp)
+  :hook ((c-mode-common python-mode lua-mode) . lsp)
   :config
   (setq lsp-prefer-flymake nil)
   (setq lsp-auto-configure nil)         ;该功能会自动执行(push company-lsp company-backends)
@@ -99,11 +98,7 @@
 
 (use-package lsp-ui
   :ensure t
-  :commands lsp-ui-mode
-  :hook ((lsp-mode . lsp-ui-mode)
-         ;; (lsp-after-open . (lambda () (lsp-ui-flycheck-enable 1)))
-         )
-
+  :hook (lsp-mode . lsp-ui-mode)
   :bind (:map lsp-ui-mode-map
               ("C-c r d" . lsp-ui-peek-find-definitions)
               ("C-c r r" . lsp-ui-peek-find-references)
