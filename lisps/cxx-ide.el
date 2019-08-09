@@ -93,42 +93,12 @@
 (use-package cc-mode
   :ensure t
   :hook (
-         ((c-mode c++-mode) . set-company-backends-for-cxx)
-         ((c-mode c++-mode) . untabify-buffer)
+         ((c-mode-common) . set-company-backends-for-cxx)
+         ((c-mode-common) . untabify-buffer)
          )
   :config
   (c-toggle-auto-newline 1)
   (setq-default c-basic-offset 4)
-  (defconst my-c-style
-    '((c-tab-always-indent . t)
-      (c-comment-only-line-offset . 4)
-      (c-hanging-braces-alist . ((substatement-open after)
-                                 (brace-list-open)))
-      (c-hanging-colons-alist . ((member-init-intro before)
-                                 (inher-intro)
-                                 (case-label after)
-                                 (label after)
-                                 (access-label after)))
-      (c-cleanup-list . (scope-operator empty-defun-braces defun-close-semi))
-      (c-offsets-alist . (
-                          (block-close . 0)
-                          (case-label . +)
-                          (defun-block-intro . +)
-                          (defun-close . 0)
-                          (statement . 0)
-                          (statement-block-intro . +)
-                          (statement-case-intro . +)
-                          (topmost-intro . 0)
-                          ))
-      (c-echo-syntactic-information-p . t))
-    "My C Programming Style")
-  (c-add-style "lsl" my-c-style)
-  (setq c-default-style '((java-mode . "java")
-                          (awk-mode . "awk")
-                          ;; (protobuf-mode . "protobuf")
-                          (other . "linux")
-                          ))
-
   )
 
 
