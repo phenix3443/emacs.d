@@ -130,7 +130,7 @@
           ("notebook" :components ("notebook-html" "notebook-static"))))
 
   ;; 13.4 Triggering publication
-  (setq org-publish-use-timestamps-flag nil)
+  (setq org-publish-use-timestamps-flag t)
 
   (when (equal system-type 'windows-nt)
     (setq org-plist (cdr (assoc "org" org-publish-project-alist)))
