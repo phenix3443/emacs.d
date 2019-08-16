@@ -90,7 +90,7 @@
          ("C-c f b" . clang-format-buffer))
 
   :config
-  ;; (setq clang-format-executable "clang-format")
+  (setq clang-format-executable "clang-format-8")
   ;; (setq clang-format-style-option "google")
 )
 

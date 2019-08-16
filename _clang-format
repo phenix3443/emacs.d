@@ -1,6 +1,5 @@
+# -*- coding:utf-8;mode:yaml; -*-
 ---
-# 现在使用的版本是clang-format-6，但是配置文件使用的是clang 10中的说明，所以由于版本不一致，有些配置当前系统的clang-format不支持，注释了
-
 Language:        Cpp
 # BasedOnStyle:  Google
 
@@ -29,10 +28,10 @@ AlignOperands: true
 AlignTrailingComments: false
 
 # 如果函数调用或括号内的初始化列表不适合某一行，则允许将所有参数放到下一行，即使BinPackArguments为false也是如此。
-# AllowAllArgumentsOnNextLine false
+# AllowAllArgumentsOnNextLine false # cf-10
 
 # 如果具有成员初始值设定项列表的构造函数定义不适合单行，而ConstructorInitializerAllOnOneLineOrOnePerLine为true，则允许将所有成员初始值设定项放到下一行。
-# AllowAllConstructorInitializersOnNextLine true
+# AllowAllConstructorInitializersOnNextLine true # cf-10
 
 # 如果函数声明不适合某一行，则允许将函数声明的所有参数放到下一行，即使BinPackParameters为false。
 AllowAllParametersOfDeclarationOnNextLine: true
@@ -55,9 +54,6 @@ AllowShortIfStatementsOnASingleLine: true
 # 允许简短的循环语句块单行
 AllowShortLoopsOnASingleLine: true
 
-# 函数定义中return语句后是否换行，该选项已经deprecated。
-# AlwaysBreakAfterDefinitionReturnType: None
-
 # return语句后换行
 AlwaysBreakAfterReturnType: None
 
@@ -65,7 +61,7 @@ AlwaysBreakAfterReturnType: None
 AlwaysBreakBeforeMultilineStrings: true
 
 # 模板声明后换行
-# AlwaysBreakTemplateDeclarations: false
+AlwaysBreakTemplateDeclarations: Yes
 
 # 如果为false，实参要么放在同一行，要么各自一行
 BinPackArguments: true
@@ -115,7 +111,7 @@ BreakBeforeTernaryOperators: true
 BreakConstructorInitializers: BeforeColon
 
 # 继承列表换行
-# BreakInheritanceList BeforeColon
+BreakInheritanceList: BeforeColon
 
 # 如果为true，继承冒号前换行
 BreakBeforeInheritanceComma: false
@@ -178,7 +174,8 @@ IncludeCategories:
 IndentCaseLabels: true
 
 # 预处理指令的缩进样式
-# IndentPPDirectives: BeforeHash
+# IndentPPDirectives: BeforeHash  # cf-10
+IndentPPDirectives: AfterHash
 
 # 缩进宽度
 IndentWidth: 4
@@ -223,34 +220,34 @@ PenaltyReturnTypeOnItsOwnLine: 200
 PointerAlignment: Right
 
 # 定义用于检测所支持语言的原始字符串
-# RawStringFormats:
-#   - Language:        Cpp
-#     Delimiters:
-#       - cc
-#       - CC
-#       - cpp
-#       - Cpp
-#       - CPP
-#       - 'c++'
-#       - 'C++'
-#     CanonicalDelimiter: ''
-#     BasedOnStyle:    google
-#   - Language:        TextProto
-#     Delimiters:
-#       - pb
-#       - PB
-#       - proto
-#       - PROTO
-#     EnclosingFunctions:
-#       - EqualsProto
-#       - EquivToProto
-#       - PARSE_PARTIAL_TEXT_PROTO
-#       - PARSE_TEST_PROTO
-#       - PARSE_TEXT_PROTO
-#       - ParseTextOrDie
-#       - ParseTextProtoOrDie
-#     CanonicalDelimiter: ''
-#     BasedOnStyle:    google
+RawStringFormats:
+  - Language:        Cpp
+    Delimiters:
+      - cc
+      - CC
+      - cpp
+      - Cpp
+      - CPP
+      - 'c++'
+      - 'C++'
+    CanonicalDelimiter: ''
+    BasedOnStyle:    google
+  - Language:        TextProto
+    Delimiters:
+      - pb
+      - PB
+      - proto
+      - PROTO
+    EnclosingFunctions:
+      - EqualsProto
+      - EquivToProto
+      - PARSE_PARTIAL_TEXT_PROTO
+      - PARSE_TEST_PROTO
+      - PARSE_TEXT_PROTO
+      - ParseTextOrDie
+      - ParseTextProtoOrDie
+    CanonicalDelimiter: ''
+    BasedOnStyle:    google
 
 # If true, clang-format 会重新组织注释
 ReflowComments:  true
@@ -265,7 +262,7 @@ SortUsingDeclarations: true
 SpaceAfterCStyleCast: false
 
 # 逻辑非后面加空格
-# SpaceAfterLogicalNot false
+# SpaceAfterLogicalNot: false     # cf-10
 
 # 如果true，template关键字后保留空格。
 SpaceAfterTemplateKeyword: true
@@ -274,25 +271,25 @@ SpaceAfterTemplateKeyword: true
 SpaceBeforeAssignmentOperators: true
 
 # c11 括号列表前是否有空格
-# SpaceBeforeCpp11BracedList true
+SpaceBeforeCpp11BracedList: true
 
 # 构造函数初始化冒号前是否存在空格
-# SpaceBeforeCtorInitializerColon true
+SpaceBeforeCtorInitializerColon: true
 
 # 继承关系的冒号前是否有空格
-# SpaceBeforeInheritanceColon true
+SpaceBeforeInheritanceColon: true
 
 # 括号前是否插入空格
 SpaceBeforeParens: Always
 
 # 如果为false，则在基于范围的循环冒号之前将删除空格。
-# SpaceBeforeRangeBasedForLoopColon true
+SpaceBeforeRangeBasedForLoopColon: true
 
 # 空的代码块{}中间是否插入空格
-# SpaceInEmptyBlock false
+# SpaceInEmptyBlock: false # cf-10
 
 # 如果true，空的括号中插入空格。
-# SpaceInEmptyParentheses false
+SpaceInEmptyParentheses: false
 
 # 行尾注释前的空格
 SpacesBeforeTrailingComments: 2
