@@ -24,7 +24,7 @@
   )
 
 (use-package exec-path-from-shell
-  :ensuer t
+  :ensure t
   :config
   (when (memq window-system '(mac ns x))
     (exec-path-from-shell-initialize))
