@@ -12,7 +12,7 @@
          (go-mode . untabify-buffer)
          )
   :config
-  (setq gofmt-command "")
+  (setq gofmt-command "goimports")
   )
 
 (use-package company-go
