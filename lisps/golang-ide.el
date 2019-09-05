@@ -58,7 +58,9 @@
   :config)
 
 
+(use-package go-playground
   :ensure t
+)
 
 (provide 'golang-ide)
 ;;; golang-ide.el ends here
