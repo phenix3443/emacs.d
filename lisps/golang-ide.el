@@ -4,6 +4,17 @@
 
 ;;; code:
 
+(use-package go-mode
+  :ensure t
+  :hook (
+         (before-save . gofmt-before-save)
+         (go-mode . go-guru-hl-identifier-mode)
+         (go-mode . untabify-buffer)
+         )
+  :config
+  (setq gofmt-command "")
+  )
+
 (use-package company-go
   :ensure t
   :after company
@@ -46,16 +57,8 @@
   :ensure t
   :config)
 
-(use-package go-mode
+
   :ensure t
-  :hook (
-         (before-save . gofmt-before-save)
-         (go-mode . go-guru-hl-identifier-mode)
-         (go-mode . untabify-buffer)
-         )
-  :config
-  (setq gofmt-command "goimports")
-  )
 
 (provide 'golang-ide)
 ;;; golang-ide.el ends here
