@@ -49,8 +49,8 @@
 
 (use-package go-eldoc
   :ensure t
+  :hook (go-mode . go-eldoc-setup)
   :config
-  (add-hook 'go-mode-hook 'go-eldoc-setup)
   )
 
 (use-package go-guru
