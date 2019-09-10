@@ -13,6 +13,11 @@
          )
   :config
   (setq gofmt-command "goimports")
+
+  (lsp-register-client
+   (make-lsp-client :new-connection (lsp-stdio-connection "gopls")
+                    :major-modes '(go-mode)
+                    :server-id 'gopls))
   )
 
 (use-package company-go
@@ -24,6 +29,7 @@
 (defun company-go-mode-setup()
   "Create golang company backend."
   (setq-local company-backends '(
+                                 company-lsp
                                  company-go
                                  company-capf
                                  company-dabbrev-code

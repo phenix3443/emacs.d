@@ -90,7 +90,7 @@
 
 (use-package lsp-mode
   :ensure t
-  :hook ((c-mode-common python-mode lua-mode) . lsp)
+  :hook ((c-mode-common python-mode lua-mode go-mode) . lsp)
   :config
   (setq lsp-prefer-flymake nil)
   (setq lsp-auto-configure nil)         ;该功能会自动执行(push company-lsp company-backends)
