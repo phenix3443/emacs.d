@@ -9,7 +9,6 @@
   :hook (
          (before-save . gofmt-before-save)
          (go-mode . go-guru-hl-identifier-mode)
-         (go-mode . untabify-buffer)
          )
   :config
   (setq gofmt-command "goimports")
