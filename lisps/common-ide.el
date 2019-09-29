@@ -68,7 +68,7 @@
   :bind (("C-c y" . company-yasnippet))
   :init
   :config
-  (setq company-minimum-prefix-length 1)
+  (setq company-minimum-prefix-length 4)
   (setq company-show-numbers t)
   (global-company-mode)
   )
