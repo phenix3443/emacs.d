@@ -30,5 +30,8 @@
     (exec-path-from-shell-initialize))
   )
 
+(use-package gnu-elpa-keyring-update
+  :ensure t
+  )
 (provide 'misc)
 ;;; misc.el ends here
