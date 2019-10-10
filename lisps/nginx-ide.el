@@ -11,8 +11,7 @@
   :ensure t
   :after (nginx-mode)
   :hook(
-        (nginx-mode . company-nginx-keywords)
-        (nginx-mode . untabify-buffer))
+        (nginx-mode . company-nginx-keywords))
   :config
   )
 

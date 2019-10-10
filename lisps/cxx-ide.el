@@ -98,7 +98,6 @@
   :ensure t
   :hook (
          ((c-mode-common) . set-company-backends-for-cxx)
-         ((c-mode-common) . untabify-buffer)
          )
   :config
   (c-toggle-auto-newline 1)
