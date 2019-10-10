@@ -32,3 +32,4 @@ tramp
 transient/
 .lsp-python/
 pls/
+mspyls/
