@@ -9,6 +9,7 @@
   :hook (
          (before-save . gofmt-before-save)
          (go-mode . go-guru-hl-identifier-mode)
+         (go-mode . lsp)
          )
   :config
   (setq gofmt-command "goimports")

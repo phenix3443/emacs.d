@@ -97,7 +97,8 @@
 (use-package cc-mode
   :ensure t
   :hook (
-         ((c-mode-common) . set-company-backends-for-cxx)
+         (c-mode-common . set-company-backends-for-cxx)
+         (c-mode-common . lsp)
          )
   :config
   (c-toggle-auto-newline 1)

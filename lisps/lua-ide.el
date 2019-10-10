@@ -10,9 +10,9 @@
   )
 
 (use-package lsp-lua-emmy
-  :demand
   :ensure nil
   :load-path "~/github/lsp-lua-emmy"
+  :demand
   :hook (lua-mode . lsp)
   :config
   (setq lsp-lua-emmy-jar-path (expand-file-name "~/EmmyLua-LS-all.jar")) ;要使用绝对路径
