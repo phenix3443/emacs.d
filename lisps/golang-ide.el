@@ -17,6 +17,7 @@
   (lsp-register-client
    (make-lsp-client :new-connection (lsp-stdio-connection "gopls")
                     :major-modes '(go-mode)
+                    :priority -2
                     :server-id 'gopls))
   )
 
