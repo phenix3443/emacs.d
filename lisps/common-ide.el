@@ -92,12 +92,12 @@
   :ensure t
   :config
   (setq lsp-prefer-flymake nil)
-  (setq lsp-auto-configure nil)         ;该功能会自动执行(push company-lsp company-backends)
+  ;; (setq lsp-auto-configure nil)         ;该功能会自动执行(push company-lsp company-backends)
 )
 
 (use-package lsp-ui
   :ensure t
-  :hook (lsp-mode . lsp-ui-mode)
+  :commands lsp-ui-mode
   :bind (:map lsp-ui-mode-map
               ("C-c r d" . lsp-ui-peek-find-definitions)
               ("C-c r r" . lsp-ui-peek-find-references)
@@ -115,9 +115,24 @@
 
 (use-package company-lsp
   :ensure t
+  :commands company-lsp
   :config
   (setq company-lsp-enable-snippet t)
   (setq company-lsp-enable-recompletion t)
+  )
+
+(use-package lsp-treemacs
+  :ensure t
+  :commands lsp-treemacs-errors-list
+  )
+
+(use-package helm-lsp
+  :ensure t
+  :commands helm-lsp-workspace-symbol
+  )
+
+(use-package dap-mode
+  :ensure t
   )
 
 (use-package format-all
