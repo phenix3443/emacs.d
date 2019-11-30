@@ -156,6 +156,9 @@
   (add-to-list 'smart-compile-alist
                '(lua-mode . "lua %f"))
 
+  (add-to-list 'smart-compile-alist
+               '(go-mode . "go run %f"))
+
   )
 
 
