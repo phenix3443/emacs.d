@@ -4,18 +4,6 @@
 
 ;;; code:
 
-(use-package go-mode
-  :ensure t
-  :hook (
-         (before-save . gofmt-before-save)
-         (go-mode . go-guru-hl-identifier-mode)
-         )
-
-  :config
-  (setq gofmt-command "goimports")
-
-  )
-
 (use-package company-go
   :ensure t
   :after company
@@ -32,7 +20,21 @@
                                  company-files)))
 
 
-(add-hook 'go-mode-hook 'company-go-mode-setup)
+(use-package go-mode
+  :ensure t
+  :hook (
+         (before-save . gofmt-before-save)
+         (go-mode . go-guru-hl-identifier-mode)
+         (go-mode . company-go-mode-setup)
+         )
+
+  :config
+  (setq gofmt-command "goimports")
+
+  )
+
+
+;; (add-hook 'go-mode-hook 'company-go-mode-setup)
 
 (use-package go-gen-test
   :ensure t
