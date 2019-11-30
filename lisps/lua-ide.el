@@ -4,29 +4,25 @@
 
 ;;; code:
 (use-package company-lua
-  :after (company)
   :ensure t
+  :after (company)
   :config
   )
 
-(use-package lsp-lua-emmy
-  :ensure nil
-  :load-path "~/github/lsp-lua-emmy"
-  :demand
-  :hook (lua-mode . lsp)
-  :config
-  (setq lsp-lua-emmy-jar-path (expand-file-name "~/EmmyLua-LS-all.jar")) ;要使用绝对路径
-  )
+;; (use-package lsp-lua-emmy
+;;   :ensure nil
+;;   :load-path "~/github/lsp-lua-emmy"
+;;   :config
+;;   (setq lsp-lua-emmy-jar-path (expand-file-name "~/EmmyLua-LS-all.jar")) ;要使用绝对路径
+;;   )
 
 (defun set-company-backends-for-lua()
   "Set lua company backend."
   (setq-local company-backends '(
-                                 (
-                                  company-lsp
-                                  company-lua
-                                  company-keywords
-                                  company-gtags
-                                  )
+                                 company-lsp
+                                 company-lua
+                                 company-keywords
+                                 company-gtags
                                  company-capf
                                  company-dabbrev-code
                                  company-files
@@ -38,8 +34,8 @@
   :interpreter "lua"
   :hook (
          (lua-mode . set-company-backends-for-lua)
-         (lua-mode . untabify-buffer)
          )
+
   :bind (:map lua-mode-map
               ("C-c l b" . lua-send-buffer)
               ("C-c l d" . lua-send-defun)
