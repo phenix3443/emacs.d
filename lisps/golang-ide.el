@@ -9,16 +9,11 @@
   :hook (
          (before-save . gofmt-before-save)
          (go-mode . go-guru-hl-identifier-mode)
-         (go-mode . lsp)
          )
+
   :config
   (setq gofmt-command "goimports")
 
-  (lsp-register-client
-   (make-lsp-client :new-connection (lsp-stdio-connection "gopls")
-                    :major-modes '(go-mode)
-                    :priority -2
-                    :server-id 'gopls))
   )
 
 (use-package company-go

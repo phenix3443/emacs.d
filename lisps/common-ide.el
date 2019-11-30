@@ -90,9 +90,12 @@
 
 (use-package lsp-mode
   :ensure t
+  :commands (lsp lsp-deferred)
+  :hook ((go-mode) . lsp-deferred)
   :config
   (setq lsp-prefer-flymake nil)
   ;; (setq lsp-auto-configure nil)         ;该功能会自动执行(push company-lsp company-backends)
+
 )
 
 (use-package lsp-ui
