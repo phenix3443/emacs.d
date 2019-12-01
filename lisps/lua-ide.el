@@ -12,7 +12,6 @@
 
 (defun set-company-backends-for-lua()
   "Set lua company backend."
-  (print company-backends)
   (setq-local company-backends '(
                                  (
                                   company-lua
@@ -32,17 +31,10 @@
   :interpreter "lua"
   :hook (
          (lua-mode . set-company-backends-for-lua)
+         ;lsp 要在set-company-backends-for-lua后面，因为lsp会添加company-lsp到company-backends最前面，这样覆盖set-company-backends-for-lua 中设置的组合backends，这里也不要使用lsp-deferred，同样的原因。
+         (lua-mode . lsp)
          )
 
-  :bind (:map lua-mode-map
-              ("C-c l b" . lua-send-buffer)
-              ("C-c l d" . lua-send-defun)
-              ("C-c l f" . lua-search-documentation)
-              ("C-c l h" . lua-hide-process-buffer)
-              ("C-c l l" . lua-send-current-line)
-              ("C-c l r" . lua-sedn-region)
-              ("C-c l s" . lua-show-process-buffer)
-              ("C-c l w" . lua-restart-with-whole-file))
   :config
   (setq lua-indent-level 4)
   (setq lua-indent-string-contents t)

@@ -14,14 +14,7 @@
 
 (use-package lsp-python-ms
   :ensure t
-  :demand
-  :hook (python-mode . lsp)
   :config
-
-  ;; ;; for dev build of language server
-  ;; (setq lsp-python-ms-dir
-  ;;       (expand-file-name "~/github/python-language-server/output/bin/Release/"))
-  ;; (setq lsp-python-ms-executable "~/github/python-language-server/output/bin/Release/linux-x64/publish/Microsoft.Python.LanguageServer")
   )
 
 ;;; 编辑辅助(Code generation helpers)
@@ -44,6 +37,8 @@
   :ensure t
   :hook (
          (python-mode . set-company-backends-for-python)
+         (python-mode . lsp)
+
          )
   :config
   (setq python-shell-interpreter 'python3)

@@ -91,10 +91,8 @@
 (use-package lsp-mode
   :ensure t
   :commands (lsp lsp-deferred)
-  :hook ((go-mode lua-mode) . lsp-deferred)
   :config
   (setq lsp-prefer-flymake nil)
-  ;; (setq lsp-auto-configure nil)         ;该功能会自动执行(push company-lsp company-backends)，我们更希望能够自己定制company-backends
 )
 
 (use-package lsp-ui
@@ -121,7 +119,7 @@
   :config
   (setq company-lsp-enable-snippet t)
   (setq company-lsp-enable-recompletion t)
-  ;; (add-to-list 'company-lsp-filter-candidates '(lsp-emmy-lua . t))
+  (add-to-list 'company-lsp-filter-candidates '(lsp-emmy-lua . t))
   )
 
 (use-package lsp-treemacs
