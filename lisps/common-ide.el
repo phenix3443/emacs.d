@@ -93,6 +93,8 @@
   :commands (lsp lsp-deferred)
   :config
   (setq lsp-prefer-flymake nil)
+  (setq lsp-keep-workspace-alive nil)
+  (setq lsp-signature-mode t)
 )
 
 (use-package lsp-ui
