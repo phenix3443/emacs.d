@@ -9,19 +9,17 @@
   :config
   )
 
-;; (use-package lsp-lua-emmy
-;;   :ensure nil
-;;   :load-path "~/github/lsp-lua-emmy"
-;;   :config
-;;   (setq lsp-lua-emmy-jar-path (expand-file-name "~/EmmyLua-LS-all.jar")) ;要使用绝对路径
-;;   )
 
 (defun set-company-backends-for-lua()
   "Set lua company backend."
+  (print company-backends)
   (setq-local company-backends '(
-                                 company-lsp
-                                 company-lua
-                                 company-keywords
+                                 (
+                                  company-lua
+                                  company-lsp
+                                  company-keywords
+                                  )
+
                                  company-gtags
                                  company-capf
                                  company-dabbrev-code

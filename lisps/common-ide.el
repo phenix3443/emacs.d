@@ -94,8 +94,7 @@
   :hook ((go-mode lua-mode) . lsp-deferred)
   :config
   (setq lsp-prefer-flymake nil)
-  ;; (setq lsp-auto-configure nil)         ;该功能会自动执行(push company-lsp company-backends)
-
+  ;; (setq lsp-auto-configure nil)         ;该功能会自动执行(push company-lsp company-backends)，我们更希望能够自己定制company-backends
 )
 
 (use-package lsp-ui
@@ -109,7 +108,7 @@
               ("C-c r R" . lsp-rename)
               )
   :config
-
+  ;; (lsp-ui-mode)
   (setq lsp-ui-doc-header t)
   (setq lsp-ui-doc-include-signature t)
   ;; (setq lsp-ui-doc-use-webkit t)
