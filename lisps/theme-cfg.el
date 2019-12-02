@@ -34,7 +34,18 @@
   (sml/setup)
   )
 
+(use-package all-the-icons
+  :ensure t
+  :config
+  (when (not (member "all-the-icons" (font-family-list)))
+    (all-the-icons-install-fonts t))
 
+  )
+
+(use-package all-the-icons-dired
+  :ensure t
+  :hook (dired-mode . all-the-icons-dired-mode)
+)
 
 (provide 'theme-cfg)
 
