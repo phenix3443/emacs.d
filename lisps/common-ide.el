@@ -102,8 +102,8 @@
   :config
   (setq lsp-prefer-flymake nil)
   (setq lsp-keep-workspace-alive nil)
-  (setq lsp-signature-mode t)
-)
+  (setq lsp-signature-auto-activate t)
+  )
 
 (use-package lsp-ui
   :ensure t
