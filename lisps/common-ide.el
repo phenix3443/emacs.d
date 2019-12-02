@@ -75,7 +75,10 @@
 
 (use-package company-box
   :ensure t
+  :diminish
+  :disabled t
   :hook (company-mode . company-box-mode)
+  :config
   )
 
 (use-package company-quickhelp
@@ -91,7 +94,7 @@
   :after (company)
   :config
   (company-statistics-mode)
-)
+  )
 
 (use-package lsp-mode
   :ensure t
