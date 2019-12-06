@@ -6,17 +6,11 @@
 
 ;;; 代码补全（code complete）
 
-(use-package company-jedi
-  :ensure t
-  :after (company)
-  :config
-  :config
-  (setq jedi:complete-on-dot t)
-  )
-
 (use-package lsp-python-ms
   :ensure t
   :config
+  (setq lsp-python-ms-executable
+      "~/.vscode/extensions/ms-python.python-2019.11.50794/languageServer.0.4.127/Microsoft.Python.LanguageServer")
   )
 
 ;;; 编辑辅助(Code generation helpers)
@@ -25,10 +19,7 @@
 (defun set-company-backends-for-python()
   "Create python company backend."
   (setq-local company-backends '(
-                                 (
-                                  company-lsp
-                                  company-jedi
-                                  )
+                                 company-lsp
                                  company-capf
                                  company-dabbrev-code
                                  company-files
