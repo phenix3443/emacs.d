@@ -51,12 +51,6 @@
   :config
   )
 
-(use-package go-eldoc
-  :ensure t
-  :hook (go-mode . go-eldoc-setup)
-  :config
-  )
-
 (use-package go-guru
   :ensure t
   :config)
