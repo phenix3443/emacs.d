@@ -7,6 +7,7 @@
 ;;; 代码补全（code complete）
 (use-package company-jedi
   :ensure t
+  :disabled t
   :after (company)
   :config
   (setq jedi:complete-on-dot t)
@@ -38,14 +39,10 @@
   :hook (
          (python-mode . set-company-backends-for-python)
          (python-mode . lsp)
-
          )
   :config
-  (setq python-shell-interpreter 'python3)
+  (setq py-shell-name 'python3)
   )
-
-
-
 
 ;; ;;; Lint, style and syntax checkers
 
