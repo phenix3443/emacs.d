@@ -31,7 +31,7 @@
   :interpreter "lua"
   :hook (
          (lua-mode . set-company-backends-for-lua)
-         ;lsp 要在set-company-backends-for-lua后面，因为lsp会添加company-lsp到company-backends最前面，这样覆盖set-company-backends-for-lua 中设置的组合backends，这里也不要使用lsp-deferred，同样的原因。
+         ;lsp 要在set-company-backends-for-lua后面，因为lsp会添加company-lsp到company-backends最前面，这样覆盖set-company-backends-for-lua 中设置的组合backends，这里也不要使用lsp-deferred，同样的原因。这样设置lsp会在set-company-bakcends函数前面
          (lua-mode . lsp)
          )
 
