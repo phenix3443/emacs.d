@@ -6,6 +6,14 @@
 
 ;;; 代码补全（code complete）
 
+(use-package company-jedi
+  :ensure t
+  :after (company)
+  :config
+  :config
+  (setq jedi:complete-on-dot t)
+  )
+
 (use-package lsp-python-ms
   :ensure t
   :config
@@ -17,7 +25,10 @@
 (defun set-company-backends-for-python()
   "Create python company backend."
   (setq-local company-backends '(
-                                 company-lsp
+                                 (
+                                  company-lsp
+                                  company-jedi
+                                  )
                                  company-capf
                                  company-dabbrev-code
                                  company-files
