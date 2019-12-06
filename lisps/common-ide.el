@@ -132,15 +132,6 @@
   (add-to-list 'company-lsp-filter-candidates '(lsp-emmy-lua . t))
   )
 
-(use-package lsp-treemacs
-  :ensure t
-  :commands lsp-treemacs-errors-list
-  )
-
-(use-package helm-lsp
-  :ensure t
-  :commands helm-lsp-workspace-symbol
-  )
 
 (use-package dap-mode
   :ensure t
