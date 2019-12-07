@@ -9,8 +9,7 @@
 (use-package lsp-python-ms
   :ensure t
   :config
-  (setq lsp-python-ms-executable
-      "~/.vscode/extensions/ms-python.python-2019.11.50794/languageServer.0.4.127/Microsoft.Python.LanguageServer")
+  (setq lsp-python-ms-python-executable-cmd "python3")
   )
 
 ;;; 编辑辅助(Code generation helpers)
@@ -33,7 +32,9 @@
          (python-mode . lsp)
          )
   :config
-  (setq py-shell-name 'python3)
+  (setq-default py-shell-name 'python3
+                py-python-command "python3"
+                )
   )
 
 ;; ;;; Lint, style and syntax checkers
