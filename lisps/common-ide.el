@@ -120,7 +120,7 @@
   ;; (lsp-ui-mode)
   (setq lsp-ui-doc-header t
         lsp-ui-doc-include-signature t
-        ;; lsp-ui-doc-use-webkit t
+        lsp-ui-doc-position 'at-point
         lsp-ui-sideline-enable t
         lsp-ui-flycheck-enable t
         )
