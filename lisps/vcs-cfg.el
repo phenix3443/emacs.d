@@ -12,5 +12,11 @@
   (add-to-list 'Info-directory-list
                (file-name-directory (find-library-name "magit"))))
 
+
+(use-package gitignore-mode
+  :ensure t
+  :config
+)
+
 (provide 'vcs-cfg)
 ;;; vcs-cfg.el ends here
