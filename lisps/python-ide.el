@@ -42,6 +42,7 @@
                           (require 'lsp-python-ms)
                           (setq-local eldoc-documentation-function #'ignore)
                           ))
+         (python-mode . format-all-mode)
          )
   :custom
   (py-shell-name "python3")

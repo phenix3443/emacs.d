@@ -69,19 +69,21 @@
 
 (defun set-company-backends-for-cxx()
   "C/C++ company补全后端设置."
-  (setq-local company-backends '(
-                                 company-lsp
-                                 company-keywords
-                                 company-gtags
-                                 company-yasnippet
-                                 company-capf
-                                 company-dabbrev-code
-                                 company-files
-                                 )))
+  (setq-local company-backends
+              '(
+                company-lsp
+                company-keywords
+                company-gtags
+                company-yasnippet
+                company-capf
+                company-dabbrev-code
+                company-files
+                )))
 
 ;;; 代码格式化
 (use-package clang-format
   :ensure t
+  :disabled t
   :hook ((c-mode-common . (lambda ()
                             (add-hook 'before-save-hook 'clang-format-buffer nil t))))
   :commands clang-format-region clang-format-buffer
@@ -92,13 +94,14 @@
   :config
   (setq clang-format-executable "clang-format-8")
   ;; (setq clang-format-style-option "google")
-)
+  )
 
 (use-package cc-mode
   :ensure t
   :hook (
          (c-mode-common . set-company-backends-for-cxx)
          (c-mode-common . lsp)
+         (c-mode-common . format-all-mode)
          )
   :config
   (c-toggle-auto-newline 1)

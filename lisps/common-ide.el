@@ -144,7 +144,6 @@
 (use-package format-all
   :ensure t
   :config
-  (format-all-mode)
   )
 
 
