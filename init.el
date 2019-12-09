@@ -76,7 +76,6 @@ There are two things you can do about this warning:
 (require 'project-cfg)
 (require 'vcs-cfg)
 (require 'org-cfg)
-(require 'github-cfg)
 (require 'ssh-cfg)
 
 ;; test
