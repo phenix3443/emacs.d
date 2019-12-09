@@ -138,7 +138,6 @@
 ;; 26.5.2 Multiple Lines of Comments
 
 ;; 26.6.3 Emacs Lisp Documentation Lookup
-(add-hook 'emacs-lisp-mode-hook (lambda () (eldoc-mode t)))
 
 ;; 26.7 Hideshow minor mode
 (add-hook 'prog-mode-hook 'hs-minor-mode)
