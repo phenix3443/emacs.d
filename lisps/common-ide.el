@@ -104,6 +104,7 @@
   (setq lsp-prefer-flymake nil)
   (setq lsp-keep-workspace-alive nil)
   (setq lsp-signature-auto-activate t)
+  (setq lsp-eldoc-enable-hover nil)
   )
 
 (use-package lsp-ui

@@ -40,12 +40,13 @@
          (python-mode . (lambda ()
                           (setq lsp-python-ms-extra-paths (list (file-name-directory buffer-file-name)))
                           (require 'lsp-python-ms)
+                          (setq-local eldoc-documentation-function #'ignore)
                           ))
          )
+  :custom
+  (py-shell-name "python3")
+  (py-python-command "python3")
   :config
-  (setq-default py-shell-name 'python3
-                py-python-command "python3"
-                )
   )
 
 ;; ;;; Lint, style and syntax checkers
