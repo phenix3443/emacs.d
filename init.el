@@ -78,6 +78,7 @@ There are two things you can do about this warning:
 (require 'org-cfg)
 (require 'ssh-cfg)
 
+(require 'macos)
 ;; test
 ;; (use-package misc)
 

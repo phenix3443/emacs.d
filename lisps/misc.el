@@ -15,23 +15,10 @@
                    (load-file (concat (file-name-as-directory dir) f)))))
     (mapc load-it (directory-files dir nil "\\.el$"))))
 
-(if (eq system-type 'darwin)
-  (add-to-list 'exec-path "/usr/local/bin"))
-
-(use-package gist
-  :ensure t
-  :config
-  )
-
-(use-package exec-path-from-shell
-  :ensure t
-  :config
-  (when (memq window-system '(mac ns x))
-    (exec-path-from-shell-initialize))
-  )
 
 (use-package gnu-elpa-keyring-update
   :ensure t
   )
+
 (provide 'misc)
 ;;; misc.el ends here
