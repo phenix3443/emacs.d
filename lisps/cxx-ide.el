@@ -92,7 +92,7 @@
   (setq-default c-basic-offset 4)
   )
 
-(use-package google-c-sytle
+(use-package google-c-style
   :ensure t
   :config
   )
