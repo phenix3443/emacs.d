@@ -92,6 +92,10 @@
   (setq-default c-basic-offset 4)
   )
 
+(use-package google-c-sytle
+  :ensure t
+  :config
+  )
 
 (provide 'cxx-ide)
 ;;; cxx-ide.el ends here
