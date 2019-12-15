@@ -80,22 +80,6 @@
                 company-files
                 )))
 
-;;; 代码格式化
-(use-package clang-format
-  :ensure t
-  :disabled t
-  :hook ((c-mode-common . (lambda ()
-                            (add-hook 'before-save-hook 'clang-format-buffer nil t))))
-  :commands clang-format-region clang-format-buffer
-  :bind (
-         ("C-c f i" . clang-format-region)
-         ("C-c f b" . clang-format-buffer))
-
-  :config
-  (setq clang-format-executable "clang-format-8")
-  ;; (setq clang-format-style-option "google")
-  )
-
 (use-package cc-mode
   :ensure t
   :hook (

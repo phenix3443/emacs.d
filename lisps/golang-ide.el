@@ -13,7 +13,6 @@
 (defun company-go-mode-setup()
   "Create golang company backend."
   (setq-local company-backends '(
-                                 company-lsp
                                  company-go
                                  company-capf
                                  company-dabbrev-code
@@ -34,8 +33,6 @@
   )
 
 
-;; (add-hook 'go-mode-hook 'company-go-mode-setup)
-
 (use-package go-gen-test
   :ensure t
   :config
@@ -50,15 +47,6 @@
   :ensure t
   :config
   )
-
-(use-package go-guru
-  :ensure t
-  :config)
-
-
-(use-package go-playground
-  :ensure t
-)
 
 (provide 'golang-ide)
 ;;; golang-ide.el ends here
