@@ -23,7 +23,6 @@
   :ensure t
   :hook (
          (before-save . gofmt-before-save)
-         (go-mode . go-guru-hl-identifier-mode)
          (go-mode . company-go-mode-setup)
          (go-mode . lsp-deferred)
          )
