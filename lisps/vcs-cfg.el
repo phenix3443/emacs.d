@@ -48,5 +48,9 @@
   :config
   )
 
+(use-package vc-msg
+  :ensure t
+  )
+
 (provide 'vcs-cfg)
 ;;; vcs-cfg.el ends here
