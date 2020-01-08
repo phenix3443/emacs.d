@@ -100,6 +100,7 @@
 (use-package lsp-mode
   :ensure t
   :commands (lsp lsp-deferred)
+  :hook (sh-mode . lsp-deferred)
   :config
   (setq lsp-prefer-flymake nil)
   (setq lsp-keep-workspace-alive nil)
