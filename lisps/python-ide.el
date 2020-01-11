@@ -14,7 +14,7 @@
   ;; 并且 python 默认指向 python2(例如 macos), 而平时使用都用 python3，
   ;; 这样不能引用python3 下面的包
   (lsp-python-ms-python-executable-cmd "python3")
-
+  (lsp-python-ms-executable "~/.emacs.d/mspyls/Microsoft.Python.LanguageServer")
   :config
   )
 
@@ -36,14 +36,16 @@
   :ensure t
   :hook (
          (python-mode . set-company-backends-for-python)
-         (python-mode . lsp-deferred)
+
          (python-mode . (lambda ()
                           (if (stringp buffer-file-name)
                               (setq lsp-python-ms-extra-paths (list (file-name-directory buffer-file-name)))
                             )
                           (require 'lsp-python-ms)
+                          (lsp)
                           (setq-local eldoc-documentation-function #'ignore)
                           ))
+
          (python-mode . format-all-mode)
          )
   :custom
