@@ -55,7 +55,7 @@ There are two things you can do about this warning:
 (require 'golang-ide)
 (require 'lua-ide)
 
-
+(require 'java-ide)
 (require 'json-ide)
 (require 'ruby-ide)
 (require 'python-ide)

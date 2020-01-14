@@ -139,6 +139,9 @@
 
 (use-package dap-mode
   :ensure t
+  :config
+  (dap-mode t)
+  (dap-ui-mode t)
   )
 
 (use-package format-all
