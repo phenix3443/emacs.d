@@ -33,3 +33,6 @@ transient/
 .lsp-python/
 pls/
 mspyls/
+.dap-breakpoints
+eclipse.jdt.ls/
+workspace/
