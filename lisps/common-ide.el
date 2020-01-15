@@ -119,11 +119,11 @@
               ("C-c r R" . lsp-rename)
               )
   :config
-  ;; (lsp-ui-mode)
   (setq lsp-ui-doc-header t
         lsp-ui-doc-include-signature t
         lsp-ui-sideline-enable t
         lsp-ui-flycheck-enable t
+        lsp-ui-doc-position 'top
         )
   )
 

@@ -19,11 +19,6 @@
   )
 
 
-(use-package dap-java
-  :ensure t
-  :after (lsp-java)
-  )
-
 ;; ;;; Lint, style and syntax checkers
 
 ;;; code navigation
