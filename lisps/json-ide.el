@@ -7,7 +7,7 @@
 (use-package json-mode
   :ensure t
   :mode "\\.json$"
-  :hook (json-mode . untabify-buffer)
+  :hook (json-mode . format-all-mode)
   :config)
 
 (provide 'json-ide)

@@ -6,7 +6,13 @@
 
 (use-package yaml-mode
   :ensure t
-  :hook (cmake-mode . untabify-buffer)
+  :hook (yaml-mode . format-all-mode)
+  )
+
+(use-package yaml-imenu
+  :ensure t
+  :config
+  (yaml-imenu-enable)
   )
 
 (provide 'yaml-ide)
