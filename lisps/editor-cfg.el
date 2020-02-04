@@ -61,14 +61,12 @@
   :config
   )
 
-(use-package indent-guide
+(use-package highlight-indent-guides
   :ensure t
-  :disabled t
   :config
-  (setq indent-guide-delay 0.1)
-  (indent-guide-global-mode)
-  ;; (setq indent-guide-recursive t)
+  (setq highlight-indent-guides-method 'character)
   )
+
 
 (use-package fill-column-indicator
   :ensure t
