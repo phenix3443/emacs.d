@@ -65,6 +65,7 @@
   :ensure t
   :config
   (setq highlight-indent-guides-method 'character)
+  (setq highlight-indent-guides-responsive 'top)
   )
 
 
