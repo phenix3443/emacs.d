@@ -47,6 +47,7 @@
                           ))
 
          (python-mode . format-all-mode)
+         ;; (python-mode . highlight-indent-guides-mode)
          )
   :custom
   (py-shell-name "python3")
