@@ -8,7 +8,7 @@
   :hook (
          (org-mode . turn-on-org-cdlatex)
          (org-mode . (lambda ()
-                             (setq-local pangu-spacing-real-insert-separtor t)))
+                       (setq-local pangu-spacing-real-insert-separtor t)))
          )
   :init
 
@@ -86,7 +86,7 @@
           ("notebook-html"
            ;; 13.1.2 Sources and destinations for files
            :base-directory "~/gitlab/notebook/" ;设置存放.org 文件位置
-           :publishing-directory "~/github/notebook/" ;导出 html 文件位置
+           :publishing-directory "~/github/pheix3443/notebook/" ;导出 html 文件位置
            ;; :preparation-function
            ;; :completion-function ;用来定义publish结束以后的动作，该项目中用于执行push master
 
@@ -123,7 +123,7 @@
           ("notebook-static"
            :base-directory "~/gitlab/notebook/"
            :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-           :publishing-directory "~/github/notebook/"
+           :publishing-directory "~/github/pheix3443/notebook/"
            :recursive t
            :publishing-function org-publish-attachment
            )
