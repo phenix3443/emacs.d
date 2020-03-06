@@ -166,6 +166,8 @@
   (add-to-list 'smart-compile-alist
                '(go-mode . "go run %f"))
 
+  (add-to-list 'smart-compile-alist
+               '(js-mode . "node %f"))
   )
 
 
