@@ -11,7 +11,10 @@
 (use-package dockerfile-mode
   :ensure t
   :mode "Dockerfile\\'"
-  :hook (dockerfile-mode . untabify-buffer)
+  :hook (
+         (dockerfile-mode . format-all-mode)
+         (dockerfile-mode. lsp-deferred)
+         )
   :config)
 
 (provide 'docker-ide)

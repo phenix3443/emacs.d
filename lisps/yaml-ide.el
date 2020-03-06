@@ -6,7 +6,10 @@
 
 (use-package yaml-mode
   :ensure t
-  :hook (yaml-mode . format-all-mode)
+  :hook (
+         (yaml-mode . format-all-mode)
+         (yaml-mode. lsp-deferred)
+         )
   )
 
 (use-package yaml-imenu

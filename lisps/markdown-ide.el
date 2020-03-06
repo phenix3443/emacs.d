@@ -9,7 +9,9 @@
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . gfm-mode)
          ("\\.markdown\\'" . markdown-mode))
-  :hook (markdown-moe . untabify-buffer)
+  :hook (
+         (markdown-mode . format-all-mode)
+         )
   )
 
 (use-package markdown-toc
