@@ -11,7 +11,8 @@
          (js-mode . format-all-mode)
          (js-mode . lsp-deferred)
          )
-  :config)
+  :config
+  )
 
 (provide 'javascript-ide)
 ;;; javascript-ide.el ends here

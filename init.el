@@ -56,6 +56,7 @@ There are two things you can do about this warning:
 (require 'lua-ide)
 
 (require 'java-ide)
+(require 'javascript-ide)
 (require 'json-ide)
 (require 'ruby-ide)
 (require 'python-ide)
