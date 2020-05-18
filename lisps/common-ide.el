@@ -230,5 +230,12 @@
    )
   )
 
+(use-package vlf
+  :ensure t
+  :bind-keymap ("C-c v". vlf-mode-map)
+  :config
+  (require 'vlf-setup)
+  )
+
 (provide 'common-ide)
 ;;; common-ide.el ends here
