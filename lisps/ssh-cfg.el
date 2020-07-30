@@ -5,6 +5,7 @@
 ;;; code:
 
 (use-package tramp
+  :ensure t
   :config
   (customize-set-variable 'tramp-verbose 6 "Enable remote command traces")
   )
