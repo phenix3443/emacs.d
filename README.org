@@ -1,8 +1,0 @@
-# -*- coding:utf-8-*-
-#+TITLE: 个人 emacs 配置
-#+AUTHOR: liushangliang
-#+EMAIL: phenix3443+github@gmail.com
-
-* 概述
-
-* 准备工作
