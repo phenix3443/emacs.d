@@ -27,12 +27,14 @@
   :config
   (google-this-mode))
 
+
 (use-package bash-completion
   :ensure t
-  ;; :hook (shell-dynamic-complete-functionos . bash-completion-dynamic-complete)
+  :disabled t
   :config
   (bash-completion-setup)
   )
+
 (use-package helm-system-packages
   :ensure t
   :config
