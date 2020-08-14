@@ -85,7 +85,6 @@
   :hook (
          (c-mode-common . set-company-backends-for-cxx)
          (c-mode-common . lsp)
-         (c-mode-common . format-all-mode)
          )
   :config
   (c-toggle-auto-newline 1)
