@@ -5,6 +5,7 @@
 ;;; code:
 (use-package markdown-mode
   :ensure t
+  :init (setq markdown-command "pandoc")
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . gfm-mode)
