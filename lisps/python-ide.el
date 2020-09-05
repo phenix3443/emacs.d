@@ -8,14 +8,19 @@
 (use-package lsp-python-ms
   :ensure t
   ;;需要延迟加载，因为脚本regist client时候依赖动态改变的lsp-python-ms-extra-paths
-  :defer t
+  ;; :defer t
   :init
   ;; lsp-python-executable-cmd, 用来解决在 PATH 里面存在 python2 和 python3,
   ;; 并且 python 默认指向 python2(例如 macos), 而平时使用都用 python3，
   ;; 这样不能引用python3 下面的包
   (setq lsp-python-ms-python-executable-cmd "python3")
   (setq lsp-python-ms-executable "~/.emacs.d/mspyls/Microsoft.Python.LanguageServer")
+  :hook   (python-mode . (lambda ()
+                           (require 'lsp-python-ms)
+                           (lsp)
+                           ))
   :config
+
   )
 
 ;;; 编辑辅助(Code generation helpers)
@@ -37,11 +42,6 @@
          (python-mode . set-company-backends-for-python)
 
          (python-mode . (lambda ()
-                          (if (stringp buffer-file-name)
-                              (setq lsp-python-ms-extra-paths (list (file-name-directory buffer-file-name)))
-                            )
-                          (require 'lsp-python-ms)
-                          (lsp)
                           (setq-local eldoc-documentation-function #'ignore)
                           ))
 
