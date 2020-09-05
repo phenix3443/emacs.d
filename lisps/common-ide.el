@@ -127,15 +127,6 @@
         )
   )
 
-(use-package company-lsp
-  :ensure t
-  :commands company-lsp
-  :config
-  (setq company-lsp-enable-snippet t)
-  (setq company-lsp-enable-recompletion t)
-  (add-to-list 'company-lsp-filter-candidates '(lsp-emmy-lua . t))
-  )
-
 
 (use-package dap-mode
   :ensure t

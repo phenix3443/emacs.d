@@ -7,8 +7,6 @@
 ;;; 代码补全
 (use-package ccls
   :ensure t
-  ;; :after (lsp-mode lsp-ui-mode company-lsp projectile-mode)
-  ;; :after (lsp-mode)
   :config
 
   ;; (setq lsp-prefer-flymake nil)
@@ -71,7 +69,6 @@
   "C/C++ company补全后端设置."
   (setq-local company-backends
               '(
-                company-lsp
                 company-keywords
                 company-gtags
                 company-yasnippet

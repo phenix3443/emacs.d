@@ -15,7 +15,6 @@
   (setq-local company-backends '(
                                  (
                                   company-lua
-                                  company-lsp
                                   company-keywords
                                   )
 
