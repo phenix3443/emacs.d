@@ -7,10 +7,6 @@
 (use-package js-mode
   ;; :ensure t
   ;; :mode "\\.js$"
-  :hook (
-         (js-mode . format-all-mode)
-         (js-mode . lsp-deferred)
-         )
   :config
   )
 

@@ -40,13 +40,11 @@
   :ensure t
   :hook (
          (python-mode . set-company-backends-for-python)
-
          (python-mode . (lambda ()
                           (setq-local eldoc-documentation-function #'ignore)
                           ))
 
-         (python-mode . format-all-mode)
-         ;; (python-mode . highlight-indent-guides-mode)
+
          )
   :custom
   (py-shell-name "python3")

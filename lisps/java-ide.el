@@ -13,7 +13,6 @@
 (use-package lsp-java
   :ensure t
   :after lsp
-  :hook (java-mode . lsp-deferred)
   :config
   (setq lsp-java-server-install-dir (concat user-emacs-directory "eclipse.jdt.ls"))
   )

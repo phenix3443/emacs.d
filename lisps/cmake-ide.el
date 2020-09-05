@@ -11,8 +11,7 @@
   ("CMakeLists\\.txt\\'" . cmake-mode)
   ("\\.cmake\\'" . cmake-mode)
   :hook (
-         (cmake-mode . format-all-mode)
-         (cmake-mode . lsp-deferred)
+
          )
   :config
   )

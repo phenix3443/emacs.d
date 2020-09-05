@@ -18,7 +18,6 @@
 (use-package emacs-lisp-mode
   :hook (
          (emacs-lisp-mode . set-company-backends-for-elisp)
-         (emacs-lisp-mode . format-all-mode)
          )
   )
 

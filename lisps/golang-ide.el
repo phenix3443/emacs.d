@@ -24,8 +24,6 @@
   :hook (
          (before-save . gofmt-before-save)
          (go-mode . company-go-mode-setup)
-         (go-mode . lsp-deferred)
-         (go-mode . highlight-indent-guides-mode)
          )
 
   :config

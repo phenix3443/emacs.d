@@ -10,9 +10,6 @@
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . gfm-mode)
          ("\\.markdown\\'" . markdown-mode))
-  :hook (
-         (markdown-mode . format-all-mode)
-         )
   )
 
 (use-package markdown-toc

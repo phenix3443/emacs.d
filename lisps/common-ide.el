@@ -100,7 +100,17 @@
 (use-package lsp-mode
   :ensure t
   :commands (lsp lsp-deferred)
-  :hook (sh-mode . lsp-deferred)
+  :hook (
+         (cmake-mode . lsp-deferred)
+         (dockerfile-mode. lsp-deferred)
+         (go-mode . lsp-deferred)
+         (java-mode . lsp-deferred)
+         (js-mode . lsp-deferred)
+         (json-mode . lsp-deferred)
+         (sh-mode . lsp-deferred)
+         (yaml-mode . lsp-deferred)
+         )
+
   :config
   (setq lsp-prefer-flymake nil)
   (setq lsp-keep-workspace-alive nil)
@@ -138,6 +148,17 @@
 (use-package format-all
   :ensure t
   :config
+  :hook (
+         (cmake-mode . format-all-mode)
+         (dockerfile-mode . format-all-mode)
+         (emacs-lisp-mode . format-all-mode)
+         (js-mode . format-all-mode)
+         (json-mode . format-all-mode)
+         (lua-mode . format-all-mode)
+         (markdown-mode . format-all-mode)
+         (python-mode . format-all-mode)
+         (yaml-mode . format-all-mode)
+         )
   )
 
 

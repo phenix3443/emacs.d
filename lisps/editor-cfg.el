@@ -63,6 +63,11 @@
 
 (use-package highlight-indent-guides
   :ensure t
+  :hook (
+         (go-mode . highlight-indent-guides-mode)
+         (lua-mode . highlight-indent-guides-mode)
+         ;; (python-mode . highlight-indent-guides-mode)
+         )
   :config
   (setq highlight-indent-guides-method 'character)
   (setq highlight-indent-guides-responsive 'top)

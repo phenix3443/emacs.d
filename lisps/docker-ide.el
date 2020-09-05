@@ -11,11 +11,8 @@
 (use-package dockerfile-mode
   :ensure t
   :mode "Dockerfile\\'"
-  :hook (
-         (dockerfile-mode . format-all-mode)
-         (dockerfile-mode. lsp-deferred)
-         )
-  :config)
+  :config
+  )
 
 (provide 'docker-ide)
 ;;; docker-ide.el ends here
