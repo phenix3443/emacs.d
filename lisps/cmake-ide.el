@@ -5,17 +5,6 @@
 ;;; code:
 
 
-(use-package cmake-mode
-  :ensure t
-  :mode
-  ("CMakeLists\\.txt\\'" . cmake-mode)
-  ("\\.cmake\\'" . cmake-mode)
-  :hook (
-
-         )
-  :config
-  )
-
 (use-package company-cmake
   :after (company)
   :config
@@ -30,9 +19,15 @@
                                  company-files)))
 
 (use-package cmake-mode
-  :hook (cmake-mode . set-company-backends-for-cmake)
+  :ensure t
+  :mode
+  ("CMakeLists\\.txt\\'" . cmake-mode)
+  ("\\.cmake\\'" . cmake-mode)
+  :hook (
+         (cmake-mode . set-company-backends-for-cmake)
+         )
+  :config
   )
-
 
 (provide 'cmake-ide)
 ;;; cmake-ide.el ends here
