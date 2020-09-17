@@ -4,16 +4,9 @@
 
 ;;; code:
 
-(use-package company-go
-  :ensure t
-  :after company
-  :config
-  )
-
 (defun company-go-mode-setup()
   "Create golang company backend."
   (setq-local company-backends '(
-                                 company-go
                                  company-capf
                                  company-dabbrev-code
                                  company-files)))
